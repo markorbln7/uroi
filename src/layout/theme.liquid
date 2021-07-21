@@ -1,0 +1,24 @@
+<!doctype html>
+<html class="no-js supports-no-cookies" lang="{{ shop.locale }}">
+    <head>
+    <script type="text/javascript">(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/h0jvVTssyZLaCXUy2m8evxepupdMrHDMTuLKsqfh/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();</script>
+      {% include 'head' %}
+      {{ content_for_header }}
+      <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+    </head>
+
+    <body class="layout layout--{{ template | handleize }}">
+      {% include 'global-header' %}
+      {% unless template == 'cart' %}
+        {% include 'global-cart' %}
+      {% endunless %}
+      <main id="content-for-layout" class="template template--{{ template | handleize }}" >
+        {{ content_for_layout }}
+      </main>
+      {% include 'global-footer' %}
+      {% include 'json-ld' %}
+      {% include 'scripts' %}
+    </body>
+</html>
+  

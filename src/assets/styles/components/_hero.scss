@@ -1,0 +1,37 @@
+.hero {
+  height:152.5vw;
+  max-height: 100vh;
+  overflow: hidden;
+  @include respond-to(md) {
+    height:25rem;
+  }
+  .hero-wrap {
+    .hero-text {
+      .hero-paragraph {
+        margin-bottom:10vw;
+        @include respond-to(md) {
+          margin-bottom:2.25rem;
+        }
+      }
+      max-width: calc(100% - 2rem);
+      margin:0 auto;
+      top:1.5rem;
+      left:6.22vw;
+      width:87vw;
+      text-align:center;
+      @include respond-to(md) {
+        display:block;
+        width:25rem;
+        top:3.5rem;
+        left:6rem;
+        text-align:left;
+      }
+    }
+  }
+  .hero-button {
+     margin:0 auto;
+     @include respond-to(md) {
+       margin:unset;
+     }
+  }
+}

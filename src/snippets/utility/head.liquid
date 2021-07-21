@@ -1,0 +1,159 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="canonical" href="{{ canonical_url }}">
+
+{% capture seo_title %}
+	{{ page_title }}
+	{% if current_tags %}
+			{%- assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+	{% endif %}
+	{% if current_page != 1 %}
+			&ndash; {{ 'general.meta.page' | t: page: current_page }}
+	{% endif %}
+	{% unless page_title contains shop.name %}
+			&ndash; {{ shop.name }}
+	{% endunless %}
+{% endcapture %}
+
+<title>{{ seo_title }}</title>
+
+{% if page_description %}
+  <meta name="description" content="{{ page_description | escape }}">
+{% endif %}
+<meta name="copyright" content="{{ shop.name }} {{ 'now' | date: '%Y' }}">
+<script>
+//let WS_API_KEY = {{ settings.ws_api_key}};
+</script>
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="{{ settings.favicon | img_url: '2000x' }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ settings.favicon | img_url: '32x' }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ settings.favicon | img_url: '16x' }}">
+<link rel="manifest" href="{{ 'site.webmanifest' | asset_url }}">
+<meta name="msapplication-TileColor" content="#6849e3">
+<meta name="theme-color" content="#6849e3">
+<!-- END Favicon -->
+
+<!-- Social Meta Tags -->
+{% include 'social-meta-tags' %}
+<!-- END Social Meta Tags -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight.js"></script>
+<!-- Stylesheets -->
+<!-- <link rel="stylesheet" type="text/css" href="{{ 'vendors.scss' | asset_url }}"> -->
+<link rel="stylesheet" type="text/css" href="{{ 'theme.scss' | asset_url }}">
+{% unless template == 'collection' %}
+<link rel="stylesheet" type="text/css" href="{{ template | handleize | append: '.scss' | asset_url }}">
+{% endunless %}
+{% assign titleFont = settings.title_font %}
+{% if titleFont == 'lora' %}
+	{% assign realFont = " 'Lora', serif; " %}
+{% elsif titleFont == 'poppins' %}
+	{% assign realFont = " 'Poppins', sans-serif; " %}
+{% else titleFont == 'yeseva' %}
+	{% assign realFont = " 'Yeseva One', cursive; " %}
+{% endif %}
+
+{% assign bodyFont = settings.body_font %}
+{% if bodyFont == 'lora' %}
+	{% assign realFontb = " 'Lora', serif; " %}
+{% elsif bodyFont == "montserat" %}
+	{% assign realFontb = " 'Montserrat', sans-serif; " %}
+{% else bodyFont == 'sans' %}
+	{% assign realFontb = " 'Work Sans', sans-serif " %}
+{% endif %}
+<style>
+.yotpo .yotpo-bottomline .yotpo-icon-star, .yotpo .yotpo-bottomline .yotpo-icon-half-star, .yotpo .yotpo-bottomline .yotpo-icon-empty-star {
+    color:{{ settings.star}} !important;
+}
+.yotpo-user-name, .yotpo-logo-title, .yotpo-icon-btn-big, .yotpo .yotpo-review .yotpo-header .yotpo-review-stars .yotpo-icon, .yotpo .yotpo-comment .yotpo-header .yotpo-review-stars .yotpo-icon, .yotpo .yotpo-question .yotpo-header .yotpo-review-stars .yotpo-icon, .yotpo .yotpo-onsite-upload .yotpo-header .yotpo-review-stars .yotpo-icon {
+	color:{{ settings.star}} !important;
+}
+.yotpo-nav-wrapper {
+	border-color:{{ settings.star}} !important;
+}
+.yotpo-nav-wrapper span {
+	color:{{ settings.star}} !important;
+}
+.section-1 {
+	background-color:{{ settings.section1}};
+}
+.section-2 {
+	background-color:{{ settings.section2}};
+}
+.section-3 {
+	background-color:{{ settings.section3}};
+}
+.top-bar-color, .footer-color {
+	background-color:{{ settings.top_bar}};
+}
+.font-lora {
+	font-family: {{realFont }};
+}
+.font-sans {
+	font-family: {{ realFontb }};
+}
+.h1{
+	color: {{ settings.title_color}};
+}
+.h2, .h3, .h4, .h5, .p1, .p2, .list {
+	color: {{ settings.body_color}};
+}
+.cta {
+	transition: 0.4s all ease;
+	border:1px solid {{ settings.cta_back}};
+	color: {{ settings.cta_text}};
+	background-color:{{ settings.cta_back}};
+	text-transform: uppercase;
+	letter-spacing: .15em !important;
+	border-radius:0;
+}
+.cta:hover {
+	opacity:.8;
+}
+.bg-badge{
+	background-color: {{ settings.badge}};
+}
+.color-badge {
+	color:{{ settings.badge_font}} !important;
+}
+.color-disc {
+	color:{{ settings.badge}}!important;
+}
+header {
+	border-bottom:2px solid {{ settings.top_bar_border}}!important;
+}
+.global-footer {
+    border-top: 2px solid {{ settings.top_bar_border}}!important;
+}
+.global-footer .global-footer-wrap .newsletter input[type=text] {
+	    border: 1px solid {{ settings.top_bar_border}}!important;
+		background: transparent;
+}
+.global-footer .global-footer-wrap .newsletter input[type=submit] {
+	border: 1px solid {{ settings.color_footer_cta}};
+	color:{{ settings.color_footer_cta_font}};
+}
+.hover-underline, .font-footer, .global-footer .global-footer-wrap .newsletter input[type=email]::placeholder{
+	color:{{ settings.color_footer}} !important;
+}
+.social svg path {
+	fill:{{ settings.star}} !important;
+}
+.newsletter .cta {
+	background:{{ settings.color_footer_cta}}!important;
+}
+.icon_cart svg path {
+	fill:{{ settings.color_footer}} !important;
+}
+.icon_cart svg rect  {
+	stroke:{{ settings.color_footer}} !important;
+}
+.cart-counter {
+	color:{{ settings.color_footer}} !important;
+}
+.yotpo .yotpo-bottomline .yotpo-icon-star, .yotpo .yotpo-bottomline .yotpo-icon-half-star, .yotpo .yotpo-bottomline .yotpo-icon-empty-star {
+	{{ settings.star}} !important;
+}
+</style>
+<!-- END Stylesheets -->

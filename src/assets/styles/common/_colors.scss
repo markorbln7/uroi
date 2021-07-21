@@ -1,0 +1,20 @@
+
+// COLOR CLASSES
+$siteColors: ();
+$siteColors: map-merge((
+    "white":$white,
+    "black":$black,
+    "lifo-green":$lifoGreen,
+    "lifo-gray":$lifoGray,
+    "lifo-light":$lifoLight,
+), $siteColors);
+
+@each $name, $color in $siteColors {
+  .color-#{$name} {
+    color: $color;
+  }
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}
+

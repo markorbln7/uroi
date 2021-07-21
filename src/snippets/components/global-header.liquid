@@ -1,0 +1,36 @@
+<header class="">
+  <div id="promoBar" class="">
+      {% render 'global-promo-bar' %}
+  </div>
+  <nav class="d-flex top-bar-color align-items-center justify-content-between">
+        <div class="logo">
+            <a href="/">{% render 'logo' %}</a>
+        </div>
+        <button class="mobile-show mobile-cart position-relative icon_cart clickable--contained clickable--contained--primary margin-bottom--s cart-toggle" href="#">
+            <span class="cart-counter cart-toggle__count font-sans"></span>
+            {% render 'icon-cart' %}
+        </button>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-links">
+        {%- for link in linklists.main-menu.links -%}
+            <li><a {% if link.active %}aria-current="page"{% endif %} class="p1 color-black font-sans hover-underline" href="{{ link.url }}">{{ link.title }}</a></li>
+         {%- endfor -%}
+            <li class="">
+            {% comment %} <span class="cart-num-items font-sans position-absolute">{{ cart.item_count }}</span> {% endcomment %}
+
+            <button class="position-relative icon_cart clickable--contained clickable--contained--primary margin-bottom--s cart-toggle" href="#">
+            <span class="cart-counter cart-toggle__count font-sans"></span>
+            {% render 'icon-cart' %}</button>
+            </li>
+
+        </ul>
+    </nav>
+  {% comment %} <nav class="global-header__nav">
+    <a class="clickable--contained clickable--contained--primary" href="/">Home</a>
+    <button class="clickable--contained clickable--contained--primary margin-bottom--s cart-toggle">Toggle Cart</button>
+  </nav> {% endcomment %}
+</header>

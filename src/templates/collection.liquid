@@ -1,0 +1,65 @@
+<div class="collection-page">
+
+<h1 class="h1 color-black text-center font-lora">All Product</h1>
+<div class="collection-cards">
+    <div class="product-cards d-flex flex-wrap">
+    {% assign colHandle = collection.handle%}
+    {% for product in collections[colHandle]products %}
+            <div class="product-card d-block font-sans box position-relative">
+                <a href="{{ product.url }}" ><div class="product-image" style="background:url({{ product.images[0].src | img_url: '2048x'}}) no-repeat center center; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;">
+                {% for tag in product.tags %}
+                    {% if tag contains 'bestseller' %}
+                        <div class="position-absolute fp-badge-holder">
+                            {% render 'badge' %}
+                        </div>
+                    {% endif %}
+                    {% if tag contains 'finalsale' %}
+                        <div class="position-absolute fp-badge-holder">
+                            {% render 'badge-final-sale' %}
+                        </div>
+                    {% endif %}
+                    {% if tag contains 'limitededition' %}
+                        <div class="position-absolute fp-badge-holder">
+                            {% render 'badge-limited' %}
+                        </div>
+                    {% endif %}
+                    {% if tag contains 'new' %}
+                        <div class="position-absolute fp-badge-holder">
+                            {% render 'badge-new' %}
+                        </div>
+                    {% endif %}
+                    {% if tag contains 'onsale' %}
+                        <div class="position-absolute fp-badge-holder">
+                            {% render 'badge-on-sale' %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                </div>
+                </a>
+                <a data-mh="title-5" href="{{ product.url }}" class="d-block h5 w-100 text-center product-title color-black">
+                {{ product.title }}
+                </a>
+                {% if product.first_available_variant.price > 0 %}
+                <h5 class="h5 w-100 text-center product-price color-black">{{ product.first_available_variant.price | money }}</h5>
+                {% else %}
+                <h5 class="h5 w-100 text-center product-price color-black">Out of Stock</h5>
+                {% endif %}
+                <div class="stars text-center">
+                    {% render 'stars' %}
+                </div>
+                {% if product.first_available_variant.price > 0 %}
+                <button data-quantity="1" data-variant-id="{{product.first_available_variant.id}}" class="cta atc-button margin-0-auto hero-button color-white bg-black button-big button-1 d-flex justify-content-center flex-column align-items-center font-sans" href="#">Add To Cart</button>
+                {% else %}
+                <button disabled data-quantity="1" data-variant-id="{{product.first_available_variant.id}}" class="cta atc-button margin-0-auto hero-button color-white bg-black button-big button-1 d-flex justify-content-center flex-column align-items-center font-sans" href="#">Unavailable</button>
+                {% endif %}
+            </div>
+    {% endfor %}
+   
+
+    </div>
+</div>
+</div>

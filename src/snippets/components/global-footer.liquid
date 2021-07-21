@@ -1,0 +1,127 @@
+<footer class="global-footer footer-color">
+    <div class="global-footer-wrap d-flex justify-content-between">
+      <div class="newsletter mobile-show n-footer">
+            <h3 class="h3 font-lora font-footer">{{ settings.newsletter}}</h3>
+            <p class="h5 font-sans font-footer">{{ settings.newsletter_sub}}</p>
+            {%- assign formId = 'Contact_' | append: section.id -%}
+             {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
+             {%- if form.posted_successfully? -%}
+                <p class="form-message form-message--success" tabindex="-1" data-form-status>
+                Email sent
+                </p>
+            {%- endif -%}
+            <div class="input-holder d-flex justify-content-center">
+                <input type="email"
+                name="contact[email]"
+                id="{{ formId }}-email"
+                class="font-sans" 
+                value="{{ form.email }}"
+                placeholder="Your Email" 
+                name="email" 
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                {% if form.errors %}
+                    aria-invalid="true"
+                    aria-describedby="{{ formId }}-email-error"
+                    data-form-status
+                {% endif %}>
+                <input name="commit"
+                class="cta fp-button hero-button color-white bg-black button-big button-1 d-flex justify-content-center flex-column align-items-center font-sans" 
+                type="submit" 
+                value="Submit">
+            </div>
+            {%- if form.errors contains 'email' -%}
+                <span id="{{ formId }}-email-error" class="input-error-message">
+                <span>Email not sent.</span>
+                </span>
+            {%- endif -%}
+            {% endform %}
+        </div>
+        <div class="brand">
+            <div class="logo">
+                {% render 'logo' %}
+            </div>
+            <div class="follow d-none d-md-block">
+                <p class="p1 font-sans font-footer">Follow us:</p>
+                <div class="social d-flex">
+                {% if settings.instagram %}<a href="{{ settings.instagram}}">{% render 'instagram' %}</a>{% endif %}
+                {% if settings.facebook %}<a href="{{ settings.facebook}}">{% render 'facebook' %}</a>{% endif %}
+                {% if settings.ln %}<a href="{{ settings.ln}}">{% render 'linkedin' %}</a>{% endif %}
+                {% if settings.pn %}<a href="{{ settings.pn}}">{% render 'pinterest' %}</a>{% endif %}
+                {% if settings.sn %}<a href="{{ settings.sn}}">{% render 'snapchat' %}</a>{% endif %}
+                {% if settings.sp %}<a href="{{ settings.sp}}">{% render 'spotify' %}</a>{% endif %}
+                {% if settings.tt %}<a href="{{ settings.tt}}">{% render 'tiktok' %}</a>{% endif %}
+                {% if settings.tw %}<a href="{{ settings.tw}}">{% render 'tw' %}</a>{% endif %}
+                {% if settings.yt %}<a href="{{ settings.yt}}">{% render 'yt' %}</a>{% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="links-left links">
+            <ul class="p1 footer-nav font-sans">
+            {%- for link in linklists.main-menu.links -%}
+                <li><a class="hover-underline" href="{{ link.url }}">{{ link.title }}</a></li>
+                {%- endfor -%}
+            </ul>
+        </div>
+        <div class="links-right links">
+            <ul class="p1 footer-nav font-sans">
+            {%- for link in linklists.privacy-menu.links -%}
+                <li><a class="hover-underline" href="{{ link.url }}">{{ link.title }}</a></li>
+            {%- endfor -%}
+            </ul>
+        </div>
+        <div class="newsletter desktop-show">
+            <h3 class="h3 font-lora font-footer">{{ settings.newsletter}}</h3>
+            <p class="h5 font-sans font-footer">{{ settings.newsletter_sub}}</p>
+            {%- assign formId = 'Contact_' | append: section.id -%}
+             {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
+             {%- if form.posted_successfully? -%}
+                <p class="form-message form-message--success" tabindex="-1" data-form-status>
+                Email sent
+                </p>
+            {%- endif -%}
+            <div class="input-holder d-flex">
+                <input type="email"
+                name="contact[email]"
+                id="{{ formId }}-email"
+                class="font-sans p1" 
+                value="{{ form.email }}"
+                placeholder="Your Email" 
+                name="email" 
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                {% if form.errors %}
+                    aria-invalid="true"
+                    aria-describedby="{{ formId }}-email-error"
+                    data-form-status
+                {% endif %}>
+                <input name="commit"
+                class="cta fp-button hero-button color-white bg-black button-big button-1 d-flex justify-content-center flex-column align-items-center font-sans" 
+                type="submit" 
+                value="Submit">
+            </div>
+            {%- if form.errors contains 'email' -%}
+                <span id="{{ formId }}-email-error" class="input-error-message">
+                <span>Email not sent.</span>
+                </span>
+            {%- endif -%}
+            {% endform %}
+        </div>
+        <div class="follow-mobile d-flex d-md-none align-items-center justify-content-between">
+            <p class="p1 font-sans font-footer">Follow us:</p>
+            <div class="social d-flex">
+                {% if settings.instagram %}<a href="{{ settings.instagram}}">{% render 'instagram' %}</a>{% endif %}
+                {% if settings.facebook %}<a href="{{ settings.facebook}}">{% render 'facebook' %}</a>{% endif %}
+                {% if settings.ln %}<a href="{{ settings.ln}}">{% render 'linkedin' %}</a>{% endif %}
+                {% if settings.pn %}<a href="{{ settings.pn}}">{% render 'pinterest' %}</a>{% endif %}
+                {% if settings.sn %}<a href="{{ settings.sn}}">{% render 'snapchat' %}</a>{% endif %}
+                {% if settings.sp %}<a href="{{ settings.sp}}">{% render 'spotify' %}</a>{% endif %}
+                {% if settings.tt %}<a href="{{ settings.tt}}">{% render 'tiktok' %}</a>{% endif %}
+                {% if settings.tw %}<a href="{{ settings.tw}}">{% render 'tw' %}</a>{% endif %}
+                {% if settings.yt %}<a href="{{ settings.yt}}">{% render 'yt' %}</a>{% endif %}
+            </div>
+        </div>
+    </div>
+</footer>

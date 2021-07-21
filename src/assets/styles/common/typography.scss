@@ -1,0 +1,55 @@
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, a {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    p,
+    a,
+    span,
+    li {
+        font-size: inherit;
+         // !important
+        margin: 0;
+        padding: 0;
+    }
+  }
+  
+  p,
+  a,
+  span,
+  li {
+      margin: 0;
+      padding: 0;
+  }
+  
+//   .regular-font{
+//     font-size: $font-size-base!important;
+//   }
+  
+//   .light-font {
+//     font-family: $lightFont;
+//   }
+  
+//   .thin-font{
+//     font-family: $thinFont!important;  
+//   }
+  
+//   .regular-font-md{
+//     @include media-breakpoint-up(md) {
+//       font-family: $regularFont!important;
+//     } 
+//   }
+  
+  // RESPONSIVE
+  html {
+    font-size: 20px;  
+    @include respond-to(md) {
+      font-size: 1.6vw !important; //23.04px
+    }
+    @include respond-to(lg) {
+      font-size: 1.38889vw !important; //20px
+    }
+}
+  

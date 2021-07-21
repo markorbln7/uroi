@@ -1,0 +1,38 @@
+@import "utility/normalize";
+@import "utility/reset";
+@import "utility/spacing";
+
+@import "common/custom";
+@import "common/fonts";
+@import "common/responsive"; 
+@import "common/variables";
+@import "common/colors";
+@import "common/typography";
+@import "common/fontConfig";
+@import "common/fontStyles";
+@import "common/general";
+@import "common/utilities";
+
+@import "vendor/bootstrap-utilities.scss";
+@import "vendor/bootstrap-grid.scss";
+
+@import "vendor/swiper";
+
+@import "components/global-footer";
+@import "components/global-header";
+@import "components/gdpr-banner";
+@import "components/global-cart";
+@import "components/featured-article";
+@import "components/product-template";
+
+
+@import "components/hero";
+@import "components/faq";
+
+@import "templates/page-collections";
+@import "templates/page";
+@import "templates/cart-page";
+@import "templates/contact";
+@import "templates/collection";
+@import "templates/product";
+

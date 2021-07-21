@@ -1,0 +1,49 @@
+{% schema %}
+{
+  "name": "Hero Image",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "image_desk",
+      "type": "image_picker",
+      "label": "Desktop Image (ratio 3:1)"
+    },
+    {
+      "id": "image_mobile",
+      "type": "image_picker",
+      "label": "Mobile Image"
+    },
+    {
+      "id": "hero_text",
+      "type": "textarea",
+      "label": "Text",
+      "default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": "hero_subtext",
+      "type": "textarea",
+      "label": "Subtext",
+      "default":"Curabitur vitae ullamcorper magna, eu ornare urna. Mauris vel enim ornare nulla tincidunt ullamcorper."
+    },
+    {
+      "id": "hero_button_link",
+      "type": "url",
+      "label": "Button Link"    
+    },
+    {
+      "id": "hero_button_text",
+      "type": "text",
+      "label": "Hero button text",
+      "default":"Shop"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Home Page",
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}
+
+{% render 'hero', section: section %}
