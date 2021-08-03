@@ -1,28 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
-
-
-
-.font-lora {
-  font-family: 'Lora', serif;
-}
-.font-sans {
-  font-family: 'Work Sans', sans-serif;
-}
-// .h4 {
-//   text-transform: uppercase;
-// }
 .font-bold {
   font-weight: bold !important;
 }
-// .h1, .h2, .h3-bold, .h4, .h5-bold, .text-2-bold, .text-3-bold, .text-4, .text-5, .h1-big, .h2-big, .h1-footer, .h1-small {
-//   font-family: $boldFontEn;
-// }
-
 
 $fontConfig: (
   mobile: (

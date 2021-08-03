@@ -1,46 +1,11 @@
-{% assign heroTitle = section.settings.hero_text %}
-{% assign heroSubTitle = section.settings.hero_subtext %}
-{% assign buttonText = section.settings.hero_button_text %}
-{% assign buttonLink = section.settings.hero_button_link %}
-{% assign imageCheckerDesk = section.settings.image_desk | img_url %}
-{% assign imageCheckerMobile = section.settings.image_mobile | img_url %}
-{% if imageCheckerDesk contains 'no-image' %} 
-    {% assign heroImageDesk = 'https://cdn.shopify.com/s/files/1/0558/9096/8784/files/heroImage.png?v=1617870268' %}
-{% else %}
-    {% assign heroImageDesk = section.settings.image_desk| img_url: '2000x' %}
-{% endif %}
-{% if imageCheckerMobile contains 'no-image' %} 
-    {% assign heroImageMobile = 'https://cdn.shopify.com/s/files/1/0558/9096/8784/files/Mask_Group_3.png?v=1617875956' %}
-{% else %}
-    {% assign heroImageMobile = section.settings.image_mobile | img_url: '2000x' %}
-{% endif %}
-<div class="hero position-relative d-none d-md-block" style="background: url({{heroImageDesk}}) no-repeat center center; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;">
-  {% comment %} <img class="d-none d-md-block w-100" src="{{heroImageDesk}}">
-  <img class="d-md-none d-sm-block w-100" src="{{heroImageMobile}}"> {% endcomment %}
-    <div class="hero-wrap">
-        <div class="hero-text position-absolute">
-            <h1 class="h1 color-black mb-3 font-lora">{{ heroTitle }}</h1>
-            <p class="p1 hero-paragraph font-sans">{{ heroSubTitle }}</p>
-            <a class="cta hero-button color-white bg-black button-big h4 d-flex justify-content-center flex-column text-center font-sans" href="{{ buttonLink }}">{{ buttonText }}</a>
-        </div>
+<section class="hero">
+    <div class="hero__bg-image hero__bg-image--mob" style="background-image: url({{  'test-hero-mobile.jpg' | asset_url }});"></div>
+    <div class="hero__bg-image hero__bg-image--desk" style="background-image: url({{  'test-hero-desk.jpg' | asset_url }});"></div>
+    <div class="hero__floating-img-wrapper">
+        <img class="hero__floating-img" src="{{  'test-float-img.jpg' | asset_url }}" alt="TEST">
     </div>
-</div>
-<div class="hero position-relative d-md-none d-sm-block" style="background: url({{heroImageMobile}}) no-repeat center center; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;">
-  {% comment %} <img class="d-none d-md-block w-100" src="{{heroImageDesk}}">
-  <img class="d-md-none d-sm-block w-100" src="{{heroImageMobile}}"> {% endcomment %}
-    <div class="hero-wrap">
-        <div class="hero-text position-absolute">
-            <h1 class="h1 color-black mb-3 font-lora">{{ heroTitle }}</h1>
-            <p class="p1 hero-paragraph font-sans">{{ heroSubTitle }}</p>
-            <a class="cta hero-button color-white bg-black button-big h4 d-flex justify-content-center flex-column text-center font-sans" href="{{ buttonLink }}">{{ buttonText }}</a>
-        </div>
+    <div class="hero__container">
+        <h3 class="hero__subtitle">It’s Made In Japan</h3>
+        <h1 class="hero__title">a blessing of water for every skin </h1>
     </div>
-</div>
+</section>

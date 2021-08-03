@@ -44,12 +44,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, a {
   
   // RESPONSIVE
   html {
-    font-size: 20px;  
+    font-size: 10px;  
     @include respond-to(md) {
-      font-size: 1.6vw !important; //23.04px
+      // font-size: 1.6vw !important; //23.04px
+      font-size: 1vw !important; //10px
     }
     @include respond-to(lg) {
-      font-size: 1.38889vw !important; //20px
+      // font-size: 1.38889vw !important; //20px
+      font-size: 0.521vw !important; //10px
     }
 }
   
