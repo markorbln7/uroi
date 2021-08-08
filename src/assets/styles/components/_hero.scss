@@ -57,6 +57,7 @@
     line-height: 1.05;
     text-transform: uppercase;
     font-family: $serif;
+    max-width: 120rem;
 
     @include respond-to(md) {
       font-size: 10rem;
