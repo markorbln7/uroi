@@ -1,0 +1,70 @@
+.science {
+    padding: 10rem 0;
+    background-color: #ecece7;
+    position: relative;
+  
+    &__wrap {
+      position: relative;
+    }
+  
+    &__img {
+      position: absolute;
+      left: 50%;
+      top: 10%;
+      height: 100%;
+      width: 80vw;
+      height: 80vw;
+      transform: translateX(-50%);
+  
+      @include respond-to(sm) {
+        width: 30vw;
+        height: 30vw;
+      }
+    }
+  
+    &__link {
+      text-align: center;
+    }
+  
+    &__subtitle {
+      margin-bottom: 2rem;
+    }
+  
+    &__span {
+      color: $color-black;
+      font-size: 1rem;
+      letter-spacing: 7.46429px;
+  
+      @include respond-to(lg) {
+        font-size: 1.4rem;
+      }
+    }
+  
+    &__title {
+      margin-bottom: 4rem;
+  
+      @include respond-to(lg) {
+        margin-bottom: 10rem;
+      }
+  
+      @include respond-to(xlg) {
+        margin-bottom: 14rem;
+      }
+    }
+  
+    &__text {
+      font-size: 2rem;
+      color: rgba($color-black, 0.6);
+      line-height: 3.1rem;
+  
+      @include respond-to(lg) {
+        font-size: 3rem;
+        line-height: 6.4rem;
+      }
+  
+      @include respond-to(lg) {
+        font-size: 4.8rem;
+      }
+    }
+  }
+  

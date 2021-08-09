@@ -12,6 +12,7 @@
 @import "common/fontStyles";
 @import "common/general";
 @import "common/utilities";
+@import "common/utils";
 
 @import "vendor/bootstrap-utilities.scss";
 @import "vendor/bootstrap-grid.scss";
@@ -24,10 +25,15 @@
 @import "components/global-cart";
 @import "components/featured-article";
 @import "components/product-template";
+@import "components/series";
+@import "components/science";
 
 
 @import "components/hero";
 @import "components/header";
+@import "components/staples";
+@import "components/button";
+@import "components/footer";
 @import "components/faq";
 
 @import "templates/page-collections";

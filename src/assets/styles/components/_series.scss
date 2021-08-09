@@ -1,0 +1,41 @@
+.series {
+    padding: 5rem 0;
+  
+    &__container {
+      @include respond-to(md) {
+        display: flex;
+        align-items: center;
+        gap: 5rem;
+      }
+    }
+  
+    &__wrap {
+      @include respond-to(md) {
+        flex-basis: 33%;
+      }
+    }
+  
+    &__btn-box {
+      width: 18.22917vw;
+    }
+  
+    &__img-content {
+      @include respond-to(md) {
+        flex-basis: 67%;
+      }
+    }
+  
+    &__img-box {
+      margin-bottom: 4rem;
+    }
+  
+    &__text {
+      color: rgba($color-black, 0.7);
+      margin-bottom: 4rem;
+  
+      @include respond-to(md) {
+        font-size: 1.9rem;
+      }
+    }
+  }
+  
