@@ -1,7 +1,28 @@
 <section class="types">
   <div class="container">
-    <p class="types__subtitle">my skin type is:</p>
+    <p class="types__subtitle">{{ section.settings.title }}</p>
     <div class="types__wrap">
+
+      {%- comment -%}
+        {% for block in section.blocks %}
+          <div class="types__card">
+            <div class="types__img-box">
+              <picture class="types__img">
+                <source
+                media="(max-width: 1200px)"
+                srcset="{{ block.img.src }}"
+                />
+                <img
+                src="{{ block.img.src }}"
+                alt="{{ block.alt }}"
+                />
+              </picture>
+            </div>
+            <span class="types__span types__active">  {{ block.btn-text }} </span>
+          </div>
+        {% endfor %}
+      {%- endcomment -%}
+
       <div class="types__card">
         <div class="types__img-box">
           <picture class="types__img">
@@ -65,3 +86,41 @@
     </div>
   </div>
 </section>
+
+{% schema %}
+{
+  "name": "CategoryButtons",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "my skin type is:"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "CategoryButton",
+      "type": "category-button",
+      "settings": [
+        {
+          "id": "btn-text",
+          "type": "text",
+          "label": "Button text"
+        },
+        {
+          "id": "img",
+          "type": "image_picker",
+          "label": "Button Image"
+        },
+        {
+          "id": "alt",
+          "type": "text",
+          "label": "Image alt"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
