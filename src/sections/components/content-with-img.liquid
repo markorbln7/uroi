@@ -1,0 +1,96 @@
+<section class="series">
+    <div class="container-left">
+    <div class="series__container">
+       <div class="series__wrap">
+          <h2>{{ section.settings.title }}</h2> 
+          <h6>{{ section.settings.subtitle }}</h6> 
+         <div class="series__text d-none-1">
+          {{ section.settings.copy }}
+       </div>
+          <div class="series__btn-box">
+          <a href="{{ section.settings.btn-link }}" class="btn d-none-1">
+             <span class="btn--span">
+                <span class="btn--arrow">
+                   <svg width="28px" height="19px" viewBox="0 0 28 19"><g stroke="none" stroke-width="1" fill-rule="evenodd"><g transform="translate(-230.000000, -3082.000000)"><path d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z"></path></g></g>
+                   </svg>
+                </span>
+                {{ section.settings.btn-text }}
+                </span>
+                </a>
+             </div>
+             </div>
+          <div class="series__img-content">
+             <div class="series__img-box">
+                <picture class="series__img">
+                   <source media="(max-width: 600px)" srcset="{{ section.settings.img-mob.src }}">
+                   <source media="(max-width: 1200px)" srcset="{{ section.settings.img-desk.src  }}"> 
+                   <img src="{{ section.settings.img-desk.src  }}" alt="Uruoi S-series image">
+                </picture>
+             </div> 
+             <div class="series__text d-none-md">
+               {{ section.settings.copy }}
+            </div>
+             <div class="series__button-wrapper ">
+                <a href="{{ section.settings.btn-link }}" class="btn d-none-md">
+                <span class="btn--span">
+                   <span class="btn--arrow">
+                   <svg width="28px" height="19px" viewBox="0 0 28 19"><g stroke="none" stroke-width="1" fill-rule="evenodd"><g transform="translate(-230.000000, -3082.000000)"><path d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z"></path></g></g>
+                   </svg>
+                </span>
+                   {{ section.settings.btn-text }}
+                </span>
+                </a>
+             </div> 
+          </div>
+       </div>
+    </div>
+ </section>
+
+ {% schema %}
+ {
+   "name": "ContentWithImage",
+   "settings": [
+      {
+         "id": "title",
+         "type": "text",
+         "label": "Title",
+         "default": "S-Series"
+      },
+      {
+         "id": "subtitle",
+         "type": "richtext",
+         "label": "Subtitle"
+      },
+      {
+         "id": "copy",
+         "type": "richtext",
+         "label": "Copy"
+      },
+      {
+         "id": "btn-text",
+         "type": "text",
+         "label": "Button text"
+      },
+      {
+         "id": "btn-link",
+         "type": "url",
+         "label": "Button link"
+      },
+      {
+         "id": "img-desk",
+         "type": "image_picker",
+         "label": "Image for desktop"
+      },
+      {
+         "id": "img-mob",
+         "type": "image_picker",
+         "label": "Image for mobile"
+      },
+      {
+         "id": "alt",
+         "type": "text",
+         "label": "Image alt"
+      }
+   ]
+ }
+ {% endschema %}
