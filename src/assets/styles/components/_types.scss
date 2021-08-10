@@ -25,6 +25,8 @@
       flex-wrap: wrap;
       justify-content: center;
       row-gap: 1.5rem;
+      max-width: 135rem;
+      margin: 0 auto;
     }
   }
 
@@ -55,10 +57,6 @@
 
     @include respond-to(lg) {
       font-size: 5rem;
-    }
-
-    @include respond-to(xlg) {
-      font-size: 6.8rem;
     }
 
     &:hover {

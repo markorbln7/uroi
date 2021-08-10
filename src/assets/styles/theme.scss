@@ -1,3 +1,6 @@
+@import "vendor/bootstrap-utilities.scss";
+@import "vendor/bootstrap-grid.scss";
+
 @import "utility/normalize";
 @import "utility/reset";
 @import "utility/spacing";
@@ -14,8 +17,6 @@
 @import "common/utilities";
 @import "common/utils";
 
-@import "vendor/bootstrap-utilities.scss";
-@import "vendor/bootstrap-grid.scss";
 
 @import "vendor/swiper";
 

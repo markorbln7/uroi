@@ -1,170 +1,213 @@
 .footer {
-    padding: 10rem 0 3rem;
-    &__wrapper {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-  
-      @include respond-to(sm) {
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        gap: 3rem;
-      }
-  
-      @include respond-to(md) {
-        gap: 5rem;
-      }
-    }
-  
-    &__content {
-      @include respond-to(sm) {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-      @include respond-to(lg) {
-        gap: 4rem;
-        flex-basis: 64%;
-      }
-    }
-  
-    &__sign-up {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 3rem;
-  
-      @include respond-to(lg) {
-        flex-basis: 25%;
-      }
-    }
-  
-    &__text {
-      margin-bottom: 3rem;
-  
-      @include respond-to(xlg) {
-        font-size: 1.8rem;
-      }
-    }
-  
-    &__item {
-      margin-bottom: 3rem;
-  
-      @include respond-to(sm) {
-        order: 1;
-      }
-    }
-  
-    &__list-item {
-      margin-bottom: 1.5rem;
-    }
-  
-    &__link {
-      color: rgba($color-black, 0.7);
-      transition: padding-left 0.7s cubic-bezier(0.16, 0.01, 0.13, 0.99);
-  
-      @include respond-to(xlg) {
-        font-size: 1.8rem;
-      }
-  
-      &:hover {
-        padding-left: 1rem;
-        color: $color-black;
-      }
-    }
-  
-    &__item-service {
-      margin-bottom: 3rem;
-  
-      @include respond-to(sm) {
-        order: 1;
-      }
-    }
-  
-    &__item-terms {
-      margin-bottom: 3rem;
-  
-      @include respond-to(sm) {
-        order: 2;
-      }
-  
-      @include respond-to(lg) {
-        order: 4;
-      }
-    }
-  
-    &__item-social {
-      margin-bottom: 3rem;
-  
-      @include respond-to(sm) {
-        order: 1;
-      }
-  
-      @include respond-to(lg) {
-        display: flex;
-        flex-direction: column;
-        gap: 5rem;
-      }
-    }
-  
-    &__social-lg {
-      display: none;
-  
-      @include respond-to(lg) {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  
-    &__list-terms {
-      &::hover {
-        color: $color-black;
-      }
-  
-      @include respond-to(sm) {
-        display: flex;
-        justify-content: space-between;
-        gap: 0.5rem;
-      }
-  
-      @include respond-to(lg) {
-        gap: 1rem;
-      }
-    }
-  
-    &__link-terms {
-      color: rgba($color-black, 0.7);
-      font-size: 1.2rem;
-  
-      @include respond-to(lg) {
-        font-size: 1.6rem;
-      }
-    }
-  
-    &__social-list {
-      display: flex;
+  padding: 10rem 0 3rem;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include respond-to(sm) {
+      flex-direction: row-reverse;
       justify-content: space-between;
-      width: 20rem;
-  
-      @include respond-to(lg) {
-        width: 15rem;
-      }
+      gap: 3rem;
     }
-  
-    &__social-span {
-      color: rgba($color-black, 0.7);
-  
-      @include respond-to(xlg) {
-        font-size: 1.8rem;
-      }
-    }
-  
-    &__copyright {
-      font-size: 1.36rem;
-      color: rgba($color-black, 0.5);
-  
-      @include respond-to(sm) {
-        order: 3;
-      }
+
+    @include respond-to(md) {
+      gap: 5rem;
     }
   }
-  
+
+  &__content {
+    @include respond-to(sm) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    @include respond-to(lg) {
+      row-gap: 10.5rem;
+      flex-basis: 60%;
+    }
+  }
+
+  &__sign-up {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+
+    @include respond-to(lg) {
+      flex-basis: 25%;
+      max-width: 35rem;
+    }
+  }
+
+  &__sign-up h3 {
+    @include respond-to(lg) {
+      font-size: 4rem;
+      margin-bottom: 2.1rem;
+    }
+  }
+
+  &__text {
+    margin-bottom: 3rem;
+
+    @include respond-to(xlg) {
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__item {
+    margin-bottom: 3rem;
+
+    @include respond-to(sm) {
+      order: 1;
+    }
+  }
+
+  &__list-item {
+    margin-bottom: 1.5rem;
+
+    @include respond-to(xlg) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    color: rgba($color-black, 0.7);
+    transition: padding-left 0.7s cubic-bezier(0.16, 0.01, 0.13, 0.99);
+
+    @include respond-to(xlg) {
+      font-size: 1.8rem;
+      line-height: 3.3rem;
+    }
+
+    &:hover {
+      padding-left: 1rem;
+      color: $color-black;
+    }
+  }
+
+  &__item-service {
+    margin-bottom: 3rem;
+
+    @include respond-to(sm) {
+      order: 1;
+    }
+  }
+
+  &__item-terms {
+    margin-bottom: 3rem;
+
+    @include respond-to(sm) {
+      order: 2;
+    }
+
+    @include respond-to(lg) {
+      order: 4;
+    }
+  }
+
+  &__item-social {
+    margin-bottom: 3rem;
+
+    @include respond-to(sm) {
+      order: 1;
+    }
+
+    @include respond-to(lg) {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+  }
+
+  &__item h5 {
+    @include respond-to(lg) {
+      font-size: 4rem;
+    }
+  }
+
+  &__item-service h5 {
+    @include respond-to(lg) {
+      font-size: 4rem;
+    }
+  }
+
+  &__item-social h5 {
+    @include respond-to(lg) {
+      font-size: 4rem;
+    }
+  }
+
+  &__social-lg {
+    display: none;
+
+    @include respond-to(lg) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__list-terms {
+    &::hover {
+      color: $color-black;
+    }
+
+    @include respond-to(sm) {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    @include respond-to(lg) {
+      gap: 3rem;
+    }
+
+    @include respond-to(xlg) {
+      gap: 5rem;
+    }
+  }
+
+  &__link-terms {
+    color: rgba($color-black, 0.7);
+    font-size: 1.2rem;
+
+    @include respond-to(lg) {
+      font-size: 1.8rem;
+      line-height: 3.3rem;
+    }
+  }
+
+  &__social-list {
+    display: flex;
+    justify-content: space-between;
+    width: 20rem;
+
+    @include respond-to(lg) {
+      width: 15rem;
+    }
+  }
+
+  &__social-span {
+    color: rgba($color-black, 0.7);
+
+    @include respond-to(xlg) {
+      font-size: 1.8rem;
+      line-height: 3.3rem;
+    }
+  }
+
+  &__copyright {
+    font-size: 1.36rem;
+    color: rgba($color-black, 0.5);
+
+    @include respond-to(sm) {
+      order: 3;
+    }
+
+    @include respond-to(lg) {
+      font-size: 1.6rem;
+      line-height: 3.3rem;
+    }
+  }
+}
