@@ -1,0 +1,46 @@
+<section class="hero">
+    <div class="hero__bg-image hero__bg-image--mob" style="background-image: url({{ section.settings.img-mob | img_url: 'master'}});"></div>
+    <div class="hero__bg-image hero__bg-image--desk" style="background-image: url({{  section.settings.img-desk | img_url: 'master' }});"></div>
+    <div class="hero__floating-img-wrapper">
+        <img class="hero__floating-img" src="{{  'test-float-img.jpg' | asset_url }}" alt="TEST">
+    </div>
+    <div class="hero__container">
+        <h3 class="hero__subtitle">{{ section.settings.subtitle }}</h3>
+        <h1 class="hero__title">{{ section.settings.title }} </h1>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Hero",
+    "settings": [
+        {
+            "id": "img-desk",
+            "type": "image_picker",
+            "label": "Background Image for Desktop"
+        },
+        {
+            "id": "img-mob",
+            "type": "image_picker",
+            "label": "Background Image for Mobile"
+        },
+        {
+            "id": "floating-img",
+            "type": "image_picker",
+            "label": "Floating Image"
+        },
+        {
+            "id": "title",
+            "type": "text",
+            "label": "Title",
+            "default": "a blessing of water for every skin"
+        },
+        {
+            "id": "subtitle",
+            "type": "text",
+            "label": "Subtitle",
+            "default": "It’s Made In Japan"
+        }        
+    ]
+}
+{% endschema %}

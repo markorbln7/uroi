@@ -2,10 +2,10 @@
   <div class="container">
     <picture class="science__img">
       <source media="(max-width: 600px)" srcset="{{
-        section.settings.img-mob.src
+        section.settings.img-mob  | img_url: 'master'
       }}"> <source media="(max-width: 1200px)" srcset="{{
-        section.settings.img-desk.src
-      }}"> <img src="{{ section.settings.img-desk.src }}" alt="{{ section.settings.alt }}">
+        section.settings.img-desk  | img_url: 'master'
+      }}"> <img src="{{ section.settings.img-desk  | img_url: 'master' }}" alt="{{ section.settings.alt }}">
     </picture>
     <div class="science__wrap">
       <a href="#" class="science__link">

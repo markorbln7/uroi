@@ -10,10 +10,10 @@
               <picture class="types__img">
                 <source
                 media="(max-width: 1200px)"
-                srcset="{{ block.img.src }}"
+                srcset="{{ block.img  | img_url: 'master' }}"
                 />
                 <img
-                src="{{ block.img.src }}"
+                src="{{ block.img  | img_url: 'master' }}"
                 alt="{{ block.alt }}"
                 />
               </picture>
