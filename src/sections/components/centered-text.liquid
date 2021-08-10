@@ -2,10 +2,11 @@
   <div class="container">
     <div class="fit__wrap">
       <div class="fit__title">
-        <h2>Find Your Fit</h2>
+        <h2>{{ section.settings.title }}</h2>
       </div>
       <div class="fit__text-box">
         <div class="fit__text mb-1-to-sm">
+          {{ section.settings.content }}
           <p>
             U-Series is suitable for all skin types. Formulated with DENKA PURE
             HYALURONIC ACID, D.P.H.A.™ and natural moisturizing factors to
@@ -13,8 +14,6 @@
             mildly-acidic in formula to balance pH levels and maintain the
             skin’s natural barrier.
           </p>
-        </div>
-        <div class="fit__text">
           <p>
             To simplify the routine each product is marked with a number. For
             your #uruoiskin, we have curated the top three items we think is the
@@ -26,3 +25,23 @@
     </div>
   </div>
 </section>
+
+
+{% schema %}
+{
+  "name": "CenteredText",
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "Title",
+      "default": "Find Your Fit"
+    },
+    {
+      "id": "content",
+      "type": "richtext",
+      "label": "Content"
+    }
+  ]
+}
+{% endschema %}
