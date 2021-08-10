@@ -1,227 +1,143 @@
-{%- comment -%}
-<footer class="global-footer footer-color">
-    <div class="global-footer-wrap d-flex justify-content-between">
-      <div class="newsletter mobile-show n-footer">
-            <h3 class="h3 font-lora font-footer">{{ settings.newsletter}}</h3>
-            <p class="h5 font-sans font-footer">{{ settings.newsletter_sub}}</p>
-            {%- assign formId = 'Contact_' | append: section.id -%}
-             {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
-             {%- if form.posted_successfully? -%}
-                <p class="form-message form-message--success" tabindex="-1" data-form-status>
-                Email sent
-                </p>
-            {%- endif -%}
-            <div class="input-holder d-flex justify-content-center">
-                <input type="email"
-                name="contact[email]"
-                id="{{ formId }}-email"
-                class="font-sans" 
-                value="{{ form.email }}"
-                placeholder="Your Email" 
-                name="email" 
-                aria-required="true"
-                autocorrect="off"
-                autocapitalize="off"
-                {% if form.errors %}
-                    aria-invalid="true"
-                    aria-describedby="{{ formId }}-email-error"
-                    data-form-status
-                {% endif %}>
-                <input name="commit"
-                class="cta fp-button hero-button color-white bg-black button-big button-1 d-flex justify-content-center flex-column align-items-center font-sans" 
-                type="submit" 
-                value="Submit">
-            </div>
-            {%- if form.errors contains 'email' -%}
-                <span id="{{ formId }}-email-error" class="input-error-message">
-                <span>Email not sent.</span>
-                </span>
-            {%- endif -%}
-            {% endform %}
-        </div>
-        <div class="brand">
-            <div class="logo">
-                {% render 'logo' %}
-            </div>
-            <div class="follow d-none d-md-block">
-                <p class="p1 font-sans font-footer">Follow us:</p>
-                <div class="social d-flex">
-                {% if settings.instagram %}<a href="{{ settings.instagram}}">{% render 'instagram' %}</a>{% endif %}
-                {% if settings.facebook %}<a href="{{ settings.facebook}}">{% render 'facebook' %}</a>{% endif %}
-                {% if settings.ln %}<a href="{{ settings.ln}}">{% render 'linkedin' %}</a>{% endif %}
-                {% if settings.pn %}<a href="{{ settings.pn}}">{% render 'pinterest' %}</a>{% endif %}
-                {% if settings.sn %}<a href="{{ settings.sn}}">{% render 'snapchat' %}</a>{% endif %}
-                {% if settings.sp %}<a href="{{ settings.sp}}">{% render 'spotify' %}</a>{% endif %}
-                {% if settings.tt %}<a href="{{ settings.tt}}">{% render 'tiktok' %}</a>{% endif %}
-                {% if settings.tw %}<a href="{{ settings.tw}}">{% render 'tw' %}</a>{% endif %}
-                {% if settings.yt %}<a href="{{ settings.yt}}">{% render 'yt' %}</a>{% endif %}
-                </div>
-            </div>
-        </div>
-        <div class="links-left links">
-            <ul class="p1 footer-nav font-sans">
-            {%- for link in linklists.main-menu.links -%}
-                <li><a class="hover-underline" href="{{ link.url }}">{{ link.title }}</a></li>
-                {%- endfor -%}
-            </ul>
-        </div>
-        <div class="links-right links">
-            <ul class="p1 footer-nav font-sans">
-            {%- for link in linklists.privacy-menu.links -%}
-                <li><a class="hover-underline" href="{{ link.url }}">{{ link.title }}</a></li>
-            {%- endfor -%}
-            </ul>
-        </div>
-        <div class="newsletter desktop-show">
-            <h3 class="h3 font-lora font-footer">{{ settings.newsletter}}</h3>
-            <p class="h5 font-sans font-footer">{{ settings.newsletter_sub}}</p>
-            {%- assign formId = 'Contact_' | append: section.id -%}
-             {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
-             {%- if form.posted_successfully? -%}
-                <p class="form-message form-message--success" tabindex="-1" data-form-status>
-                Email sent
-                </p>
-            {%- endif -%}
-            <div class="input-holder d-flex">
-                <input type="email"
-                name="contact[email]"
-                id="{{ formId }}-email"
-                class="font-sans p1" 
-                value="{{ form.email }}"
-                placeholder="Your Email" 
-                name="email" 
-                aria-required="true"
-                autocorrect="off"
-                autocapitalize="off"
-                {% if form.errors %}
-                    aria-invalid="true"
-                    aria-describedby="{{ formId }}-email-error"
-                    data-form-status
-                {% endif %}>
-                <input name="commit"
-                class="cta fp-button hero-button color-white bg-black button-big button-1 d-flex justify-content-center flex-column align-items-center font-sans" 
-                type="submit" 
-                value="Submit">
-            </div>
-            {%- if form.errors contains 'email' -%}
-                <span id="{{ formId }}-email-error" class="input-error-message">
-                <span>Email not sent.</span>
-                </span>
-            {%- endif -%}
-            {% endform %}
-        </div>
-        <div class="follow-mobile d-flex d-md-none align-items-center justify-content-between">
-            <p class="p1 font-sans font-footer">Follow us:</p>
-            <div class="social d-flex">
-                {% if settings.instagram %}<a href="{{ settings.instagram}}">{% render 'instagram' %}</a>{% endif %}
-                {% if settings.facebook %}<a href="{{ settings.facebook}}">{% render 'facebook' %}</a>{% endif %}
-                {% if settings.ln %}<a href="{{ settings.ln}}">{% render 'linkedin' %}</a>{% endif %}
-                {% if settings.pn %}<a href="{{ settings.pn}}">{% render 'pinterest' %}</a>{% endif %}
-                {% if settings.sn %}<a href="{{ settings.sn}}">{% render 'snapchat' %}</a>{% endif %}
-                {% if settings.sp %}<a href="{{ settings.sp}}">{% render 'spotify' %}</a>{% endif %}
-                {% if settings.tt %}<a href="{{ settings.tt}}">{% render 'tiktok' %}</a>{% endif %}
-                {% if settings.tw %}<a href="{{ settings.tw}}">{% render 'tw' %}</a>{% endif %}
-                {% if settings.yt %}<a href="{{ settings.yt}}">{% render 'yt' %}</a>{% endif %}
-            </div>
-        </div>
-    </div>
-</footer>
-{%- endcomment -%}
-
 <footer class="footer">
-    <div class="container">
-       <div class="footer__wrapper">
-          <div class="footer__sign-up">
-             <div class="font-size-4">
-          <h3>Join Our Mailing List</h3>
-       </div>
-       <div class="footer__text">
-          <p>
-             Sign up now and be the first to know about exclusive offers, product updates, and exciting news and announcements.
-          </p>
-       </div>
-          <input type="email" name="EMAIL" class="input" placeholder="Enter your email">
-          <a href="#" class="btn">
-             <span class="btn--span"><span class="btn--arrow"><svg width="28px" height="19px" viewBox="0 0 28 19"><g stroke="none" stroke-width="1" fill-rule="evenodd"><g transform="translate(-230.000000, -3082.000000)"><path d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z"></path></g></g></svg></span>
-             send
-          </span>
-       </a>
-       </div>
-       <div class="footer__content">
-       <div class="footer__item">
-          <div class="mb-3 font-size-4">
-          <h5>About Us</h5>
-       </div>
-          <ul class="footer__list">
-             <li class="footer__list-item">
-                <a href="#" class="footer__link">About Us</a>
-             </li>
-             <li class="footer__list-item">
-                <a href="#" class="footer__link">Regimen</a>
-             </li>
-             <li class="footer__list-item">
-                <a href="#" class="footer__link">Shop All</a>
-             </li>
-          </ul>
-       </div>
-       <div class="footer__item-service">
-          <div class="mb-3 font-size-4">
-          <h5>Customer Service</h5>
-       </div>
-          <ul class="footer__list">
-             <li class="footer__list-item">
-                <a href="#" class="footer__link">FAQs</a>
-             </li>
-             <li class="footer__list-item">
-                <a href="#" class="footer__link">Returns</a>
-             </li>
-             <li class="footer__list-item">
-                <a href="#" class="footer__link">Contact Us</a>
-             </li>
-          </ul>
-       </div>
-       <div class="footer__item-terms">
-          <ul class="footer__list-terms">
-             <li class="footer__list-item">
-                <a href="#" class="footer__link-terms">Terms & Conditions</a>
-             </li>
-             <li class="footer__list-item">
-                <a href="#" class="footer__link-terms">Privacy Policy</a>
-             </li>
-             <li class="footer__list-item">
-                <a href="#" class="footer__link-terms">Web Accessibility</a>
-             </li>
-          </ul>
-       </div>
-          <div class="footer__item-social">
-             <div class="footer__social-lg">
-                <div class="mb-3 font-size-4 ">
-                <h5>Connect</h5>
-             </div>
-                <span class="footer__social-span">@uruoiskincare</span>
-             </div>
-             <ul class="footer__social-list">
-                <li >
-                   <a target="_blank" href="https://www.instagram.com/uruoiskincare/" >
-                   <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-v-177b5e3e=""><title>Instagram</title> <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-18.000000, -6459.000000)" fill="#000000" fill-rule="nonzero"><g transform="translate(0.000000, 5686.000000)"><g transform="translate(18.000000, 773.000000)"><g id="instagram"><path id="Combined-Shape" d="M11,0 C13.761,0 16,2.239 16,5 L16,11 C16,13.761 13.761,16 11,16 L5,16 C2.239,16 0,13.761 0,11 L0,5 C0,2.239 2.239,0 5,0 L11,0 Z M14.5,11 L14.5,5 C14.5,3.07 12.93,1.5 11,1.5 L5,1.5 C3.07,1.5 1.5,3.07 1.5,5 L1.5,11 C1.5,12.93 3.07,14.5 5,14.5 L11,14.5 C12.93,14.5 14.5,12.93 14.5,11 Z M8,4 C10.209,4 12,5.791 12,8 C12,10.209 10.209,12 8,12 C5.791,12 4,10.209 4,8 C4,5.791 5.791,4 8,4 Z M8,10.5 C9.378,10.5 10.5,9.378 10.5,8 C10.5,6.621 9.378,5.5 8,5.5 C6.622,5.5 5.5,6.621 5.5,8 C5.5,9.378 6.622,10.5 8,10.5 Z M12.4,4 C12.1790861,4 12,3.8209139 12,3.6 C12,3.3790861 12.1790861,3.2 12.4,3.2 C12.6209139,3.2 12.8,3.3790861 12.8,3.6 C12.8,3.8209139 12.6209139,4 12.4,4 Z"></path></g></g></g></g></g>
-                   </svg></a></li> 
-                <li >
-                   <a target="_blank" href="https://www.facebook.com/uruoiskincare" >
-                   <svg width="9px" height="16px" viewBox="0 0 9 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-v-177b5e3e=""><title>Facebook icon</title> <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-85.000000, -6459.000000)" fill="#000000"><g transform="translate(0.000000, 5686.000000)"><g transform="translate(18.000000, 773.000000)"><path d="M75.2336445,0.00332906797 L73.1814894,0 C70.8759636,0 69.3860315,1.5455198 69.3860315,3.93762159 L69.3860315,5.7531288 L67.3226814,5.7531288 C67.1443835,5.7531288 67,5.89927489 67,6.07954392 L67,8.71000697 C67,8.890276 67.1445481,9.03625563 67.3226814,9.03625563 L69.3860315,9.03625563 L69.3860315,15.6737513 C69.3860315,15.8540204 69.530415,16 69.708713,16 L72.400798,16 C72.5790959,16 72.7234794,15.8538539 72.7234794,15.6737513 L72.7234794,9.03625563 L75.1360169,9.03625563 C75.3143149,9.03625563 75.4586983,8.890276 75.4586983,8.71000697 L75.4596861,6.07954392 C75.4596861,5.99298815 75.425607,5.91009436 75.3651866,5.84883951 C75.3047661,5.78758466 75.2224494,5.7531288 75.1368401,5.7531288 L72.7234794,5.7531288 L72.7234794,4.21410068 C72.7234794,3.47438178 72.8978261,3.09886292 73.8508888,3.09886292 L75.2333152,3.09836356 C75.4114486,3.09836356 75.555832,2.95221747 75.555832,2.77211489 L75.555832,0.329577729 C75.555832,0.149641605 75.4116132,0.00366197476 75.2336445,0.00332906797 Z"></path></g></g></g></g>
-                   </svg></a></li> 
-                <li >
-                   <a target="_blank" href="https://www.pinterest.com/uruoiskincare/" >
-                   <svg width="13px" height="16px" viewBox="0 0 13 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-v-177b5e3e=""><title>Pinterest icon</title> <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-220.000000, -6459.000000)" fill="#000000"><g transform="translate(0.000000, 5686.000000)"><g transform="translate(18.000000, 773.000000)"><g transform="translate(202.000000, 0.000000)"><path id="XMLID_799_" d="M10.7115025,1.6395865 C9.63360463,0.582308135 8.1419116,0 6.51122621,0 C4.02027309,0 2.4882258,1.04329347 1.64164518,1.91845863 C0.598293404,2.99699816 0,4.42908191 0,5.84759361 C0,7.62862876 0.729103797,8.99563891 1.95008498,9.50420384 C2.03205612,9.538521 2.11453233,9.5558086 2.19539234,9.5558086 C2.45297265,9.5558086 2.65706717,9.38360351 2.72777549,9.10736322 C2.76898834,8.94888499 2.86449508,8.55792732 2.90601096,8.38819925 C2.99490143,8.05302632 2.92308197,7.89181305 2.72924016,7.65840471 C2.37610261,7.23147851 2.21165526,6.72662913 2.21165526,6.0695973 C2.21165526,4.11800841 3.63390262,2.0438582 6.26990881,2.0438582 C8.36146093,2.0438582 9.66072633,3.25847949 9.66072633,5.21368071 C9.66072633,6.44749897 9.40062072,7.59013161 8.92818812,8.43123762 C8.59989949,9.01566155 8.02261656,9.71232584 7.13638877,9.71232584 C6.75314968,9.71232584 6.40890117,9.5514738 6.19167511,9.27105352 C5.98646946,9.00595986 5.918842,8.66351066 6.00136871,8.30661212 C6.09460268,7.90337251 6.22172614,7.4827421 6.34475862,7.07609657 C6.56915653,6.33340084 6.78128149,5.63193731 6.78128149,5.07228366 C6.78128149,4.11501533 6.20531171,3.47181357 5.34817535,3.47181357 C4.25886316,3.47181357 3.40546424,4.60226749 3.40546424,6.04539466 C3.40546424,6.75315397 3.5895584,7.28251562 3.67289321,7.48578678 C3.53566856,8.0798608 2.72009859,11.6117423 2.56539888,12.2777534 C2.47595286,12.6665437 1.93710495,15.737285 2.8289894,15.9821496 C3.83107782,16.2572546 4.72680073,13.2665522 4.81796395,12.9285926 C4.89185415,12.6537457 5.15039407,11.6144774 5.30883122,10.9756104 C5.79257714,11.451716 6.5714798,11.7735749 7.32937198,11.7735749 C8.75813461,11.7735749 10.0430563,11.1166462 10.9474662,9.92390537 C11.824603,8.76702981 12.3076923,7.15458742 12.3076923,5.38382161 C12.3076923,3.99947227 11.7258638,2.63473273 10.7115025,1.6395865 Z"></path></g></g></g></g></g>
-                   </svg></a></li>
-                </ul>
-          </div>
-          <div class="footer__copyright">
-          <p>
-             © 2020 Denka Corporation.
-             All Rights Reserved.
-           </p>
-          </div>
-       </div>
-    </div>
-    </div>
- </footer>
+   <div class="container">
+      <div class="footer__wrapper">
+         <div class="footer__sign-up">
+            <div class="footer__text">
+               <p>
+                  Sign up now and be the first to know about exclusive offers, product updates, and exciting news and
+                  announcements.
+               </p>
+            </div>
+            <input type="email" name="EMAIL" class="input" placeholder="Enter your email">
+            <a href="#" class="btn">
+               <span class="btn--span"><span class="btn--arrow"><svg width="28px" height="19px" viewBox="0 0 28 19">
+                        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+                           <g transform="translate(-230.000000, -3082.000000)">
+                              <path
+                                 d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z">
+                              </path>
+                           </g>
+                        </g>
+                     </svg></span>
+                  send
+               </span>
+            </a>
+         </div>
+         <div class="footer__content">
+            <div class="footer__item">
+               <ul class="footer__list">
+                  <li class="footer__list-item">
+                     <a href="#" class="footer__link">About Us</a>
+                  </li>
+                  <li class="footer__list-item">
+                     <a href="#" class="footer__link">Regimen</a>
+                  </li>
+                  <li class="footer__list-item">
+                     <a href="#" class="footer__link">Shop All</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="footer__item-service">
+               <ul class="footer__list">
+                  <li class="footer__list-item">
+                     <a href="#" class="footer__link">FAQs</a>
+                  </li>
+                  <li class="footer__list-item">
+                     <a href="#" class="footer__link">Returns</a>
+                  </li>
+                  <li class="footer__list-item">
+                     <a href="#" class="footer__link">Contact Us</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="footer__item-terms">
+               <ul class="footer__list-terms">
+                  <li class="footer__list-item">
+                     <a href="#" class="footer__link-terms">Terms & Conditions</a>
+                  </li>
+                  <li class="footer__list-item">
+                     <a href="#" class="footer__link-terms">Privacy Policy</a>
+                  </li>
+                  <li class="footer__list-item">
+                     <a href="#" class="footer__link-terms">Web Accessibility</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="footer__item-social">
+               <div class="footer__social-lg">
+                  <span class="footer__social-span">@uruoiskincare</span>
+               </div>
+               <ul class="footer__social-list">
+                  <li>
+                     <a target="_blank" href="https://www.instagram.com/uruoiskincare/">
+                        <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1"
+                           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                           data-v-177b5e3e="">
+                           <title>Instagram</title>
+                           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g transform="translate(-18.000000, -6459.000000)" fill="#000000" fill-rule="nonzero">
+                                 <g transform="translate(0.000000, 5686.000000)">
+                                    <g transform="translate(18.000000, 773.000000)">
+                                       <g id="instagram">
+                                          <path id="Combined-Shape"
+                                             d="M11,0 C13.761,0 16,2.239 16,5 L16,11 C16,13.761 13.761,16 11,16 L5,16 C2.239,16 0,13.761 0,11 L0,5 C0,2.239 2.239,0 5,0 L11,0 Z M14.5,11 L14.5,5 C14.5,3.07 12.93,1.5 11,1.5 L5,1.5 C3.07,1.5 1.5,3.07 1.5,5 L1.5,11 C1.5,12.93 3.07,14.5 5,14.5 L11,14.5 C12.93,14.5 14.5,12.93 14.5,11 Z M8,4 C10.209,4 12,5.791 12,8 C12,10.209 10.209,12 8,12 C5.791,12 4,10.209 4,8 C4,5.791 5.791,4 8,4 Z M8,10.5 C9.378,10.5 10.5,9.378 10.5,8 C10.5,6.621 9.378,5.5 8,5.5 C6.622,5.5 5.5,6.621 5.5,8 C5.5,9.378 6.622,10.5 8,10.5 Z M12.4,4 C12.1790861,4 12,3.8209139 12,3.6 C12,3.3790861 12.1790861,3.2 12.4,3.2 C12.6209139,3.2 12.8,3.3790861 12.8,3.6 C12.8,3.8209139 12.6209139,4 12.4,4 Z">
+                                          </path>
+                                       </g>
+                                    </g>
+                                 </g>
+                              </g>
+                           </g>
+                        </svg></a>
+                  </li>
+                  <li>
+                     <a target="_blank" href="https://www.facebook.com/uruoiskincare">
+                        <svg width="9px" height="16px" viewBox="0 0 9 16" version="1.1"
+                           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                           data-v-177b5e3e="">
+                           <title>Facebook icon</title>
+                           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g transform="translate(-85.000000, -6459.000000)" fill="#000000">
+                                 <g transform="translate(0.000000, 5686.000000)">
+                                    <g transform="translate(18.000000, 773.000000)">
+                                       <path
+                                          d="M75.2336445,0.00332906797 L73.1814894,0 C70.8759636,0 69.3860315,1.5455198 69.3860315,3.93762159 L69.3860315,5.7531288 L67.3226814,5.7531288 C67.1443835,5.7531288 67,5.89927489 67,6.07954392 L67,8.71000697 C67,8.890276 67.1445481,9.03625563 67.3226814,9.03625563 L69.3860315,9.03625563 L69.3860315,15.6737513 C69.3860315,15.8540204 69.530415,16 69.708713,16 L72.400798,16 C72.5790959,16 72.7234794,15.8538539 72.7234794,15.6737513 L72.7234794,9.03625563 L75.1360169,9.03625563 C75.3143149,9.03625563 75.4586983,8.890276 75.4586983,8.71000697 L75.4596861,6.07954392 C75.4596861,5.99298815 75.425607,5.91009436 75.3651866,5.84883951 C75.3047661,5.78758466 75.2224494,5.7531288 75.1368401,5.7531288 L72.7234794,5.7531288 L72.7234794,4.21410068 C72.7234794,3.47438178 72.8978261,3.09886292 73.8508888,3.09886292 L75.2333152,3.09836356 C75.4114486,3.09836356 75.555832,2.95221747 75.555832,2.77211489 L75.555832,0.329577729 C75.555832,0.149641605 75.4116132,0.00366197476 75.2336445,0.00332906797 Z">
+                                       </path>
+                                    </g>
+                                 </g>
+                              </g>
+                           </g>
+                        </svg></a>
+                  </li>
+                  <li>
+                     <a target="_blank" href="https://www.pinterest.com/uruoiskincare/">
+                        <svg width="13px" height="16px" viewBox="0 0 13 16" version="1.1"
+                           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                           data-v-177b5e3e="">
+                           <title>Pinterest icon</title>
+                           <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g transform="translate(-220.000000, -6459.000000)" fill="#000000">
+                                 <g transform="translate(0.000000, 5686.000000)">
+                                    <g transform="translate(18.000000, 773.000000)">
+                                       <g transform="translate(202.000000, 0.000000)">
+                                          <path id="XMLID_799_"
+                                             d="M10.7115025,1.6395865 C9.63360463,0.582308135 8.1419116,0 6.51122621,0 C4.02027309,0 2.4882258,1.04329347 1.64164518,1.91845863 C0.598293404,2.99699816 0,4.42908191 0,5.84759361 C0,7.62862876 0.729103797,8.99563891 1.95008498,9.50420384 C2.03205612,9.538521 2.11453233,9.5558086 2.19539234,9.5558086 C2.45297265,9.5558086 2.65706717,9.38360351 2.72777549,9.10736322 C2.76898834,8.94888499 2.86449508,8.55792732 2.90601096,8.38819925 C2.99490143,8.05302632 2.92308197,7.89181305 2.72924016,7.65840471 C2.37610261,7.23147851 2.21165526,6.72662913 2.21165526,6.0695973 C2.21165526,4.11800841 3.63390262,2.0438582 6.26990881,2.0438582 C8.36146093,2.0438582 9.66072633,3.25847949 9.66072633,5.21368071 C9.66072633,6.44749897 9.40062072,7.59013161 8.92818812,8.43123762 C8.59989949,9.01566155 8.02261656,9.71232584 7.13638877,9.71232584 C6.75314968,9.71232584 6.40890117,9.5514738 6.19167511,9.27105352 C5.98646946,9.00595986 5.918842,8.66351066 6.00136871,8.30661212 C6.09460268,7.90337251 6.22172614,7.4827421 6.34475862,7.07609657 C6.56915653,6.33340084 6.78128149,5.63193731 6.78128149,5.07228366 C6.78128149,4.11501533 6.20531171,3.47181357 5.34817535,3.47181357 C4.25886316,3.47181357 3.40546424,4.60226749 3.40546424,6.04539466 C3.40546424,6.75315397 3.5895584,7.28251562 3.67289321,7.48578678 C3.53566856,8.0798608 2.72009859,11.6117423 2.56539888,12.2777534 C2.47595286,12.6665437 1.93710495,15.737285 2.8289894,15.9821496 C3.83107782,16.2572546 4.72680073,13.2665522 4.81796395,12.9285926 C4.89185415,12.6537457 5.15039407,11.6144774 5.30883122,10.9756104 C5.79257714,11.451716 6.5714798,11.7735749 7.32937198,11.7735749 C8.75813461,11.7735749 10.0430563,11.1166462 10.9474662,9.92390537 C11.824603,8.76702981 12.3076923,7.15458742 12.3076923,5.38382161 C12.3076923,3.99947227 11.7258638,2.63473273 10.7115025,1.6395865 Z">
+                                          </path>
+                                       </g>
+                                    </g>
+                                 </g>
+                              </g>
+                           </g>
+                        </svg></a>
+                  </li>
+               </ul>
+            </div>
+            <div class="footer__copyright">
+               <p>
+                  © 2020 Denka Corporation.
+                  All Rights Reserved.
+               </p>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>

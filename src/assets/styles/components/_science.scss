@@ -50,6 +50,17 @@
       @include respond-to(xlg) {
         margin-bottom: 14rem;
       }
+
+      h4 {
+        font-family: $sans;
+        font-size: 2.2rem;
+        line-height: 2.4rem;
+
+        @include respond-to(md) {
+          font-size: 5rem;
+          line-height: 5.7rem;
+        }
+      }
     }
   
     &__text {
