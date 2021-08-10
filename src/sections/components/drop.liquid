@@ -1,0 +1,66 @@
+<section class="science">
+  <div class="container">
+    <picture class="science__img">
+      <source media="(max-width: 600px)" srcset="{{
+        section.settings.img-mob.src
+      }}"> <source media="(max-width: 1200px)" srcset="{{
+        section.settings.img-desk.src
+      }}"> <img src="{{ section.settings.img-desk.src }}" alt="{{ section.settings.alt }}">
+    </picture>
+    <div class="science__wrap">
+      <a href="#" class="science__link">
+        <div class="science__subtitle">
+          <span class="science__span">{{ section.settings.subtitle }}</span>
+        </div>
+        <div class="science__title">
+          <h4>{{ section.settings.title }}</h4>
+        </div>
+        <div>
+          <div class="science__text">
+            {{ section.settings.copy }}
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+   "name": "drop",
+   "settings": [
+      {
+         "id": "subtitle",
+         "type": "text",
+         "label": "Subtitle",
+         "default": "SINCE 1989"
+      },
+      {
+         "id": "title",
+         "type": "text",
+         "label": "Title",
+         "default": "Science To Skin Care"
+      },
+      {
+         "id": "copy",
+         "type": "richtext",
+         "label": "Copy"
+      },
+      {
+         "id": "img-desk",
+         "type": "image_picker",
+         "label": "Background Image for Desktop"
+      },
+      {
+         "id": "img-mob",
+         "type": "image_picker",
+         "label": "Background Image for Mobile"
+      },
+      {
+         "id": "alt",
+         "type": "text",
+         "label": "Image alt"
+      }
+   ]
+}
+{% endschema %}
