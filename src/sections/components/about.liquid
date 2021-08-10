@@ -1,0 +1,99 @@
+<section class="about">
+  <div class="container">
+    <div class="about__wrap">
+      <div class="about__heading-content">
+        <div class="about__heading">
+          <h1>{{ section.settings.title }}</h1>
+        </div>
+        <div class="about__title-box">
+            {% for block in section.blocks %}
+                <div class="about__title about__title--{{ forloop.index }} {% if forloop.index == 3  %}about__active{% endif %}" data-tab="{{ forloop.index }}">
+                    <span>{{ block.title }}</span>
+                </div>
+            {% endfor %}
+        </div>
+      </div>
+      <div class="about__img-content">
+          {% for block in section.blocks %}
+            <div class="about__img-box about__img-box--{{ forloop.index }} ">
+                <img
+                src="{{ block.img | img_url: 'master' }}"
+                alt="{{ block.alt }}"
+                class="about__img {% if forloop.index == 3  %}about__active-content{% endif %}"
+                />
+            </div>
+          {% endfor %}
+        <div class="about__text">
+          {{ section.settings.copy }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+    const tabs = document.querySelectorAll('.about__title');
+    const tabsContainer = document.querySelector('.about__title-box');
+    const tabsContent = document.querySelectorAll('.about__img-box');
+
+    tabsContainer.addEventListener('click', function (e) {
+    const clicked = e.target.closest('.about__title');
+
+    // Guard clause
+    if (!clicked) return;
+
+    // Remove active classes
+    tabs.forEach(t => t.classList.remove('about__active'));
+    tabsContent.forEach(c => c.classList.remove('about__active-content'));
+
+    // Activate tab
+    clicked.classList.add('about__active');
+
+    // Activate content area
+    document
+        .querySelector(`.about__img-box--${clicked.dataset.tab}`)
+        .classList.add('about__active-content');
+    });
+</script>
+
+{% schema %}
+{
+    "name": "About",
+    "settings": [
+        {
+            "id": "title",
+            "type": "text",
+            "label": "Title",
+            "default": "About us"
+        },
+        {
+            "id": "copy",
+            "type": "richtext",
+            "label": "Copy"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "AboutTabs",
+            "type": "about-tabs",
+            "settings": [
+                {
+                    "id": "title",
+                    "type": "text",
+                    "label": "Title"
+                },
+                {
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Image"
+                },
+                {
+                    "id": "alt",
+                    "type": "text",
+                    "label": "Image Alt"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
