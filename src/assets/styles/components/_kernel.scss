@@ -1,0 +1,191 @@
+.kernel {
+  padding: 5rem 0;
+
+  &__content {
+    @include respond-to(md) {
+      display: flex;
+      gap: 2rem;
+      padding-right: 10.8vw;
+      margin: 0 auto;
+    }
+
+    @include respond-to(lg) {
+      padding-right: 13rem;
+    }
+  }
+
+  &__img-box {
+    margin-bottom: 4rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3rem 0;
+    background-color: $color-light;
+
+    @include respond-to(md) {
+      flex-basis: 50%;
+      margin-bottom: 0;
+    }
+
+    @include respond-to(lg) {
+      padding: 15.1rem 0 13.2rem;
+      flex-basis: 54%;
+    }
+  }
+
+  &__img img {
+    max-width: 11.3rem;
+    @include respond-to(md) {
+      max-width: 20rem;
+    }
+
+    @include respond-to(lg) {
+      max-width: 35.5rem;
+    }
+  }
+
+  &__img-small {
+    position: absolute;
+    top: 18%;
+    left: 25%;
+    max-width: 8rem;
+
+    @include respond-to(md) {
+      top: 33%;
+      left: 11%;
+      transform: translateY(-50%);
+      max-width: 15rem;
+    }
+
+    @include respond-to(lg) {
+      max-width: 24.4rem;
+      top: 36.5%;
+      left: 17%;
+    }
+  }
+
+  &__subtitle-top {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    letter-spacing: 0.746rem;
+    text-transform: uppercase;
+    margin-bottom: 5.5rem;
+
+    @include respond-to(md) {
+      margin-bottom: 8rem;
+    }
+
+    @include respond-to(lg) {
+      font-size: 1.4rem;
+      line-height: 1.2rem;
+      letter-spacing: 1.045rem;
+      margin-bottom: 14.7rem;
+    }
+  }
+
+  &__subtitle-bottom {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    letter-spacing: 0.746rem;
+    text-transform: uppercase;
+    margin-top: 2.2rem;
+
+    @include respond-to(md) {
+      margin-top: 3.5rem;
+    }
+
+    @include respond-to(lg) {
+      font-size: 1.4rem;
+      line-height: 1.2rem;
+      letter-spacing: 1.045rem;
+      margin-top: 6.9rem;
+    }
+  }
+
+  &__container {
+    margin: 0 auto;
+    padding: 0 1.9rem;
+
+    @include respond-to(xs) {
+      max-width: 58rem;
+    }
+
+    @include respond-to(md) {
+      flex-basis: 50%;
+      max-width: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    @include respond-to(lg) {
+      flex-basis: 46%;
+      justify-content: flex-start;
+      padding-left: 11rem;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include respond-to(md) {
+      max-width: 30rem;
+    }
+
+    @include respond-to(lg) {
+      max-width: 44rem;
+    }
+  }
+
+  &__number {
+    font-family: $ff-serif;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    text-transform: uppercase;
+
+    @include respond-to(md) {
+      font-size: 1.6rem;
+      line-height: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @include respond-to(lg) {
+      font-size: 2.8rem;
+      line-height: 5rem;
+    }
+  }
+
+  &__heading h5 {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+
+    @include respond-to(md) {
+      font-size: 2rem;
+      margin-bottom: 2.2rem;
+    }
+
+    @include respond-to(lg) {
+      font-size: 3.5rem;
+      line-height: 7rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+
+    @include respond-to(lg) {
+      font-size: 1.9rem;
+      line-height: 2.6rem;
+    }
+  }
+}
