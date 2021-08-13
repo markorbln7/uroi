@@ -1,0 +1,117 @@
+.gluco {
+  padding: 5rem 0;
+
+  &__content {
+    @include respond-to(md) {
+      display: flex;
+      padding: 0 10.8vw;
+      margin: 0 auto;
+    }
+  }
+
+  &__img-box {
+    margin-bottom: 4rem;
+
+    @include respond-to(md) {
+      flex-basis: 50%;
+      position: relative;
+      margin-bottom: 0;
+    }
+  }
+
+  &__img-small {
+    display: none;
+
+    @include respond-to(md) {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: -30%;
+      transform: translateY(-50%);
+      max-width: 17rem;
+    }
+
+    @include respond-to(lg) {
+      max-width: 32.5rem;
+      right: -32%;
+    }
+  }
+
+  &__container {
+    margin: 0 auto;
+    padding: 0 1.9rem;
+
+    @include respond-to(xs) {
+      max-width: 58rem;
+    }
+
+    @include respond-to(md) {
+      flex-basis: 50%;
+      max-width: none;
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include respond-to(md) {
+      max-width: 25rem;
+    }
+
+    @include respond-to(lg) {
+      max-width: 40rem;
+    }
+  }
+
+  &__number {
+    font-family: $ff-serif;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    text-transform: uppercase;
+
+    @include respond-to(md) {
+      font-size: 1.6rem;
+      line-height: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @include respond-to(lg) {
+      font-size: 2.8rem;
+      line-height: 5rem;
+    }
+  }
+
+  &__heading h5 {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+
+    @include respond-to(md) {
+      font-size: 2rem;
+      margin-bottom: 2.2rem;
+    }
+
+    @include respond-to(lg) {
+      font-size: 3.5rem;
+      line-height: 7rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+
+    @include respond-to(lg) {
+      font-size: 1.9rem;
+      line-height: 2.6rem;
+    }
+  }
+}
