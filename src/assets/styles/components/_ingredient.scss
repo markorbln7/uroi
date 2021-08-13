@@ -1,0 +1,135 @@
+.ingredient {
+    padding-bottom: 4rem;
+    background-color: $color-light-1;
+  
+    @include respond-to(sm) {
+      padding-bottom: 0;
+    }
+  
+    &__wrap {
+      @include respond-to(sm) {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  
+    &__left-content {
+      position: relative;
+      margin-bottom: 4.3rem;
+  
+      @include respond-to(sm) {
+        flex-basis: 50%;
+        margin-bottom: 0;
+      }
+    }
+  
+    &__heading-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      color: $color-white;
+    }
+  
+    &__heading h3 {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  
+    &__heading-big {
+      font-size: 3.2rem;
+      line-height: 4.2rem;
+      margin-bottom: 1rem;
+  
+      @include respond-to(lg) {
+        font-size: 5.5rem;
+        line-height: 8.4rem;
+        margin-bottom: 3rem;
+      }
+      @include respond-to(xlg) {
+        font-size: 7rem;
+      }
+    }
+  
+    &__heading-small {
+      font-size: 1.9rem;
+      line-height: 3.9rem;
+  
+      @include respond-to(lg) {
+        font-size: 2.6rem;
+      }
+    }
+  
+    &__sup {
+      font-size: 1.8rem;
+    }
+  
+    &__right-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 4rem;
+      padding: 0 10.8vw;
+  
+      @include respond-to(sm) {
+        flex-basis: 50%;
+        flex-direction: column-reverse;
+        padding: 0 6vw;
+      }
+  
+      @include respond-to(xlg) {
+        padding: 0 14vw;
+      }
+    }
+  
+    &__text {
+      font-size: 1.4rem;
+      text-align: center;
+      line-height: 2.2rem;
+  
+      @include respond-to(sm) {
+        font-size: 1rem;
+      }
+  
+      @include respond-to(lg) {
+        font-size: 1.9rem;
+        line-height: 2.6rem;
+      }
+    }
+  
+    &__img-box-small {
+      width: 37.8125vw;
+      height: 50vw;
+      position: relative;
+      z-index: 2;
+  
+      @include respond-to(sm) {
+        width: 15.75521vw;
+        height: 20.83333vw;
+      }
+  
+      &::after {
+        content: "";
+        position: absolute;
+        width: 78.125vw;
+        height: 0.3125vw;
+        bottom: 2vw;
+        left: -14vw;
+        background: #000;
+        opacity: 0.8;
+        transform-origin: left;
+        transform: rotate(-35deg);
+        z-index: -1;
+  
+        @include respond-to(sm) {
+          height: 1px;
+          width: 32.55208vw;
+          left: -6vw;
+        }
+      }
+    }
+  }
+  

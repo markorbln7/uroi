@@ -1,0 +1,183 @@
+.grid {
+  padding: 5rem 0;
+
+  &__heading-main h2 {
+    font-family: $ff-serif;
+    font-size: 2.5rem;
+    margin-bottom: 6rem;
+
+    @include respond-to(lg) {
+      font-size: 3rem;
+      margin-bottom: 8rem;
+    }
+
+    @include respond-to(xlg) {
+      font-size: 3.6rem;
+      margin-bottom: 12.2rem;
+    }
+  }
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3.6rem;
+
+    @include respond-to(xs) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    @include respond-to(md) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5rem;
+    }
+
+    @include respond-to(lg) {
+      row-gap: 7rem;
+      column-gap: 10rem;
+    }
+
+    @include respond-to(xlg) {
+      row-gap: 8.9rem;
+      column-gap: 21.3rem;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    &:hover .grid__hover-info {
+      opacity: 1;
+    }
+  }
+
+  &__img img {
+    width: 100%;
+
+    @include respond-to(lg) {
+      max-width: 100%;
+    }
+
+    @include respond-to(xlg) {
+      max-width: 37.2rem;
+    }
+  }
+
+  &__hover-info {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.16, 0.01, 0.13, 0.99);
+    background-color: rgba($color-black, $alpha: 0.6);
+  }
+
+  &__rating {
+    position: absolute;
+    top: 31%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    height: 4.6875vw;
+    z-index: 2;
+  }
+
+  &__svg-star {
+    width: 1.8rem;
+    fill: $color-white;
+
+    @include respond-to(lg) {
+      width: 2.4rem;
+    }
+  }
+
+  &__price {
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 36.5%;
+    width: 100%;
+    font-weight: 300;
+    height: 4.55729vw;
+    line-height: 4.55729vw;
+    font-size: 1.30208vw;
+    letter-spacing: 0.39062vw;
+    transition: transform 0.5s cubic-bezier(0.16, 0.01, 0.13, 0.99),
+      opacity 0.5s cubic-bezier(0.16, 0.01, 0.13, 0.99),
+      -webkit-transform 0.5s cubic-bezier(0.16, 0.01, 0.13, 0.99);
+
+    @include respond-to(lg) {
+      font-size: 0.8vw;
+      top: 30%;
+    }
+
+    @include respond-to(xlg) {
+      font-size: 0.75vw;
+      top: 32%;
+    }
+  }
+
+  &__cart {
+    position: absolute;
+    left: 50%;
+    bottom: 13.5%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1.5625vw;
+    height: 4.55729vw;
+    line-height: 4.55729vw;
+    padding: 0 0.65104vw;
+    font-weight: 400;
+    letter-spacing: 0.15625vw;
+    cursor: pointer;
+
+    @include respond-to(lg) {
+      font-size: 0.8vw;
+      height: 3vw;
+    }
+
+    &::after {
+      content: "";
+      height: 1px;
+      background: #fff;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      transition: transform 0.5s cubic-bezier(0.16, 0.01, 0.13, 0.99),
+        -webkit-transform 0.5s cubic-bezier(0.16, 0.01, 0.13, 0.99);
+    }
+  }
+
+  &__heading {
+    margin: 0.7rem 0;
+    font-size: 2.5rem;
+    font-family: $ff-serif;
+
+    @include respond-to(md) {
+      font-family: $ff-sans;
+    }
+
+    @include respond-to(lg) {
+      font-size: 3rem;
+      margin: 1.5rem 0;
+    }
+
+    @include respond-to(xlg) {
+      font-size: 3rem;
+      margin: 2.2rem 0 1.6rem;
+    }
+  }
+
+  &__subtitle {
+    color: rgba($color-black, $alpha: 0.6);
+
+    @include respond-to(md) {
+      font-size: 1.8rem;
+    }
+  }
+}
