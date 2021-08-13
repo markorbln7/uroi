@@ -1,0 +1,383 @@
+.features {
+    margin: 5rem 0;
+  
+    &__heading-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 1rem;
+  
+      @include respond-to(lg) {
+        margin-bottom: 6.9rem;
+      }
+    }
+  
+    &__heading-box h2 {
+      @include respond-to(lg) {
+        font-size: 7.7rem;
+        line-height: 9rem;
+      }
+    }
+  
+    &__subtitle {
+      text-transform: uppercase;
+      font-size: 1rem;
+      text-align: center;
+      letter-spacing: 0.67rem;
+      line-height: 1.2rem;
+      color: rgba($color-black, $alpha: 0.58);
+  
+      @include respond-to(lg) {
+        font-size: 1.4rem;
+        letter-spacing: 1.045rem;
+        margin-bottom: 0.8rem;
+      }
+    }
+  
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+  
+      @include respond-to(sm) {
+        flex-direction: row-reverse;
+      }
+    }
+  
+    &__img-box {
+      @include respond-to(sm) {
+        flex-basis: 50%;
+      }
+    }
+  
+    &__wrap {
+      padding: 0 2rem;
+      margin: 0 auto;
+  
+      @include respond-to(sm) {
+        flex-basis: 50%;
+      }
+  
+      @include respond-to(md) {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+  
+      @include respond-to(lg) {
+        align-items: center;
+        max-width: 48.5rem;
+      }
+    }
+  
+    &__content-top {
+      padding-bottom: 3rem;
+  
+      @include respond-to(sm) {
+        padding-bottom: 0;
+      }
+    }
+  
+    &__heading-sub {
+      @include respond-to(lg) {
+        align-self: flex-start;
+      }
+    }
+  
+    &__heading-sub h3 {
+      font-size: 3rem;
+  
+      @include respond-to(lg) {
+        font-size: 5.2rem;
+        line-height: 4.8rem;
+        margin-bottom: 8.2rem;
+      }
+    }
+  
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      padding: 0 3rem;
+  
+      @include respond-to(sm) {
+        gap: 1rem;
+      }
+  
+      @include respond-to(lg) {
+        gap: 6rem;
+      }
+    }
+  
+    &__item {
+      font-size: 1.4rem;
+      color: $color-dark;
+      line-height: 2.6rem;
+      letter-spacing: 0.042rem;
+      position: relative;
+  
+      @include respond-to(sm) {
+        font-size: 1rem;
+      }
+  
+      @include respond-to(md) {
+        font-size: 1.4rem;
+      }
+  
+      @include respond-to(lg) {
+        font-size: 1.9rem;
+        line-height: 2.6rem;
+      }
+  
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background: $color-grey;
+        left: -3rem;
+        top: 0.8rem;
+      }
+    }
+  
+    &__content-mid {
+      @include respond-to(sm) {
+        display: flex;
+      }
+    }
+  
+    &__left-box-mid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: $color-light;
+      padding: 3rem 0;
+  
+      @include respond-to(sm) {
+        flex-basis: 50%;
+      }
+  
+      @include respond-to(lg) {
+        padding: 8.5rem;
+      }
+    }
+  
+    &__title h2 {
+      @include respond-to(lg) {
+        font-size: 6.6rem;
+        line-height: 4.8rem;
+        position: relative;
+        z-index: 100;
+      }
+    }
+  
+    &__img-box-mid {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 2rem;
+  
+      @include respond-to(lg) {
+        margin: -2.5rem 0;
+      }
+  
+      &::after {
+        content: "";
+        position: absolute;
+        width: 33rem;
+        height: 0.1rem;
+        top: 10%;
+        left: -20%;
+        background: $color-black;
+        opacity: 0.8;
+        transform-origin: left;
+        transform: rotate(35deg);
+        z-index: -1;
+  
+        @include respond-to(lg) {
+          width: 50rem;
+        }
+      }
+    }
+  
+    &__img-box-mid img {
+      max-width: 19rem;
+  
+      @include respond-to(lg) {
+        max-width: 28rem;
+      }
+    }
+  
+    &__text-wrap {
+      padding: 0 2rem;
+      margin: 0 auto;
+  
+      @include respond-to(lg) {
+        max-width: 67.1rem;
+        position: relative;
+        z-index: 100;
+      }
+    }
+  
+    &__text-desc {
+      text-align: center;
+      font-size: 1.4rem;
+      margin-bottom: 3rem;
+      line-height: 2rem;
+  
+      @include respond-to(sm) {
+        font-size: 1rem;
+      }
+  
+      @include respond-to(md) {
+        font-size: 1.4rem;
+      }
+  
+      @include respond-to(lg) {
+        font-size: 1.9rem;
+        line-height: 2.8rem;
+        margin-bottom: 2.4rem;
+      }
+    }
+  
+    &__text-big {
+      text-align: center;
+      font-size: 1.4rem;
+      line-height: 2rem;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 3rem;
+  
+      @include respond-to(sm) {
+        font-size: 1rem;
+      }
+  
+      @include respond-to(md) {
+        font-size: 1.4rem;
+      }
+  
+      @include respond-to(lg) {
+        font-size: 1.9rem;
+        line-height: 2.7rem;
+        margin-bottom: 3.5rem;
+      }
+    }
+  
+    &__text-small {
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.9rem;
+      display: block;
+      color: rgba($color-black, $alpha: 0.4);
+  
+      @include respond-to(lg) {
+        font-size: 1.2rem;
+        line-height: 2.1rem;
+      }
+    }
+  
+    &__right-box-mid {
+      padding: 3rem 2rem;
+      margin: 0 auto;
+  
+      @include respond-to(sm) {
+        flex-basis: 50%;
+      }
+  
+      @include respond-to(md) {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+  
+      @include respond-to(lg) {
+        align-items: center;
+        max-width: 46.9rem;
+      }
+    }
+  
+    &__text-mid {
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+      letter-spacing: 0.04rem;
+      color: $color-dark;
+      font-family: $ff-serif;
+  
+      @include respond-to(sm) {
+        font-size: 1rem;
+      }
+  
+      @include respond-to(md) {
+        font-size: 1.4rem;
+      }
+  
+      @include respond-to(lg) {
+        font-size: 1.8rem;
+        line-height: 3.1rem;
+      }
+    }
+  
+    &__content-bottom {
+      @include respond-to(sm) {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+    }
+  
+    &__img-box-bottom {
+      @include respond-to(sm) {
+        flex-basis: 50%;
+      }
+    }
+  
+    &__wrap-bottom {
+      padding: 3rem 2rem;
+      margin: 0 auto;
+  
+      @include respond-to(sm) {
+        padding: 0 2rem;
+        flex-basis: 50%;
+      }
+  
+      @include respond-to(md) {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+  
+      @include respond-to(lg) {
+        align-items: center;
+        max-width: 60.7rem;
+      }
+    }
+  
+    &__text-bottom {
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+      color: $color-grey;
+      font-family: $ff-serif;
+  
+      @include respond-to(lg) {
+        font-size: 2.1rem;
+        line-height: 3.1rem;
+      }
+    }
+  
+    &__separator {
+      margin-bottom: 2rem;
+      display: block;
+    }
+  
+    &__num {
+      font-family: $ff-sans;
+      color: $color-black;
+      margin-right: 0.2rem;
+  
+      @include respond-to(lg) {
+        margin-right: 0.8rem;
+      }
+    }
+  }
+  
