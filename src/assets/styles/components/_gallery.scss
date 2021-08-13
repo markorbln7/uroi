@@ -1,0 +1,192 @@
+.gallery {
+    padding: 8rem 0 5.6rem;
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 3.6rem;
+  
+      @include respond-to(sm) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+      }
+  
+      @include respond-to(md) {
+        gap: 5rem;
+      }
+  
+      @include respond-to(lg) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  
+    &__content {
+      position: relative;
+  
+      &:hover .gallery__hover-info {
+        opacity: 1;
+      }
+    }
+  
+    &__card h2 {
+      @include respond-to(xlg) {
+        margin-bottom: 1.1rem;
+      }
+    }
+  
+    &__hover-info {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.5s cubic-bezier(0.16, 0.01, 0.13, 0.99);
+      background-color: rgba($color-black, $alpha: 0.6);
+    }
+  
+    &__rating {
+      position: absolute;
+      top: 31%;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      height: 4.6875vw;
+      z-index: 2;
+    }
+  
+    &__svg-star {
+      width: 1.8rem;
+      fill: $color-white;
+  
+      @include respond-to(lg) {
+        width: 2.4rem;
+      }
+    }
+  
+    &__price {
+      color: #fff;
+      text-align: center;
+      position: absolute;
+      top: 36.5%;
+      width: 100%;
+      font-weight: 300;
+      height: 4.55729vw;
+      line-height: 4.55729vw;
+      font-size: 1.30208vw;
+      letter-spacing: 0.39062vw;
+      transition: transform 0.5s cubic-bezier(0.16, 0.01, 0.13, 0.99),
+        opacity 0.5s cubic-bezier(0.16, 0.01, 0.13, 0.99),
+        -webkit-transform 0.5s cubic-bezier(0.16, 0.01, 0.13, 0.99);
+  
+      @include respond-to(lg) {
+        font-size: 0.8vw;
+        top: 30%;
+      }
+  
+      @include respond-to(xlg) {
+        font-size: 0.75vw;
+        top: 32%;
+      }
+    }
+  
+    &__cart {
+      position: absolute;
+      left: 50%;
+      bottom: 13.5%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 1.5625vw;
+      height: 4.55729vw;
+      line-height: 4.55729vw;
+      padding: 0 0.65104vw;
+      font-weight: 400;
+      letter-spacing: 0.15625vw;
+      cursor: pointer;
+  
+      @include respond-to(lg) {
+        font-size: 0.8vw;
+        height: 3vw;
+      }
+  
+      &::after {
+        content: "";
+        height: 1px;
+        background: #fff;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        transition: transform 0.5s cubic-bezier(0.16, 0.01, 0.13, 0.99),
+          -webkit-transform 0.5s cubic-bezier(0.16, 0.01, 0.13, 0.99);
+      }
+    }
+  
+    &__img img {
+      @include respond-to(sm) {
+        max-width: 37.2rem;
+      }
+    }
+  
+    &__subtitle {
+      color: $color-grey;
+      margin-bottom: 2rem;
+      font-family: $ff-serif;
+      letter-spacing: 0.495238px;
+  
+      @include respond-to(lg) {
+        font-size: 2.6rem;
+        line-height: 3.1rem;
+        margin-bottom: 2.8rem;
+      }
+    }
+  
+    &__text {
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+      color: rgba($color-black, $alpha: 0.7);
+      margin-bottom: 1.4rem;
+  
+      @include respond-to(lg) {
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+      }
+  
+      @include respond-to(xlg) {
+        width: 48rem;
+      }
+    }
+  
+    &__heading-sub {
+      margin: 0.7rem 0;
+      font-size: 2.5rem;
+      font-family: $ff-serif;
+  
+      @include respond-to(md) {
+        font-family: $ff-sans;
+      }
+  
+      @include respond-to(lg) {
+        font-size: 3rem;
+        margin: 1.5rem 0;
+      }
+  
+      @include respond-to(xlg) {
+        font-size: 3rem;
+        margin: 2.2rem 0 1.6rem;
+      }
+    }
+  
+    &__desc {
+      font-family: $ff-serif;
+      line-height: 1.9rem;
+      color: rgba($color-black, $alpha: 0.6);
+  
+      @include respond-to(lg) {
+        font-size: 1.8rem;
+        line-height: 2.1rem;
+      }
+    }
+  }
+  
