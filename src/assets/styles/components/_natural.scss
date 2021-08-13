@@ -1,0 +1,175 @@
+.natural {
+  padding: 5rem 0;
+
+  &__content {
+    padding: 0 2rem;
+
+    @include respond-to(md) {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 2rem;
+      padding: 0 10.8vw;
+      margin: 0 auto;
+    }
+  }
+
+  &__img-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 11.7rem;
+
+    @include respond-to(md) {
+      flex-basis: 50%;
+      margin-bottom: 0;
+      justify-content: center;
+    }
+
+    @include respond-to(lg) {
+      align-items: flex-start;
+      padding-right: 9.5rem;
+      height: 88.3rem;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 44rem;
+      height: 0.1rem;
+      top: -15%;
+      left: 2%;
+      background: $color-black;
+      opacity: 0.8;
+      transform-origin: left;
+      transform: rotate(55deg);
+
+      @include respond-to(md) {
+        top: 10%;
+        left: 18%;
+        width: 51.5rem;
+      }
+
+      @include respond-to(lg) {
+        width: 108rem;
+        top: 5%;
+        left: 6%;
+        transform: rotate(50deg);
+      }
+    }
+  }
+
+  &__img img {
+    max-width: 16.8rem;
+    @include respond-to(md) {
+      max-width: 20rem;
+    }
+
+    @include respond-to(lg) {
+      max-width: 39rem;
+    }
+  }
+
+  &__img-small {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    max-width: 12.5rem;
+    z-index: -1;
+
+    @include respond-to(md) {
+      top: 80%;
+      max-width: 15rem;
+      z-index: 0;
+    }
+
+    @include respond-to(lg) {
+      max-width: 27.8rem;
+      top: 53%;
+    }
+  }
+
+  &__container {
+    margin: 0 auto;
+    padding: 0 1.9rem;
+
+    @include respond-to(xs) {
+      max-width: 58rem;
+    }
+
+    @include respond-to(md) {
+      flex-basis: 50%;
+      max-width: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    @include respond-to(lg) {
+      flex-basis: 50%;
+      justify-content: flex-start;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include respond-to(md) {
+      max-width: 30rem;
+    }
+
+    @include respond-to(lg) {
+      max-width: 44rem;
+    }
+  }
+
+  &__number {
+    font-family: $ff-serif;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    text-transform: uppercase;
+
+    @include respond-to(md) {
+      font-size: 1.6rem;
+      line-height: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @include respond-to(lg) {
+      font-size: 2.8rem;
+      line-height: 5rem;
+    }
+  }
+
+  &__heading h5 {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+
+    @include respond-to(md) {
+      font-size: 2rem;
+      margin-bottom: 2.2rem;
+    }
+
+    @include respond-to(lg) {
+      font-size: 3.5rem;
+      line-height: 7rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+
+    @include respond-to(lg) {
+      font-size: 1.9rem;
+      line-height: 2.6rem;
+    }
+  }
+}
