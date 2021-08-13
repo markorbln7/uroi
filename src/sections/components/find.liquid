@@ -1,0 +1,120 @@
+<section class="find">
+    <div class="container">
+        <div class="find__heading-box">
+            <h2>
+                <span class="find__heading-small">Find</span> <br>
+                <span class="find__heading-big">Your Fit</span>
+            </h2>
+        </div>
+    </div>
+    <div class="find__container">
+        <div class="find__slider">
+            <div class="find__card">
+                <div class="find__card-box">
+                    <picture class="find__img">
+                        <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/find/11_U1_U3_U5_FINAL_SQ.png">
+                        <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/find/11_U1_U3_U5_FINAL_SQ.png">
+                        <img src="http://127.0.0.1:5500/img/find/11_U1_U3_U5_FINAL_SQ.png" alt="Uruoi Image">
+                    </picture>
+                    <div class="find__hover"></div>
+                </div>
+                <div class="find__title">Oily & Combo Skin</div>
+                <div class="find__desc">Cleanse Smart.</div>
+            </div>
+            <div class="find__card">
+                <div class="find__card-box">
+                    <picture class="find__img">
+                        <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/find/08_U1_U2_FINAL_SQ.png">
+                        <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/find/08_U1_U2_FINAL_SQ.png">
+                        <img src="http://127.0.0.1:5500/img/find/08_U1_U2_FINAL_SQ.png" alt="Uruoi Image">
+                    </picture>
+                    <div class="find__hover"></div>
+                </div>
+                <div class="find__title">Normal Skin</div>
+                <div class="find__desc">Layer for radiance.</div>
+            </div>
+            <div class="find__card">
+                <div class="find__card-box">
+                    <picture class="find__img">
+                        <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/find/09_U3_U4_FINAL_SQ (1).png">
+                        <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/find/09_U3_U4_FINAL_SQ (1).png">
+                        <img src="http://127.0.0.1:5500/img/find/09_U3_U4_FINAL_SQ (1).png" alt="Uruoi Image">
+                    </picture>
+                    <div class="find__hover"></div>
+                </div>
+                <div class="find__title">Dry Skin</div>
+                <div class="find__desc">Lock in the moisture.</div>
+            </div>
+            <div class="find__card">
+                <div class="find__card-box">
+                    <picture class="find__img">
+                        <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/find/10_S3_S1_UA_FINAL_SQ.png">
+                        <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/find/10_S3_S1_UA_FINAL_SQ.png">
+                        <img src="http://127.0.0.1:5500/img/find/10_S3_S1_UA_FINAL_SQ.png" alt="Uruoi Image">
+                    </picture>
+                    <div class="find__hover"></div>
+                </div>
+                <div class="find__title">Sensitive Skin</div>
+                <div class="find__desc">Find gentle efficacy.</div>
+            </div>
+            <div class="find__card">
+                <a href="#" class="find__link">
+                    <div class="find__card-content">
+                        <picture class="find__background">
+                            <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/find/background.png">
+                            <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/find/background.png">
+                            <img src="http://127.0.0.1:5500/img/find/background.png" alt="Uruoi Image">
+                        </picture>
+                        <div class="find__card-text">
+                            Explore <br>
+                            All
+                            <svg class="find__svg" width="28px" height="19px" viewBox="0 0 28 19">
+                                <g stroke="none" stroke-width="1" fill-rule="evenodd">
+                                    <g transform="translate(-230.000000, -3082.000000)">
+                                        <path
+                                            d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="find__card">
+                <div class="find__card-wrap"></div>
+            </div>
+        </div>
+        <div class="find__arrow-next"></div>
+        <div class="find__arrow-prev"></div>
+    </div>
+</section>
+
+<script>
+    $(function(){
+        $('.find__slider').slick({
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            nextArrow: '.find__arrow-next',
+            prevArrow: '.find__arrow-prev',
+            responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+                }
+            },
+            ]
+        });
+    });
+</script>

@@ -1,0 +1,162 @@
+.find {
+  padding: 5rem 0;
+  background-color: $color-light;
+  overflow: hidden;
+
+  &__heading-box {
+    margin-bottom: 4rem;
+
+    @include respond-to(lg) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__heading-small {
+    font-size: 2.8rem;
+    line-height: 3.9rem;
+
+    @include respond-to(lg) {
+      font-size: 5.2rem;
+      line-height: 14.7rem;
+    }
+  }
+
+  &__heading-big {
+    font-size: 3.6rem;
+    line-height: 3.9rem;
+
+    @include respond-to(lg) {
+      font-size: 8rem;
+      line-height: 9.4rem;
+    }
+  }
+
+  &__container {
+    padding: 0 2rem;
+
+    width: 54rem;
+
+    @include respond-to(sm) {
+      width: 78rem;
+    }
+
+    @include respond-to(md) {
+      padding-left: 10.8vw;
+      width: 120rem;
+    }
+
+    @include respond-to(lg) {
+      width: 228rem;
+    }
+  }
+
+  &__card {
+    margin-right: 1rem;
+  }
+
+  &__img img {
+    max-width: 27rem;
+
+    @include respond-to(lg) {
+      max-width: 100%;
+    }
+  }
+
+  &__background img {
+    max-width: 27rem;
+
+    @include respond-to(lg) {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    margin: 2.1rem 0 1.3rem;
+
+    @include respond-to(sm) {
+      font-size: 1.2rem;
+    }
+
+    @include respond-to(md) {
+      font-size: 2.5rem;
+    }
+
+    @include respond-to(lg) {
+      font-size: 3rem;
+      line-height: 3.6rem;
+    }
+  }
+
+  &__desc {
+    font-family: $ff-serif;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    color: rgba($color-black, $alpha: 0.6);
+
+    @include respond-to(sm) {
+      font-size: 1.2rem;
+    }
+
+    @include respond-to(md) {
+      font-size: 1.6rem;
+    }
+
+    @include respond-to(lg) {
+      font-size: 1.8rem;
+      line-height: 2.1rem;
+    }
+  }
+
+  &__card-content {
+    background-color: $color-rice;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  &__card-box {
+    cursor: pointer;
+    position: relative;
+
+    &:hover .find__hover {
+      opacity: 1;
+    }
+  }
+
+  &__card-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    line-height: 2.5rem;
+    color: $color-black;
+
+    @include respond-to(lg) {
+      font-size: 2.6rem;
+      line-height: 3.1rem;
+    }
+  }
+
+  &__svg {
+    margin-left: 1.5rem;
+  }
+
+  &__hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color-black, $alpha: 0.6);
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.16, 0.01, 0.13, 0.99);
+  }
+
+  &__card-wrap {
+    height: 100%;
+    width: 100%;
+  }
+}
