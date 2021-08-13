@@ -1,0 +1,151 @@
+.discovery {
+  padding: 5rem 0;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include respond-to(lg) {
+      gap: 13.7rem;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include respond-to(md) {
+      justify-content: space-between;
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    @include respond-to(lg) {
+      gap: 20rem;
+    }
+  }
+
+  &__heading-box {
+    text-align: center;
+
+    @include respond-to(md) {
+      flex-basis: 50%;
+      text-align: start;
+    }
+  }
+
+  &__heading-wrap {
+    @include respond-to(lg) {
+      max-width: 33rem;
+    }
+  }
+
+  &__heading-box h2 {
+    font-size: 3.5rem;
+    line-height: 4.1rem;
+    margin-bottom: 2.4rem;
+
+    @include respond-to(lg) {
+      font-size: 5.2rem;
+      line-height: 4.8rem;
+      margin: 5rem 0 8rem;
+    }
+  }
+
+  &__heading-subtitle {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    letter-spacing: 0.75rem;
+    text-transform: uppercase;
+    color: rgba($color-black, $alpha: 0.58);
+    display: block;
+    margin-bottom: 1.4rem;
+
+    @include respond-to(lg) {
+      font-size: 1.4rem;
+      letter-spacing: 1.045rem;
+    }
+  }
+
+  &__heading-desc {
+    font-family: $ff-serif;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+
+    @include respond-to(lg) {
+      font-size: 2.4rem;
+      line-height: 3rem;
+    }
+  }
+
+  &__card {
+    @include respond-to(md) {
+      flex-basis: 50%;
+    }
+  }
+
+  &__card-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.9rem 0;
+  }
+
+  &__card-heading {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__card-title {
+    font-size: 3.2rem;
+    line-height: 3.8rem;
+    margin-bottom: 0.8rem;
+
+    @include respond-to(lg) {
+      font-size: 3.6rem;
+      line-height: 2.6rem;
+    }
+  }
+
+  &__card-subtitle {
+    font-family: $ff-serif;
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+    letter-spacing: 0.031rem;
+    color: rgba($color-dark, $alpha: 0.5);
+
+    @include respond-to(lg) {
+      font-size: 1.9rem;
+      line-height: 2.6rem;
+      letter-spacing: 0.042rem;
+    }
+  }
+
+  &__card-desc {
+    font-size: 0.9rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.36rem;
+    text-transform: uppercase;
+    align-self: flex-end;
+    color: rgba($color-black, $alpha: 0.58);
+
+    @include respond-to(lg) {
+      font-size: 1.4rem;
+      line-height: 2.6rem;
+      letter-spacing: 0.5rem;
+    }
+  }
+
+  &__card-text {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    color: $color-dark;
+
+    @include respond-to(lg) {
+      font-size: 1.6rem;
+      line-height: 2.6rem;
+      letter-spacing: 0.035rem;
+    }
+  }
+}
