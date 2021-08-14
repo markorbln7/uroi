@@ -66,6 +66,10 @@
       font-size: 1.4rem;
       margin-bottom: 1.5rem;
       line-height: 2.6rem;
+
+      & > * + * {
+        margin-top: 2rem;
+      }
   
       @include respond-to(md) {
         font-size: 1.8rem;

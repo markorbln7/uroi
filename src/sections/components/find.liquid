@@ -2,63 +2,30 @@
     <div class="container">
         <div class="find__heading-box">
             <h2>
-                <span class="find__heading-small">Find</span> <br>
-                <span class="find__heading-big">Your Fit</span>
+                <span class="find__heading-small">{{ section.settings.title-small }}</span> <br>
+                <span class="find__heading-big">{{ section.settings.title-big }}</span>
             </h2>
         </div>
     </div>
     <div class="find__container">
         <div class="find__slider">
-            <div class="find__card">
-                <div class="find__card-box">
-                    <picture class="find__img">
-                        <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/find/11_U1_U3_U5_FINAL_SQ.png">
-                        <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/find/11_U1_U3_U5_FINAL_SQ.png">
-                        <img src="http://127.0.0.1:5500/img/find/11_U1_U3_U5_FINAL_SQ.png" alt="Uruoi Image">
-                    </picture>
-                    <div class="find__hover"></div>
+            {% for block in section.block %}
+                <div class="find__card">
+                    <div class="find__card-box">
+                        <picture class="find__img">
+                            <source media="(max-width: 600px)" srcset="{{ block.product.img | img_url: 'medium' }}">
+                            <source media="(max-width: 1200px)" srcset="{{ block.product.img | img_url: 'medium' }}">
+                            <img src="{{ block.product.img | img_url: 'master' }}" alt="{{ block.product.title }}">
+                        </picture>
+                        <div class="find__hover"></div>
+                    </div>
+                    <div class="find__title">{{ block.title }}</div>
+                    <div class="find__desc">{{ block.desc }}</div>
                 </div>
-                <div class="find__title">Oily & Combo Skin</div>
-                <div class="find__desc">Cleanse Smart.</div>
-            </div>
+            {% endfor %}
+
             <div class="find__card">
-                <div class="find__card-box">
-                    <picture class="find__img">
-                        <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/find/08_U1_U2_FINAL_SQ.png">
-                        <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/find/08_U1_U2_FINAL_SQ.png">
-                        <img src="http://127.0.0.1:5500/img/find/08_U1_U2_FINAL_SQ.png" alt="Uruoi Image">
-                    </picture>
-                    <div class="find__hover"></div>
-                </div>
-                <div class="find__title">Normal Skin</div>
-                <div class="find__desc">Layer for radiance.</div>
-            </div>
-            <div class="find__card">
-                <div class="find__card-box">
-                    <picture class="find__img">
-                        <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/find/09_U3_U4_FINAL_SQ (1).png">
-                        <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/find/09_U3_U4_FINAL_SQ (1).png">
-                        <img src="http://127.0.0.1:5500/img/find/09_U3_U4_FINAL_SQ (1).png" alt="Uruoi Image">
-                    </picture>
-                    <div class="find__hover"></div>
-                </div>
-                <div class="find__title">Dry Skin</div>
-                <div class="find__desc">Lock in the moisture.</div>
-            </div>
-            <div class="find__card">
-                <div class="find__card-box">
-                    <picture class="find__img">
-                        <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/find/10_S3_S1_UA_FINAL_SQ.png">
-                        <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/find/10_S3_S1_UA_FINAL_SQ.png">
-                        <img src="http://127.0.0.1:5500/img/find/10_S3_S1_UA_FINAL_SQ.png" alt="Uruoi Image">
-                    </picture>
-                    <div class="find__hover"></div>
-                </div>
-                <div class="find__title">Sensitive Skin</div>
-                <div class="find__desc">Find gentle efficacy.</div>
-            </div>
-            <div class="find__card">
-                <a href="#" class="find__link">
+                <a href="{{ section.settings.link }}" class="find__link">
                     <div class="find__card-content">
                         <picture class="find__background">
                             <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/find/background.png">
@@ -81,6 +48,7 @@
                     </div>
                 </a>
             </div>
+
             <div class="find__card">
                 <div class="find__card-wrap"></div>
             </div>
@@ -118,3 +86,51 @@
         });
     });
 </script>
+
+{% schema %}
+{
+    "name": "Find Your Fit",
+    "settings": [
+        {
+            "id": "title-small",
+            "type": "text",
+            "label": "Title (small)",
+            "default": "Find"
+        },
+        {
+            "id": "title-big",
+            "type": "text",
+            "label": "Title (big)",
+            "default": "Your Fit"
+        },
+        {
+            "id": "link",
+            "type": "url",
+            "label": "Last slide link"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Products",
+            "type": "products",
+            "settings": [
+                {
+                    "id": "product",
+                    "type": "product",
+                    "label": "Product"
+                },
+                {
+                    "id": "title",
+                    "type": "text",
+                    "label": "Product Title"
+                },
+                {
+                    "id": "desc",
+                    "type": "text",
+                    "label": "Product Description"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

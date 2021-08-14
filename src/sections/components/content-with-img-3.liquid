@@ -3,36 +3,96 @@
         <div class="ingredient__left-content">
             <div class="ingredient__img-box">
                 <picture class="ingredient__img">
-                    <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/about/ingred-2-mob.jpg">
-                    <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/about/ingred-2-tablet.jpg">
-                    <img src="http://127.0.0.1:5500/img/about/ingred-2.jpg" alt="Uruoi Home Background Image">
+                    <source media="(max-width: 600px)" srcset="{{ section.settings.img-mob | img_url: 'master' }}">
+                    <source media="(max-width: 1200px)" srcset="{{ section.settings.img-tab | img_url: 'master' }}">
+                    <img src="{{ section.settings.img-desk | img_url: 'master' }}" alt="{{ section.settings.alt }}">
                 </picture>
             </div>
             <div class="ingredient__heading-box">
                 <div class="ingredient__heading">
                     <h3>
-                        <span class="ingredient__heading-big">D.P.H.A.<sup class="ingredient__sup">TM &trade; </sup></span>
-                        <span class="ingredient__heading-small">Denka Pure Hyaluronic Acid</span>
+                        <span class="ingredient__heading-big">{{ section.settings.title-top }}</span>
+                        <span class="ingredient__heading-small">{{ section.settings.title-bottom }}</span>
                     </h3>
                 </div>
             </div>
         </div>
         <div class="ingredient__right-content">
             <div class="ingredient__text">
-                <p>
-                    High-quality and high-purity macro molecule sodium hyaluronate processed with our own patented
-                    technology.
-                    Since its proprietary, uruoi is formulated with generous amount of hyaluronic acid to make your skin
-                    truly hydrated.
-                </p>
+                {{ section.settings.copy }}
             </div>
             <div class="ingredient__img-box-small">
                 <picture class="ingredient__img-small">
-                    <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/about/ingred-3-mob.jpg">
-                    <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/about/ingred-3-tablet.jpg">
-                    <img src="http://127.0.0.1:5500/img/about/ingred-3.jpg" alt="Uruoi Home Background Image">
+                    <source media="(max-width: 600px)" srcset="{{ section.settings.small-img-mob | img_url: 'master' }}">
+                    <source media="(max-width: 1200px)" srcset="{{ section.settings.small-img-tab | img_url: 'master' }}">
+                    <img src="{{ section.settings.small-img-desk | img_url: 'master' }}" alt="{{ section.settings.small-img-alt }}">
                 </picture>
             </div>
         </div>
     </div>
 </section>
+
+{% schema %}
+{
+    "name": "Content with image 3",
+    "settings": [
+        {
+            "id": "img-desk",
+            "type": "image_picker",
+            "label": "Image for Desktop"
+        },
+        {
+            "id": "img-tab",
+            "type": "image_picker",
+            "label": "Image for Tablet"
+        },
+        {
+            "id": "img-mob",
+            "type": "image_picker",
+            "label": "Image for Mobile"
+        },
+        {
+            "id": "alt",
+            "type": "text",
+            "label": "Image Alt"
+        },
+        {
+            "id": "title-top",
+            "type": "text",
+            "label": "Title top",
+            "default": "D.P.H.A.™"
+        },
+        {
+            "id": "title-bottom",
+            "type": "text",
+            "label": "Title bottom",
+            "default": "Denka Pure Hyaluronic Acid"
+        },
+        {
+            "id": "copy",
+            "type": "richtext",
+            "label": "Copy"
+        },
+        {
+            "id": "small-img-desk",
+            "type": "image_picker",
+            "label": "Image for Desktop"
+        },
+        {
+            "id": "small-img-tab",
+            "type": "image_picker",
+            "label": "Image for Tablet"
+        },
+        {
+            "id": "small-img-mob",
+            "type": "image_picker",
+            "label": "Image for Mobile"
+        },
+        {
+            "id": "small-img-alt",
+            "type": "text",
+            "label": "Image Alt"
+        }
+    ]    
+}
+{% endschema %}

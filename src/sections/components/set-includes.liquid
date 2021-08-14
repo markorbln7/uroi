@@ -2,60 +2,115 @@
     <div class="container">
         <div class="set__wrap">
             <div class="set__heading-box">
-                <h2>Double Cleansing Set Includes</h2>
-                <span class="set__heading-subtitle">recomended for</span>
-                <span class="set__heading-desc">For oily to normal skin types. <br> Best for congested pores</span>
+                <h2>{{ section.settings.title }}</h2>
+                <span class="set__heading-subtitle">{{ section.settings.subtitle }}</span>
+                <span class="set__heading-desc">{{ section.settings.copy }}</span>
             </div>
             <div class="set__card-box">
                 <div class="set__card">
                     <picture class="set__img">
-                        <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/set/U1.png">
-                        <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/set/U1.png">
-                        <img src="http://127.0.0.1:5500/img/set/U1.png" alt="Uruoi Image">
+                        <source media="(max-width: 600px)" srcset="{{ section.settings.product-1.featured_image | img_url: 'medium' }}">
+                        <source media="(max-width: 1200px)" srcset="{{ section.settings.product-1.featured_image | img_url: 'medium' }}">
+                        <img src="{{ section.settings.product-1.featured_image | img_url: 'master' }}" alt="{{ section.settings.product-1.title }}">
                     </picture>
                     <div class="set__card-wrap">
                         <div class="set__card-heading">
-                            <span class="set__card-title">U1</span>
-                            <span class="set__card-subtitle">make-up cleansing</span>
+                            <span class="set__card-title">{{ section.settings.product-1.title }}</span>
+                            <span class="set__card-subtitle">{{ section.settings.product-1-category }}</span>
                         </div>
-                        <div class="set__card-desc">4.94 fl.oz</div>
+                        <div class="set__card-desc">{{ section.settings.product-1-size }}</div>
                     </div>
                     <div class="set__card-text">
-                        <p>
-                            A lightweight gel-to-oil cleanser that easily washes away make-up, sunscreen, and
-                            impurities. With plant-based
-                            cleansing agents and D.P.H.A.™ in its formula, U1 make-up cleansing provides a deep clean
-                            without stripping
-                            skin’s essential moisture. Formulated without synthetic fragrances, ethanol, paraben,
-                            phthalate, SLS, synthetic
-                            color, and mineral oil.
-                        </p>
+                        {{ section.settings.product-1-desc }}
                     </div>
                 </div>
                 <div class="set__card">
                     <picture class="set__img">
-                        <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/set/U2.png">
-                        <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/set/U2.png">
-                        <img src="http://127.0.0.1:5500/img/set/U2.png" alt="Uruoi Image">
+                        <source media="(max-width: 600px)" srcset="{{ section.settings.product-2.featured_image | img_url: 'medium' }}">
+                        <source media="(max-width: 1200px)" srcset="{{ section.settings.product-2.featured_image | img_url: 'medium' }}">
+                        <img src="{{ section.settings.product-2.featured_image | img_url: 'master' }}" alt="{{ section.settings.product-2.title }}">
                     </picture>
                     <div class="set__card-wrap">
                         <div class="set__card-heading">
-                            <span class="set__card-title">U2</span>
-                            <span class="set__card-subtitle">make-up cleansing</span>
+                            <span class="set__card-title">{{ section.settings.product-2.title }}</span>
+                            <span class="set__card-subtitle">{{ section.settings.product-2-category }}</span>
                         </div>
-                        <div class="set__card-desc">4.94 fl.oz</div>
+                        <div class="set__card-desc">{{ section.settings.product-2-size }}</div>
                     </div>
                     <div class="set__card-text">
-                        <p>
-                            A cream-to-foam cleanser that lathers into a dreamy cloud of fluffy foam. Cleanses oil and
-                            sebum, and
-                            minimizes appearance of pores. Leaves skin soft and fresh. Formulated without synthetic
-                            fragrances, ethanol,
-                            paraben, phthalate, SLS, synthetic color, and mineral oil.
-                        </p>
+                        {{ section.settings.product-2-desc }}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+{% schema %}
+{
+    "name": "SetIncludes",
+    "settings": [
+        {
+            "id": "title",
+            "type": "text",
+            "label": "Title",
+            "default": "Double Cleansing Set Includes"
+        },
+        {
+            "id": "subtitle",
+            "type": "text",
+            "label": "Subtitle",
+            "default": "recommended for"
+        },
+        {
+            "id": "copy",
+            "type": "richtext",
+            "label": "Copy"
+        },
+        {
+            "id": "product-1",
+            "type": "product",
+            "label": "First Product"
+        },
+        {
+            "id": "product-1-category",
+            "type": "text",
+            "label": "First Product Category" ,
+            "default": "make-up cleansing"
+        },
+        {
+            "id": "product-1-size",
+            "type": "text",
+            "label": "First Product Size",
+            "default": "4.94 fl.oz"
+        },
+        {
+            "id": "product-1-desc",
+            "type": "richtext",
+            "label": "First Product Description"
+        },
+        {
+            "id": "product-2",
+            "type": "product",
+            "label": "Second Product"
+        },
+        {
+            "id": "product-2-category",
+            "type": "text",
+            "label": "Second Product Category" ,
+            "default": "make-up cleansing"
+        },
+        {
+            "id": "product-2-size",
+            "type": "text",
+            "label": "Second Product Size",
+            "default": "4.94 fl.oz"
+        },
+        {
+            "id": "product-2-desc",
+            "type": "richtext",
+            "label": "Second Product Description"
+        }
+    ]
+}
+{% endschema %}
