@@ -1,44 +1,88 @@
-<section class="glycerin">
-    <div class="glycerin__content">
-        <div class="glycerin__img-box">
-            <picture class="glycerin__img">
-                <source media="(max-width: 768px)" srcset="http://127.0.0.1:5500/img/glycerin/Bitmap.png">
-                <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/glycerin/45.png">
-                <img src="http://127.0.0.1:5500/img/glycerin/45.png" alt="Uruoi Image">
+<section class="natural">
+    <div class="natural__content">
+        <div class="natural__img-box">
+            <picture class="natural__img">
+                <source media="(max-width: 600px)" srcset="{{ section.settings.big-img | img_url: 'master' }}">
+                <source media="(max-width: 1200px)" srcset="{{ section.settings.big-img | img_url: 'master' }}">
+                <img src="{{ section.settings.big-img | img_url: 'master' }}" alt="{{ section.settings.big-img-alt }}">
             </picture>
-            <picture class="glycerin__img-small">
-                <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/glycerin/U2.png">
-                <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/glycerin/U2.png">
-                <img src="http://127.0.0.1:5500/img/glycerin/U2.png" alt="Uruoi Image">
+            <picture class="natural__img-small">
+                <source media="(max-width: 600px)" srcset="{{ section.settings.small-img | img_url: 'master' }}">
+                <source media="(max-width: 1200px)" srcset="{{ section.settings.small-img | img_url: 'master' }}">
+                <img src="{{ section.settings.small-img | img_url: 'master' }}" alt="{{ section.settings.small-img-alt }}">
             </picture>
         </div>
-        <div class="glycerin__container">
-            <div class="glycerin__wrap">
-                <div class="glycerin__text-box">
-                    <div class="glycerin__number">8.</div>
-                    <div class="glycerin__heading">
-                        <h5>Dipotassium Glycyrrhizate: </h5>
+        <div class="natural__container">
+            <div class="natural__wrap">
+                <div class="natural__text-box">
+                    <div class="natural__number">13.</div>
+                    <div class="natural__heading">
+                        <h5>{{ section.settings.thirteenth-title }}</h5>
                     </div>
-                    <div class="glycerin__text max-width-lg-33">
-                        <p>
-                            Also known as licorice root extract, Dipotassium Glycyrrhizate has anti-inflammatory
-                            properties to help prevent redness and helps skin retain hyaluronic acid.
-                        </p>
+                    <div class="natural__text">
+                        {{ section.settings.thirteenth-copy }}
                     </div>
                 </div>
-                <div class="glycerin__text-box">
-                    <div class="glycerin__number">9.</div>
-                    <div class="glycerin__heading">
-                        <h5> Glycerin:</h5>
+                <div class="natural__text-box">
+                    <div class="natural__number">14.</div>
+                    <div class="natural__heading">
+                        <h5>{{ section.settings.fourteenth-title }}</h5>
                     </div>
-                    <div class="glycerin__text max-width-lg-38">
-                        <p>
-                            Moisturizes the skin by absorbing the water from the air into the skin’s outer layer.
-                            It helps to form a protective layer that helps prevent moisture loss.
-                        </p>
+                    <div class="natural__text">
+                        {{ section.settings.fourteenth-copy }}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+{% schema %}
+{
+    "name": "ZigZag Partials 6",
+    "settings": [
+        {
+            "id": "big-img",
+            "type": "image_picker",
+            "label": "Big Image"
+        },
+        {
+            "id": "big-img-alt",
+            "type": "text",
+            "label": "Big Image Alt"
+        },
+        {
+            "id": "small-img",
+            "type": "image_picker",
+            "label": "Small Image"
+        },
+        {
+            "id": "small-img-alt",
+            "type": "text",
+            "label": "Small Image Alt"
+        },
+        {
+            "id": "thirteenth-title",
+            "type": "text",
+            "label": "13. Section Title",
+            "default": "Licorice root extract:"
+        },
+        {
+            "id": "thirteenth-copy",
+            "type": "richtext",
+            "label": "13. Section Copy"
+        },
+        {
+            "id": "fourteenth-title",
+            "type": "text",
+            "label": "14. Section Title",
+            "default": "Natural Oils:"
+        },
+        {
+            "id": "fourteenth-copy",
+            "type": "richtext",
+            "label": "14. Section Copy"
+        }
+    ]
+}
+{% endschema %}

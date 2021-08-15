@@ -1,43 +1,122 @@
-<section class="sodium">
-    <div class="sodium__content">
-        <div class="sodium__img-box">
-            <picture class="sodium__img">
-                <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/sodium/UA_U5_U6.png">
-                <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/sodium/UA_U5_U6.png">
-                <img src="http://127.0.0.1:5500/img/sodium/UA_U5_U6.png" alt="Uruoi Image">
+<section class="leaf">
+    <div class="leaf__content">
+        <div class="leaf__img-box">
+            <div class="leaf__subtitle-top">{{ section.settings.above-imgs }}</div>
+            <picture class="leaf__img">
+                <source media="(max-width: 600px)" srcset="{{ section.settings.first-img | img_url: 'master' }}">
+                <source media="(max-width: 1200px)" srcset="{{ section.settings.first-img | img_url: 'master' }}">
+                <img src="{{ section.settings.first-img | img_url: 'master' }}" alt="{{ section.settings.first-img-alt }}">
             </picture>
+            <picture class="leaf__img-small">
+                <source media="(max-width: 600px)" srcset="{{ section.settings.second-img | img_url: 'master' }}">
+                <source media="(max-width: 1200px)" srcset="{{ section.settings.second-img | img_url: 'master' }}">
+                <img src="{{ section.settings.second-img | img_url: 'master' }}" alt="{{ section.settings.second-img-alt }}">
+            </picture>
+            <div class="leaf__subtitle-bottom">{{ section.settings.under-imgs }}</div>
         </div>
-        <div class="sodium__container">
-            <picture class="sodium__img-small">
-                <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/sodium/Bitmap.png">
-                <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/sodium/Bitmap.png">
-                <img src="http://127.0.0.1:5500/img/sodium/Bitmap.png" alt="Uruoi Image">
-            </picture>
-            <div class="sodium__wrap">
-                <div class="sodium__text-box">
-                    <div class="sodium__number">18.</div>
-                    <div class="sodium__heading">
-                        <h5> Plant Derived Extracts:</h5>
+        <div class="leaf__container">
+            <div class="leaf__wrap">
+                <div class="leaf__text-box">
+                    <div class="leaf__number">3.</div>
+                    <div class="leaf__heading">
+                        <h5>{{ section.settings.third-title }}</h5>
                     </div>
-                    <div class="sodium__text">
-                        <p>
-                            Carrot root extracts/ Grapevine extract/ Aloe vera extract: Skin soothing extracts with
-                            hydrating benefits.
-                        </p>
+                    <div class="leaf__text">
+                        {{ section.settings.third-copy }}
                     </div>
                 </div>
-                <div class="sodium__text-box">
-                    <div class="sodium__number">19.</div>
-                    <div class="sodium__heading">
-                        <h5> Sodium Lactate:</h5>
+                <div class="leaf__text-box">
+                    <div class="leaf__number">4.</div>
+                    <div class="leaf__heading">
+                        <h5>{{ section.settings.fourth-title }}</h5>
                     </div>
-                    <div class="sodium__text">
-                        <p>
-                            A natural part of our skin, Sodium Lactate is a humectant that keeps skin hydrated.
-                        </p>
+                    <div class="leaf__text max-width-lg-40">
+                        {{ section.settings.fourth-copy }}
+                    </div>
+                </div>
+                <div class="leaf__text-box max-width-lg-42">
+                    <div class="leaf__number">5.</div>
+                    <div class="leaf__heading">
+                        <h5>{{ section.settings.fifth-title }}</h5>
+                    </div>
+                    <div class="leaf__text">
+                        {{ section.settings.fifth-copy }}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+{% schema %}
+{
+    "name": "ZigZag Partial 2",
+    "settings": [
+        {
+            "id": "third-title",
+            "type": "text",
+            "label": "Third Section Title",
+            "default": "Artichoke leaf extract:"
+        },
+        {
+            "id": "third-copy",
+            "type": "richtext",
+            "label": "Third Section Copy"
+        },
+        {
+            "id": "fourth-title",
+            "type": "text",
+            "label": "Fourth Section Title",
+            "default": "Ascorbyl phosphate Mg (Vitamin C):"
+        },
+        {
+            "id": "fourth-copy",
+            "type": "richtext",
+            "label": "Fourth Section Copy"
+        },
+        {
+            "id": "fifth-title",
+            "type": "text",
+            "label": "Fifth Section Title",
+            "default": "Brown algae extract:"
+        },
+        {
+            "id": "fifth-copy",
+            "type": "richtext",
+            "label": "Fifth Section Copy"
+        },
+        {
+            "id": "above-imgs",
+            "type": "text",
+            "label": "Text Above Images",
+            "default": "since 1989"
+        },
+        {
+            "id": "under-imgs",
+            "type": "text",
+            "label": "Text Under Images",
+            "default": "made in japan"
+        },
+        {
+            "id": "first-img",
+            "type": "image_picker",
+            "label": "First Image"
+        },
+        {
+            "id": "first-img-alt",
+            "type": "text",
+            "label": "First Image Alt"
+        },
+        {
+            "id": "second-img",
+            "type": "image_picker",
+            "label": "Second Image"
+        },
+        {
+            "id": "second-img-alt",
+            "type": "text",
+            "label": "Second Image Alt"
+        }
+    ]
+}
+{% endschema %}

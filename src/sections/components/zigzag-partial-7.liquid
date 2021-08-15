@@ -1,42 +1,122 @@
-<section class="acid">
-    <div class="acid__content">
-        <div class="acid__img-box">
-            <picture class="acid__img">
-                <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/acid/U_Series.png">
-                <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/acid/U_Series.png">
-                <img src="http://127.0.0.1:5500/img/acid/U_Series.png" alt="Uruoi Image">
+<section class="kernel">
+    <div class="kernel__content">
+        <div class="kernel__img-box">
+            <div class="kernel__subtitle-top">{{ section.settings.above-imgs }}</div>
+            <picture class="kernel__img">
+                <source media="(max-width: 600px)" srcset="{{ section.settings.first-img | img_url: 'master' }}">
+                <source media="(max-width: 1200px)" srcset="{{ section.settings.first-img | img_url: 'master' }}">
+                <img src="{{ section.settings.first-img | img_url: 'master' }}" alt="{{ section.settings.first-img-alt }}">
             </picture>
+            <picture class="kernel__img-small">
+                <source media="(max-width: 600px)" srcset="{{ section.settings.second-img | img_url: 'master' }}">
+                <source media="(max-width: 1200px)" srcset="{{ section.settings.second-img | img_url: 'master' }}">
+                <img src="{{ section.settings.second-img | img_url: 'master' }}" alt="{{ section.settings.second-img-alt }}">
+            </picture>
+            <div class="kernel__subtitle-bottom">{{ section.settings.under-imgs }}</div>
         </div>
-        <div class="acid__container">
-            <picture class="acid__img-small">
-                <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/acid/Bitmap.png">
-                <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/acid/Bitmap.png">
-                <img src="http://127.0.0.1:5500/img/acid/Bitmap.png" alt="Uruoi Image">
-            </picture>
-            <div class="acid__wrap">
-                <div class="acid__text-box max-width-lg-34">
-                    <div class="acid__number">6.</div>
-                    <div class="acid__heading">
-                        <h5>Chlorella extract:</h5>
+        <div class="kernel__container">
+            <div class="kernel__wrap">
+                <div class="kernel__text-box">
+                    <div class="kernel__number">15.</div>
+                    <div class="kernel__heading">
+                        <h5>{{ section.settings.fifteenth-title }}</h5>
                     </div>
-                    <div class="acid__text">
-                        <p>
-                            Provides B vitamins, which help calm skin inflammation and promote a healthy complexion. 
-                        </p>
+                    <div class="kernel__text">
+                        {{ section.settings.fifteenth-copy }}
                     </div>
                 </div>
-                <div class="acid__text-box">
-                    <div class="acid__number">7.</div>
-                    <div class="acid__heading">
-                        <h5>Citric acid:</h5>
+                <div class="kernel__text-box">
+                    <div class="kernel__number">16.</div>
+                    <div class="kernel__heading">
+                        <h5>{{ section.settings.sixteenth-title }}</h5>
                     </div>
-                    <div class="acid__text">
-                        <p>
-                            An Alpha Hydroxy Acid that exfoliates skin, gently lifting dead skin and fighting dullness.
-                        </p>
+                    <div class="kernel__text max-width-lg-34">
+                        {{ section.settings.sixteenth-copy }}
+                    </div>
+                </div>
+                <div class="kernel__text-box max-width-lg-36">
+                    <div class="kernel__number">17.</div>
+                    <div class="kernel__heading">
+                        <h5>{{ section.settings.seventeenth-title }}</h5>
+                    </div>
+                    <div class="kernel__text">
+                        {{ section.settings.seventeenth-copy }}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+{% schema %}
+{
+    "name": "ZigZag Partial 7",
+    "settings": [
+        {
+            "id": "fifteenth-title",
+            "type": "text",
+            "label": "15. Section Title",
+            "default": "Oat Kernel Extract:"
+        },
+        {
+            "id": "fifteenth-copy",
+            "type": "richtext",
+            "label": "15. Section Copy"
+        },
+        {
+            "id": "sixteenth-title",
+            "type": "text",
+            "label": "16. Section Title",
+            "default": "pca na:"
+        },
+        {
+            "id": "sixteenth-copy",
+            "type": "richtext",
+            "label": "16. Section Copy"
+        },
+        {
+            "id": "seventeenth-title",
+            "type": "text",
+            "label": "17. Section Title",
+            "default": "Polyquaternium-51:"
+        },
+        {
+            "id": "seventeenth-copy",
+            "type": "richtext",
+            "label": "17. Section Copy"
+        },
+        {
+            "id": "above-imgs",
+            "type": "text",
+            "label": "Text Above Images",
+            "default": "since 1989"
+        },
+        {
+            "id": "under-imgs",
+            "type": "text",
+            "label": "Text Under Images",
+            "default": "made in japan"
+        },
+        {
+            "id": "first-img",
+            "type": "image_picker",
+            "label": "First Image"
+        },
+        {
+            "id": "first-img-alt",
+            "type": "text",
+            "label": "First Image Alt"
+        },
+        {
+            "id": "second-img",
+            "type": "image_picker",
+            "label": "Second Image"
+        },
+        {
+            "id": "second-img-alt",
+            "type": "text",
+            "label": "Second Image Alt"
+        }
+    ]
+}
+{% endschema %}

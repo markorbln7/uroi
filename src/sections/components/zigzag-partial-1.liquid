@@ -1,44 +1,171 @@
-<section class="gluco">
-    <div class="gluco__content">
-        <div class="gluco__img-box">
-            <picture class="gluco__img">
-                <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/gluco/adolescent-casual-contemporary-1030895.png">
-                <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/gluco/adolescent-casual-contemporary-1030895.png">
-                <img src="http://127.0.0.1:5500/img/gluco/adolescent-casual-contemporary-1030895.png" alt="Uruoi Image">
+<section class="extract">
+    <div class="extract__content">
+        <div class="extract__box-right">
+            <picture class="extract__img">
+                <source media="(max-width: 600px)" srcset="{{ section.settings.big-img-on-right | img_url: 'master' }}">
+                <source media="(max-width: 1200px)" srcset="{{ section.settings.big-img-on-right | img_url: 'master' }}">
+                <img src="{{ section.settings.big-img-on-right | img_url: 'master' }}" alt="{{ section.settings.big-img-on-right-alt }}">
             </picture>
-            <picture class="gluco__img-small">
-                <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/gluco/UA.png">
-                <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/gluco/UA.png">
-                <img src="http://127.0.0.1:5500/img/gluco/UA.png" alt="Uruoi Image">
-            </picture>
-        </div>
-        <div class="gluco__container">
-            <div class="gluco__wrap">
-                <div class="gluco__text-box">
-                    <div class="gluco__number">20.</div>
-                    <div class="gluco__heading">
-                        <h5> squalane:</h5>
+            <div class="extract__wrap d-none-1">
+                <div class="extract__text-box">
+                    <div class="extract__number">1.</div>
+                    <div class="extract__heading">
+                        <h5>{{ section.settings.first-section-title }}</h5>
                     </div>
-                    <div class="gluco__text">
-                        <p>
-                            A stable form of Squalene (a naturally occurring part of skin’s natural moisture),
-                            helps balance oil production and keep our skin hydrated.
-                        </p>
+                    <div class="extract__text">
+                        {{ section.settings.first-section-copy }}
                     </div>
                 </div>
-                <div class="gluco__text-box">
-                    <div class="gluco__number">21.</div>
-                    <div class="gluco__heading">
-                        <h5> Xylitylglucoside:</h5>
+                <div class="extract__text-box">
+                    <div class="extract__number">2.</div>
+                    <div class="extract__heading">
+                        <h5>{{ section.settings.second-section-title }}</h5>
                     </div>
-                    <div class="gluco__text">
-                        <p>
-                            An ingredient derived from two water-binding plant sugars, xylitol and glucose,
-                            optimizes water reserves by promoting existing NMFs and promotes water retention.
-                        </p>
+                    <div class="extract__text">
+                        {{ section.settings.second-section-copy }}
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="extract__box-left">
+            <div class="extract__title-box">
+                <div class="extract__title">
+                    <h2>{{ section.settings.title-left }}</h2>
+                </div>
+                <div class="extract__title-text">
+                    {{ section.settings.copy-left }}
+                </div>
+                <div class="extract__svg-box-top d-none-1">
+                    <svg class="extract__svg" width="22px" height="32px" viewBox="0 0 22 32">
+                        <title>Arrow Down</title>
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g transform="translate(-38.000000, -3068.000000)" fill="#000000">
+                                <g
+                                    transform="translate(49.000000, 3084.000000) rotate(-270.000000) translate(-49.000000, -3084.000000) translate(33.000000, 3073.000000)">
+                                    <path
+                                        d="M21.426087,6.39488462e-14 L20.0347826,1.60784314 C23.9304348,5.46666667 26.7130435,8.14640523 28.3826087,9.64705882 C22.5246498,9.58730789 13.0637802,9.58730789 0,9.64705882 L0,11.5764706 C13.0678362,11.5297639 22.5287058,11.5297639 28.3826087,11.5764706 C26.7130435,13.2915033 23.9304348,16.0784314 20.0347826,19.9372549 L21.426087,21.8666667 L32,10.6117647 L21.426087,6.39488462e-14 Z">
+                                    </path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div class="extract__img-box">
+                <picture class="extract__img-big">
+                    <source media="(max-width: 600px)" srcset="{{ section.settings.first-img-on-left | img_url: 'master' }}">
+                    <source media="(max-width: 1200px)" srcset="{{ section.settings.first-img-on-left | img_url: 'master' }}">
+                    <img src="{{ section.settings.first-img-on-left | img_url: 'master' }}" alt="{{ section.settings.first-img-on-left-alt }}">
+                </picture>
+                <picture class="extract__img-small">
+                    <source media="(max-width: 600px)" srcset="{{ section.settings.second-img-on-left | img_url: 'master' }}">
+                    <source media="(max-width: 1200px)" srcset="{{ section.settings.second-img-on-left | img_url: 'master' }}">
+                    <img src="{{ section.settings.second-img-on-left | img_url: 'master' }}" alt="{{ section.settings.second-img-on-left-alt }}">
+                </picture>
+            </div>
+            <div class="extract__svg-box-bottom d-none-1">
+                <svg class="extract__svg" width="22px" height="32px" viewBox="0 0 22 32">
+                    <title>Arrow Down</title>
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g transform="translate(-38.000000, -3068.000000)" fill="#000000">
+                            <g
+                                transform="translate(49.000000, 3084.000000) rotate(-270.000000) translate(-49.000000, -3084.000000) translate(33.000000, 3073.000000)">
+                                <path
+                                    d="M21.426087,6.39488462e-14 L20.0347826,1.60784314 C23.9304348,5.46666667 26.7130435,8.14640523 28.3826087,9.64705882 C22.5246498,9.58730789 13.0637802,9.58730789 0,9.64705882 L0,11.5764706 C13.0678362,11.5297639 22.5287058,11.5297639 28.3826087,11.5764706 C26.7130435,13.2915033 23.9304348,16.0784314 20.0347826,19.9372549 L21.426087,21.8666667 L32,10.6117647 L21.426087,6.39488462e-14 Z">
+                                </path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="extract__wrap d-none-md">
+            <div class="extract__text-box">
+                <div class="extract__number">1.</div>
+                <div class="extract__heading">
+                    <h5>{{ section.settings.first-section-title }}</h5>
+                </div>
+                <div class="extract__text">
+                    {{ section.settings.first-section-copy }}
+                </div>
+            </div>
+            <div class="extract__text-box">
+                <div class="extract__number">2.</div>
+                <div class="extract__heading">
+                    <h5>{{ section.settings.second-section-title }}</h5>
+                </div>
+                <div class="extract__text">
+                    {{ section.settings.second-section-copy }}
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+{% schema %}
+{
+    "name": "Zig Zag Partial 1",
+    "settings": [
+        {
+            "id": "title-left",
+            "type": "text",
+            "label": "Title Left"
+        },
+        {
+            "id": "copy-left",
+            "type": "richtext",
+            "label": "Copy on left side"
+        },       
+        {
+            "id": "first-section-title",
+            "type": "text",
+            "label": "First Section Title"
+        },
+        {
+            "id": "first-section-copy",
+            "type": "richtext",
+            "label": "First Section Copy"
+        },
+        {
+            "id": "second-section-title",
+            "type": "text",
+            "label": "Second Section Title"
+        },
+        {
+            "id": "second-section-copy",
+            "type": "richtext",
+            "label": "Second Section Copy"
+        },
+        {
+            "id": "big-img-on-right",
+            "type": "image_picker",
+            "label": "Big Image On Right"
+        },
+        {
+            "id": "big-img-on-right-alt",
+            "type": "text",
+            "label": "Big Image On Right Alt"
+        },
+        {
+            "id": "first-img-on-left",
+            "type": "image_picker",
+            "label": "First Image On Left"
+        },
+        {
+            "id": "first-img-on-left-alt",
+            "type": "text",
+            "label": "First Image On Left Alt"
+        },
+        {
+            "id": "second-img-on-left",
+            "type": "image_picker",
+            "label": "Second Image On Left"
+        },
+        {
+            "id": "second-img-on-left-alt",
+            "type": "text",
+            "label": "Second Image On Left Alt"
+        }
+    ]
+}
+{% endschema %}

@@ -2,9 +2,9 @@
     <div class="collagen__content">
         <div class="collagen__img-box">
             <picture class="collagen__img">
-                <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/collagen/uruoi_s1.png">
-                <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/collagen/uruoi_s1.png">
-                <img src="http://127.0.0.1:5500/img/collagen/uruoi_s1.png" alt="Uruoi Image">
+                <source media="(max-width: 600px)" srcset="{{ section.settings.img | img_url: 'master' }}">
+                <source media="(max-width: 1200px)" srcset="{{ section.settings.img | img_url: 'master' }}">
+                <img src="{{ section.settings.img | img_url: 'master' }}" alt="{{ section.settings.img-alt }}">
             </picture>
         </div>
         <div class="collagen__container">
@@ -12,40 +12,83 @@
                 <div class="collagen__text-box">
                     <div class="collagen__number">10.</div>
                     <div class="collagen__heading">
-                        <h5>Grapevine extract:</h5>
+                        <h5>{{ section.settings.tenth-title }}</h5>
                     </div>
                     <div class="collagen__text">
-                        <p>
-                            Helps enhance and promote cell rejuvenation, collagen production, and supple skin. Helps
-                            reduce the appearance of fine lines.
-                        </p>
+                        {{ section.settings.tenth-copy }}
                     </div>
                 </div>
                 <div class="collagen__text-box">
                     <div class="collagen__number">11.</div>
                     <div class="collagen__heading">
-                        <h5>Hydrolyzed Collagen:</h5>
+                        <h5>{{ section.settings.eleventh-title }}</h5>
                     </div>
                     <div class="collagen__text">
-                        <p>
-                            Creates a protective layer across skin that is very similar to your natural acid mantle to
-                            maintain moisture.
-                        </p>
+                        {{ section.settings.eleventh-copy }}
                     </div>
                 </div>
                 <div class="collagen__text-box">
                     <div class="collagen__number">12.</div>
                     <div class="collagen__heading">
-                        <h5>Jojoba seed oil: </h5>
+                        <h5>{{ section.settings.twelfth-title }}</h5>
                     </div>
                     <div class="collagen__text">
-                        <p>
-                            Similar to our skin’s natural sebum, Jojoba oil helps moisturize skin while
-                            controlling sebum production, and alleviates redness caused by dryness.
-                        </p>
+                        {{ section.settings.twelfth-copy }}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
+{% schema %}
+{
+    "name": "ZigZag Partials 5",
+    "settings": [
+        {
+            "id": "img",
+            "type": "image_picker",
+            "label": "Image"
+        },
+        {
+            "id": "img-alt",
+            "type": "text",
+            "label": "Image Alt"
+        },
+        {
+            "id": "tenth-title",
+            "type": "text",
+            "label": "Tenth Section Title",
+            "default": "Grapevine extract:"
+        },
+        {
+            "id": "tenth-copy",
+            "type": "richtext",
+            "label": "Tenth Section Copy"
+        },
+        {
+            "id": "eleventh-title",
+            "type": "text",
+            "label": "Eleventh Section Title",
+            "default": "Hydrolyzed Collagen:"
+        },
+        {
+            "id": "eleventh-copy",
+            "type": "richtext",
+            "label": "Eleventh Section Copy"
+        },
+        {
+            "id": "twelfth-title",
+            "type": "text",
+            "label": "Twelfth Section Title",
+            "default": "Jojoba seed oil: "
+        },
+        {
+            "id": "twelfth-copy",
+            "type": "richtext",
+            "label": "Twelfth Section Copy"
+        }
+    ]
+}
+{% endschema %}

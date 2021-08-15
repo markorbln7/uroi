@@ -1,61 +1,88 @@
-<section class="kernel">
-    <div class="kernel__content">
-        <div class="kernel__img-box">
-            <div class="kernel__subtitle-top">since 1989</div>
-            <picture class="kernel__img">
-                <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/kernel/U3_U4.png">
-                <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/kernel/U3_U4.png">
-                <img src="http://127.0.0.1:5500/img/kernel/U3_U4.png" alt="Uruoi Image">
+<section class="acid">
+    <div class="acid__content">
+        <div class="acid__img-box">
+            <picture class="acid__img">
+                <source media="(max-width: 600px)" srcset="{{ section.settings.big-img | img_url: 'master' }}">
+                <source media="(max-width: 1200px)" srcset="{{ section.settings.big-img | img_url: 'master' }}">
+                <img src="{{ section.settings.big-img | img_url: 'master' }}" alt="{{ section.settings.big-img-alt }}">
             </picture>
-            <picture class="kernel__img-small">
-                <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/kernel/Bitmap.png">
-                <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/kernel/Bitmap.png">
-                <img src="http://127.0.0.1:5500/img/kernel/Bitmap.png" alt="Uruoi Image">
-            </picture>
-            <div class="kernel__subtitle-bottom">made in japan</div>
         </div>
-        <div class="kernel__container">
-            <div class="kernel__wrap">
-                <div class="kernel__text-box">
-                    <div class="kernel__number">15.</div>
-                    <div class="kernel__heading">
-                        <h5> Oat Kernel Extract:</h5>
+        <div class="acid__container">
+            <picture class="acid__img-small">
+                <source media="(max-width: 600px)" srcset="{{ section.settings.small-img | img_url: 'master' }}">
+                <source media="(max-width: 1200px)" srcset="{{ section.settings.small-img | img_url: 'master' }}">
+                <img src="{{ section.settings.small-img | img_url: 'master' }}" alt="{{ section.settings.small-img-alt }}">
+            </picture>
+            <div class="acid__wrap">
+                <div class="acid__text-box max-width-lg-34">
+                    <div class="acid__number">6.</div>
+                    <div class="acid__heading">
+                        <h5>{{ section.settings.sixth-title }}</h5>
                     </div>
-                    <div class="kernel__text">
-                        <p>
-                            Oat has been used to treat troubled skin for thousands of years. It helps to calm irritation
-                            and
-                            relieve itchiness from skin. Hydrates skin. Antioxidant properties help to protect and
-                            improve skin
-                            tone for a plump and rejuvenating appearance.
-                        </p>
-                    </div>
-                </div>
-                <div class="kernel__text-box">
-                    <div class="kernel__number">16.</div>
-                    <div class="kernel__heading">
-                        <h5> pca na:</h5>
-                    </div>
-                    <div class="kernel__text max-width-lg-34">
-                        <p>
-                            Protects the acid mantle, help reduces inflammation in the skin, prevents surface
-                            irritation.
-                        </p>
+                    <div class="acid__text">
+                        {{ section.settings.sixth-copy }}
                     </div>
                 </div>
-                <div class="kernel__text-box max-width-lg-36">
-                    <div class="kernel__number">17.</div>
-                    <div class="kernel__heading">
-                        <h5>Polyquaternium-51:</h5>
+                <div class="acid__text-box">
+                    <div class="acid__number">7.</div>
+                    <div class="acid__heading">
+                        <h5>{{ section.settings.seventh-title }}</h5>
                     </div>
-                    <div class="kernel__text">
-                        <p>
-                            Creates a protective layer across skin that is very similar to your natural acid mantle to
-                            maintain moisture.
-                        </p>
+                    <div class="acid__text">
+                        {{ section.settings.seventh-copy }}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+{% schema %}
+{
+    "name": "ZigZag Partials 3",
+    "settings": [
+        {
+            "id": "big-img",
+            "type": "image_picker",
+            "label": "Big Image"
+        },
+        {
+            "id": "big-img-alt",
+            "type": "text",
+            "label": "Big Image Alt"
+        },
+        {
+            "id": "sixth-title",
+            "type": "text",
+            "label": "Sixth Section Title",
+            "default": "Chlorella extract:"
+        },
+        {
+            "id": "sixth-copy",
+            "type": "richtext",
+            "label": "Sixth Section Copy"
+        },
+        {
+            "id": "seventh-title",
+            "type": "text",
+            "label": "Seventh Section Title",
+            "default": "Citric acid:"
+        },
+        {
+            "id": "seventh-copy",
+            "type": "richtext",
+            "label": "Seventh Section Copy"
+        },
+        {
+            "id": "small-img",
+            "type": "image_picker",
+            "label": "Small Image"
+        },
+        {
+            "id": "small-img-alt",
+            "type": "text",
+            "label": "Small Image Alt"
+        }
+    ]
+}
+{% endschema %}
