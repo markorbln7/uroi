@@ -31,21 +31,21 @@
                {% for block in section.blocks %}
                   <div class="staples__slide">
                      <picture class="staples__img">
-                        <source media="(min-width: 600px)" srcset="{{ block.product.img | img_url: 'master' }}">
-                        <source media="(min-width: 1200px)" srcset="{{ block.product.img | img_url: 'master' }}">
-                        <img src="{{ block.product.img | img_url: 'master' }}" alt="{{ block.product.title }}">
+                        <source media="(min-width: 600px)" srcset="{{ block.settings.product.featured_image | img_url: 'master' }}">
+                        <source media="(min-width: 1200px)" srcset="{{ block.settings.product.featured_image | img_url: 'master' }}">
+                        <img src="{{ block.settings.product.featured_image | img_url: 'master' }}" alt="{{ block.settings.product.title }}">
                      </picture>
                      <div class="staples__desc">
-                        <h5>{{ block.product.title }}</h5>
+                        <h5>{{ block.settings.product.title }}</h5>
                         <div class="staples__desc-text">
-                           <p>{{ block.product-desc }}</p>
+                           <p>{{ block.settings.product-desc }}</p>
                         </div>
                      </div>
                   </div>
                {% endfor %}
  
 
-               <div class="staples__slide">
+               <div class="staples__slide staples__slide--last">
                   <!-- on mobile last card is not visible so this empty is added to move actual last card into view -->
                </div>
             </div>

@@ -1,4 +1,4 @@
-<section class="series">
+<section class="series {% if section.settings.no-top-padding %}pt0{% endif %} {% if section.settings.no-top-padding %}pb0{% endif %}">
     <div class="container-left">
     <div class="series__container">
        <div class="series__wrap">
@@ -22,9 +22,9 @@
           <div class="series__img-content">
              <div class="series__img-box">
                 <picture class="series__img">
-                   <source media="(max-width: 600px)" srcset="{{ section.settings.img-mob.src }}">
-                   <source media="(max-width: 1200px)" srcset="{{ section.settings.img-desk.src  }}"> 
-                   <img src="{{ section.settings.img-desk.src  }}" alt="Uruoi S-series image">
+                   <source media="(max-width: 600px)" srcset="{{ section.settings.img-mob | img_url: 'master' }}">
+                   <source media="(max-width: 1200px)" srcset="{{ section.settings.img-desk | img_url: 'master'  }}"> 
+                   <img src="{{ section.settings.img-desk | img_url: 'master'  }}" alt="Uruoi S-series image">
                 </picture>
              </div> 
              <div class="series__text d-none-md">
@@ -90,6 +90,16 @@
          "id": "alt",
          "type": "text",
          "label": "Image alt"
+      },
+      {
+         "id": "no-top-padding",
+         "type": "checkbox",
+         "label": "Remove Padding at Top"
+      },
+      {
+         "id": "no-bottom-padding",
+         "type": "checkbox",
+         "label": "Remove Padding at Bottom"
       }
    ]
  }

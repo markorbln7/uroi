@@ -35,6 +35,14 @@
     &__slider {
       margin-bottom: 3.5rem;
     }
+
+    &__slide {
+      &--last {
+        @include respond-to(lg) {
+          display: none;
+        }
+      }
+    }
   
     &__img {
       display: flex !important;
