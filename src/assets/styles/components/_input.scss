@@ -1,8 +1,33 @@
 .input {
-    border: none;
-    border-bottom: 2px solid rgba($color-black, 0.58);
-    margin-bottom: 3rem;
-    padding-bottom: 1.5rem;
-    font-size: 1.6rem;
+  border: none;
+  border-bottom: 2px solid rgba($color-black, 0.58);
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  font-size: 1.6rem;
+
+  @include respond-to(lg) {
+    font-size: 1.7rem;
+    line-height: 3.3rem;
+    padding-bottom: 0;
   }
-  
+
+  &--number {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 2.1rem;
+    max-width: 2rem;
+    -moz-appearance: textfield;
+
+
+    @include respond-to(md) {
+      font-size: 2.5rem;
+    }
+  }
+}

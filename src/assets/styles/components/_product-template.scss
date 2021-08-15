@@ -61,12 +61,13 @@
               }
           }
           .cta {
-             margin-bottom:2rem;
              display: flex;
              justify-content: center;
              align-items: center;
              margin-top:1rem;
-             letter-spacing: .15em !important;
+             font-size: 2rem;
+             line-height: 2.44rem;
+             width: 100%;
           }
           .product-description {
               margin-bottom:0rem;

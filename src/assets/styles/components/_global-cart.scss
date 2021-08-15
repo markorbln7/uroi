@@ -8,6 +8,11 @@
   pointer-events: none;
   visibility: hidden;
   transition: visibility $base-transition;
+
+  .section-2 {
+    background-color: #fff;
+  }
+
   .close {
     right:1.5rem;
   }
@@ -48,6 +53,8 @@
     width: 100%;
     height: 100%;
     max-width: 100%;
+    padding: 5rem 10rem 3.5rem;
+
     @include respond-to(md) {
       max-width: 36.8vw;
     }
@@ -82,7 +89,7 @@
       position: relative;
       flex-grow: 1;
       margin: 0;
-      overflow-y: scroll;
+      // overflow-y: scroll;
       list-style: none;
       max-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
       max-height: calc((var(--vh, 1vh) * 100) - 11rem);
@@ -102,7 +109,7 @@
           width: 100%;
           height: 100%;
           pointer-events: none;
-          background-color: $color--white--50;
+          // background-color: $color--white--50;
           content: "";
           opacity: 0;
           visibility: hidden;
@@ -126,13 +133,15 @@
           flex-shrink: 0;
           width: 25%;
           height: 4.5rem;
+          margin-right: 3rem;
+
           @include respond-to(md) {
             width: 3.90rem;
             height: 3.90rem;
           }
           @include respond-to(lg) {
-            width: 4.5rem;
-            height: 4.5rem;
+            width: 13.2rem;
+            height: 13.2rem;
           }
 
           img {
@@ -214,10 +223,11 @@
       padding:.8rem 1.5rem 1.5rem;
       text-align: center;
       background-color: transparent;
-      border-top: solid 2px $black;
       box-sizing: border-box;
       position: absolute;
       bottom:0;
+      left: 10rem;
+      right: 10rem;
 
       .shipping-msg {
         margin:1.1rem 0 .6rem;
@@ -226,24 +236,58 @@
       .checkout-link {
         margin:0 auto;
       }
+
+      .btn {
+        width: 100%;
+        margin: 3rem 0 0;
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__title-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+      font-size: 4rem;
+      line-height: 1.1;
+      font-family: $serif;
     }
   }
 }
 
 .wl-item-info {
+  display: flex;
+  flex-direction: column;
   width: 70%;
   @include respond-to(md) {
     width: 15.625rem;
   }
   @include respond-to(lg) {
-    width: 18rem;
+    // width: 18rem;
+    flex: 1;
   }
   .item-title {
-    max-width: 9rem;
-    font-weight: bold;
+    font-size: 2.6rem;
+    line-height: 3.1rem;
+    margin-bottom: 1rem;
   }
   .item-price {
     font-weight: bold;
+    font-size: 2.1rem;
+    line-height: 2.5rem;
+    font-weight: 500;
+  }
+  .default-title {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    letter-spacing: 0.3rem;
+    opacity: 0.57;
+    text-transform: uppercase;
+  }
+  .bottom {
+    margin-top: auto;
   }
   span {
     margin-right: 1rem;
@@ -251,16 +295,33 @@
   .empty {
     right:1rem;
     bottom:1rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+    line-height: 2rem;
+    padding-bottom: 0.2rem;
+    opacity: 0.5;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: #000;
+      opacity: 0.5;
+    }
   }
   .qty {
-    margin-right:0;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
   .quantity {
     align-self: flex-start;
     margin-top: auto;
-    border: 1px solid #000;
-    max-width: 4.5rem;
+    // max-width: 5.5rem;
     margin-top: .5rem;
+    font-size: 2rem;
     button {
       position: relative;
       display: inline-block;
@@ -272,7 +333,7 @@
       border-radius: 0;
       -webkit-appearance: none;
       appearance: none;
-      font-size: .8rem;
+      font-size: 2rem;
       vertical-align: middle;
       /* height: 25px; */
       width: 1.5rem;
@@ -290,4 +351,17 @@
     font-size: .5rem;
     letter-spacing: -0.2px;
     width: 100%;
+}
+
+.subtotal-wrapper {
+  font-size: 4rem;
+  line-height: 4.6rem;
+  font-family: $serif;
+  border-bottom: 1px solid #979797;
+
+  .sans {
+    font-family: $sans;
+    font-size: 3.2rem;
+    font-weight: 500;
+  }
 }
