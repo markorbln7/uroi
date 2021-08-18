@@ -42,6 +42,8 @@
     }
 
     &__slide {
+      display: block;
+      
       &--last {
         @include respond-to(lg) {
           display: none;

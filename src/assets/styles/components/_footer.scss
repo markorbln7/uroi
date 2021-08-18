@@ -122,6 +122,7 @@
 
     @include respond-to(sm) {
       order: 1;
+      margin-right: 8rem;
     }
 
     @include respond-to(lg) {

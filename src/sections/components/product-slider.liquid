@@ -29,7 +29,7 @@
          <div class="staples__slider-content">
             <div class="staples__slider">
                {% for block in section.blocks %}
-                  <div class="staples__slide">
+                  <a href="{{ block.settings.product.url }}" class="staples__slide">
                      <picture class="staples__img">
                         {%- comment -%}If user wants to display image other than featured image{%- endcomment -%}
                         {% if block.settings.override-img %}
@@ -55,7 +55,7 @@
                            <p>{{ block.settings.product-desc }}</p>
                         </div>
                      </div>
-                  </div>
+                  </a>
                {% endfor %}
  
 
