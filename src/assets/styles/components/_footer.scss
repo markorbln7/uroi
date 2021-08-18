@@ -1,5 +1,10 @@
 .footer {
-  padding: 10rem 0 3rem;
+  padding: 3rem 0;
+
+  @include respond-to(md) {
+    padding: 10rem 0 3rem;
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -48,6 +53,9 @@
 
   &__text {
     margin-bottom: 3rem;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    font-weight: 300;
 
     @include respond-to(xlg) {
       font-size: 1.8rem;
@@ -75,6 +83,7 @@
   &__link {
     color: rgba($color-black, 0.7);
     transition: padding-left 0.7s cubic-bezier(0.16, 0.01, 0.13, 0.99);
+    font-size: 1.6rem;
 
     @include respond-to(xlg) {
       font-size: 1.8rem;
@@ -97,6 +106,7 @@
 
   &__item-terms {
     margin-bottom: 3rem;
+    font-size: 1.6rem;
 
     @include respond-to(sm) {
       order: 2;
@@ -181,9 +191,9 @@
   &__social-list {
     display: flex;
     justify-content: space-between;
-    width: 20rem;
+    width: 10rem;
 
-    @include respond-to(lg) {
+    @include respond-to(md) {
       width: 15rem;
     }
   }
@@ -198,7 +208,7 @@
   }
 
   &__copyright {
-    font-size: 1.36rem;
+    font-size: 1.26rem;
     color: rgba($color-black, 0.5);
 
     @include respond-to(sm) {
@@ -208,6 +218,14 @@
     @include respond-to(lg) {
       font-size: 1.6rem;
       line-height: 3.3rem;
+    }
+  }
+
+  .font-size-4 > * {
+    font-size: 2rem;
+
+    @include respond-to(md) {
+      font-size: inherit;
     }
   }
 }

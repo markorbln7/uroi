@@ -67,3 +67,13 @@
 @import "templates/collection";
 @import "templates/product";
 
+.pixel-perfect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: 111111;
+    opacity: 0.5;
+    border: 1px solid red;
+}

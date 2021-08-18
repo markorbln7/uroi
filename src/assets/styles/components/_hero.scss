@@ -31,7 +31,7 @@
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -70%);
 
     @include respond-to(md) {
       display: block;
@@ -71,11 +71,19 @@
     text-transform: uppercase;
     font-size: 0.9rem;
     letter-spacing: 0.6rem;
+    left: 0;
+    width: 100%;
 
     @include respond-to(md) {
       position: static;
       font-size: 1.4rem;
       margin-bottom: 1.3rem;
+    }
+  }
+
+  &__content-wrapper {
+    @include respond-to(md) {
+      margin-top: -10rem;
     }
   }
 }

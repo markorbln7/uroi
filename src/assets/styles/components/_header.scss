@@ -75,7 +75,8 @@
         fill: white;
 
         @include respond-to(md) {
-            max-width: 15rem;
+            width: 100%;
+            max-width: 18.5rem;
         }
     }
 

@@ -31,12 +31,26 @@
                {% for block in section.blocks %}
                   <div class="staples__slide">
                      <picture class="staples__img">
-                        <source media="(min-width: 600px)" srcset="{{ block.settings.product.featured_image | img_url: 'master' }}">
-                        <source media="(min-width: 1200px)" srcset="{{ block.settings.product.featured_image | img_url: 'master' }}">
-                        <img src="{{ block.settings.product.featured_image | img_url: 'master' }}" alt="{{ block.settings.product.title }}">
+                        {%- comment -%}If user wants to display image other than featured image{%- endcomment -%}
+                        {% if block.settings.override-img %}
+                           <source media="(min-width: 600px)" srcset="{{ block.settings.override-img | img_url: 'master' }}">
+                           <source media="(min-width: 1200px)" srcset="{{ block.settings.override-img | img_url: 'master' }}">
+                           <img src="{{ block.settings.override-img | img_url: 'master' }}" alt="{{ block.settings.product.title }}">
+                        {% else %}
+                           {%- comment -%}If user wants to display featured image{%- endcomment -%}
+                           <source media="(min-width: 600px)" srcset="{{ block.settings.product.featured_image | img_url: 'master' }}">
+                           <source media="(min-width: 1200px)" srcset="{{ block.settings.product.featured_image | img_url: 'master' }}">
+                           <img src="{{ block.settings.product.featured_image | img_url: 'master' }}" alt="{{ block.settings.product.title }}">
+                        {% endif %}
                      </picture>
                      <div class="staples__desc">
-                        <h5>{{ block.settings.product.title }}</h5>
+                        <h5>
+                           {% if block.settings.override-name and block.settings.override-name != '' %}
+                                 {{ block.settings.override-name }}
+                              {% else %}
+                                 {{ block.settings.product.title }}
+                           {% endif %}
+                        </h5>
                         <div class="staples__desc-text">
                            <p>{{ block.settings.product-desc }}</p>
                         </div>
@@ -164,6 +178,16 @@
                "id": "product",
                "type": "product",
                "label": "Product"
+            },
+            {
+               "id": "override-img",
+               "type": "image_picker",
+               "label": "Override Products Featured Image"
+            },
+            {
+               "id": "override-name",
+               "type": "text",
+               "label": "Override Product Name"
             },
             {
                "id": "product-desc",

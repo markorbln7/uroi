@@ -1,12 +1,16 @@
 <section class="hero">
     <div class="hero__bg-image hero__bg-image--mob" style="background-image: url({{ section.settings.img-mob | img_url: 'master'}});"></div>
     <div class="hero__bg-image hero__bg-image--desk" style="background-image: url({{  section.settings.img-desk | img_url: 'master' }});"></div>
-    <div class="hero__floating-img-wrapper">
-        <img class="hero__floating-img" src="{{  section.settings.floating-img | img_url: 'master'}}" alt="{{ section.settings.floating-img-alt }}">
-    </div>
+    {% if section.settings.floating-img %}
+        <div class="hero__floating-img-wrapper">
+            <img class="hero__floating-img" src="{{  section.settings.floating-img | img_url: 'master'}}" alt="{{ section.settings.floating-img-alt }}">
+        </div>
+    {% endif %}
     <div class="hero__container">
-        <h3 class="hero__subtitle">{{ section.settings.subtitle }}</h3>
-        <h1 class="hero__title">{{ section.settings.title }} </h1>
+        <div class="hero__content-wrapper">
+            <h3 class="hero__subtitle">{{ section.settings.subtitle }}</h3>
+            <h1 class="hero__title">{{ section.settings.title }} </h1>
+        </div>
     </div>
 </section>
 

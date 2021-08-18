@@ -1,8 +1,13 @@
 .staples {
-    padding-top: 11.8rem;
-  
+    padding: 3.6rem 0;
+
+    @include respond-to(lg) {
+      padding: 11.8rem 0 0;
+    }
+
     &__container {
       overflow: hidden;
+
       @include respond-to(lg) {
         display: flex;
         justify-content: space-between;
@@ -98,9 +103,12 @@
     }
   
     &__subtitle {
-      font-family: $ff-serif;
+      font-family: $serif;
       color: $color-grey;
       letter-spacing: 0.3px;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      margin-bottom: 1.6rem;
   
       @include respond-to(md) {
         font-size: 2rem;
@@ -154,7 +162,7 @@
       
       @include respond-to(md) {
         display: block !important;
-        left: 2%;
+        left: -4%;
       }
     }
   }

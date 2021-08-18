@@ -1,59 +1,82 @@
 .series {
+  padding: 5rem 0;
+
+  @include respond-to(md) {
     padding: 7rem 0;
+  }
   
-    &__container {
-      @include respond-to(md) {
-        display: flex;
-        align-items: center;
-        gap: 5rem;
-      }
-    }
-  
-    &__wrap {
-      h6 {
-        font-size: 1.6rem;
-        line-height: 2.4rem;
-        font-family: $serif;
+  &.pt0 {
+    padding-top: 5rem;
 
-        @include respond-to(md) {
-          font-size: 2.6rem;
-          line-height: 3.1rem;
-        }
-      }
-
-      @include respond-to(md) {
-        flex-basis: 33%;
-      }
-    }
-  
-    &__btn-box {
-      width: 18.22917vw;
-    }
-  
-    &__img-content {
-      @include respond-to(md) {
-        flex-basis: 67%;
-      }
-    }
-  
-    &__img-box {
-      margin-bottom: 4rem;
-    }
-  
-    &__text {
-      color: rgba($color-black, 0.7);
-      margin-bottom: 4rem;
-      font-size: 1.4rem;
-      line-height: 2.2rem;
-  
-      @include respond-to(md) {
-        font-size: 1.9rem;
-        line-height: 2.6rem;
-      }
-    }
-
-    img {
-      max-width: 100%;
+    @include respond-to(md) {
+      padding-top: 0;
     }
   }
   
+  &.pb0 {
+    padding-bottom: 5rem;
+
+    @include respond-to(md) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__container {
+    @include respond-to(md) {
+      display: flex;
+      align-items: center;
+      gap: 5rem;
+    }
+  }
+
+  &__wrap {
+    h6 {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      font-family: $serif;
+
+      @include respond-to(md) {
+        font-size: 2.6rem;
+        line-height: 3.1rem;
+      }
+    }
+
+    @include respond-to(md) {
+      flex-basis: 33%;
+    }
+  }
+
+  &__btn-box {
+    width: 18.22917vw;
+  }
+
+  &__img-content {
+    @include respond-to(md) {
+      flex-basis: 67%;
+    }
+  }
+
+  &__img-box {
+    margin-bottom: 4rem;
+
+    @include respond-to(md) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    color: rgba($color-black, 0.7);
+    margin-bottom: 4rem;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+
+    @include respond-to(md) {
+      font-size: 1.9rem;
+      line-height: 2.6rem;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
