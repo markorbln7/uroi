@@ -108,5 +108,16 @@
         }
       }
     }
+
+    &--small {
+      @include respond-to(md) {
+        .hero {
+          &__title {
+            font-size: 9rem;
+            max-width: 150rem;
+          }
+        }
+      }
+    }
   }
 }

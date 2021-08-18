@@ -162,6 +162,7 @@
       margin: 0.7rem 0;
       font-size: 2.5rem;
       font-family: $ff-serif;
+      display: block;
   
       @include respond-to(md) {
         font-family: $ff-sans;
