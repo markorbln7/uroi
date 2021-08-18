@@ -41,7 +41,9 @@
         </div>
         <div class="product__price">
           <span class="product__price-big">{{ product.price | money }}</span>
-          <span class="product__price-small">($103.00 Value)</span>
+          {%- comment -%}
+            <span class="product__price-small">($103.00 Value)</span>
+          {%- endcomment -%}
         </div>
       </div>
       <div class="product__subtitle">
