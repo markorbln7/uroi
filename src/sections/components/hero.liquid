@@ -7,7 +7,7 @@
         </div>
     {% endif %}
     <div class="hero__container">
-        <div class="hero__content-wrapper">
+        <div class="hero__content-wrapper {% if section.settings.dark-title %}hero__content-wrapper--dark-bottom{% endif %}">
             <h3 class="hero__subtitle">{{ section.settings.subtitle }}</h3>
             <h1 class="hero__title">{{ section.settings.title }} </h1>
         </div>
@@ -49,12 +49,17 @@
             "type": "text",
             "label": "Subtitle",
             "default": "It’s Made In Japan"
-        }        
+        },   
+        {
+            "id": "dark-title",
+            "type": "checkbox",
+            "label": "Move Title to bottom"
+        }
     ],
     "presets": [
         {
-        "category": "Home Page",
-        "name": "Hero"
+            "category": "Home Page",
+            "name": "Hero"
         }
     ]
 }

@@ -180,4 +180,26 @@
       font-size: 1.8rem;
     }
   }
+
+  &__filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+  }
+
+  &__filters-list {
+    display: flex;
+
+    & > * + * {
+      margin-left: 4rem;
+    }
+  }
+
+  &__filters-list-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.6rem;
+  }
 }

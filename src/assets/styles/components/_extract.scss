@@ -1,6 +1,10 @@
 .extract {
   padding: 5rem 0;
 
+  @include respond-to(md) {
+    padding: 0;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;

@@ -2,258 +2,165 @@
     <div class="container">
         <div class="sensitive__grid">
             <div class="sensitive__card align-end">
-                <h2>S-Series</h2>
+                <h2>{{ section.settings.title }}</h2>
                 <div class="sensitive__subtitle">
-                    <span>Designed for sensitive skin. </span>
+                    {{ section.settings.subtitle }}
                 </div>
                 <div class="sensitive__text">
-                    <p>
-                        Treat sensitive skin with special care. Our S-Series products are the answer for skin that needs
-                        hydration with a soothing and calming touch. Free of ethanol, fragrance, colorant, mineral oils,
-                        petroleum surfactant, and other harsh chemicals, S-Series is a perfectly pure choice for those
-                        who
-                        want a gentle, mildly acidic formula that restores the skin barrier, retains moisture and
-                        delivers
-                        soft supple skin. To simplify the routine each product is marked with a number to match the
-                        sequence
-                        of use to U-Series. 
-                    </p>
+                    {{ section.settings.copy }}
                 </div>
             </div>
-            <div class="sensitive__card">
-                <div class="sensitive__content">
-                    <a href="#" class="sensitive__link">
-                        <picture class="sensitive__img">
-                            <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/grid/S1_S3.png">
-                            <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/grid/S1_S3.png">
-                            <img src="http://127.0.0.1:5500/img/grid/S1_S3.png" alt="Uruoi Image">
-                        </picture>
-                        <div class="sensitive__hover-info">
-                            <div class="sensitive__rating">
-                                <div class="sensitive__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="sensitive__svg-star">
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
+            {% for block in section.blocks %}
+                <div class="sensitive__card">
+                    <div class="sensitive__content">
+                        <a href="{{ block.settings.product.url }}" class="sensitive__link">
+                            <picture class="sensitive__img">
+                            {%- comment -%}If user wants to display image other than featured image{%- endcomment -%}
+                            {% if block.settings.override-img %}
+                                <source media="(min-width: 600px)" srcset="{{ block.settings.override-img | img_url: 'master' }}">
+                                <source media="(min-width: 1200px)" srcset="{{ block.settings.override-img | img_url: 'master' }}">
+                                <img src="{{ block.settings.override-img | img_url: 'master' }}" alt="{{ block.settings.product.title }}">
+                            {% else %}
+                                {%- comment -%}If user wants to display featured image{%- endcomment -%}
+                                <source media="(min-width: 600px)" srcset="{{ block.settings.product.featured_image | img_url: 'master' }}">
+                                <source media="(min-width: 1200px)" srcset="{{ block.settings.product.featured_image | img_url: 'master' }}">
+                                <img src="{{ block.settings.product.featured_image | img_url: 'master' }}" alt="{{ block.settings.product.title }}">
+                            {% endif %}
+                            </picture>
+                            <div class="sensitive__hover-info">
+                                <div class="sensitive__rating">
+                                    <div class="sensitive__star">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="sensitive__svg-star">
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="sensitive__star">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="sensitive__svg-star">
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="sensitive__star">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="sensitive__svg-star">
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="sensitive__star">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="sensitive__svg-star">
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="sensitive__star">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="sensitive__svg-star">
+                                            <defs>
+                                                <clipPath id="rect16284126205765">
+                                                    <path
+                                                        d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                        class="mask"></path>
+                                                </clipPath>
+                                            </defs>
+                                            <rect clip-path="url(#rect16284126205765)" width="4.5269999999999975" x="0.5"
+                                                y="0" height="14.15" fill="#000"></rect>
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="sensitive__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="sensitive__svg-star">
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
+                                <div class="sensitive__price">
+                                    $ 28.00
                                 </div>
-                                <div class="sensitive__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="sensitive__svg-star">
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
-                                </div>
-                                <div class="sensitive__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="sensitive__svg-star">
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
-                                </div>
-                                <div class="sensitive__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="sensitive__svg-star">
-                                        <defs>
-                                            <clipPath id="rect16284126205765">
-                                                <path
-                                                    d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                                    class="mask"></path>
-                                            </clipPath>
-                                        </defs>
-                                        <rect clip-path="url(#rect16284126205765)" width="4.5269999999999975" x="0.5"
-                                            y="0" height="14.15" fill="#000"></rect>
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
+                                <div class="sensitive__cart">
+                                    <span>
+                                        Add to cart
+                                    </span>
                                 </div>
                             </div>
-                            <div class="sensitive__price">
-                                $ 28.00
-                            </div>
-                            <div class="sensitive__cart">
-                                <span>
-                                    Add to cart
-                                </span>
-                            </div>
-                        </div>
+                        </a>
+                    </div>
+                    <a href="{{ block.settings.product.url }}" class="sensitive__heading-sub">
+                        {% if block.settings.override-name and block.settings.override-name != '' %}
+                                {{ block.settings.override-name }}
+                            {% else %}
+                                {{ block.settings.product.title }}
+                        {% endif %}
                     </a>
+                    <div class="sensitive__desc">
+                        {{ block.settings.product-desc }}
+                    </div>
                 </div>
-                <div class="sensitive__heading-sub">
-                    <span>S1 + S3</span>
-                </div>
-                <div class="sensitive__desc">
-                    <p>Gentle Skincare Set</p>
-                </div>
-            </div>
-            <div class="sensitive__card">
-                <div class="sensitive__content">
-                    <a href="#" class="sensitive__link">
-                        <picture class="sensitive__img">
-                            <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/grid/uruoi_s1-S.png">
-                            <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/grid/uruoi_s1-S.png">
-                            <img src="http://127.0.0.1:5500/img/grid/uruoi_s1-S.png" alt="Uruoi Image">
-                        </picture>
-                        <div class="sensitive__hover-info">
-                            <div class="sensitive__rating">
-                                <div class="sensitive__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="sensitive__svg-star">
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
-                                </div>
-                                <div class="sensitive__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="sensitive__svg-star">
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
-                                </div>
-                                <div class="sensitive__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="sensitive__svg-star">
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
-                                </div>
-                                <div class="sensitive__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="sensitive__svg-star">
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
-                                </div>
-                                <div class="sensitive__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="sensitive__svg-star">
-                                        <defs>
-                                            <clipPath id="rect16284126205765">
-                                                <path
-                                                    d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                                    class="mask"></path>
-                                            </clipPath>
-                                        </defs>
-                                        <rect clip-path="url(#rect16284126205765)" width="4.5269999999999975" x="0.5"
-                                            y="0" height="14.15" fill="#000"></rect>
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="sensitive__price">
-                                $ 28.00
-                            </div>
-                            <div class="sensitive__cart">
-                                <span>
-                                    Add to cart
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="sensitive__heading-sub">
-                    <span>S1</span>
-                </div>
-                <div class="sensitive__desc">
-                    <p>Extra Mild Cleansing</p>
-                </div>
-            </div>
-            <div class="sensitive__card">
-                <div class="sensitive__content">
-                    <a href="#" class="sensitive__link">
-                        <picture class="sensitive__img">
-                            <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/grid/S3-S.png">
-                            <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/grid/S3-S.png">
-                            <img src="http://127.0.0.1:5500/img/grid/S3-S.png" alt="Uruoi Image">
-                        </picture>
-                        <div class="sensitive__hover-info">
-                            <div class="sensitive__rating">
-                                <div class="sensitive__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="sensitive__svg-star">
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
-                                </div>
-                                <div class="sensitive__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="sensitive__svg-star">
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
-                                </div>
-                                <div class="sensitive__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="sensitive__svg-star">
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
-                                </div>
-                                <div class="sensitive__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="sensitive__svg-star">
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
-                                </div>
-                                <div class="sensitive__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="sensitive__svg-star">
-                                        <defs>
-                                            <clipPath id="rect16284126205765">
-                                                <path
-                                                    d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                                    class="mask"></path>
-                                            </clipPath>
-                                        </defs>
-                                        <rect clip-path="url(#rect16284126205765)" width="4.5269999999999975" x="0.5"
-                                            y="0" height="14.15" fill="#000"></rect>
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="sensitive__price">
-                                $ 28.00
-                            </div>
-                            <div class="sensitive__cart">
-                                <span>
-                                    Add to cart
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="sensitive__heading-sub">
-                    <span>S3</span>
-                </div>
-                <div class="sensitive__desc">
-                    <p>Extra Mild Lotion</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
+
+{% schema %}
+{
+    "name": "Text with three Products",
+    "settings": [
+        {
+            "id": "title",
+            "type": "text",
+            "label": "Title",
+            "default": "S-Series"
+        },
+        {
+            "id": "subtitle",
+            "type": "text",
+            "label": "Subtitle",
+            "default": "Designed for sensitive skin. "
+        },
+        {
+            "id": "copy",
+            "type": "richtext",
+            "label": "Copy"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Products",
+            "type": "products",
+            "settings": [
+                {
+                    "id": "product",
+                    "type": "product",
+                    "label": "Product"
+                },
+                {
+                    "id": "override-img",
+                    "type": "image_picker",
+                    "label": "Override Featured Image"
+                },
+                {
+                    "id": "override-name",
+                    "type": "text",
+                    "label": "Override Product Name"
+                },
+                {
+                    "id": "product-desc",
+                    "type": "text",
+                    "label": "Add text under product name"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "General",
+            "name": "Text with three Products"
+        }
+    ]
+}
+{% endschema %}

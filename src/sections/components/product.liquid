@@ -4,10 +4,10 @@
       <div class="product__breadcrumb-box">
         <ul class="product__breadcrumb-list">
           <li class="product__item">
-            <a href="#" class="product__link">home</a>
+            <a href="{{ shop.url }}" class="product__link">home</a>
           </li>
           <li class="product__item">
-            <a href="#" class="product__link">all</a>
+            <a href="{{ routes.collections_url }}" class="product__link">all</a>
           </li>
           <li class="product__item-active">
             <span class="product__link-active">{{ product.title }}</span>
@@ -24,9 +24,9 @@
   <div class="product__content">
     <div class="product__img-box">
       <picture class="product__img">
-        <source media="(max-width: 600px)" srcset="/img/grid/10_S3_S1_UA_FINAL.png">
-        <source media="(max-width: 1200px)" srcset="/img/grid/10_S3_S1_UA_FINAL.png">
-        <img src="/img/grid/10_S3_S1_UA_FINAL.png" alt="Uruoi Image">
+        <source media="(max-width: 600px)" srcset="{{ product.featured_image | img_url: 'master' }}">
+        <source media="(max-width: 1200px)" srcset="{{ product.featured_image | img_url: 'master' }}">
+        <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
       </picture>
     </div>
     <div class="product__right-box">

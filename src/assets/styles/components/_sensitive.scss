@@ -1,6 +1,10 @@
 .sensitive {
   padding: 5rem 0;
 
+  @include respond-to(md) {
+    padding-top: 20rem;
+  }
+
   &__grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -149,6 +153,7 @@
     margin: 0.7rem 0;
     font-size: 2.5rem;
     font-family: $ff-serif;
+    display: block;
 
     @include respond-to(md) {
       font-family: $ff-sans;
@@ -166,7 +171,7 @@
   }
 
   &__desc {
-    font-family: $ff-serif;
+    font-family: $serif;
     line-height: 1.9rem;
     color: rgba($color-black, $alpha: 0.6);
 

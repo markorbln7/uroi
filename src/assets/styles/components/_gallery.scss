@@ -177,6 +177,11 @@
         margin: 2.2rem 0 1.6rem;
       }
     }
+    
+    &__link {
+      position: relative;
+      display: inline-block;
+    }
   
     &__desc {
       font-family: $ff-serif;

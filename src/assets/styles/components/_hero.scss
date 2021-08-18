@@ -10,6 +10,7 @@
     display: block;
     z-index: -1;
     background-size: cover;
+    background-position: center;
 
     &--desk {
       display: none;
@@ -84,6 +85,28 @@
   &__content-wrapper {
     @include respond-to(md) {
       margin-top: -10rem;
+    }
+
+    &--dark-bottom {
+      color: #080808;
+
+      .hero__title {
+        color: inherit;
+      }
+
+      @include respond-to(md) {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -25%);
+        z-index: 1;
+        width: 100%;
+
+        .hero__title {
+          max-width: 127rem;
+          margin: 0 auto;
+        }
+      }
     }
   }
 }

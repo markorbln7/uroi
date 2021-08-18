@@ -53,9 +53,10 @@
     width: 100%;
     height: 100%;
     max-width: 100%;
-    padding: 5rem 10rem 3.5rem;
-
+    padding: 2rem;
+    
     @include respond-to(md) {
+      padding: 5rem 10rem 3.5rem;
       max-width: 36.8vw;
     }
     transform: translateX(110%);
@@ -220,14 +221,20 @@
 
     &__footer {
       position: relative;
-      padding:.8rem 1.5rem 1.5rem;
       text-align: center;
       background-color: transparent;
       box-sizing: border-box;
       position: absolute;
       bottom:0;
-      left: 10rem;
-      right: 10rem;
+      width: calc(100% - 4rem);
+      padding-bottom: 2rem;
+
+      @include respond-to(md) {
+        padding:.8rem 1.5rem 1.5rem;
+        left: 10rem;
+        right: 10rem;
+        width: 100%;
+      }
 
       .shipping-msg {
         margin:1.1rem 0 .6rem;
@@ -269,15 +276,22 @@
     flex: 1;
   }
   .item-title {
-    font-size: 2.6rem;
-    line-height: 3.1rem;
+    font-size: 1.6rem;
     margin-bottom: 1rem;
+
+    @include respond-to(md) {
+      font-size: 2.6rem;
+      line-height: 3.1rem;
+    }
   }
   .item-price {
-    font-weight: bold;
-    font-size: 2.1rem;
-    line-height: 2.5rem;
+    font-size: 1.6rem;
     font-weight: 500;
+
+    @include respond-to(md) {
+      font-size: 2.1rem;
+      line-height: 2.5rem;
+    }
   }
   .default-title {
     font-size: 0.9rem;
@@ -296,10 +310,14 @@
     right:1rem;
     bottom:1rem;
     cursor: pointer;
-    font-size: 1.7rem;
     line-height: 2rem;
     padding-bottom: 0.2rem;
     opacity: 0.5;
+    font-size: 1.5rem;
+
+    @include respond-to(md) {
+      font-size: 1.7rem;
+    }
 
     &::after {
       content: '';
@@ -354,14 +372,23 @@
 }
 
 .subtotal-wrapper {
-  font-size: 4rem;
-  line-height: 4.6rem;
   font-family: $serif;
   border-bottom: 1px solid #979797;
+  font-size: 2rem;
+  line-height: 1.2;
+
+  @include respond-to(md) {
+    font-size: 4rem;
+    line-height: 4.6rem;
+  }
 
   .sans {
     font-family: $sans;
-    font-size: 3.2rem;
     font-weight: 500;
+
+    @include respond-to(md) {
+      font-size: 4rem;
+      line-height: 4.6rem;
+    }
   }
 }

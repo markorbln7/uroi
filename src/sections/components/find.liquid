@@ -9,29 +9,26 @@
     </div>
     <div class="find__container">
         <div class="find__slider">
-            {% for block in section.block %}
+            {% for block in section.blocks %}
                 <div class="find__card">
                     <div class="find__card-box">
-                        <picture class="find__img">
-                            <source media="(max-width: 600px)" srcset="{{ block.product.img | img_url: 'medium' }}">
-                            <source media="(max-width: 1200px)" srcset="{{ block.product.img | img_url: 'medium' }}">
-                            <img src="{{ block.product.img | img_url: 'master' }}" alt="{{ block.product.title }}">
-                        </picture>
-                        <div class="find__hover"></div>
+                        <div class="find__img-wrapper">
+                            <picture class="find__img">
+                                <source media="(max-width: 600px)" srcset="{{ block.settings.image | img_url: 'medium' }}">
+                                <source media="(max-width: 1200px)" srcset="{{ block.settings.image | img_url: 'medium' }}">
+                                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.product.title }}">
+                            </picture>
+                            <div class="find__hover"></div>
+                        </div>
                     </div>
-                    <div class="find__title">{{ block.title }}</div>
-                    <div class="find__desc">{{ block.desc }}</div>
+                    <div class="find__title">{{ block.settings.title }}</div>
+                    <div class="find__desc">{{ block.settings.desc }}</div>
                 </div>
             {% endfor %}
 
             <div class="find__card">
                 <a href="{{ section.settings.link }}" class="find__link">
                     <div class="find__card-content">
-                        <picture class="find__background">
-                            <source media="(max-width: 600px)" srcset="http://127.0.0.1:5500/img/find/background.png">
-                            <source media="(max-width: 1200px)" srcset="http://127.0.0.1:5500/img/find/background.png">
-                            <img src="http://127.0.0.1:5500/img/find/background.png" alt="Uruoi Image">
-                        </picture>
                         <div class="find__card-text">
                             Explore <br>
                             All
@@ -115,9 +112,9 @@
             "type": "products",
             "settings": [
                 {
-                    "id": "product",
-                    "type": "product",
-                    "label": "Product"
+                    "id": "image",
+                    "type": "image_picker",
+                    "label": "Image"
                 },
                 {
                     "id": "title",
@@ -134,8 +131,8 @@
     ],
     "presets": [
         {
-        "category": "General",
-        "name": "Find Your Fit"
+            "category": "General",
+            "name": "Find Your Fit"
         }
     ]
 }
