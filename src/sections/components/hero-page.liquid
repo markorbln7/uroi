@@ -1,0 +1,66 @@
+<section class="hero">
+    <div class="hero__bg-image hero__bg-image--mob" style="background-image: url({{ section.settings.img-mob | img_url: 'master'}});"></div>
+    <div class="hero__bg-image hero__bg-image--desk" style="background-image: url({{  section.settings.img-desk | img_url: 'master' }});"></div>
+    {% if section.settings.floating-img %}
+        <div class="hero__floating-img-wrapper">
+            <img class="hero__floating-img" src="{{  section.settings.floating-img | img_url: 'master'}}" alt="{{ section.settings.floating-img-alt }}">
+        </div>
+    {% endif %}
+    <div class="hero__container">
+        <div class="hero__content-wrapper {% if section.settings.dark-title %}hero__content-wrapper--dark-bottom{% endif %}">
+            <h3 class="hero__subtitle">{{ section.settings.subtitle }}</h3>
+            <h1 class="hero__title">{{ section.settings.title }} </h1>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Hero Page",
+    "settings": [
+        {
+            "id": "img-desk",
+            "type": "image_picker",
+            "label": "Background Image for Desktop"
+        },
+        {
+            "id": "img-mob",
+            "type": "image_picker",
+            "label": "Background Image for Mobile"
+        },
+        {
+            "id": "floating-img",
+            "type": "image_picker",
+            "label": "Floating Image"
+        },
+        {
+            "id": "floating-img-alt",
+            "type": "text",
+            "label": "Floating Image Alt"
+        },
+        {
+            "id": "title",
+            "type": "text",
+            "label": "Title",
+            "default": "a blessing of water for every skin"
+        },
+        {
+            "id": "subtitle",
+            "type": "text",
+            "label": "Subtitle",
+            "default": "It’s Made In Japan"
+        },   
+        {
+            "id": "dark-title",
+            "type": "checkbox",
+            "label": "Move Title to bottom"
+        }
+    ],
+    "presets": [
+        {
+            "category": "Home Page",
+            "name": "Hero Page"
+        }
+    ]
+}
+{% endschema %}

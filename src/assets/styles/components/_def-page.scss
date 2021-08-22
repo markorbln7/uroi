@@ -1,0 +1,89 @@
+.def-page {
+    margin: 5rem 0;
+
+    &__container {
+        display: flex;
+        padding: 0 2rem;
+
+        @include respond-to(md) {
+            padding: 0 20rem;
+        }
+    }
+
+    &__aside {
+        display: none;
+        flex: 0 0 45rem;
+        font-size: 1.6rem;
+        padding-right: 5rem;
+
+        @include respond-to(md) {
+            display: block;
+        }
+    }
+
+    &__list {
+        line-height: 1.2;
+
+        & > * + * {
+            margin-top: 3rem;
+        }
+    }
+
+    &__list-item {
+        opacity: 0.5;
+        transition: 0.2s;
+        cursor: pointer;
+        max-width: 35rem;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__content {
+        font-size: 1.6rem;
+        line-height: 1.5;
+
+        @include respond-to(md) {
+            font-size: 1.8rem;
+        }
+
+        h2, h3, h4 {
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2rem;
+
+            @include respond-to(md) {
+                font-size: 4.5rem;
+                line-height: 7.5rem;
+            }
+        }
+
+        h3 {
+            font-size: 1.8rem;
+
+            @include respond-to(md) {
+                font-size: 3.5rem;
+            }
+        }
+
+        a {
+            color: silver;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        & > * + * {
+            margin-top: 3rem;
+        }
+
+        & > * + h2,
+        & > * + h3 {
+            margin-top: 5rem;
+        }
+    }
+}
