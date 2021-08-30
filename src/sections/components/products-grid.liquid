@@ -18,9 +18,10 @@
         <div class="grid__wrap">
                 {% for collection in collections %}
                     {% for product in collection.products %}
+
                         <div class="grid__card">
                             <div class="grid__content">
-                                <a href="{{ product.url }}" class="grid__link">
+                                <div class="grid__link">
                                     <div class="grid__img-box">
                                         <picture class="grid__img">
                                             <source media="(max-width: 600px)" srcset="{{ product.featured_image | img_url: 'master' }}">
@@ -29,6 +30,7 @@
                                         </picture>
                                     </div>
                                     <div class="grid__hover-info">
+                                        <a class="grid__overlay-link" href="{{ product.url }}"></a>
                                         <div class="grid__rating">
                                             <div class="grid__star">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
@@ -83,16 +85,12 @@
                                         <div class="grid__price">
                                             {{ product.price | money }}
                                         </div>
-                                        <div class="grid__cart">
-                                            <span>
-                                                Add to cart
-                                            </span>
-                                        </div>
+                                        <button class="grid__cart" data-quantity="1" data-variant-id="{{product.first_available_variant.id}}">Add To Cart</button>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                             <div class="grid__heading">
-                                <span>{{ product.title }}</span>
+                                <span data-mh="title-5">{{ product.title }}</span>
                             </div>
                             <p class="grid__subtitle">Extra mild cleansing</p>
                         </div>

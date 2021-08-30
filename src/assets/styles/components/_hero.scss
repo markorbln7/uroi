@@ -108,7 +108,7 @@
         }
       }
     }
-
+ 
     &--small {
       @include respond-to(md) {
         .hero {
@@ -118,6 +118,12 @@
           }
         }
       }
+    }
+  }
+
+  &--mb {
+    @include respond-to(md) {
+      margin-bottom: 10rem;
     }
   }
 }

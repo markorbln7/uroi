@@ -132,8 +132,12 @@
     line-height: 4.55729vw;
     padding: 0 0.65104vw;
     font-weight: 400;
+    border: none;
+    padding: 0;
     letter-spacing: 0.15625vw;
     cursor: pointer;
+    z-index: 2;
+    background-color: transparent;
 
     @include respond-to(lg) {
       font-size: 0.8vw;
@@ -201,5 +205,14 @@
     cursor: pointer;
     padding: 0;
     font-size: 1.6rem;
+  }
+
+  &__overlay-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
   }
 }
