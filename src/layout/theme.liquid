@@ -17,8 +17,11 @@
       {% unless template == 'cart' %}
       {% include 'global-cart' %}
       {% endunless %}
-      <main id="content-for-layout" class="template template--{{ template | handleize }}" >
-        {{ content_for_layout }}
+    
+      <main data-router-wrapper id="content-for-layout" class="template template--{{ template | handleize }}" >
+        <div data-router-view="template--{{ template | handleize }}">
+          {{ content_for_layout }}
+        </div>
       </main>
       {% include 'global-footer' %}
       {% include 'json-ld' %}
