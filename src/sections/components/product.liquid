@@ -69,7 +69,7 @@
               </button>
             </div>
           </div>
-          <button class="atc-button btn btn--cart">
+          <button class="atc-button btn btn--cart" data-variant-Id="{{product.variants[0].id}}" data-quantity="1">
             <span class="btn--span">
               <span class="btn--arrow">
                 <svg width="28px" height="19px" viewBox="0 0 28 19">
@@ -88,12 +88,7 @@
         </div>
         <div class="product__text">
           <p>
-            Lavish yourself with a trio of products that are graciously gentle from start to finish. The mild cleanser,
-            toner, and moisturizer work together to create a calming, refreshing head-to-toe beauty ritual. Purify skin
-            with S1 extra mild cleansing. Tone with skin-smoothing S3 extra mild lotion, and moisturize all over with
-            UA deep moisture gel. Mildly acidic in formula, all products help soothe and calm skin, and provide lasting
-            hydration. Great for both AM and PM routine, suitable for all skin types including sensitive skin types who
-            also have dry and dehydrated skin. 
+            {{ product.description }} 
           </p>
 
           <div class="product__badges">

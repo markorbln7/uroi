@@ -1,6 +1,7 @@
 import Highway from '@dogstudio/highway';
 import Tween from 'gsap';
 
+
 // Fade
 class Fade extends Highway.Transition {
     in({ from, to, done }) {
