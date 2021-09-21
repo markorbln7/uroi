@@ -1,5 +1,10 @@
 import Highway from '@dogstudio/highway';
 import Tween from 'gsap';
+import CartRenderer from '../renderers/cart';
+import FindRenderer from '../renderers/find';
+import HomepageRenderer from '../renderers/homepage';
+import IngredientRenderer from '../renderers/ingredients';
+import RegimenRenderer from '../renderers/regimen';
 
 
 // Fade
@@ -37,6 +42,17 @@ export default Fade;
 
 
 const H = new Highway.Core({
+    renderers: {
+      ingredients: IngredientRenderer,
+      regimen: RegimenRenderer,
+      cart: CartRenderer,
+      listCollection: FindRenderer,
+      collection: FindRenderer,
+      index: HomepageRenderer,
+      s: FindRenderer,
+      u: FindRenderer,
+      product: FindRenderer
+    },
     transitions: {
       default: Fade
     }

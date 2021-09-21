@@ -1,4 +1,4 @@
-<div id="cart" class="d-flex flex-column flex-md-row justify-content-between lifo-cart hide" data-free-ship-threshold="{{ settings.free_shipping | json }}" v-cloak>
+<div id="cart" class="d-flex flex-column flex-md-row justify-content-between lifo-cart hide"  data-router-view="cart" data-free-ship-threshold="{{ settings.free_shipping | json }}" v-cloak>
   {% comment %} PRODUCT PART {% endcomment %}
   <div class="lifo-cart-wrap">
     <div class="d-flex flex-row">
@@ -150,13 +150,3 @@
   </div>
   {% comment %} PRICE BOX END {% endcomment %}
 </div>
-
-
- <script>
-$(window).ready(function(){
-  setInterval(function(){ 
-    $('#cart').addClass("loaded")
-  }, 1000);
-
-});
-</script>
