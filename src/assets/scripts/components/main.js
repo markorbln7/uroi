@@ -1,6 +1,7 @@
 import Highway from '@dogstudio/highway';
 import Tween from 'gsap';
 import IngredientRenderer from '../renderers/ingredients';
+import RegimenRenderer from '../renderers/regimen';
 
 // Fade
 class Fade extends Highway.Transition {
@@ -38,7 +39,8 @@ export default Fade;
 
 const H = new Highway.Core({
     renderers: {
-      ingredients: IngredientRenderer
+      ingredients: IngredientRenderer,
+      regimen: RegimenRenderer
     },
     transitions: {
       default: Fade
