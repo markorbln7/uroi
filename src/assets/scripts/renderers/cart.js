@@ -1,15 +1,9 @@
-import Highway from '@dogstudio/highway';
+import DefaultRenderer from './default'
 
-class CartRenderer extends Highway.Renderer {
+class CartRenderer extends DefaultRenderer {
     onEnter() {}
     onLeave() {}
-    onEnterCompleted() {
-        $(window).ready(function(){
-            setInterval(function(){ 
-              $('#cart').addClass("loaded")
-            }, 1000);
-        });
-    }
+    onEnterCompleted() {}
     onLeaveCompleted() {}
 }
 

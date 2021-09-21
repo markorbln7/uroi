@@ -1,11 +1,14 @@
-import Highway from '@dogstudio/highway';
+import DefaultRenderer from './default'
+import Slick from '../modules/slider'
 
-class FindRenderer extends Highway.Renderer {
+class FindRenderer extends DefaultRenderer {
     onEnter() {}
     onLeave() {}
     onEnterCompleted() {
-        $(function(){
-            $('.find__slider').slick({
+        super.onEnterCompleted()
+        this.Slick = new Slick({
+            el: $('.staples__slider'),
+            options:{
                 infinite: false,
                 speed: 300,
                 slidesToShow: 4,
@@ -28,8 +31,8 @@ class FindRenderer extends Highway.Renderer {
                     }
                 },
                 ]
-            });
-        });
+            }        
+        })
     }
     onLeaveCompleted() {}
 }

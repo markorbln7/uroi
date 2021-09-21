@@ -1,28 +1,15 @@
-import Highway from '@dogstudio/highway';
+import DefaultRenderer from './default'
+import Slick from '../modules/slider';
+import _each from 'lodash/each'
 
-class HomepageRenderer extends Highway.Renderer {
+class HomepageRenderer extends DefaultRenderer {
     onEnter() {}
     onLeave() {}
     onEnterCompleted() {
-        $(function () {
-            $('.staples__slider').slick({
-               infinite: false,
-               speed: 300,
-               slidesToShow: 3,
-               slidesToScroll: 1,
-               nextArrow: '.staples__arrow-next',
-               prevArrow: '.staples__arrow-prev',
-               responsive: [
-                  {
-                     breakpoint: 600,
-                     settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                     }
-                  }
-               ]
-            });
-         });
+      super.onEnterCompleted()
+      _each($('.staples__slider'), (el) => {
+        this.Slick = new Slick({el:$(el)})
+      })
     }
     onLeaveCompleted() {}
 }

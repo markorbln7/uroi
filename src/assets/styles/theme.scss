@@ -61,6 +61,7 @@
 @import "components/acid";
 @import "components/menu-drawer";
 @import "components/def-page";
+@import "components/parallax";
 
 @import "templates/page-collections";
 @import "templates/page";
@@ -69,6 +70,12 @@
 @import "templates/collection";
 @import "templates/product";
 
+@import "~locomotive-scroll/dist/locomotive-scroll";
+
+html.has-smooth-scroll #wrapper {
+    position: fixed;
+    width:100%;
+}
 .pixel-perfect {
     position: absolute;
     top: 0;

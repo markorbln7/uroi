@@ -19,9 +19,10 @@
       {% endunless %}
     
       <main data-router-wrapper id="content-for-layout" class="template template--{{ template | handleize }}" >
+      
           {{ content_for_layout }}
+          
       </main>
-      {% include 'global-footer' %}
       {% include 'json-ld' %}
       {% include 'scripts' %}
   </body>

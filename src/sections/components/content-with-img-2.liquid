@@ -1,10 +1,12 @@
 <section class="authentic">
     <div class="authentic__wrap">
-        <div class="authentic__img-box">
-            <picture class="authentic__img">
-                <source media="(max-width: 1200px)" srcset="{{ section.settings.img-mob | img_url: 'master' }}">
-                <img src="{{ section.settings.img-desk | img_url: 'master' }}" alt="{{ section.settings.alt }}">
-            </picture>
+        <div class="authentic__img-box overflow-hidden parallax-wrapper">
+            <div class="parallax-element">
+                <picture data-scroll data-scroll-speed="-1.2" class="authentic__img d-block">
+                    <source media="(max-width: 1200px)" srcset="{{ section.settings.img-mob | img_url: 'master' }}">
+                    <img src="{{ section.settings.img-desk | img_url: 'master' }}" alt="{{ section.settings.alt }}">
+                </picture>
+            </div>
         </div>
         <div class="authentic__container">
             <div class="authentic__text-box">

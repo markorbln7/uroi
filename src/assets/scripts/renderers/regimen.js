@@ -1,28 +1,14 @@
-import Highway from '@dogstudio/highway';
+import DefaultRenderer from './default';
+import Slick from '../modules/slider';
 
-class RegimenRenderer extends Highway.Renderer {
+class RegimenRenderer extends DefaultRenderer {
     onEnter() {}
     onLeave() {}
     onEnterCompleted() {
-        $(function () {
-            $('.staples__slider').slick({
-               infinite: false,
-               speed: 300,
-               slidesToShow: 3,
-               slidesToScroll: 1,
-               nextArrow: '.staples__arrow-next',
-               prevArrow: '.staples__arrow-prev',
-               responsive: [
-                  {
-                     breakpoint: 600,
-                     settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                     }
-                  }
-               ]
-            });
-         });
+       super.onEnterCompleted()
+       this.Slick = new Slick({
+          el: $('.staples__slider')          
+       })
     }
     onLeaveCompleted() {}
 }
