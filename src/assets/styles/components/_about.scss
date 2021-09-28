@@ -87,21 +87,24 @@
   
     &__active {
       color: $color-black;
-      position: relative;
-  
-      &:after {
-        content: "";
-        position: absolute;
-        display: block;
-        height: 0.2vw;
-        width: 100%;
-        left: 0;
-        bottom: 0;
-        background: #000;
-        transition: transform 0.5s cubic-bezier(0.16, 0.01, 0.13, 0.99);
-  
-        @include respond-to(lg) {
-          bottom: -0.4vw;
+
+      span {
+        position: relative;
+        
+        &:after {
+          content: "";
+          position: absolute;
+          display: block;
+          height: 0.2vw;
+          width: 100%;
+          left: 0;
+          bottom: 0;
+          background: #000;
+          transition: transform 0.5s cubic-bezier(0.16, 0.01, 0.13, 0.99);
+          
+          @include respond-to(lg) {
+            bottom: -0.4vw;
+          }
         }
       }
     }
