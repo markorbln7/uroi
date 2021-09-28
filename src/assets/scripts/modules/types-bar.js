@@ -11,6 +11,18 @@ export function initTypesBar() {
     })
 }
 
+const addScrollListenerToBar = () => {
+    setTimeout(() => {
+        window.locoScroll.on('scroll', args => {
+            if(args.scroll.y > window.innerHeight + document.querySelector('.fit').offsetHeight + document.querySelector('.types').offsetHeight) {
+                document.querySelector('.tabs-bar').classList.add('tabs-bar--show');
+            } else {
+                document.querySelector('.tabs-bar').classList.remove('tabs-bar--show');
+            }
+        })
+    }, 500)
+}
+
 const addMarkupToHeader = () => {
     const markup = `
         <ul class="tabs-bar tabs-bar--types">
@@ -30,6 +42,7 @@ const addMarkupToHeader = () => {
     `;
 
     document.querySelector('header').insertAdjacentHTML('beforeend', markup);
+    addScrollListenerToBar();
 }
 
 export const destroyMarkup = () => {

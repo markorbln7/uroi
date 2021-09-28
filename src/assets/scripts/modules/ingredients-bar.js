@@ -11,6 +11,18 @@ export function initIngredientsBar() {
     })
 }
 
+const addScrollListenerToBar = () => {
+    setTimeout(() => {
+        window.locoScroll.on('scroll', args => {
+            if(args.scroll.y > window.innerHeight + document.querySelector('.about').offsetHeight) {
+                document.querySelector('.tabs-bar').classList.add('tabs-bar--show');
+            } else {
+                document.querySelector('.tabs-bar').classList.remove('tabs-bar--show');
+            }
+        })
+    }, 500)
+}
+
 const addMarkupToHeader = () => {
     const markup = `
         <ul class="tabs-bar tabs-bar--ingredient">
@@ -27,6 +39,7 @@ const addMarkupToHeader = () => {
     `;
 
     document.querySelector('header').insertAdjacentHTML('beforeend', markup);
+    addScrollListenerToBar();
 }
 
 export const destroyMarkup = () => {
