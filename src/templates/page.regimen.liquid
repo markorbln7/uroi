@@ -2,6 +2,21 @@
     {% section 'hero-regimen' %}
     {% section 'centered-text' %}
     {% section 'category-buttons' %}
-    {% section 'product-slider-regimen' %}
-     {% include 'global-footer' %}
+    <div class="regimen-section regimen-section--show">
+        OILY
+        {% section 'product-slider-regimen' %}
+    </div>
+    <div class="regimen-section">
+        NORMAL
+        {% section 'product-slider-regimen-normal' %}
+    </div>
+    <div class="regimen-section">
+        SENSITIVE
+        {% section 'product-slider-regimen-sensitive' %}
+    </div>
+    <div class="regimen-section">
+        DRY
+        {% section 'product-slider-regimen-dry' %}
+    </div>
+    {% include 'global-footer' %}
 </div>
