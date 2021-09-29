@@ -9,10 +9,10 @@
                 <li><a class="open-drawer" href="#">shop</a></li>
                 <li><a href="/pages/ingredients-test">about</a></li>
                 <li><a href="/pages/regimen-test">regimen</a></li>
-                <li><a href="#">login</a></li>
+                <li><a href="/account">log in</a></li>
             </ul>
             <ul class="header__menu header__menu--sec">
-                <li><a href="#">login</a></li>
+                <li><a href="/account">log in</a></li>
                 <li class="header__cart-desk"><button class="header__menu-toggler cart-toggle">cart{% if cart.item_count > 0 %}({{ cart.item_count }}){% endif %} </button></li>
             </ul>
             <button class="header__cart-mob cart-toggle">{% include 'cart-icon' %} {% if cart.item_count > 0 %}<span>{{ cart.item_count }}</span>{% endif %}</button>

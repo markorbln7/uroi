@@ -32,7 +32,7 @@ const copyFile = (output, filePath) => {
   const splitPathRev = output.split('/').reverse();
   let flattenedPath = `${splitPath[0]}/${splitPathRev[0]}`
   if (output.includes('/customers/')) {
-    flattenedPath = `${splitPath[0]}/customer/${splitPathRev[0]}`;
+    flattenedPath = `${splitPath[0]}/customers/${splitPathRev[0]}`;
   }
   copy(`${filePath}`, `${PATHS.output}/${flattenedPath}`);
 };
@@ -46,7 +46,7 @@ const unlinkFile = (output) => {
   const splitPathRev = output.split('/').reverse();
   let flattenedPath = `${splitPath[0]}/${splitPathRev[0]}`
   if (output.includes('/customers/')) {
-    flattenedPath = `${splitPath[0]}/customer/${splitPathRev[0]}`;
+    flattenedPath = `${splitPath[0]}/customers/${splitPathRev[0]}`;
   }
   fs.unlinkSync(`${PATHS.output}/${flattenedPath}`);
 };
