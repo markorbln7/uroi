@@ -6,7 +6,7 @@ export default class LocoSroll {
         setTimeout(() => {
             this.initScroll()
             this.scroll.on('scroll', args => {
-                if(args.scroll.y > window.innerHeight) {
+                if(args.scroll.y > 300) {
                     document.querySelector('header').classList.add('header--dark');
                 } else {
                     document.querySelector('header').classList.remove('header--dark');
