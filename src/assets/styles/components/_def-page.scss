@@ -5,8 +5,8 @@
         display: flex;
         padding: 0 2rem;
 
-        @include respond-to(md) {
-            padding: 0 20rem;
+        @include respond-to(lg) {
+            padding: 5rem 20rem 0;
         }
     }
 
@@ -16,7 +16,7 @@
         font-size: 1.6rem;
         padding-right: 5rem;
 
-        @include respond-to(md) {
+        @include respond-to(lg) {
             display: block;
         }
     }
@@ -44,7 +44,7 @@
         font-size: 1.6rem;
         line-height: 1.5;
 
-        @include respond-to(md) {
+        @include respond-to(lg) {
             font-size: 1.8rem;
         }
 
@@ -55,7 +55,7 @@
         h2 {
             font-size: 2rem;
 
-            @include respond-to(md) {
+            @include respond-to(lg) {
                 font-size: 4.5rem;
                 line-height: 7.5rem;
             }
@@ -64,7 +64,7 @@
         h3 {
             font-size: 1.8rem;
 
-            @include respond-to(md) {
+            @include respond-to(lg) {
                 font-size: 3.5rem;
             }
         }
@@ -84,6 +84,20 @@
         & > * + h2,
         & > * + h3 {
             margin-top: 5rem;
+        }
+
+        &--faq {
+            h2 {
+                font-size: 3.5rem;
+                text-align: center;
+
+                @include respond-to(lg) {
+                    font-size: 2.70833vw;
+                    line-height: 3.22917vw;
+                    margin-bottom: 2.13542vw;
+                    text-align: left;
+                }
+            }
         }
     }
 }
