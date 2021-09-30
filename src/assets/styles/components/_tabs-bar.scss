@@ -1,7 +1,7 @@
 .tabs-bar {
     display: none;
 
-    @include respond-to(md) { 
+    @include respond-to(lg) { 
         align-items: center;
         justify-content: center;
         background-color: #f7f7f7;
@@ -10,10 +10,10 @@
         width: 100%;
         padding: 0 10.67708vw;
         gap: 11rem;
-    }
 
-    &--show {
-        display: flex;
+        &--show {
+            display: flex;
+        }
     }
 
     &__button {
