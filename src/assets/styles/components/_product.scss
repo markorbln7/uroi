@@ -6,7 +6,7 @@
     justify-content: space-between;
     margin-bottom: 1.1rem;
 
-    @include respond-to(lg) {
+    @include respond-to(md) {
       margin-bottom: 2.5rem;
     }
   }
@@ -121,7 +121,7 @@
 
     @include respond-to(md) {
       max-width: none;
-      padding: 0 10.8vw;
+      padding: 0 4rem;
     }
 
     @include respond-to(xlg) {
@@ -204,6 +204,10 @@
     margin-bottom: 1.4rem;
     letter-spacing: 2.33125vw;
 
+    @include respond-to(md) {
+      letter-spacing: 0.6rem;
+    }
+
     @include respond-to(lg) {
       font-size: 1.4rem;
       letter-spacing: 1.05rem;
@@ -245,12 +249,12 @@
     gap: 1.5rem;
     margin-bottom: 4rem;
 
-    @include respond-to(sm) {
-      flex-direction: row;
+    @include respond-to(md) {
+      flex-direction: row-reverse;
     }
 
-    @include respond-to(xlg) {
-      gap: 1.7rem;
+    @include respond-to(lg) {
+      flex-direction: row;
     }
   }
 
@@ -298,6 +302,7 @@
 
     @include respond-to(sm) {
       flex-basis: 100%;
+      flex-shrink: 0;
     }
 
     @include respond-to(lg) {
@@ -310,7 +315,7 @@
     background-color: transparent;
     font-size: 2.1rem;
 
-    @include respond-to(md) {
+    @include respond-to(lg) {
       font-size: 2.5rem;
     }
   }
@@ -354,12 +359,16 @@
     align-items: center;
     max-width: 23.1rem;
 
-    @include respond-to(xlg) {
-      margin-top: 3.6rem;
+    @include respond-to(md) {
+      gap: 3rem;
     }
   }
 
   &__badge {
     max-width: 2.7rem;
+  }
+
+  .btn {
+    width: 100%;
   }
 }
