@@ -2,7 +2,7 @@
     padding: 3.6rem 0;
 
     @include respond-to(md) {
-        padding: 6.6rem 0;
+        padding: 5rem 0;
     }
 
     @include respond-to(lg) {
@@ -24,6 +24,10 @@
     }
   
     &__wrap {
+      @include respond-to(md) {
+        margin-bottom: 10rem;
+      }
+
       @include respond-to(lg) {
         max-width: 28%;
         display: flex;
@@ -37,7 +41,6 @@
       
       @include respond-to(md) {
         font-size: 4.16667vw;
-        margin-bottom: 10rem;
       }
 
       @include respond-to(lg) {
@@ -107,9 +110,12 @@
       h5 {
         font-size: 2.5rem;
         font-family: $serif;
-        
+
         @include respond-to(md) {
           font-family: $sans;
+        }
+        
+        @include respond-to(lg) {
           font-size: 3rem;
         }
       }
@@ -121,6 +127,10 @@
       font-size: 1.6rem;
   
       @include respond-to(md) {
+        font-size: 1.4rem;
+      }
+  
+      @include respond-to(lg) {
         font-size: 1.8rem;
       }
     }
@@ -134,11 +144,13 @@
       margin-bottom: 1.6rem;
   
       @include respond-to(md) {
-        font-size: 2rem;
+        font-size: 2.6rem;
+        line-height: 1.4;
         margin-bottom: 2.5rem;
+        margin-top: 4rem;
       }
   
-      @include respond-to(md) {
+      @include respond-to(lg) {
         font-size: 2.6rem;
         margin-bottom: 3.2rem;
       }
@@ -151,7 +163,7 @@
       color: rgba($color-black, 0.7);
 
       @include respond-to(md) {
-        font-size: 2.1rem;
+        font-size: 1.6rem;
         line-height: 1.4;
         max-width: 60%;
         margin-top: 2rem;

@@ -120,7 +120,7 @@ h6 {
 
     @include respond-to(md) {
       // font-size: 1.6vw !important; //23.04px
-      font-size: 1vw !important; //10px
+      font-size: 1.304vw !important; //10px
     }
     
     @include respond-to(lg) {
