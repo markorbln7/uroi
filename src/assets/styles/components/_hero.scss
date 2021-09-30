@@ -12,13 +12,13 @@
     &--desk {
       display: none;
 
-      @include respond-to(md) {
+      @include respond-to(lg) {
         display: block;
       }
     }
 
     &--mobile {
-      @include respond-to(md) {
+      @include respond-to(lg) {
         display: none;
       }
     }
@@ -37,7 +37,7 @@
     left: 50%;
     transform: translate(-50%, -70%);
 
-    @include respond-to(md) {
+    @include respond-to(lg) {
       display: block;
     }
   }
@@ -64,6 +64,16 @@
     max-width: 120rem;
 
     @include respond-to(md) {
+      font-size: 6.51042vw;
+      line-height: 7.8125vw;
+      padding: 0 7.6875vw;
+      letter-spacing: 0;
+      width: 100%;
+      margin-top: 20rem;
+      margin-bottom: 6rem;
+    }
+
+    @include respond-to(lg) {
       font-size: 10rem;
     }
   }
@@ -80,6 +90,13 @@
 
     @include respond-to(md) {
       position: static;
+      font-size: 1.82292vw;
+      line-height: 1.5625vw;
+      letter-spacing: 1.36068vw;
+    }
+
+    @include respond-to(lg) {
+      position: static;
       font-size: 1.4rem;
       margin-bottom: 1.3rem;
     }
@@ -87,6 +104,11 @@
 
   &__content-wrapper {
     @include respond-to(md) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    
+    @include respond-to(lg) {
       margin-top: -10rem;
     }
 
@@ -97,7 +119,7 @@
         color: inherit;
       }
 
-      @include respond-to(md) {
+      @include respond-to(lg) {
         position: absolute;
         top: 100%;
         left: 50%;
@@ -113,7 +135,7 @@
     }
  
     &--small {
-      @include respond-to(md) {
+      @include respond-to(lg) {
         .hero {
           &__title {
             font-size: 9rem;
@@ -125,7 +147,7 @@
   }
 
   &--mb {
-    @include respond-to(md) {
+    @include respond-to(lg) {
       margin-bottom: 10rem;
     }
   }

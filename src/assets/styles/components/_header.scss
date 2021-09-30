@@ -21,7 +21,7 @@
     }
 
     &--open {
-        @include respond-to(md) {
+        @include respond-to(lg) {
             color: black;
     
             .header {
@@ -77,8 +77,6 @@
         & + .header__spacer {
             display: block;
         }
-
-
     }
 
     &__spacer {
@@ -92,6 +90,11 @@
         align-items: center;
         padding: 0 2rem 2.4rem;
 
+        @include respond-to(md) {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+
         @include respond-to(lg) {
             padding: 0 20rem 2.4rem;
         }
@@ -103,6 +106,10 @@
 
         @include respond-to(md) {
             width: 100%;
+            max-width: 13rem;
+        }
+
+        @include respond-to(lg) {
             max-width: 18.5rem;
         }
     }
@@ -134,7 +141,7 @@
             margin-top: 2rem;
         }
 
-        @include respond-to(md) {
+        @include respond-to(lg) {
             display: flex;
             flex-direction: row;
             color: inherit;
@@ -161,7 +168,7 @@
                 margin-top: auto;
                 margin-bottom: 2rem;
 
-                @include respond-to(md) {
+                @include respond-to(lg) {
                     display: none;
                     margin: 0;
                 }
@@ -171,7 +178,7 @@
         &--sec {
             display: none;
 
-            @include respond-to(md) {
+            @include respond-to(lg) {
                 display: flex;
             }
         }
@@ -194,6 +201,11 @@
         svg {
             width: 1.5rem;
             height: 2.1rem;
+
+            @include respond-to(md) {
+                width: 2.7rem;
+                height: 3.3rem;
+            }
         }
 
         & > span {
@@ -203,7 +215,7 @@
             font-size: 1.5rem;
         }
 
-        @include respond-to(md) {
+        @include respond-to(lg) {
             display: none;
         }
     }
@@ -218,6 +230,10 @@
         position: relative;
         display: block;
 
+        @include respond-to(md) {
+            width: 4.6rem;
+        }
+
         &:before,
         &:after {
             content: '';
@@ -228,17 +244,29 @@
             left: 0;
             transform-origin: center;
             transition: 0.2s;
+
+            @include respond-to(md) {
+                height: 0.2rem;
+            }
         }
 
         &::before {
             top: 0.5rem;
+
+            @include respond-to(md) {
+                top: 0.4rem;
+            }
         }
 
         &::after {
             top: 1.5rem;
+
+            @include respond-to(md) {
+                top: 1.6rem;
+            }
         }
 
-        @include respond-to(md) {
+        @include respond-to(lg) {
             display: none;
         }
     }
