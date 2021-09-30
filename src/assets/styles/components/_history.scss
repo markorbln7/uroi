@@ -55,6 +55,11 @@
         line-height: 2.2rem;
 
         @include respond-to(md) {
+            font-size: 1.2rem;
+            line-height: 2.1rem;
+        }
+
+        @include respond-to(lg) {
             font-size: .98958vw;
             line-height: 1.35417vw;
         }
@@ -74,6 +79,12 @@
             line-height: 14.375vw;
 
             @include respond-to(md) {
+                font-size: 3rem;
+                line-height: 4.1rem;
+                margin-bottom: 3rem;
+            }
+
+            @include respond-to(lg) {
                 font-size: 2.70833vw;
                 line-height: 3.64583vw;
                 margin-bottom: 3.125vw;
@@ -82,10 +93,14 @@
 
         &--top {
             padding: 12.5vw 6.25vw 7.8125vw;
+
+            @include respond-to(md) {
+                padding-top: 0;
+            }
         }
 
         &--bottom {
-            @include respond-to(md) {
+            @include respond-to(lg) {
                 padding: 0 8.02083vw 0 15.20833vw;
             }
         }
@@ -119,9 +134,14 @@
 
     &__bottom-imgs {
         @include respond-to(md) {
+            width: 21.6rem;
+            height: 28.5rem;
+            object-fit: cover;
+        }
+        
+        @include respond-to(lg) {
             width: 48.1rem;
             height: 63.6rem;
-            object-fit: cover;
         }
     }
 
@@ -129,16 +149,35 @@
         margin-bottom: 12.5vw;
 
         @include respond-to(md) {
+            padding: 0 8.46354vw 0 13.411146vw;
+            position: relative;
+            top: -1.432291vw;
+            width: 50vw; 
+            margin-left: 6.25vw;
+        }
+
+        @include respond-to(lg) {
             padding: 0 12.54167vw 0 6.40625vw;
             top: -11.19792vw;
-            width: 50vw;
             position: relative;
             margin-bottom: 0;
+        }
 
-            &::before {
+        &::before {
+            @include respond-to(md) {
                 content: '';
                 position: absolute;
                 z-index: -2;
+                right: 0;
+                top: -.65104vw;
+                width: 63.02083vw;
+                height: .13021vw;
+                transform-origin: right;
+                transform: rotate(-45deg);
+                background-color: #b9b9b9;
+            }
+            
+            @include respond-to(lg) {
                 height: .05208vw;
                 width: 67.1875vw;
                 top: auto;
@@ -147,12 +186,9 @@
                 bottom: 0;
                 transform-origin: left;
                 transform: rotate(-50deg);
-                background-color: #b9b9b9;
             }
         }
     }
-
-
 
     &__bottom-desk-img {
         display: none;
@@ -161,6 +197,13 @@
             display: block;
             position: absolute;
             z-index: -1;
+            right: 0;
+            top: -2.86458vw;
+            width: 10.5rem;
+            height: 10.6rem;
+        }
+
+        @include respond-to(lg) {
             width: 15.36458vw;
             height: 15.36458vw;
             top: -4.16667vw;

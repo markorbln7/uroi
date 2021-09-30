@@ -11,9 +11,6 @@
     </head>
     
   <body class="layout layout--{{ template | handleize }}">
-      <!-- <div class="pixel-perfect">
-        <img src="http://127.0.0.1:5500/img/homepage.jpg" alt="">
-      </div> -->
       {% include 'global-header' %}
       {% unless template == 'cart' %}
       {% include 'global-cart' %}
