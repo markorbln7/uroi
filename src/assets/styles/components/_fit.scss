@@ -1,8 +1,22 @@
 .fit {
   padding-top: 5rem;
 
+  @include respond-to(md) {
+    padding-top: 10rem;
+    max-width: 53.2rem;
+    margin: 0 auto;
+  }
+
+  @include respond-to(lg) {
+    max-width: 100%;
+  }
+
   &__title {
     text-align: center;
+
+    @include respond-to(md) {
+      margin-bottom: .5rem;
+    }
   }
 
   &__wrap {
