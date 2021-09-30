@@ -3,8 +3,9 @@
 
   &__heading-main h2 {
     font-family: $ff-serif;
-    font-size: 2.5rem;
-    margin-bottom: 6rem;
+    font-size: 3.2rem;
+    line-height: 1;
+    margin-bottom: 5rem;
 
     @include respond-to(lg) {
       font-size: 3rem;
@@ -22,32 +23,24 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 3.6rem;
 
-    @include respond-to(xs) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-
     @include respond-to(md) {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 5rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3.2rem;
     }
 
     @include respond-to(lg) {
-      row-gap: 7rem;
-      column-gap: 10rem;
-    }
-
-    @include respond-to(xlg) {
-      row-gap: 8.9rem;
-      column-gap: 21.3rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17rem;
     }
   }
 
   &__content {
     position: relative;
 
-    &:hover .grid__hover-info {
-      opacity: 1;
+    @include respond-to(lg) {
+      &:hover .grid__hover-info {
+        opacity: 1;
+      }
     }
   }
 
@@ -56,10 +49,6 @@
 
     @include respond-to(lg) {
       max-width: 100%;
-    }
-
-    @include respond-to(xlg) {
-      max-width: 37.2rem;
     }
   }
 
@@ -160,28 +149,25 @@
   &__heading {
     margin: 0.7rem 0;
     font-size: 2.5rem;
-    font-family: $ff-serif;
+    font-family: $ff-sans;
 
     @include respond-to(md) {
-      font-family: $ff-sans;
+      font-size: 2.3rem;
     }
 
     @include respond-to(lg) {
       font-size: 3rem;
       margin: 1.5rem 0;
     }
-
-    @include respond-to(xlg) {
-      font-size: 3rem;
-      margin: 2.2rem 0 1.6rem;
-    }
   }
 
   &__subtitle {
     color: rgba($color-black, $alpha: 0.6);
+    font-family: $ff-serif;
+    font-size: 1.8rem;
 
     @include respond-to(md) {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
     }
   }
 

@@ -1,6 +1,10 @@
 <section class="hero {% if section.settings.floating-img %}hero--mb{% endif %}">
-    <div class="hero__bg-image hero__bg-image--mob" style="background-image: url({{ section.settings.img-mob | img_url: 'master'}});"></div>
-    <div class="hero__bg-image hero__bg-image--desk" style="background-image: url({{  section.settings.img-desk | img_url: 'master' }});"></div>
+    <div class="hero__bg-image hero__bg-image--mob parallax-wrapper" >
+        <img data-scroll data-scroll-speed="2" class="parallax-element" src="{{ section.settings.img-mob | img_url: 'master'}}" alt="">
+    </div>
+    <div class="hero__bg-image hero__bg-image--desk parallax-wrapper">
+        <img data-scroll data-scroll-speed="2" class="parallax-element" src="{{ section.settings.img-desk | img_url: 'master'}}" alt="">
+    </div>
     {% if section.settings.floating-img %} 
         <div class="hero__floating-img-wrapper">
             <img class="hero__floating-img" src="{{  section.settings.floating-img | img_url: 'master'}}" alt="{{ section.settings.floating-img-alt }}">
