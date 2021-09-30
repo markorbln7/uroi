@@ -1,6 +1,10 @@
 .authentic {
     padding: 8rem 0;
     background-color: $color-light;
+
+    @include respond-to(md) {
+      padding: 0;
+    }
   
     &__wrap {
       @include respond-to(sm) {
@@ -10,6 +14,16 @@
         flex-direction: row-reverse;
         gap: 1rem;
         padding: 0 5vw 0 10.8vw;
+      }
+
+      @include respond-to(md) {
+        padding: 0 4vw;
+        align-items: flex-start;
+      }  
+
+      @include respond-to(lg) {
+        align-items: flex-end;
+        padding: 0 4vw 0 10.8vw;
       }
   
       @include respond-to(xlg) {
@@ -26,6 +40,7 @@
       }
   
       @include respond-to(md) {
+        padding-top: 4rem;
       }
   
       @include respond-to(lg) {
@@ -48,9 +63,14 @@
   
     &__text-box h2 {
       text-transform: uppercase;
+
+      @include respond-to(md) {
+        font-size: 3rem;
+      }
+
       @include respond-to(xlg) {
         font-size: 5.2rem;
-        line-height: 7rem;
+        line-height: 1.5;
       }
     }
   
@@ -72,12 +92,15 @@
       }
   
       @include respond-to(md) {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
+        line-height: 2.1rem;
+        margin-bottom: 7.5rem;
       }
   
       @include respond-to(lg) {
         font-size: 2rem;
         max-width: 39.6rem;
+        line-height: 2.8rem;
         font-size: 1.9rem;
       }
     }

@@ -1,14 +1,20 @@
 .leaf {
   padding: 5rem 0;
 
+  @include respond-to(md) {
+    padding-bottom: 2rem;
+  }
+
   &__content {
     @include respond-to(md) {
       display: flex;
       flex-direction: row-reverse;
       gap: 2rem;
-      padding-left: 10.8vw;
+      padding-left: 4vw;
       margin: 0 auto;
+      align-items: flex-start;
     }
+
     @include respond-to(lg) {
       padding-left: 13rem;
     }
@@ -36,8 +42,9 @@
 
   &__img img {
     max-width: 11.3rem;
+    
     @include respond-to(md) {
-      max-width: 20rem;
+      max-width: 12.7rem;
     }
 
     @include respond-to(lg) {
@@ -52,10 +59,10 @@
     max-width: 8rem;
 
     @include respond-to(md) {
-      top: 33%;
-      left: 11%;
+      top: 40%;
+      left: 23%;
       transform: translateY(-50%);
-      max-width: 15rem;
+      max-width: 8.8rem;
     }
 
     @include respond-to(lg) {
@@ -147,8 +154,8 @@
     text-transform: uppercase;
 
     @include respond-to(md) {
-      font-size: 1.6rem;
-      line-height: 1rem;
+      font-size: 1.2rem;
+      line-height: 2.1rem;
       margin-bottom: 0.5rem;
     }
 
@@ -165,13 +172,14 @@
     margin-bottom: 3rem;
 
     @include respond-to(md) {
-      font-size: 2rem;
+      font-size: 1.6rem;
+      line-height: 2.8rem;
       margin-bottom: 2.2rem;
     }
 
     @include respond-to(lg) {
       font-size: 3.5rem;
-      line-height: 7rem;
+      line-height: 1.5;
       margin-bottom: 4rem;
     }
   }
@@ -179,6 +187,11 @@
   &__text {
     font-size: 1.4rem;
     line-height: 2.2rem;
+
+    @include respond-to(md) {
+      font-size: 1.2rem;
+      line-height: 2.1rem;
+    }
 
     @include respond-to(lg) {
       font-size: 1.9rem;
