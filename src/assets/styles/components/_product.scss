@@ -1,6 +1,6 @@
 .product {
-  padding: 5rem 0;
-
+  padding: 10rem 0 0;
+  
   &__top-wrap {
     display: flex;
     justify-content: space-between;
@@ -202,6 +202,7 @@
     text-transform: uppercase;
     color: rgba($color-black, $alpha: 0.58);
     margin-bottom: 1.4rem;
+    letter-spacing: 2.33125vw;
 
     @include respond-to(lg) {
       font-size: 1.4rem;
@@ -216,11 +217,13 @@
     letter-spacing: 3.69643px;
     text-transform: uppercase;
     margin-bottom: 2.5rem;
+    width: 70%;
 
     @include respond-to(lg) {
       font-size: 1.2rem;
       letter-spacing: 0.5rem;
       margin-bottom: 5.5rem;
+      width: 100%;
     }
   }
 
@@ -347,9 +350,8 @@
 
   &__badges {
     display: flex;
-    justify-content: space-between;
+    gap: 1rem;
     align-items: center;
-    margin-top: 2rem;
     max-width: 23.1rem;
 
     @include respond-to(xlg) {

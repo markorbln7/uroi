@@ -21,6 +21,11 @@
     }
 
     &--open {
+        .header {
+            &__menu {
+                display: flex;
+            }
+        }
         @include respond-to(lg) {
             color: black;
     
@@ -136,6 +141,7 @@
         font-family: $serif;
         z-index: -1;
         display: none;
+        text-transform: capitalize;
 
         & > * + * {
             margin-top: 2rem;
@@ -152,6 +158,7 @@
             width: auto;
             font-family: $sans;
             z-index: 1;
+            text-transform: none;
 
             & > * + * {
                 margin-left: 4rem;
@@ -177,6 +184,8 @@
 
         &--sec {
             display: none;
+            top: auto;
+            bottom: 0;
 
             @include respond-to(lg) {
                 display: flex;
