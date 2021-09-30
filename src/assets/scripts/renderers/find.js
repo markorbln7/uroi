@@ -3,7 +3,9 @@ import Slick from '../modules/slider'
 
 class FindRenderer extends DefaultRenderer {
     onEnter() {}
-    onLeave() {}
+    onLeave() {
+        super.onLeave()
+    }
     onEnterCompleted() {
         super.onEnterCompleted()
         this.Slick = new Slick({
@@ -34,7 +36,9 @@ class FindRenderer extends DefaultRenderer {
             }        
         })
     }
-    onLeaveCompleted() {}
+    onLeaveCompleted() {
+        super.onLeaveCompleted()
+    }
 }
 
 export default FindRenderer;

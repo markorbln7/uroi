@@ -4,14 +4,18 @@ import _each from 'lodash/each'
 
 class HomepageRenderer extends DefaultRenderer {
     onEnter() {}
-    onLeave() {}
+    onLeave() {
+      super.onLeave()
+    }
     onEnterCompleted() {
       super.onEnterCompleted()
       _each($('.staples__slider'), (el) => {
         this.Slick = new Slick({el:$(el)})
       })
     }
-    onLeaveCompleted() {}
+    onLeaveCompleted() {
+      super.onLeaveCompleted()
+    }
 }
 
 export default HomepageRenderer;

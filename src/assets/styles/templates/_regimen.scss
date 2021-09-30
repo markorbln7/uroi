@@ -1,7 +1,14 @@
 .regimen-section {
-    display: none;
+    visibility: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: opacity .6s, visibility .6s;
 
     &--show {
-        display: block;
+        visibility:visible;
+        max-height: unset;
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .6s, visibility .6s;
     }
 }
