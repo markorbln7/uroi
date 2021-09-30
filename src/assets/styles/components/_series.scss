@@ -8,7 +8,7 @@
   &.pt0 {
     padding-top: 5rem;
 
-    @include respond-to(md) {
+    @include respond-to(lg) {
       padding-top: 0;
     }
   }
@@ -16,7 +16,7 @@
   &.pb0 {
     padding-bottom: 5rem;
 
-    @include respond-to(md) {
+    @include respond-to(lg) {
       padding-bottom: 0;
     }
   }
@@ -26,6 +26,10 @@
       display: flex;
       align-items: flex-end;
       gap: 4rem;
+    }
+
+    @include respond-to(lg) {
+      align-items: center;
     }
   }
 
@@ -70,6 +74,12 @@
     @include respond-to(md) {
       font-size: 1.6rem;
       line-height: 1.8;
+    }
+
+    @include respond-to(lg) {
+      font-size: 1.9rem;
+      line-height: 2.6rem;
+      padding-right: 8.5rem;
     }
   }
 

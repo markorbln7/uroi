@@ -30,6 +30,10 @@
     padding-left: 4vw !important;
     max-width: none !important;
   }
+
+  @include respond-to(lg) {
+    padding-left: 20rem !important;
+  }
 }
 
 .d-none-1 {
