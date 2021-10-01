@@ -5,6 +5,10 @@
   
     &__wrap {
       position: relative;
+
+      @include respond-to(lg) {
+        padding: 0 4rem;
+      }
     }
   
     &__img {

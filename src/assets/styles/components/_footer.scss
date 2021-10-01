@@ -70,6 +70,10 @@
     @include respond-to(sm) {
       order: 1;
     }
+
+    @include respond-to(lg) {
+      width: 21.7rem;
+    }
   }
 
   &__list-item {
@@ -101,6 +105,10 @@
 
     @include respond-to(sm) {
       order: 1;
+    }
+
+    @include respond-to(lg) {
+      width: 21.7rem;
     }
   }
 
@@ -222,16 +230,20 @@
     }
   }
 
-  .font-size-4 > * {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-
-    @include respond-to(md) {
-      font-size: 2.1rem;
-    }
-
-    @include respond-to(lg) {
-      font-size: inherit;
+  .font-size-4 {
+    display: none;
+    
+    & > * {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+  
+      @include respond-to(md) {
+        font-size: 2.1rem;
+      }
+  
+      @include respond-to(lg) {
+        font-size: inherit;
+      }
     }
   }
 }

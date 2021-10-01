@@ -3,9 +3,11 @@
       <div class="staples__container">
          <div class="staples__wrap">
             <h2 class="staples__title">{{ section.settings.title }}</h2>
-            <div class="staples__subtitle">
-               {{ section.settings.subtitle }}
-            </div>
+            {% if section.settings.subtitle and section.settings.subtitle != '' %}
+               <div class="staples__subtitle">
+                  {{ section.settings.subtitle }}
+               </div>
+            {% endif %}
             <div class="staples__text d-none-2">
                {{ section.settings.copy }}
             </div>

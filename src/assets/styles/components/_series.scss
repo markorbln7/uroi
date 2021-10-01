@@ -34,6 +34,12 @@
   }
 
   &__wrap {
+    h2 {
+      @include respond-to(lg) {
+        max-width: 40rem;
+      }
+    }
+
     h6 {
       font-size: 1.6rem;
       line-height: 2.4rem;
@@ -79,7 +85,7 @@
     @include respond-to(lg) {
       font-size: 1.9rem;
       line-height: 2.6rem;
-      padding-right: 8.5rem;
+      padding-right: 17.5rem;
     }
   }
 

@@ -31,6 +31,10 @@
         margin-bottom: 0;
 
         @include respond-to(md) {
+            font-size: 3rem;
+        }
+
+        @include respond-to(lg) {
             font-size: 7rem;
         }
     }
@@ -61,6 +65,12 @@
         }
 
         @include respond-to(md) {
+            padding: 10.41667vw 8.46354vw 0 5.20833vw;
+            font-size: 1.2rem;
+            line-height: 2.1rem;
+        }
+
+        @include respond-to(lg) {
             font-size: 1.9rem;
             line-height: 2.6rem;
             padding: 43.5rem 23.4rem 0 28.2rem;
@@ -76,6 +86,13 @@
         left: 15.3rem;
 
         @include respond-to(md) {
+            width: 17.1875vw;
+            height: 20.57292vw;
+            left: 8.59375vw;
+            top: -14.97396vw;
+        }
+
+        @include respond-to(lg) {
             top: -7.7vw;
             left: 14.84vw;
             width: 39.3rem;

@@ -5,7 +5,7 @@
     @include respond-to(sm) {
       padding-bottom: 0;
     }
-  
+
     &__wrap {
       @include respond-to(sm) {
         display: flex;
@@ -19,6 +19,7 @@
   
       @include respond-to(sm) {
         flex-basis: 50%;
+        flex-shrink: 0;
         margin-bottom: 0;
       }
     }
@@ -73,15 +74,9 @@
       flex-direction: column;
       gap: 4rem;
       padding: 0 10.8vw;
-  
-      @include respond-to(sm) {
-        flex-basis: 50%;
+
+      @include respond-to(md) {
         flex-direction: column-reverse;
-        padding: 0 6vw;
-      }
-  
-      @include respond-to(xlg) {
-        padding: 0 14vw;
       }
     }
   
@@ -89,14 +84,15 @@
       font-size: 1.4rem;
       text-align: center;
       line-height: 2.2rem;
-  
-      @include respond-to(sm) {
-        font-size: 1rem;
+
+      @include respond-to(md) {
+        font-size: 1.2rem;
+        line-height: 2.1rem;
       }
   
       @include respond-to(lg) {
         font-size: 1.9rem;
-        line-height: 2.6rem;
+        line-height: 2.8rem;
       }
     }
   

@@ -4,6 +4,10 @@
     position: relative;
 
     @include respond-to(md) {
+        padding: 14.42708vw 52.64583vw 14.11458vw 4vw;
+    }
+
+    @include respond-to(lg) {
         padding: 14.42708vw 52.64583vw 14.11458vw 10.78125vw;
     }
 
@@ -16,9 +20,14 @@
         font-style: normal;
 
         @include respond-to(md) {
+            font-size: 3rem;
+            line-height: 4.1rem;
+            padding-left: 0;
+        }
+
+        @include respond-to(lg) {
             font-size: 3.125vw;
             line-height: 3.95833vw;
-            padding-left: 0;
         }
     }
 
@@ -47,7 +56,7 @@
                 height: .05208vw;
                 top: -2.76042vw;
                 left: -.88542vw;
-                z-index: 1;
+                z-index: -1;
                 opacity: .6;
                 transform: rotate(55deg);
             }

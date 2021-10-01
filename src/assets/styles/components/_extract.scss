@@ -63,6 +63,7 @@
 
   &__img img {
     max-width: 96rem;
+    width: 100%;
   }
 
   &__img-big img {
@@ -100,7 +101,7 @@
 
     @include respond-to(md) {
       margin-bottom: 0;
-      flex-basis: 55%;
+      flex-basis: 50%;
       display: flex;
       flex-direction: column;
       gap: 5rem;
@@ -115,8 +116,8 @@
     padding: 0 2rem;
 
     @include respond-to(md) {
-      padding: 6rem 10.8vw 0 9vw;
-      margin: 0 auto;
+      padding: 6rem 6.8vw 0 4vw;
+      margin: 0 auto 0 0;
       flex-basis: 45%;
       display: flex;
       flex-direction: column;
@@ -136,7 +137,7 @@
 
     @include respond-to(lg) {
       font-size: 5.2rem;
-      line-height: 7rem;
+      line-height: 1.5;
       margin-bottom: 6rem;
     }
   }
@@ -145,6 +146,11 @@
     font-size: 1.4rem;
     line-height: 2.2rem;
     margin-bottom: 5.5rem;
+
+    @include respond-to(md) {
+      font-size: 1.2rem;
+      line-height: 2.1rem;
+    }
 
     @include respond-to(lg) {
       font-size: 1.9rem;
@@ -180,6 +186,10 @@
 
   &__svg-box-bottom {
     margin-top: 37rem;
+
+    @include respond-to(md) {
+      margin-top: 20rem;
+    }
   }
 
   &__wrap {
@@ -189,7 +199,7 @@
     padding: 0 2rem;
 
     @include respond-to(md) {
-      padding-left: 8rem;
+      padding-left: 4.5rem;
       max-width: 40rem;
     }
 
@@ -231,13 +241,14 @@
     margin-bottom: 3rem;
 
     @include respond-to(md) {
-      font-size: 2rem;
+      font-size: 1.6rem;
+      line-height: 2.8rem;
       margin-bottom: 2.2rem;
     }
 
     @include respond-to(lg) {
       font-size: 3.5rem;
-      line-height: 7rem;
+      line-height: 1.5;
       margin-bottom: 4rem;
     }
   }
@@ -245,6 +256,11 @@
   &__text {
     font-size: 1.4rem;
     line-height: 2.2rem;
+
+    @include respond-to(md) {
+      font-size: 1.2rem;
+      line-height: 2.1rem;
+    }
 
     @include respond-to(lg) {
       font-size: 1.9rem;

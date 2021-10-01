@@ -1,13 +1,22 @@
 .sodium {
   padding: 5rem 0;
 
+  @include respond-to(md) {
+    padding-top: 0;
+  }
+
   &__content {
     @include respond-to(md) {
       display: flex;
       flex-direction: row-reverse;
       gap: 2rem;
+      padding: 0 4vw;
+      margin: 0;
+      justify-content: space-between;
+    }
+
+    @include respond-to(lg) {
       padding: 0 10.8vw;
-      margin: 0 auto;
     }
   }
 
@@ -15,7 +24,7 @@
     margin-bottom: 4rem;
 
     @include respond-to(md) {
-      flex-basis: 43%;
+      flex-basis: 47%;
       position: relative;
       margin-bottom: 0;
     }
@@ -36,16 +45,12 @@
   &__img-small {
     display: none;
 
-    @include respond-to(md) {
+    @include respond-to(lg) {
       display: block;
       position: absolute;
       top: 50%;
       left: 0;
       transform: translateY(-50%);
-      max-width: 15rem;
-    }
-
-    @include respond-to(lg) {
       max-width: 24.9rem;
       right: -32%;
     }
@@ -60,17 +65,16 @@
     }
 
     @include respond-to(md) {
-      flex-basis: 57%;
+      flex-basis: 50%;
       max-width: none;
       padding: 0;
       display: flex;
-      justify-content: flex-end;
       align-items: center;
       position: relative;
     }
 
     @include respond-to(lg) {
-      flex-basis: 50%;
+      justify-content: flex-end;
       padding-right: 6rem;
     }
   }
@@ -79,10 +83,6 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
-
-    @include respond-to(md) {
-      max-width: 25rem;
-    }
 
     @include respond-to(lg) {
       max-width: 40rem;
@@ -114,13 +114,13 @@
     margin-bottom: 3rem;
 
     @include respond-to(md) {
-      font-size: 2rem;
+      font-size: 1.6rem;
       margin-bottom: 2.2rem;
     }
 
     @include respond-to(lg) {
       font-size: 3.5rem;
-      line-height: 7rem;
+      line-height: 1.5;
       margin-bottom: 4rem;
     }
   }
@@ -128,6 +128,11 @@
   &__text {
     font-size: 1.4rem;
     line-height: 2.2rem;
+
+    @include respond-to(md) {
+      font-size: 1.2rem;
+      line-height: 2.1rem;
+    }
 
     @include respond-to(lg) {
       font-size: 1.9rem;
