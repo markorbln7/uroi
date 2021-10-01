@@ -314,6 +314,7 @@
     border: none;
     background-color: transparent;
     font-size: 2.1rem;
+    cursor: pointer;
 
     @include respond-to(lg) {
       font-size: 2.5rem;
@@ -324,6 +325,7 @@
     border: none;
     background-color: transparent;
     font-size: 2.1rem;
+    cursor: pointer;
 
     @include respond-to(md) {
       font-size: 2.5rem;

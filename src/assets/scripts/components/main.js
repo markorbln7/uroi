@@ -7,6 +7,7 @@ import HomepageRenderer from '../renderers/homepage';
 import IngredientRenderer from '../renderers/ingredients';
 import RegimenRenderer from '../renderers/regimen';
 import DefPageRenderer from '../renderers/def-page-renderer';
+import ProductRenderer from '../renderers/product';
 
 
 // Fade
@@ -53,7 +54,7 @@ const H = new Highway.Core({
       index: HomepageRenderer,
       s: FindRenderer,
       u: FindRenderer,
-      product: FindRenderer,
+      product: ProductRenderer,
       faq: FaqRenderer,
       defPage: DefPageRenderer
     },
