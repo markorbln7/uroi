@@ -5,13 +5,12 @@
                 <ul class="def-page__list">
                     {% for block in section.blocks %}
                         <li class="def-page__list-item">{{ block.settings.title }}</li>
-                        {{ block.settings.content }}
                     {% endfor %}
                 </ul>
             </aside>
             <div class="def-page__content">
                 {% for block in section.blocks %}
-                    <h3>{{ block.settings.title }}</h3>
+                    <h2>{{ block.settings.title }}</h2>
                     {{ block.settings.content }}
                 {% endfor %}
             </div>
@@ -21,10 +20,10 @@
 
 {% schema %}
 {
-    "name": "Regular Page Content",
+    "name": "Accessibility Content",
     "blocks": [
         {
-            "name": "Regular Page Blocks",
+            "name": "Accessibility Page Blocks",
             "type": "rp-blocks",
             "settings": [
                 {

@@ -43,6 +43,7 @@
     &__content {
         font-size: 1.6rem;
         line-height: 1.5;
+        color: rgba(0,0,0,.7);
 
         @include respond-to(lg) {
             font-size: 1.8rem;
@@ -50,14 +51,22 @@
 
         h2, h3, h4 {
             line-height: 1.2;
+            color: black;
+        }
+
+        strong {
+            font-weight: bold;
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 3rem;
+
+            @include respond-to(md) {
+                font-size: 4rem;
+            }
 
             @include respond-to(lg) {
-                font-size: 4.5rem;
-                line-height: 7.5rem;
+                font-size: 5rem;
             }
         }
 
