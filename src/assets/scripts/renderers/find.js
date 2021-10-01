@@ -9,7 +9,7 @@ class FindRenderer extends DefaultRenderer {
     onEnterCompleted() {
         super.onEnterCompleted()
         this.Slick = new Slick({
-            el: $('.staples__slider'),
+            el: $('.find__slider'),
             options:{
                 infinite: false,
                 speed: 300,
