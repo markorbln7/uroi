@@ -1,9 +1,9 @@
 <section class="hero {% if section.settings.floating-img %}hero--mb{% endif %}">
-    <div class="hero__bg-image hero__bg-image--mob parallax-wrapper" >
-        <img data-scroll data-scroll-speed="2" class="parallax-element" src="{{ section.settings.img-mob | img_url: 'master'}}" alt="">
-    </div>
-    <div class="hero__bg-image hero__bg-image--desk parallax-wrapper">
-        <img data-scroll data-scroll-speed="2" class="parallax-element" src="{{ section.settings.img-desk | img_url: 'master'}}" alt="">
+    <div class="hero__bg-image hero__bg-image--mob parallax-wrapper">
+        <picture>
+            <source media="(max-width: 600px)" srcset="{{ section.settings.img-mob | img_url: 'master'}}">
+            <img data-scroll data-scroll-speed="-1" class="parallax-element" src="{{ section.settings.img-desk | img_url: 'master'}}" alt="">    
+        </picture>
     </div>
     {% if section.settings.floating-img %} 
         <div class="hero__floating-img-wrapper parallax-wrapper">

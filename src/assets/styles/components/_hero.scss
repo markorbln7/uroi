@@ -9,19 +9,6 @@
     height: 100%;
     display: block;
     z-index: -1;
-    &--desk {
-      display: none;
-
-      @include respond-to(lg) {
-        display: block;
-      }
-    }
-
-    &--mobile {
-      @include respond-to(lg) {
-        display: none;
-      }
-    }
 
     img {
       width: 100%;
@@ -35,7 +22,7 @@
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translate(-50%, -70%);
+    transform: translate(-50%, -80%);
 
     @include respond-to(lg) {
       display: block;

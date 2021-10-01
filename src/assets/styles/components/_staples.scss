@@ -125,8 +125,10 @@
       color: rgba($color-black, 0.6);
       font-family: $serif;
       font-size: 1.6rem;
+      text-align: left;
   
       @include respond-to(md) {
+        text-align: inherit;
         font-size: 1.4rem;
       }
   
@@ -220,6 +222,19 @@
       & > * + * {
         margin-left: 1rem;
         margin-bottom: 0.3rem;
+      }
+    }
+
+    .container-left {
+      padding-right: 0;
+
+      .staples__text,
+      .btn {
+        margin-right: 2rem;
+
+        @include respond-to(md) {
+          margin-right: 0;
+        }
       }
     }
   }

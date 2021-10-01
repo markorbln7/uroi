@@ -24,7 +24,7 @@
 
         @include respond-to(md) {
             padding-left: 10rem;
-            padding-top: 7rem;
+            padding-top: 3rem;
             font-size: 6rem;
             width: 60rem;
             max-width: 100%;
@@ -43,6 +43,7 @@
 
     &__list {
         font-family: $serif;
+        color: #5A5858;
 
         & > * + * {
             margin-top: 3rem;
