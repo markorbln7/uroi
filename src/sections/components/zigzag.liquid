@@ -22,7 +22,9 @@
                 </div>
                 <ul class="features__list">
                     {% for block in section.blocks %}
-                        <li class="features__item">{{ block.first-list-item }}</li>
+                       {% if block.settings.first-list-item %}
+                            <li class="features__item">{{ block.settings.first-list-item }}</li>
+                       {% endif %}
                     {% endfor %}
                 </ul>
             </div>
@@ -75,8 +77,12 @@
             </div>
             <div class="features__text-bottom">
                 <p>
+                  {% assign counter = 1%}
                     {% for block in section.blocks %}
-                        <span class="features__separator"><span class="features__num">0{{ forloop.index }}.</span>{{ block.third-list-item }}</span>
+                        {% if block.settings.third-list-item %}
+                            <span class="features__separator"><span class="features__num">0{{ counter }}.</span>{{ block.settings.third-list-item }}</span>
+                            {% assign counter = counter | plus:1 %}
+                        {% endif %}
                     {% endfor %}
                 </p>
             </div>
