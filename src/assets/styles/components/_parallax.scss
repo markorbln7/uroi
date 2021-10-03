@@ -26,18 +26,18 @@ $delays: 1, 2, 3, 4, 5;
 
     &.is-inview{ 
         transition: opacity 0.7s ease, transform 0.7s ease;
-        transform: translate(0) rotate(0deg) scale(1) !important;
+        transform: translate3d(0, 0 ,0) scale(1) !important;
         opacity: 1 !important;
             
     }
 
     &.from-y {
-        transform: translate(0, 100px);
+        transform: translate3d(0, 40px, 0);
     }
 }
 
 // TRANSITIONS
-.transitioning{
+.transitioning {
     pointer-events: none;
     position: absolute;
     width: 100%;
