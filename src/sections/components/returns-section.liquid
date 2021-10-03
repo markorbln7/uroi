@@ -1,16 +1,25 @@
 <section class="def-page">
     <div class="container-fluid">
         <div class="def-page__container">
-            <aside class="def-page__aside">
+            <aside 
+            data-scroll
+            data-scroll-offset='-100'
+            data-scroll-target="#fixed-target" 
+            data-scroll-sticky
+            class="def-page__aside">
                 <ul class="def-page__list">
                     {% for block in section.blocks %}
-                        <li class="def-page__list-item">{{ block.settings.title }}</li>
+                        <li 
+                        data-title='{{ block.settings.title }}'
+                        class="def-page__list-item">{{ block.settings.title }}</li>
                     {% endfor %}
                 </ul>
             </aside>
-            <div class="def-page__content">
+            <div 
+            id='fixed-target'
+            class="def-page__content">
                 {% for block in section.blocks %}
-                    <h2>{{ block.settings.title }}</h2>
+                    <h2 data-section='{{ block.settings.title }}'>{{ block.settings.title }}</h2>
                     {{ block.settings.content }}
                 {% endfor %}
             </div>

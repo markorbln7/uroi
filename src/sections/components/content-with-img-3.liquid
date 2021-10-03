@@ -1,22 +1,40 @@
 <section class="ingredient">
     <div class="ingredient__wrap">
         <div class="ingredient__left-content">
-            <div class="ingredient__img-box">
-                <picture class="ingredient__img">
-                    <source media="(max-width: 600px)" srcset="{{ section.settings.img-mob | img_url: 'master' }}">
-                    <source media="(max-width: 1200px)" srcset="{{ section.settings.img-tab | img_url: 'master' }}">
-                    <img src="{{ section.settings.img-desk | img_url: 'master' }}" alt="{{ section.settings.alt }}">
-                </picture>
+
+            <!-- IMAGE -->
+            <div class="ingredient__img-box parallax-wrapper">
+                <div class='parallax-element'>
+                    <picture 
+                    data-scroll
+                    data-scroll-speed="-.85"
+                    class="ingredient__img">
+                        <source media="(max-width: 600px)" srcset="{{ section.settings.img-mob | img_url: 'master' }}">
+                        <source media="(max-width: 1200px)" srcset="{{ section.settings.img-tab | img_url: 'master' }}">
+                        <img src="{{ section.settings.img-desk | img_url: 'master' }}" alt="{{ section.settings.alt }}">
+                    </picture>
+                </div>
             </div>
-            <div class="ingredient__heading-box">
-                <div class="ingredient__heading">
+            <!-- END :: IMAGE -->
+
+            <!-- TITLE -->
+            <div 
+            class="ingredient__heading-box">
+                <div 
+                data-scroll 
+                data-scroll-direction="vertical" 
+                data-scroll-repeat="false"
+                class="ingredient__heading should-animate from-y dl-2">
                     <h3>
                         <span class="ingredient__heading-big">{{ section.settings.title-top }}</span>
                         <span class="ingredient__heading-small">{{ section.settings.title-bottom }}</span>
                     </h3>
                 </div>
             </div>
+            <!-- END :: TITLE -->
         </div>
+
+        <!-- RIGHT COLUMN -->
         <div class="ingredient__right-content">
             <div class="ingredient__text">
                 {{ section.settings.copy }}
@@ -29,6 +47,8 @@
                 </picture>
             </div>
         </div>
+        <!-- END :: RIGHT COLUMN -->
+
     </div>
 </section>
 

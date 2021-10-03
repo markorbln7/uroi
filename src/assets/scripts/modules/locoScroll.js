@@ -5,7 +5,7 @@ export default class LocoSroll {
     constructor (options){
         this.$el = options.el[0]
         this.darkNav = options.darkNav
-
+        
         this.toggleDarkNav(this.darkNav ? "add" : "remove")
 
         setTimeout(() => {

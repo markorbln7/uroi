@@ -93,6 +93,8 @@
   }
 
   &__content-wrapper {
+    max-width: 120rem;
+
     @include respond-to(md) {
       display: flex;
       flex-direction: column-reverse;

@@ -1,25 +1,58 @@
-<section class="hero {% if section.settings.floating-img %}hero--mb{% endif %}">
-    <div class="hero__bg-image hero__bg-image--mob parallax-wrapper">
-        <picture class="parallax-element">
-            <source media="(max-width: 600px)" srcset="{{ section.settings.img-mob | img_url: 'master'}}">
+<section class="hero {% if section.settings.floating-img %}hero--mb{% endif %} hero--collections">
+    
+    <!-- IMAGE -->
+    <div 
+    data-scroll 
+    data-scroll-direction="vertical" 
+    data-scroll-repeat="false"
+    class="hero__bg-image hero__bg-image--mob parallax-wrapper should-animate">
+        <div class='parallax-element position-absolute w-100 h-100 t-0 l-0'>
+            <picture class='position-absolute w-100 h-100 t-0 l-0' data-scroll data-scroll-speed="-1">
+                <source media="(max-width: 600px)" srcset="{{ section.settings.img-mob | img_url: 'master'}}">
+                <img src="{{ section.settings.img-desk | img_url: 'master'}}" alt="">    
+            </picture>
+        </div>
+    </div>
+    <!-- END :: IMAGE -->
+
+    <!-- SMALL IMAGE -->
+    {% if section.settings.floating-img %} 
+    <div class="hero__floating-img-wrapper">
+        <div 
+        data-scroll 
+        data-scroll-direction="vertical" 
+        data-scroll-repeat="false"
+        class='should-animate from-y dl-4'>
             <img 
             data-scroll 
-            data-scroll-speed="-1" 
-            src="{{ section.settings.img-desk | img_url: 'master'}}" 
-            alt="">    
-        </picture>
-    </div>
-    {% if section.settings.floating-img %} 
-        <div class="hero__floating-img-wrapper">
-            <img class="hero__floating-img" src="{{  section.settings.floating-img | img_url: 'master'}}" alt="{{ section.settings.floating-img-alt }}">
+            data-scroll-speed="1" 
+            class="hero__floating-img" 
+            src="{{  section.settings.floating-img | img_url: 'master'}}" 
+            alt="{{ section.settings.floating-img-alt }}" />
         </div>
+    </div>
     {% endif %}
+    <!-- END :: SMALL IMAGE -->
+
+    <!-- CONTENT -->
     <div class="hero__container">
-        <div class="hero__content-wrapper hero__content-wrapper--small {% if section.settings.dark-title %}hero__content-wrapper--dark-bottom{% endif %}">
-            <h3 class="hero__subtitle">{{ section.settings.subtitle }}</h3>
-            <h1 class="hero__title">{{ section.settings.title }} </h1>
+        <div 
+        class="hero__content-wrapper hero__content-wrapper--small {% if section.settings.dark-title %}hero__content-wrapper--dark-bottom{% endif %}">
+            <h3 
+            data-scroll 
+            data-scroll-direction="vertical" 
+            data-scroll-repeat="false"
+            class="hero__subtitle should-animate from-y dl-2">{{ section.settings.subtitle }}</h3>
+
+            <h1 
+            data-scroll 
+            data-scroll-direction="vertical" 
+            data-scroll-repeat="false"
+            class="hero__title should-animate from-y dl-3">{{ section.settings.title }} </h1>
         </div>
     </div>
+    <!-- END :: CONTENT -->
+
 </section>
 
 {% schema %}

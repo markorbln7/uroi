@@ -55,7 +55,7 @@ const H = new Highway.Core({
       product: ProductRenderer,
       faq: FaqRenderer,
       contact: ContactRenderer,
-      defPage: DefPageRenderer
+      defpage: DefPageRenderer
     },
     transitions: {
       default: Fade

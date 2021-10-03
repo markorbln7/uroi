@@ -35,3 +35,12 @@ $delays: 1, 2, 3, 4, 5;
         transform: translate(0, 100px);
     }
 }
+
+// TRANSITIONS
+.transitioning{
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+}

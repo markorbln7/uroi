@@ -1,18 +1,15 @@
-import Highway from '@dogstudio/highway';
-import LocoSroll from '../modules/locoScroll';
+import DefaultRenderer from './default'
+import initAside from '../modules/aside'
 
-class DefPageRenderer extends Highway.Renderer {
+class DefPageRenderer extends DefaultRenderer {
     onEnter() {}
-    onLeave() {
-        this.LocoSroll.destroyScroll()       
-    }
+    onLeave() {}
     onEnterCompleted() {
-        this.LocoSroll = new LocoSroll({
-            el: $("#wrapper")
-        })
+      super.onEnterCompleted()
+      initAside(this.LocoSroll)
     }
     onLeaveCompleted() {
-        super.onLeaveCompleted()
+      super.onLeaveCompleted()
     }
 }
 
