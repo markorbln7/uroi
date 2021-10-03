@@ -44,6 +44,7 @@ class Tabs {
         }, {
             opacity: 1,
             onComplete: () => {
+                this.scroll.updateScroll()
                 this.activeSection = newActiveSection
             }
         })
