@@ -37,10 +37,10 @@
     }
 
     &__title {
-      font-size: 10vw;
+      font-size: 4rem;
       
       @include respond-to(md) {
-        font-size: 4.16667vw;
+        font-size: 4rem;
       }
 
       @include respond-to(lg) {

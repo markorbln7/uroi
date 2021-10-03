@@ -36,6 +36,7 @@
 
   &__content {
     position: relative;
+    padding-bottom: 120%;
 
     @include respond-to(lg) {
       &:hover .grid__hover-info {
@@ -44,8 +45,23 @@
     }
   }
 
+  &__link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &__img-box {
+    height: 100%;
+  }
+
+
   &__img img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 
     @include respond-to(lg) {
       max-width: 100%;

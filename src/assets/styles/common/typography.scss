@@ -116,7 +116,12 @@ h6 {
   
   // RESPONSIVE
   html {
-    font-size: 3.2vw;
+    // font-size: 3.2vw;
+    font-size: 14px;
+
+    @include respond-to(sm) {
+      font-size: 15px;
+    }
 
     @include respond-to(md) {
       // font-size: 1.6vw !important; //23.04px
