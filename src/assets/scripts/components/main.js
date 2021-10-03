@@ -8,6 +8,7 @@ import IngredientRenderer from '../renderers/ingredients';
 import RegimenRenderer from '../renderers/regimen';
 import DefPageRenderer from '../renderers/def-page-renderer';
 import ProductRenderer from '../renderers/product';
+import ContactRenderer from '../renderers/contact';
 
 
 // Fade
@@ -18,26 +19,23 @@ class Fade extends Highway.Transition {
   
       // Remove Old View
       from.remove();
+
+      done()
   
       // Animation
-      Tween.fromTo(to, 0.5,
-        { opacity: 0 },
-        {
-          opacity: 1,
-          onComplete: done
-        }
-      );
+      // Tween.to(to, 0.1, {
+      //     opacity: 1,
+      //     // delay: 1,
+      //     onComplete: done
+      // });
     }
   
     out({ from, done }) {
       // Animation
-      Tween.fromTo(from, 0.5,
-        { opacity: 1 },
-        {
+      Tween.to(from, 0.25,{
           opacity: 0,
           onComplete: done
-        }
-      );
+      });
     }
   }
   
@@ -56,12 +54,10 @@ const H = new Highway.Core({
       u: FindRenderer,
       product: ProductRenderer,
       faq: FaqRenderer,
+      contact: ContactRenderer,
       defPage: DefPageRenderer
     },
     transitions: {
       default: Fade
     }
-  });
-
-
-  console.log('This is main js')
+  })

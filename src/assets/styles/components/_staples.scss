@@ -80,18 +80,19 @@
       justify-content: center;
       align-items: center;
       margin-bottom: 2rem;
-    }
-  
-    &__img img {
-      height: 90vw;
-      width: auto;
-  
-      @include respond-to(sm) {
-        height: 40vw;
-      }
-  
-      @include respond-to(lg) { 
-        height: 24vw;
+
+      img {
+        height: 90vw;
+        width: auto;
+        object-fit: contain;
+        
+        @include respond-to(sm) {
+          height: 40vw;
+        }
+    
+        @include respond-to(lg) { 
+          height: 24vw;
+        }
       }
     }
   

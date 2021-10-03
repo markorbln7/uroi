@@ -3,17 +3,14 @@ import LocoSroll from '../modules/locoScroll';
 
 class DefaultRenderer extends Highway.Renderer {
     onEnter() {}
-    onLeave() {
-        console.log('UDRI')
-        this.LocoSroll.destroyScroll()       
-    }
+    onLeave() {}
     onEnterCompleted() {
         this.LocoSroll = new LocoSroll({
             el: $("#wrapper")
         })
     }
     onLeaveCompleted() {
-        
+        this.LocoSroll && this.LocoSroll.destroyScroll() 
     }
 }
 

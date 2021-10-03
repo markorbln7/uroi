@@ -1,49 +1,89 @@
-<section class="series {% if section.settings.no-top-padding %}pt0{% endif %} {% if section.settings.no-bottom-padding %}pb0{% endif %}">
-    <div class="container-left">
-    <div class="series__container">
-       <div class="series__wrap">
-          <h2>{{ section.settings.title }}</h2> 
-          <h6>{{ section.settings.subtitle }}</h6> 
-         <div class="series__text d-none-1">
-          {{ section.settings.copy }}
-       </div>
-          <div class="series__btn-box">
-          <a href="{{ section.settings.btn-link }}" class="btn d-none-1">
-             <span class="btn--span">
-                <span class="btn--arrow">
-                   <svg width="28px" height="19px" viewBox="0 0 28 19"><g stroke="none" stroke-width="1" fill-rule="evenodd"><g transform="translate(-230.000000, -3082.000000)"><path d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z"></path></g></g>
-                   </svg>
+<section 
+class="series {% if section.settings.no-top-padding %}pt0{% endif %} {% if section.settings.no-bottom-padding %}pb0{% endif %}">
+  
+  <!-- MAIN CONTAINER -->
+  <div class="container-left">
+
+      <!-- CONTENT COLUMN -->
+      <div class="series__container">
+
+        <!-- CONTENT COLUMN -->
+        <div class="series__wrap">
+          <h2
+          class='should-animate from-y dl-1' 
+          data-scroll data-scroll-direction="vertical" 
+          data-scroll-repeat="false">{{ section.settings.title }}</h2> 
+
+          <h6 
+          class='should-animate from-y dl-2' 
+          data-scroll data-scroll-direction="vertical" 
+          data-scroll-repeat="false">{{ section.settings.subtitle }}</h6> 
+
+          <div 
+          class='should-animate series__text d-none-1 from-y dl-3' 
+          data-scroll data-scroll-direction="vertical" 
+          data-scroll-repeat="false">{{ section.settings.copy }}</div>
+
+          <!-- BUTTON BOX -->
+          <div 
+          data-scroll data-scroll-direction="vertical" 
+          data-scroll-repeat="false"
+          class="series__btn-box should-animate from-y dl-4">
+            <a href="{{ section.settings.btn-link }}" class="btn d-none-1">
+               <span class="btn--span">
+                  <span class="btn--arrow">
+                     <svg width="28px" height="19px" viewBox="0 0 28 19"><g stroke="none" stroke-width="1" fill-rule="evenodd"><g transform="translate(-230.000000, -3082.000000)"><path d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z"></path></g></g>
+                     </svg>
+                  </span>
+                  {{ section.settings.btn-text }}
                 </span>
-                {{ section.settings.btn-text }}
-                </span>
-                </a>
-             </div>
-             </div>
-          <div class="series__img-content">
-             <div class="series__img-box">
-                <picture class="series__img">
-                   <source media="(max-width: 600px)" srcset="{{ section.settings.img-mob | img_url: 'master' }}">
-                   <source media="(max-width: 1200px)" srcset="{{ section.settings.img-desk | img_url: 'master'  }}"> 
-                   <img src="{{ section.settings.img-desk | img_url: 'master'  }}" alt="Uruoi S-series image">
-                </picture>
-             </div> 
-             <div class="series__text d-none-md">
-               {{ section.settings.copy }}
-            </div>
-             <div class="series__button-wrapper ">
-                <a href="{{ section.settings.btn-link }}" class="btn d-none-md">
-                <span class="btn--span">
-                   <span class="btn--arrow">
-                   <svg width="28px" height="19px" viewBox="0 0 28 19"><g stroke="none" stroke-width="1" fill-rule="evenodd"><g transform="translate(-230.000000, -3082.000000)"><path d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z"></path></g></g>
-                   </svg>
-                </span>
-                   {{ section.settings.btn-text }}
-                </span>
-                </a>
-             </div> 
+            </a>
           </div>
-       </div>
-    </div>
+          <!-- END :: BUTTON BOX -->
+
+        </div>
+        <!-- END :: CONTENT COLUMN -->
+
+        <!-- IMAGE COLUMN -->
+        <div class="series__img-content parallax-wrapper">
+
+           <!-- IMAGE WRAPPER -->
+           <div class="series__img-box parallax-element">
+              <picture data-scroll data-scroll-speed="-.85" class="series__img">
+                 <source media="(max-width: 600px)" srcset="{{ section.settings.img-mob | img_url: 'master' }}">
+                 <source media="(max-width: 1200px)" srcset="{{ section.settings.img-desk | img_url: 'master'  }}"> 
+                 <img src="{{ section.settings.img-desk | img_url: 'master'  }}" alt="Uruoi S-series image">
+              </picture>
+           </div> 
+           <!-- END :: IMAGE WRAPPER -->
+
+           <!-- CAPTION -->
+           <div class="series__text d-none-md">{{ section.settings.copy }}</div>
+           <!-- END:: CAPTION -->
+
+           <!-- BUTTON -->
+           <div class="series__button-wrapper">
+              <a href="{{ section.settings.btn-link }}" class="btn d-none-md">
+                <span class="btn--span">
+                  <span class="btn--arrow">
+                     <svg width="28px" height="19px" viewBox="0 0 28 19"><g stroke="none" stroke-width="1" fill-rule="evenodd"><g transform="translate(-230.000000, -3082.000000)"><path d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z"></path></g></g>
+                     </svg>
+                  </span>
+                  {{ section.settings.btn-text }}
+                </span>
+              </a>
+           </div> 
+           <!-- END :: BUTTON -->
+
+        </div>
+        <!-- END :: IMAGE COLUMN -->
+
+     </div>
+     <!-- END :: CONTENT COLUMN -->
+
+  </div>
+  <!-- END :: MAIN CONTAINER -->
+
  </section>
 
  {% schema %}

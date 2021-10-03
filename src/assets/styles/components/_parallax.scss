@@ -1,9 +1,37 @@
+// PARALLAX
 .parallax-element {
-    transform: scale(1.2);
+    transform: scale(1.075);
     picture {
         display:block;
     }
 }
 .parallax-wrapper {
     overflow: hidden;
+}
+
+
+// IN VIEWPORT ANIMATIONS
+$delays: 1, 2, 3, 4, 5;
+
+.should-animate {
+    opacity: 0;
+    will-change: opacity, transform;
+
+    // TRANSITION DELAYS FOR STAGGERS
+    @each $delay in $delays {
+      &.dl-#{$delay} {
+        transition-delay: ($delay / 2) * .1s!important;
+      }
+    }
+
+    &.is-inview{ 
+        transition: opacity 0.7s ease, transform 0.7s ease;
+        transform: translate(0) rotate(0deg) scale(1) !important;
+        opacity: 1 !important;
+            
+    }
+
+    &.from-y {
+        transform: translate(0, 100px);
+    }
 }

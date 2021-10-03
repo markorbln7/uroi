@@ -12,7 +12,7 @@ class DefPageRenderer extends Highway.Renderer {
         })
     }
     onLeaveCompleted() {
-        
+        super.onLeaveCompleted()
     }
 }
 

@@ -1,19 +1,27 @@
-import LocomotiveScroll from 'locomotive-scroll';
+import LocomotiveScroll from 'locomotive-scroll'
+import { gsap } from 'gsap'
 
 export default class LocoSroll {
     constructor (options){
         this.$el = options.el[0]
+        this.darkNav = options.darkNav
+
+        this.toggleDarkNav(this.darkNav ? "add" : "remove")
+
         setTimeout(() => {
             this.initScroll()
-            console.log(this.scroll)
-            this.scroll.on('scroll', args => {
-                if(args.scroll.y > 300) {
-                    document.querySelector('header').classList.add('header--dark');
-                } else {
-                    document.querySelector('header').classList.remove('header--dark');
-                }
-            })
+            this.initScrollEvents()
         },100)
+    }
+
+    initScrollEvents() {
+        this.scroll.on('scroll', args => {
+            this.toggleDarkNav(args.scroll.y > 300 || this.darkNav ? "add" : "remove")
+        })
+    }
+
+    toggleDarkNav(method = "remove") {
+        document.querySelector('header').classList.[method]('header--dark')
     }
 
     initScroll() {
@@ -23,17 +31,19 @@ export default class LocoSroll {
             inertia: 1
         })
 
-        window.locoScroll = this.scroll;
+
+        setTimeout(() => {
+            this.scroll.update()
+        }, 300)
+
+        window.locoScroll = this.scroll
     }
 
     destroyScroll() {
         this.scroll.destroy()
-        //this.$el.css("transform", "none")
-        console.log('DESTROY')
     }
 
     updateScroll(el) {
-        console.log("UPDATE",this.scroll) 
         this.scroll.update()
         if(el) {
             this.scroll.scrollTo(el, {

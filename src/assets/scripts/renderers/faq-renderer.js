@@ -1,34 +1,32 @@
-import Highway from '@dogstudio/highway';
-import LocoSroll from '../modules/locoScroll';
+import DefaultRenderer from './default'
 
-class FaqRenderer extends Highway.Renderer {
+class FaqRenderer extends DefaultRenderer {
     onEnter() {}
-    onLeave() {
-        this.LocoSroll.destroyScroll()       
-    }
+    onLeave() {}
+
     onEnterCompleted() {
-        this.LocoSroll = new LocoSroll({
-            el: $("#wrapper")
+        super.onEnterCompleted()
+
+        // SCROLL TO ASIDE
+        const sideButtons = document.querySelectorAll('.def-page__list-item');
+        sideButtons.forEach((btn, i) => {
+            btn.addEventListener('click', (e) => {
+                let sectionTitle = e.target.dataset.title
+                let section = document.querySelector(`[data-section="${sectionTitle}"]`)
+                this.LocoSroll.updateScroll(section)
+            })
         })
 
-        // const buttons = document.querySelectorAll('.faq-accordion__button');
-        // const sideButtons = document.querySelectorAll('.def-page__list-item');
-        // const titles = document.querySelectorAll('.def-page__title');
-
-        // sideButtons.forEach((button, i) => {
-        //     button.addEventListener('click', () => {
-        //         this.LocoSroll.scrollTo(titles[i]);
-        //     })
-        // })
-       
-        // buttons.forEach((button, i) => {
-        //     button.addEventListener('click', () => {
-        //         button.parentElement.classList.toggle('faq-accordion__item--active');
-        //     })
-        // })
+       // ACCORDIONS
+       const buttons = document.querySelectorAll('.faq-accordion__button');
+        buttons.forEach((button, i) => {
+            button.addEventListener('click', () => {
+                button.parentElement.classList.toggle('faq-accordion__item--active');
+            })
+        })
     }
     onLeaveCompleted() {
-        
+        super.onLeaveCompleted()
     }
 }
 

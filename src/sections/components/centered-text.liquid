@@ -1,14 +1,26 @@
 <section class="fit">
   <div class="container">
-    <div class="fit__wrap">
-      <div class="fit__title">
+    <div
+    class="fit__wrap">
+
+      <div 
+      data-scroll 
+      data-scroll-direction="vertical" 
+      data-scroll-repeat="false"
+      class="fit__title should-animate from-y dl-1">
         <h2>{{ section.settings.title }}</h2>
       </div>
-      <div class="fit__text-box">
+
+      <div 
+      data-scroll 
+      data-scroll-direction="vertical" 
+      data-scroll-repeat="false"
+      class="fit__text-box should-animate from-y dl-2">
         <div class="fit__text mb-1-to-sm">
           {{ section.settings.content }}
         </div>
       </div>
+
     </div>
   </div>
 </section>

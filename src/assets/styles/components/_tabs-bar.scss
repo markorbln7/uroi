@@ -1,5 +1,10 @@
 .tabs-bar {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .5s;
     display: none;
+    position: absolute;
+    top: 100%;
 
     @include respond-to(lg) { 
         align-items: center;
@@ -10,9 +15,11 @@
         width: 100%;
         padding: 0 10.67708vw;
         gap: 11rem;
+        display: flex;
 
         &--show {
-            display: flex;
+            pointer-events: all;
+            opacity: 1;
         }
     }
 

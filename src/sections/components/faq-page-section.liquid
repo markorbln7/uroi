@@ -1,30 +1,51 @@
-<section class="def-page">
+<section id='fixed-target' class="def-page">
     <div class="container-fluid">
         <div class="def-page__container">
-            <aside class="def-page__aside">
+            <aside 
+            data-scroll
+            data-scroll-offset='-100'
+            data-scroll-target="#fixed-target" 
+            data-scroll-sticky
+            class="def-page__aside">
                 <ul class="def-page__list">
-                    <li class="def-page__list-item active">
+                    <li 
+                    data-title='general'
+                    class="def-page__list-item active">
                         General
                     </li>
-                    <li class="def-page__list-item">
+                    <li 
+                    data-title='products'
+                    class="def-page__list-item">
                         Products
                     </li>
-                    <li class="def-page__list-item">
+                    <li 
+                    data-title='regimen'
+                    class="def-page__list-item">
                         Regimen
                     </li>
-                    <li class="def-page__list-item">
+                    <li 
+                    data-title='payment'
+                    class="def-page__list-item">
                         Payment and Shipping
                     </li>
-                    <li class="def-page__list-item">
+                    <li 
+                    data-title='returns'
+                    class="def-page__list-item">
                         Returns and exchanges
                     </li>
-                    <li class="def-page__list-item">
+                    <li 
+                    data-title='other'
+                    class="def-page__list-item">
                         Other Questions?
                     </li>
                 </ul>
             </aside>
+
             <div class="def-page__content def-page__content--faq">
-                <h2 class="def-page__title">General</h2>
+
+                <h2 
+                data-section='general' 
+                class="def-page__title">General</h2>
                 <ul class="faq-accordion">
                     <li class="faq-accordion__item faq-accordion__item--active">
                         <button class="faq-accordion__button">What does uruoi mean?</button>
@@ -51,7 +72,10 @@
                         </div>
                     </li>
                 </ul> 
-                <h2 class="def-page__title">Products</h2>
+
+                <h2 
+                data-section='products'
+                class="def-page__title">Products</h2>
                 <ul class="faq-accordion">
                     <li class="faq-accordion__item faq-accordion__item--active">
                         <button class="faq-accordion__button">What does uruoi mean?</button>
@@ -78,7 +102,10 @@
                         </div>
                     </li>
                 </ul>
-                <h2 class="def-page__title">Regimen</h2>
+
+                <h2 
+                data-section='regimen'
+                class="def-page__title">Regimen</h2>
                 <ul class="faq-accordion">
                     <li class="faq-accordion__item faq-accordion__item--active">
                         <button class="faq-accordion__button">What does uruoi mean?</button>
@@ -105,7 +132,11 @@
                         </div>
                     </li>
                 </ul>
-                <h2 class="def-page__title">Payment and Shipping</h2>
+
+
+                <h2 
+                data-section='payment'
+                class="def-page__title">Payment and Shipping</h2>
                 <ul class="faq-accordion">
                     <li class="faq-accordion__item faq-accordion__item--active">
                         <button class="faq-accordion__button">What does uruoi mean?</button>
@@ -132,7 +163,10 @@
                         </div>
                     </li>
                 </ul>
-                <h2 class="def-page__title">Returns and exchanges</h2>
+
+                <h2 
+                data-section='returns'
+                class="def-page__title">Returns and exchanges</h2>
                 <ul class="faq-accordion">
                     <li class="faq-accordion__item faq-accordion__item--active">
                         <button class="faq-accordion__button">What does uruoi mean?</button>
@@ -159,7 +193,10 @@
                         </div>
                     </li>
                 </ul>
-                <h2 class="def-page__title">Other Questions?</h2>
+
+                <h2 
+                data-section='other'
+                class="def-page__title">Other Questions?</h2>
                 <div>
                     <p>If you have any other questions, please email us at <a href="mailto:hello@uruoiskincare.com">hello@uruoiskincare.com</a>. with your questions, and we will do our best to reply as quickly as we can!</p>
                 </div>

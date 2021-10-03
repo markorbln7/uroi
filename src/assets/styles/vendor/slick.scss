@@ -90,6 +90,7 @@
 .slick-slide img
 {
     display: block;
+    object-fit: contain;
 }
 .slick-slide.slick-loading img
 {

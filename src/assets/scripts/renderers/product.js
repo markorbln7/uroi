@@ -1,5 +1,6 @@
 import DefaultRenderer from './default'
 import Slick from '../modules/slider'
+import LocoSroll from '../modules/locoScroll'
 
 class ProductRenderer extends DefaultRenderer {
     onEnter() {}
@@ -7,7 +8,14 @@ class ProductRenderer extends DefaultRenderer {
         super.onLeave()
     }
     onEnterCompleted() {
-        super.onEnterCompleted()
+        // super.onEnterCompleted()
+
+        this.LocoSroll = new LocoSroll({
+            el: $("#wrapper"),
+            darkNav: "add"
+        })
+
+
         this.Slick = new Slick({
             el: $('.find__slider'),
             options:{
@@ -45,8 +53,10 @@ class ProductRenderer extends DefaultRenderer {
             let currentAmmount = Number(cta.getAttribute('data-quantity'))
             let toSet = currentAmmount + 1
             ammount.textContent = toSet
-            cta.setAttribute('data-quantity', toSet) })
-            decrease.addEventListener('click', function () {
+            cta.setAttribute('data-quantity', toSet) 
+        })
+
+        decrease.addEventListener('click', function () {
             let currentAmmount = Number(cta.getAttribute('data-quantity'))
             let toSet = currentAmmount - 1
             if (currentAmmount > 1) {
@@ -54,6 +64,7 @@ class ProductRenderer extends DefaultRenderer {
                 cta.setAttribute('data-quantity', toSet)
             }
         })
+        
     }
     onLeaveCompleted() {
         super.onLeaveCompleted()

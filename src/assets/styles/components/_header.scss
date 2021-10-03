@@ -8,6 +8,7 @@
     font-size: 1.8rem;
     padding-top: 2.4rem;
     border: none;
+    transition: background .5s, color .5s;
 
     &--scrolled {
         background: white;
@@ -108,6 +109,7 @@
     &__logo {
         max-width: 7.8rem;
         fill: white;
+        transition: .5s;
 
         @include respond-to(md) {
             width: 100%;
@@ -115,7 +117,7 @@
         }
 
         @include respond-to(lg) {
-            max-width: 18.5rem;
+            max-width: 14.5rem;
         }
     }
 

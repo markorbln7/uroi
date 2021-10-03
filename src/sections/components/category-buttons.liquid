@@ -1,7 +1,14 @@
 <section class="types">
-  <div class="container">
+
+  <div 
+  data-scroll 
+  data-scroll-direction="vertical" 
+  data-scroll-repeat="false"
+  class="container should-animate from-y dl-1">
     <p class="types__subtitle">{{ section.settings.title }}</p>
     <div class="types__wrap">
+
+
       <div class="types__card" data-index="0">
         <div class="types__img-box">
           <picture class="types__img">
@@ -17,6 +24,7 @@
         </div>
         <span class="types__span types__active">Oily/Combination </span>
       </div>
+
       <div class="types__card" data-index="1">
         <div class="types__img-box">
           <picture class="types__img">
@@ -32,6 +40,8 @@
         </div>
         <span class="types__span"> Normal </span>
       </div>
+
+
       <div class="types__card" data-index="2">
         <div class="types__img-box">
           <picture class="types__img">
@@ -47,6 +57,8 @@
         </div>
         <span class="types__span"> Sensitive </span>
       </div>
+
+
       <div class="types__card" data-index="3">
         <div class="types__img-box">
           <picture class="types__img">
@@ -62,8 +74,11 @@
         </div>
         <span class="types__span"> dry skin </span>
       </div>
+
+
     </div>
   </div>
+
 </section>
 
 {% schema %}

@@ -1,27 +1,53 @@
 <section class="science parallax-wrapper">
   <div class="container">
-    <picture class="science__img">
+
+    <!-- BG IMAGE -->
+    <picture class="science__img parallax-element">
       <source media="(max-width: 600px)" srcset="{{
         section.settings.img-mob  | img_url: 'master'
-      }}"> <source media="(max-width: 1200px)" srcset="{{
+      }}"> 
+      <source media="(max-width: 1200px)" srcset="{{
         section.settings.img-desk  | img_url: 'master'
-      }}"> <img class="parallax-element" data-scroll data-scroll-speed="2" src="{{ section.settings.img-desk  | img_url: 'master' }}" alt="{{ section.settings.alt }}">
+      }}"> 
+      <img
+      data-scroll 
+      data-scroll-speed="-.85" 
+      src="{{ section.settings.img-desk  | img_url: 'master' }}" 
+      alt="{{ section.settings.alt }}">
     </picture>
+    <!-- END :: BG IMAGE -->
+
+    <!-- CONTENT -->
     <div class="science__wrap">
+
       <a href="#" class="science__link">
-        <div class="science__subtitle">
+        <div 
+        data-scroll data-scroll-direction="vertical" 
+        data-scroll-repeat="false"
+        class="science__subtitle should-animate from-y dl-1">
           <span class="science__span">{{ section.settings.subtitle }}</span>
         </div>
-        <div class="science__title">
+
+        <div 
+        data-scroll data-scroll-direction="vertical" 
+        data-scroll-repeat="false"
+        class="science__title should-animate from-y dl-2">
           <h4>{{ section.settings.title }}</h4>
         </div>
-        <div>
+
+        <div
+        class='should-animate from-y dl-2'
+        data-scroll data-scroll-direction="vertical" 
+        data-scroll-repeat="false">
           <div class="science__text">
             {{ section.settings.copy }}
           </div>
         </div>
+
       </a>
     </div>
+    <!-- END :: CONTENT -->
+
   </div>
 </section>
 

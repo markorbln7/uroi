@@ -3,6 +3,7 @@
 
     &__container {
         display: flex;
+        align-items: flex-start;
         padding: 0 2rem;
 
         @include respond-to(lg) {
