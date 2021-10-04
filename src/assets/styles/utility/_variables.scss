@@ -158,7 +158,7 @@ $space--utility--100: 100px;
 
 /*==== Transitions ====*/
 $bezier: cubic-bezier(0.23, 1, 0.32, 1); // easeOutQuint
-$timing: 0.4s;
+$timing: 0.6s;
 $timing--quick: 0.2s;
 $timing--slow: 0.4s;
 $base-transition: $timing $bezier;

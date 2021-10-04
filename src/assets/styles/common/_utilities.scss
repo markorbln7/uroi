@@ -56,6 +56,10 @@ header {
 // }
 
 
+.disabled{
+    pointer-events: none;
+}
+
 .mobile-show {
     display:block;
     @include respond-to(md) {

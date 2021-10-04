@@ -1,6 +1,10 @@
 <section class="product">
   <div class="container">
-    <div class="product__top-wrap">
+    <div 
+    data-scroll 
+    data-scroll-direction="vertical" 
+    data-scroll-repeat="false"
+    class="product__top-wrap should-animate from-y">
       <div class="product__breadcrumb-box">
         <ul class="product__breadcrumb-list">
           <li class="product__item">
@@ -21,15 +25,25 @@
       </div>
     </div>
   </div>
+
   <div class="product__content">
-    <div class="product__img-box">
+    <div 
+    data-scroll 
+    data-scroll-direction="vertical" 
+    data-scroll-repeat="false"
+    class="product__img-box should-animate from-y dl-1">
       <picture class="product__img">
         <source media="(max-width: 600px)" srcset="{{ product.featured_image | img_url: 'master' }}">
         <source media="(max-width: 1200px)" srcset="{{ product.featured_image | img_url: 'master' }}">
         <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
       </picture>
     </div>
-    <div class="product__right-box">
+
+    <div 
+    data-scroll 
+    data-scroll-direction="vertical" 
+    data-scroll-repeat="false"
+    class="product__right-box should-animate from-y dl-1">
       <div class="product__top-buttons d-none-2">
         <a href="#" class="product__btn">prev</a>
         <span class="product__separator">-</span>
@@ -75,7 +89,7 @@
             </div>
           </div>
           <button class="atc-button add-to-cart btn btn--cart" data-variant-Id="{{product.variants[0].id}}" data-quantity="1">
-            <span class="btn--span">
+            <span class="btn--span disabled">
               <span class="btn--arrow">
                 <svg width="28px" height="19px" viewBox="0 0 28 19">
                   <g stroke="none" stroke-width="1" fill-rule="evenodd">

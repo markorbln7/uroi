@@ -1,6 +1,14 @@
-<section class="features">
+<section class="features zigzag">
+
+    <!-- TOP SECTION -->
     <div class="features__content-top">
-        <div class="container">
+
+        <!-- TOP TITLE -->
+        <div 
+        data-scroll 
+        data-scroll-direction="vertical" 
+        data-scroll-repeat="false"
+        class="container should-animate from-y">
             <div class="features__heading-box">
                 <span class="features__subtitle">
                     {{ section.settings.subtitle }}
@@ -10,17 +18,39 @@
                 </div>
             </div>
         </div>
+        <!-- END :: TOP TITLE -->
+
         <div class="features__container">
-            <picture class="features__img-box">
-                <source media="(max-width: 600px)" srcset="{{ section.settings.first-img-mob | img_url: 'master' }}">
-                <source media="(max-width: 1200px)" srcset="{{ section.settings.first-img-tab | img_url: 'master' }}">
-                <img src="{{ section.settings.first-img-desk | img_url: 'master' }}" alt="{{ section.settings.first-img-alt }}">
-            </picture>
+
+            <!-- IMAGE -->
+            <div class='parallax-wrapper'>
+                <div class='parallax-element'>
+                    <picture 
+                    data-scroll 
+                    data-scroll-speed="-.85"
+                    class="features__img-box">
+                        <source media="(max-width: 600px)" srcset="{{ section.settings.first-img-mob | img_url: 'master' }}">
+                        <source media="(max-width: 1200px)" srcset="{{ section.settings.first-img-tab | img_url: 'master' }}">
+                        <img src="{{ section.settings.first-img-desk | img_url: 'master' }}" alt="{{ section.settings.first-img-alt }}">
+                    </picture>
+                </div>
+            </div>
+            <!-- IMAGE -->
+
+            <!-- FEATURES LIST -->
             <div class="features__wrap">
-                <div class="features__heading-sub ml-3-lg">
+                <div 
+                data-scroll 
+                data-scroll-direction="vertical" 
+                data-scroll-repeat="false"
+                class="features__heading-sub ml-3-lg should-animate from-y dl-1">
                     <h3>{{ section.settings.first-title }}</h3>
                 </div>
-                <ul class="features__list">
+                <ul 
+                data-scroll 
+                data-scroll-direction="vertical" 
+                data-scroll-repeat="false"
+                class="features__list should-animate from-y dl-1">
                     {% for block in section.blocks %}
                        {% if block.settings.first-list-item %}
                             <li class="features__item">{{ block.settings.first-list-item }}</li>
@@ -28,21 +58,44 @@
                     {% endfor %}
                 </ul>
             </div>
+            <!-- END :: FEATURES LIST -->
         </div>
+
     </div>
+    <!-- END :: TOP SECTION -->
+
+
+    <!-- MIDDLE SECTION -->
     <div class="features__content-mid">
+
+        <!-- LEFT COLUMN -->
         <div class="features__left-box-mid">
-            <div class="features__title">
+
+            <div 
+            data-scroll 
+            data-scroll-direction="vertical" 
+            data-scroll-repeat="false"
+            class="features__title should-animate from-y">
                 <h2>{{ section.settings.second-title }}</h2>
             </div>
-            <div class="features__img-box-mid">
+
+            <div 
+            data-scroll 
+            data-scroll-direction="vertical" 
+            data-scroll-repeat="false"
+            class="features__img-box-mid should-animate from-y dl-1">
                 <picture class="features__img-mid">
                     <source media="(max-width: 600px)" srcset="{{ section.settings.second-img-mob | img_url: 'master' }}">
                     <source media="(max-width: 1200px)" srcset="{{ section.settings.second-img-tab | img_url: 'master' }}">
                     <img src="{{ section.settings.second-img-desk | img_url: 'master' }}" alt="{{ section.settings.second-img-alt }}">
                 </picture>
             </div>
-            <div class="features__text-wrap">
+
+            <div 
+            data-scroll 
+            data-scroll-direction="vertical" 
+            data-scroll-repeat="false"
+            class="features__text-wrap should-animate from-y dl-2">
                 <div class="features__text-desc">
                     {{ section.settings.second-copy-1 }}
                 </div>
@@ -53,29 +106,65 @@
                     {{ section.settings.second-copy-3 }}
                 </div>
             </div>
+
         </div>
+        <!-- END :: LEFT COLUMN -->
+
+        <!-- RIGHT COLUMN -->
         <div class="features__right-box-mid">
-            <div class="features__heading-sub">
+            <div 
+            data-scroll 
+            data-scroll-direction="vertical" 
+            data-scroll-repeat="false"
+            class="features__heading-sub should-animate from-y dl-1">
                 <h3>{{ section.settings.second-content-title }}</h3>
             </div>
-            <div class="features__text-mid">
+
+            <div 
+            data-scroll 
+            data-scroll-direction="vertical" 
+            data-scroll-repeat="false"
+            class="features__text-mid should-animate from-y dl-2">
                 {{ section.settings.second-content }}
             </div>
         </div>
+        <!-- END :: RIGHT COLUMN -->
+
     </div>
+    <!-- END :: MIDDLE SECTION -->
+
+    <!-- BOTTOM SECTION -->
     <div class="features__content-bottom">
-        <div class="features__img-box-bottom">
-            <picture class="features__img-bottom">
-                <source media="(max-width: 600px)" srcset="{{ section.settings.third-img-mob | img_url: 'master' }}">
-                <source media="(max-width: 1200px)" srcset="{{ section.settings.third-img-tab | img_url: 'master' }}">
-                <img src="{{ section.settings.third-img-desk | img_url: 'master' }}" alt="{{ section.settings.third-img-alt }}">
-            </picture>
+        <!-- IMAGE WRAPPER -->
+        <div class="features__img-box-bottom parallax-wrapper">
+            <div class="parallax-element">
+                <picture 
+                data-scroll 
+                data-scroll-speed="-.85"
+                class="features__img-bottom">
+                    <source media="(max-width: 600px)" srcset="{{ section.settings.third-img-mob | img_url: 'master' }}">
+                    <source media="(max-width: 1200px)" srcset="{{ section.settings.third-img-tab | img_url: 'master' }}">
+                    <img src="{{ section.settings.third-img-desk | img_url: 'master' }}" alt="{{ section.settings.third-img-alt }}">
+                </picture>
+            </div>
         </div>
+        <!-- END :: IMAGE WRAPPER -->
+
+        <!-- NUMBERED LIST -->
         <div class="features__wrap-bottom">
-            <div class="features__heading-sub">
+            <div 
+            data-scroll 
+            data-scroll-direction="vertical" 
+            data-scroll-repeat="false"
+            class="features__heading-sub should-animate dl-1 from-y">
                 <h3>{{ section.settings.third-title }}</h3>
             </div>
-            <div class="features__text-bottom">
+
+            <div 
+            data-scroll 
+            data-scroll-direction="vertical" 
+            data-scroll-repeat="false"
+            class="features__text-bottom should-animate dl-2 from-y">
                 <p>
                   {% assign counter = 1%}
                     {% for block in section.blocks %}
@@ -87,7 +176,11 @@
                 </p>
             </div>
         </div>
+        <!-- END :: NUMBERED LIST -->
+
     </div>
+    <!-- END :: BOTTOM SECTION -->
+
 </section>
 
 {% schema %}
