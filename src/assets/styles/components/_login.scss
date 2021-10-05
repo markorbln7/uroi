@@ -1,0 +1,208 @@
+.login {
+    background-color: #f7f7f7;
+    padding: 29.6875vw 6.25vw 26.5625vw;
+
+    @include respond-to(md) {
+        padding: 33.20312vw 21.875vw 37.10938vw;
+    }
+
+    @include respond-to(lg) {
+        padding: 12.23958vw 10.15625vw 4.94792vw;
+        display: flex;
+        justify-content: space-between;
+        background: transparent;
+    }
+
+    &__title {
+        font-size: 10vw;
+        margin: 0 0 9.375vw;
+        line-height: normal;
+        text-align: center;
+        color: black;
+        text-transform: none;
+
+        @include respond-to(md) {
+            font-size: 6.51042vw;
+            margin-bottom: 10.41667vw;
+        }
+
+        @include respond-to(lg) {
+            font-size: 2.44792vw;
+            margin-bottom: 4.42708vw;
+        }
+    }
+
+    &__content {
+        @include respond-to(lg) {
+            width: 22.39583vw;
+        }
+    }
+
+    &__desktop {
+        display: none;
+
+        @include respond-to(lg) {
+            display: flex;
+            position: relative;
+            width: 43.95833vw;
+            height: 38.75vw;
+        }
+
+        span {
+            position: absolute;
+            bottom: 20.88542vw;
+            left: 29.01042vw;
+            font-family: GTSectraDisplay-Regular,serif;
+            font-size: 1.97917vw;
+            line-height: normal;
+            color: #b9b9b9;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            height: 1px;
+            width: 62.86458vw;
+            background: #979797;
+            left: -4.6875vw;
+            top: 3.4375vw;
+            -webkit-transform-origin: left;
+            transform-origin: left;
+            -webkit-transform: rotate(34deg);
+            transform: rotate(34deg);
+            z-index: -1;
+        }
+    }
+
+    .login-img-wrap {
+        position: absolute;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .img-wrap-1 {
+        left: 0;
+        top: 0;
+        width: 27.65625vw;
+        height: 34.73958vw;
+    }
+
+    .img-wrap-2 {
+        width: 18.75vw;
+        height: 19.6875vw;
+        right: 0;
+        bottom: 0;
+    }
+
+    &__forgot {
+        border: none;
+        padding: 0;
+        background-color: transparent;
+        text-align: right;
+        display: block;
+        cursor: pointer;
+        font-size: 3.75vw;
+        letter-spacing: .01562vw;
+        color: rgba(0,0,0,.6);
+        float: right;
+        transform: translateY(-2rem);
+
+        @include respond-to(md) {
+            font-size: 1.95312vw;
+            letter-spacing: .00781vw;
+        }
+
+        @include respond-to(lg) {
+            font-size: .78125vw;
+            letter-spacing: .00313vw;
+        }
+    }
+
+    &__signup-box {
+        text-align: center;
+
+        @include respond-to(md) {
+            font-size: 2.34375vw;
+            letter-spacing: .01042vw;
+        }
+
+        @include respond-to(lg) {
+            font-size: .9375vw;
+            letter-spacing: .00417vw;
+        }
+    }
+
+    &__underline-btn {
+        position: relative;
+        display: inline-block;
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 1px;
+            bottom: -2px;
+            background: #000;
+            position: absolute;
+            left: 0;
+        }
+    }
+
+    .input {
+        background: transparent;
+        border-radius: 0;
+        height: 15.625vw;
+        width: 100%;
+        line-height: 15.625vw;
+        border: none;
+            border-bottom-color: currentcolor;
+            border-bottom-style: none;
+            border-bottom-width: medium;
+        border-bottom: 2px solid rgba(0,0,0,.4);
+        font-size: 5vw;
+        padding: 0;
+        outline: none;
+        font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+
+        @include respond-to(md) {
+            height: 5.46875vw;
+            font-size: 2.34375vw;
+        }
+
+        @include respond-to(lg) {
+            height: 2.1875vw;
+            font-size: .9375vw;
+            border-width: 1px;
+        }
+    }
+
+    .btn {
+        border: none;
+        padding: 0;
+        height: 18.4375vw;
+        width: 100%;
+        max-width: 100%;
+        font-size: 4.6875vw;
+        margin-bottom: 6.25vw;
+        cursor: pointer;
+        position: relative;
+        transition: background-color .5s cubic-bezier(.16,.01,.13,.99);
+        margin-top: 8vw;
+
+        @include respond-to(md) {
+            height: 13.02083vw;
+            font-size: 2.60417vw;
+            margin-bottom: 3.38542vw;
+        }
+
+        @include respond-to(lg) {
+            height: 5.20833vw;
+            font-size: 1.04167vw;
+            margin-bottom: 1.5625vw;
+            margin-top: 3rem;
+        }
+    }
+}

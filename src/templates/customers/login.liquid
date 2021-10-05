@@ -1,0 +1,51 @@
+<div id="wrapper" data-scroll-container data-router-view="login">
+    <section class="login">
+        <div class="login__content">
+            <h1 class="login__title">Log In</h1>
+            
+            {% form 'customer_login', class: "form" %}
+                {{ form_errors | default_errors }}
+                <ul class="login__inputs">
+                    <li>
+                        <div class="form__input-box">
+                            <!-- <label for="email" class="form__label">email</label> -->
+                            <input type="email" id="email" name="customer[email]" placeholder="email" class="input">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form__input-box">
+                            <!-- <label for="password" class="form__label">Your password</label> -->
+                            <input type="password" id="password" name="customer[password]" placeholder="password" class="input">
+                        </div>
+                    </li>
+                    <button id="forgot-pass-btn" class="login__forgot">forgot your password?</button>
+                </ul>
+                <button type="subumit" class="btn btn--black">log in</button>
+                <div class="login__signup-box">
+                    <span>don't have an account?</span>
+                    <a href="{{ routes.account_register_url }}" class="login__underline-btn">sign up</a>
+                </div> 
+            {% endform %}  
+        </div>
+        <div class="login__desktop">
+            <div class="login-img-wrap img-wrap-1">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="https://uruoiskincare.com/img/login-1.jpg">
+                    <img src="" alt="Uruoi Home Background Image">
+                </picture>
+            </div> 
+            <div class="login-img-wrap img-wrap-2">
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="https://uruoiskincare.com/img/login-2.jpg">
+                    <img src="" alt="Uruoi Home Background Image">
+                </picture>
+            </div>
+            <span>
+            おかえり! <br>
+            Welcome Back.
+            </span>
+        </div>
+
+    </section> 
+    {% include 'global-footer' %}
+</div>

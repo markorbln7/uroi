@@ -45,7 +45,7 @@
     function openDrawer() {
         drawer.classList.add('menu-drawer--open');
     }
-
+    
     function closeDrawer(e) {
         if(e.target.classList.contains('menu-drawer')) {
             drawer.classList.remove('menu-drawer--open');
@@ -54,6 +54,8 @@
 
     function toggleHamburger() {
         header.classList.toggle('header--open');
+        header.classList.toggle('header--dark');
+        document.body.classList.toggle('noscroll')
     }
 
     drawer.addEventListener('click', closeDrawer)

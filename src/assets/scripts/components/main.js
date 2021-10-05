@@ -9,6 +9,7 @@ import RegimenRenderer from '../renderers/regimen';
 import DefPageRenderer from '../renderers/def-page-renderer';
 import ProductRenderer from '../renderers/product';
 import ContactRenderer from '../renderers/contact';
+import LoginRenderer from '../renderers/login';
 
 
 // Fade
@@ -55,7 +56,9 @@ const H = new Highway.Core({
       product: ProductRenderer,
       faq: FaqRenderer,
       contact: ContactRenderer,
-      defpage: DefPageRenderer
+      defpage: DefPageRenderer,
+      login: LoginRenderer,
+      register: LoginRenderer
     },
     transitions: {
       default: Fade
