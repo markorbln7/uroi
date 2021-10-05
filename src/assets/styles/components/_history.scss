@@ -51,8 +51,8 @@
     }
 
     &__content {
-        font-size: 1.4rem;
-        line-height: 2.2rem;
+        font-size: 14px;
+        line-height: 22px;
 
         @include respond-to(md) {
             font-size: 1.2rem;
