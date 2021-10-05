@@ -1,5 +1,5 @@
 .staples {
-    padding: 3.6rem 0;
+    padding: 36px 0;
 
     @include respond-to(md) {
         padding: 5rem 0;
@@ -37,7 +37,7 @@
     }
 
     &__title {
-      font-size: 4rem;
+      font-size: 10vw;
       
       @include respond-to(md) {
         font-size: 4rem;
@@ -50,7 +50,7 @@
   
     &__slider-content {
       position: relative;
-      width: 37rem;
+      width: 370px;
   
       @include respond-to(xs) {
         width: 90%;
@@ -62,7 +62,11 @@
     }
   
     &__slider {
-      margin-bottom: 3.5rem;
+      margin-bottom: 35px;
+      
+      @include respond-to(md) {
+        margin-bottom: 3.5rem;
+      }
     }
 
     &__slide {
@@ -76,14 +80,18 @@
     }
   
     &__img {
-      display: flex !important;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 2rem;
+      margin-bottom: 20px;
+      
+      @include respond-to(md) {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
 
       img {
         height: 90vw;
-        width: auto;
+        width: 90vw;
         object-fit: contain;
         
         @include respond-to(sm) {
@@ -101,19 +109,21 @@
       justify-content: center;
       align-items: flex-start;
       flex-direction: column;
-      gap: 1rem;
+      gap: 10px;
       text-align: center;
 
       @include respond-to(md) {
+        gap: 1rem;
         align-items: center;
       }
 
       h5 {
-        font-size: 2.5rem;
+        font-size: 25px;
         font-family: $serif;
 
         @include respond-to(md) {
           font-family: $sans;
+          font-size: 2.5rem;
         }
         
         @include respond-to(lg) {
@@ -125,7 +135,7 @@
     &__desc-text {
       color: rgba($color-black, 0.6);
       font-family: $serif;
-      font-size: 1.6rem;
+      font-size: 16px;
       text-align: left;
   
       @include respond-to(md) {
@@ -142,9 +152,9 @@
       font-family: $serif;
       color: $color-grey;
       letter-spacing: 0.3px;
-      font-size: 1.6rem;
-      line-height: 2.4rem;
-      margin-bottom: 1.6rem;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 16px;
   
       @include respond-to(md) {
         font-size: 2.6rem;
@@ -160,9 +170,9 @@
     }
   
     &__text {
-      line-height: 2.2rem;
-      margin-bottom: 4rem;
-      font-size: 1.4rem;
+      line-height: 22px;
+      margin-bottom: 40px;
+      font-size: 14px;
       color: rgba($color-black, 0.7);
 
       @include respond-to(md) {
@@ -170,6 +180,7 @@
         line-height: 1.4;
         max-width: 60%;
         margin-top: 2rem;
+        margin-bottom: 4rem;
       }
   
       @include respond-to(lg) {
@@ -184,8 +195,8 @@
       position: absolute;
       top: 50%;
       right: 0;
-      width: 3rem;
-      height: 3rem;
+      width: 30px;
+      height: 30px;
       transform: scale(0.95) rotate(180deg) translate(-50%, 50%);
       cursor: pointer;
       
@@ -193,6 +204,7 @@
         display: block !important;
         right: -5%;
         width: 4rem;
+        height: 3rem;
       }
     }
     
@@ -201,40 +213,54 @@
       position: absolute;
       top: 50%;
       left: 0;
-      width: 3rem;
-      height: 3rem;
+      width: 30px;
+      height: 30px;
       transform: scale(0.95) translate(-50%, -50%);
       cursor: pointer;
       
       @include respond-to(md) {
         display: block !important;
         left: -4%;
+        width: 3rem;
+        height: 3rem;
       }
     }
 
     &__am-pm {
       font-family: $serif;
-      font-size: 1.8rem;
+      font-size: 18px;
       opacity: 0.6;
       line-height: 1;
       display: flex;
       align-items: center;
 
+      @include respond-to(md) {
+        font-size: 1.8rem;
+      }
+
       & > * + * {
-        margin-left: 1rem;
-        margin-bottom: 0.3rem;
+        margin-left: 10px;
+        margin-bottom: 3px;
+
+        @include respond-to(md) {
+          margin-left: 1rem;
+          margin-bottom: 0.3rem;
+        }
       }
     }
 
     .container-left {
       padding-right: 0;
+      // padding-left: 0;
 
       .staples__text,
       .btn {
-        margin-right: 2rem;
+        margin-right: 20px;
+        // margin-left: 20px;
 
         @include respond-to(md) {
           margin-right: 0;
+          margin-left: 0;
         }
       }
     }

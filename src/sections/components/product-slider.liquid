@@ -26,6 +26,7 @@
                     {{ section.settings.copy }}
                 </div> 
                 {% if section.settings.btn-text and section.settings.btn-text != '' %}
+                
                     <a 
                     data-scroll data-scroll-direction="vertical" 
                     data-scroll-repeat="false"
@@ -115,89 +116,92 @@
                 {{ section.settings.copy }}
             </div>
 
+        {% if section.settings.btn-tex and section.settings.btn-tex != "" %}
             <a href="{{ section.settings.btn-link }}" class="btn d-none-lg">
-                <span class="btn--span">
-                    <span class="btn--arrow">
-                        <svg width="28px" height="19px" viewBox="0 0 28 19">
-                            <g stroke="none" stroke-width="1" fill-rule="evenodd">
-                                <g transform="translate(-230.000000, -3082.000000)">
-                                    <path d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z">
-                                    </path>
-                                </g>
-                            </g>
-                        </svg>
-                    </span>
-                    {{ section.settings.btn-text }}
-                </span>
-            </a>
+               <span class="btn--span">
+                  <span class="btn--arrow">
+                     <svg width="28px" height="19px" viewBox="0 0 28 19">
+                        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+                           <g transform="translate(-230.000000, -3082.000000)">
+                              <path
+                                 d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z">
+                              </path>
+                           </g>
+                        </g>
+                     </svg>
+                  </span>
+                  {{ section.settings.btn-text }}
+               </span>
+            </a> 
+         {% endif %}
 
         </div>
     </div>
 </section>
 {% schema %}
-{
-"name": "ProductSlider",
-"settings": [
-{
-"id": "title",
-"type": "text",
-"label": "Title",
-"default": "Hydration Staples"
-},
-{
-"id": "subtitle",
-"type": "richtext",
-"label": "Subtitle"
-},
-{
-"id": "copy",
-"type": "richtext",
-"label": "Copy"
-},
-{
-"id": "btn-text",
-"type": "text",
-"label": "Button Text"
-},
-{
-"id": "btn-link",
-"type": "url",
-"label": "Button Link"
-}
-],
-"blocks": [
-{
-"name": "ProductSlider",
-"type": "product-slider",
-"settings": [
-{
-"id": "product",
-"type": "product",
-"label": "Product"
-},
-{
-"id": "override-img",
-"type": "image_picker",
-"label": "Override Products Featured Image"
-},
-{
-"id": "override-name",
-"type": "text",
-"label": "Override Product Name"
-},
-{
-"id": "product-desc",
-"type": "text",
-"label": "Text under the product"
-}
-]
-}
-],
-"presets": [
-{
-"category": "Product",
-"name": "Product Slider"
-}
-]
-}
+    {
+    "name": "ProductSlider",
+        "settings": [
+            {
+                "id": "title",
+                "type": "text",
+                "label": "Title",
+                "default": "Hydration Staples"
+            },
+            {
+                "id": "subtitle",
+                "type": "richtext",
+                "label": "Subtitle"
+            },
+            {
+                "id": "copy",
+                "type": "richtext",
+                "label": "Copy"
+            },
+            {
+                "id": "btn-text",
+                "type": "text",
+                "label": "Button Text"
+            },
+            {
+                "id": "btn-link",
+                "type": "url",
+                "label": "Button Link"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "ProductSlider",
+                "type": "product-slider",
+                "settings": [
+                    {
+                        "id": "product",
+                        "type": "product",
+                        "label": "Product"
+                    },
+                    {
+                        "id": "override-img",
+                        "type": "image_picker",
+                        "label": "Override Products Featured Image"
+                    },
+                    {
+                        "id": "override-name",
+                        "type": "text",
+                        "label": "Override Product Name"
+                    },
+                    {
+                        "id": "product-desc",
+                        "type": "text",
+                        "label": "Text under the product"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "category": "Product",
+                "name": "Product Slider"
+            }
+        ]
+    }
 {% endschema %}

@@ -11,22 +11,24 @@
             <div class="staples__text d-none-2">
                {{ section.settings.copy }}
             </div>
-            <a href="{{ section.settings.btn-link }}" class="btn d-none-2">
-               <span class="btn--span font-size-def">
-                  <span class="btn--arrow">
-                     <svg width="28px" height="19px" viewBox="0 0 28 19">
-                        <g stroke="none" stroke-width="1" fill-rule="evenodd">
-                           <g transform="translate(-230.000000, -3082.000000)">
-                              <path
-                                 d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z">
-                              </path>
+            {% if section.settings.btn-text and section.settings.btn-text !='' %}
+               <a href="{{ section.settings.btn-link }}" class="btn d-none-2">
+                  <span class="btn--span font-size-def">
+                     <span class="btn--arrow">
+                        <svg width="28px" height="19px" viewBox="0 0 28 19">
+                           <g stroke="none" stroke-width="1" fill-rule="evenodd">
+                              <g transform="translate(-230.000000, -3082.000000)">
+                                 <path
+                                    d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z">
+                                 </path>
+                              </g>
                            </g>
-                        </g>
-                     </svg>
+                        </svg>
+                     </span>
+                     {{ section.settings.btn-text }}
                   </span>
-                  {{ section.settings.btn-text }}
-               </span>
-            </a>
+               </a>
+            {% endif %}
          </div>
          <div class="staples__slider-content">
             <div class="staples__slider">
@@ -126,22 +128,24 @@
          <div class="staples__text d-none-lg">
             {{ section.settings.copy }}
          </div>
-         <a href="{{ section.settings.btn-link }}" class="btn d-none-lg">
-            <span class="btn--span">
-               <span class="btn--arrow">
-                  <svg width="28px" height="19px" viewBox="0 0 28 19">
-                     <g stroke="none" stroke-width="1" fill-rule="evenodd">
-                        <g transform="translate(-230.000000, -3082.000000)">
-                           <path
-                              d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z">
-                           </path>
+         {% if section.settings.btn-tex and section.settings.btn-tex != "" %}
+            <a href="{{ section.settings.btn-link }}" class="btn d-none-lg">
+               <span class="btn--span">
+                  <span class="btn--arrow">
+                     <svg width="28px" height="19px" viewBox="0 0 28 19">
+                        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+                           <g transform="translate(-230.000000, -3082.000000)">
+                              <path
+                                 d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z">
+                              </path>
+                           </g>
                         </g>
-                     </g>
-                  </svg>
+                     </svg>
+                  </span>
+                  {{ section.settings.btn-text }}
                </span>
-               {{ section.settings.btn-text }}
-            </span>
-         </a>
+            </a> 
+         {% endif %}
       </div>
    </div>
 </section>
