@@ -1,22 +1,22 @@
-import Highway from '@dogstudio/highway';
-import Tween from 'gsap';
-import CartRenderer from '../renderers/cart';
-import FaqRenderer from '../renderers/faq-renderer';
-import FindRenderer from '../renderers/find';
-import HomepageRenderer from '../renderers/homepage';
-import IngredientRenderer from '../renderers/ingredients';
-import RegimenRenderer from '../renderers/regimen';
-import DefPageRenderer from '../renderers/def-page-renderer';
-import ProductRenderer from '../renderers/product';
-import ContactRenderer from '../renderers/contact';
-import LoginRenderer from '../renderers/login';
+import Highway from '@dogstudio/highway'
+import Tween from 'gsap'
+import CartRenderer from '../renderers/cart'
+import FaqRenderer from '../renderers/faq-renderer'
+import FindRenderer from '../renderers/find'
+import HomepageRenderer from '../renderers/homepage'
+import IngredientRenderer from '../renderers/ingredients'
+import RegimenRenderer from '../renderers/regimen'
+import DefPageRenderer from '../renderers/def-page-renderer'
+import ProductRenderer from '../renderers/product'
+import ContactRenderer from '../renderers/contact'
+import LoginRenderer from '../renderers/login'
 
-import Header from '../modules/header';
-import ShopMenu from '../modules/shopMenu';
+import Menu from '../modules/menu'
+import ShopMenu from '../modules/shopMenu'
 
 window.APP = {}
 
-APP.Header = new Header({
+APP.MainMenu = new Menu({
   el: document.querySelector('.header')
 })
 

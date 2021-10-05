@@ -5,7 +5,7 @@ class DefaultRenderer extends Highway.Renderer {
     onEnter() {}
     onLeave() {}
     onEnterCompleted() {
-        APP.Header.closeMenu()
+        APP.MainMenu.closeMenu()
         APP.ShopMenu.closeDrawer()
 
         this.LocoSroll = new LocoSroll({
