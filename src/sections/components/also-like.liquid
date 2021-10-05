@@ -7,13 +7,13 @@
             </h2>
         </div>
         <div class="like__content">
-            {% for block in section.blocks %}
-                <div class="like__card">
+            {% for product in collections.also-like.products %}
+                <a href="{{ product.url }}" class="like__card">
                     <div class="like__img-box">
                         <picture class="like__img">
-                            <source media="(max-width: 600px)" srcset="{{ block.settings.product.featured_image | img_url: 'medium' }}">
-                            <source media="(max-width: 1200px)" srcset="{{ block.settings.product.featured_image | img_url: 'medium' }}">
-                            <img src="{{ block.settings.product.featured_image | img_url: 'master' }}" alt="{{ block.product.title }}">
+                            <source media="(max-width: 600px)" srcset="{{ product.featured_image | img_url: 'medium' }}">
+                            <source media="(max-width: 1200px)" srcset="{{ product.featured_image | img_url: 'medium' }}">
+                            <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
                         </picture>
                         <div class="like__hover-info">
                             <div class="like__rating">
@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                             <div class="like__price">
-                                {{ block.product.price | money_with_currency }}
+                                {{ product.price | money_with_currency }}
                             </div>
                             <div class="like__cart">
                                 <span>
@@ -79,15 +79,15 @@
                     </div>
                     <div class="like__desc-wrap">
                         <div class="like__desc">
-                            <span class="like__desc-title">{{ block.product.title }}</span>
+                            <span class="like__desc-title">{{ product.title }}</span>
                             <span class="like__separator">/</span>
                             <div class="like__text">
-                                <p>{{ block.product-desc }}</p>
+                                <p>{{ product-desc }}</p>
                             </div>
                         </div>
-                        <div class="like__price-bottom"> {{ block.product.price | money_with_currency }}</div>
+                        <div class="like__price-bottom"> {{ product.price | money_with_currency }}</div>
                     </div>
-                </div>
+                </a>
             {% endfor %}
         </div>
     </div>
@@ -108,24 +108,6 @@
             "type": "text",
             "label": "Title big",
             "default": "Also Like"
-        }
-    ],
-    "blocks": [
-        {
-            "name": "AlsoLikeProducts",
-            "type": "also-like-products",
-            "settings": [
-                {
-                    "id": "product",
-                    "type": "product",
-                    "label": "Select Product"
-                },
-                {
-                    "id": "product-desc",
-                    "type": "text",
-                    "label": "Add text under product"
-                }
-            ]
         }
     ],
     "presets": [

@@ -10,7 +10,7 @@
     <div class="find__container">
         <div class="find__slider">
             {% for block in section.blocks %}
-                <div class="find__card">
+                <a href="/pages/regimen-test" class="find__card">
                     <div class="find__card-box">
                         <div class="find__img-wrapper">
                             <picture class="find__img">
@@ -23,7 +23,7 @@
                     </div>
                     <div class="find__title">{{ block.settings.title }}</div>
                     <div class="find__desc">{{ block.settings.desc }}</div>
-                </div>
+                </a>
             {% endfor %}
 
             <div class="find__card">
