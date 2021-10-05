@@ -10,8 +10,8 @@
     <div class="find__container">
         <div class="find__slider">
             {% for block in section.blocks %}
-                <a href="/pages/regimen-test" class="find__card">
-                    <div class="find__card-box">
+                <div class="find__card">
+                    <a href="/pages/regimen-test" class="find__card-box">
                         <div class="find__img-wrapper">
                             <picture class="find__img">
                                 <source media="(max-width: 600px)" srcset="{{ block.settings.image | img_url: 'medium' }}">
@@ -20,10 +20,10 @@
                             </picture>
                             <div class="find__hover"></div>
                         </div>
-                    </div>
-                    <div class="find__title">{{ block.settings.title }}</div>
+                    </a>
+                    <a href="/pages/regimen-test" class="find__title">{{ block.settings.title }}</a>
                     <div class="find__desc">{{ block.settings.desc }}</div>
-                </a>
+                </div>
             {% endfor %}
 
             <div class="find__card">
