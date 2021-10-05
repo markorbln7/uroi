@@ -105,6 +105,14 @@
       margin-top: -10rem;
     }
 
+    &--dark {
+      color: #080808;
+      
+      & > * {
+        color: #080808;
+      }
+    }
+
     &--dark-bottom {
       color: #080808;
 

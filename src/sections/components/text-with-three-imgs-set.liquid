@@ -1,0 +1,168 @@
+<section class="gallery">
+    <div class="container">
+        <div class="gallery__grid">
+            <div class="gallery__card fb">
+                <h2>{{ section.settings.title }}</h2>
+                <div class="gallery__subtitle">
+                    {{ section.settings.subtitle }}
+                </div>
+                <div class="gallery__text">
+                    {{ section.settings.copy }}
+                </div>
+            </div>
+
+            {% for block in section.blocks %}
+                <div class="gallery__card">
+                    <div class="gallery__content">
+                        <a href="{{ block.settings.product.url }}" class="gallery__link gallery__link--square">
+                            <picture class="gallery__img">
+                                {%- comment -%}If user wants to display image other than featured image{%- endcomment -%}
+                                {% if block.settings.override-img %}
+                                    <source media="(min-width: 600px)" srcset="{{ block.settings.override-img | img_url: 'master' }}">
+                                    <source media="(min-width: 1200px)" srcset="{{ block.settings.override-img | img_url: 'master' }}">
+                                    <img src="{{ block.settings.override-img | img_url: 'master' }}" alt="{{ block.settings.product.title }}">
+                                {% else %}
+                                    {%- comment -%}If user wants to display featured image{%- endcomment -%}
+                                    <source media="(min-width: 600px)" srcset="{{ block.settings.product.featured_image | img_url: 'master' }}">
+                                    <source media="(min-width: 1200px)" srcset="{{ block.settings.product.featured_image | img_url: 'master' }}">
+                                    <img src="{{ block.settings.product.featured_image | img_url: 'master' }}" alt="{{ block.settings.product.title }}">
+                                {% endif %}
+                            </picture>
+                            <div class="gallery__hover-info">
+                                <div class="gallery__rating">
+                                    <div class="gallery__star">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="gallery__svg-star">
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="gallery__star">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="gallery__svg-star">
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="gallery__star">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="gallery__svg-star">
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="gallery__star">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="gallery__svg-star">
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="gallery__star">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="gallery__svg-star">
+                                            <defs>
+                                                <clipPath id="rect16284126205765">
+                                                    <path
+                                                        d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                        class="mask"></path>
+                                                </clipPath>
+                                            </defs>
+                                            <rect clip-path="url(#rect16284126205765)" width="4.5269999999999975" x="0.5"
+                                                y="0" height="14.15" fill="#000"></rect>
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="gallery__price">
+                                    {{ block.settings.product.price | money }}
+                                </div>
+                                <div class="gallery__cart">
+                                    <span>
+                                        Add to cart
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <a href="{{ block.settings.product.url }}" class="gallery__heading-sub">
+                        {% if block.settings.override-name and block.settings.override-name != '' %}
+                                {{ block.settings.override-name }}
+                            {% else %}
+                                {{ block.settings.product.title }}
+                        {% endif %}
+                    </a>
+                    <div class="gallery__desc">
+                        {{ block.settings.product-desc }}
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Text with three Products",
+    "settings": [
+        {
+            "id": "title",
+            "type": "text",
+            "label": "Title",
+            "default": "S-Series"
+        },
+        {
+            "id": "subtitle",
+            "type": "text",
+            "label": "Subtitle",
+            "default": "Designed for sensitive skin. "
+        },
+        {
+            "id": "copy",
+            "type": "richtext",
+            "label": "Copy"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Products",
+            "type": "products",
+            "settings": [
+                {
+                    "id": "product",
+                    "type": "product",
+                    "label": "Product"
+                },
+                {
+                    "id": "override-img",
+                    "type": "image_picker",
+                    "label": "Override Featured Image"
+                },
+                {
+                    "id": "override-name",
+                    "type": "text",
+                    "label": "Override Product Name"
+                },
+                {
+                    "id": "product-desc",
+                    "type": "text",
+                    "label": "Add text under product name"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "General",
+            "name": "Text with three Products"
+        }
+    ]
+}
+{% endschema %}
