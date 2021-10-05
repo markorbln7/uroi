@@ -1,12 +1,21 @@
 .grid {
-  padding: 5rem 0;
+  padding: 50px 0;
+
+  @include respond-to(md) {
+    padding: 5rem 0;
+  }
 
   &__heading-main h2 {
     font-family: $ff-serif;
-    font-size: 3.2rem;
+    font-size: 32px;
     line-height: 1;
-    margin-bottom: 5rem;
+    margin-bottom: 50px;
 
+    @include respond-to(md) {
+      font-size: 3.2rem;
+      margin-bottom: 5rem;
+    }
+  
     @include respond-to(lg) {
       font-size: 3rem;
       margin-bottom: 8rem;
@@ -21,7 +30,7 @@
   &__wrap {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 3.6rem;
+    gap: 36px;
 
     @include respond-to(md) {
       grid-template-columns: repeat(2, 1fr);
@@ -92,8 +101,12 @@
   }
 
   &__svg-star {
-    width: 1.8rem;
+    width: 18px;
     fill: $color-white;
+
+    @include respond-to(md) {
+      width: 1.8rem;
+    }
 
     @include respond-to(lg) {
       width: 2.4rem;
@@ -163,11 +176,12 @@
   }
 
   &__heading {
-    margin: 0.7rem 0;
-    font-size: 2.5rem;
+    margin: 7px 0;
+    font-size: 25px;
     font-family: $ff-sans;
 
     @include respond-to(md) {
+      margin: 0.7rem 0;
       font-size: 2.3rem;
     }
 
@@ -180,7 +194,7 @@
   &__subtitle {
     color: rgba($color-black, $alpha: 0.6);
     font-family: $ff-serif;
-    font-size: 1.8rem;
+    font-size: 18px;
 
     @include respond-to(md) {
       font-size: 1.4rem;
@@ -190,14 +204,22 @@
   &__filters {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 4rem;
+    margin-bottom: 40px;
+
+    @include respond-to(md) {
+      margin-bottom: 4rem;
+    }
   }
 
   &__filters-list {
     display: flex;
 
     & > * + * {
-      margin-left: 4rem;
+      margin-bottom: 40px;
+
+      @include respond-to(md) {
+        margin-bottom: 4rem;
+      }
     }
   }
 
@@ -206,7 +228,11 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    font-size: 1.6rem;
+    font-size: 16px;
+    
+    @include respond-to(md) {
+      font-size: 1.6rem;
+    }
   }
 
   &__overlay-link {
