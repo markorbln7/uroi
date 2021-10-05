@@ -8,7 +8,7 @@
                   {{ section.settings.subtitle }}
                </div>
             {% endif %}
-            <div class="staples__text d-none-2">
+            <div class="staples__text {% unless section.settings.btn-text and section.settings.btn-text !='' %}mb-0{% endunless %} d-none-2">
                {{ section.settings.copy }}
             </div>
             {% if section.settings.btn-text and section.settings.btn-text !='' %}
@@ -125,10 +125,10 @@
                </svg>
             </div>
          </div>
-         <div class="staples__text d-none-lg">
+         <div class="staples__text d-none-lg {% unless section.settings.btn-text and section.settings.btn-text !='' %}mb-0{% endunless %}">
             {{ section.settings.copy }}
          </div>
-         {% if section.settings.btn-tex and section.settings.btn-tex != "" %}
+         {% if section.settings.btn-text and section.settings.btn-text != "" %}
             <a href="{{ section.settings.btn-link }}" class="btn d-none-lg">
                <span class="btn--span">
                   <span class="btn--arrow">

@@ -71,6 +71,7 @@
 
     &__slide {
       display: block;
+      margin-top: 30px;
       
       &--last {
         @include respond-to(lg) {
@@ -90,16 +91,18 @@
       }
 
       img {
-        height: 90vw;
-        width: 90vw;
+        height: 80vw;
+        width: 80vw;
         object-fit: contain;
         
-        @include respond-to(sm) {
+        @include respond-to(md) {
           height: 40vw;
+          width: 40vw;
         }
     
         @include respond-to(lg) { 
           height: 24vw;
+          width: 24vw;
         }
       }
     }
@@ -191,10 +194,9 @@
     }
   
     &__arrow-next {
-      display: none !important;
       position: absolute;
       top: 50%;
-      right: 0;
+      right: 100px;
       width: 30px;
       height: 30px;
       transform: scale(0.95) rotate(180deg) translate(-50%, 50%);
