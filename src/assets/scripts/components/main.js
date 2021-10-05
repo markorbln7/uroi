@@ -11,39 +11,41 @@ import ProductRenderer from '../renderers/product';
 import ContactRenderer from '../renderers/contact';
 import LoginRenderer from '../renderers/login';
 
+import Header from '../modules/header';
+import ShopMenu from '../modules/shopMenu';
+
+window.APP = {}
+
+APP.Header = new Header({
+  el: document.querySelector('.header')
+})
+
+APP.ShopMenu = new ShopMenu()
+
 
 // Fade
 class Fade extends Highway.Transition {
-    in({ from, to, done }) {
-      // Reset Scroll
-      window.scrollTo(0, 0);
-  
-      // Remove Old View
-      from.remove();
+  in({ from, to, done }) {
+    // Reset Scroll
+    window.scrollTo(0, 0);
 
-      done()
-  
-      // Animation
-      // Tween.to(to, 0.1, {
-      //     opacity: 1,
-      //     // delay: 1,
-      //     onComplete: done
-      // });
-    }
-  
-    out({ from, done }) {
-      // Animation
-      Tween.to(from, 0.25,{
-          opacity: 0,
-          onComplete: done
-      });
-    }
+    // Remove Old View
+    from.remove();
+
+    done()
   }
-  
-export default Fade;
+
+  out({ from, done }) {
+    // Animation
+    Tween.to(from, 0.25,{
+        opacity: 0,
+        onComplete: done
+    });
+  }
+}
 
 
-const H = new Highway.Core({
+APP.Highway = new Highway.Core({
     renderers: {
       ingredients: IngredientRenderer,
       regimen: RegimenRenderer,

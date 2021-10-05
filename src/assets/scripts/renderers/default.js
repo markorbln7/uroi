@@ -1,10 +1,13 @@
-import Highway from '@dogstudio/highway';
-import LocoSroll from '../modules/locoScroll';
+import Highway from '@dogstudio/highway'
+import LocoSroll from '../modules/locoScroll'
 
 class DefaultRenderer extends Highway.Renderer {
     onEnter() {}
     onLeave() {}
     onEnterCompleted() {
+        APP.Header.closeMenu()
+        APP.ShopMenu.closeDrawer()
+
         this.LocoSroll = new LocoSroll({
             el: $("#wrapper")
         })
@@ -14,4 +17,4 @@ class DefaultRenderer extends Highway.Renderer {
     }
 }
 
-export default DefaultRenderer;
+export default DefaultRenderer

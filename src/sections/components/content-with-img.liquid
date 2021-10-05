@@ -45,16 +45,18 @@ class="series content-with-img {% if section.settings.no-top-padding %}pt0{% end
         <!-- END :: CONTENT COLUMN -->
 
         <!-- IMAGE COLUMN -->
-        <div class="series__img-content parallax-wrapper">
+        <div class="series__img-content">
 
            <!-- IMAGE WRAPPER -->
-           <div class="series__img-box parallax-element">
-              <picture data-scroll data-scroll-speed="-.85" class="series__img">
-                 <source media="(max-width: 600px)" srcset="{{ section.settings.img-mob | img_url: 'master' }}">
-                 <source media="(max-width: 1200px)" srcset="{{ section.settings.img-desk | img_url: 'master'  }}"> 
-                 <img src="{{ section.settings.img-desk | img_url: 'master'  }}" alt="Uruoi S-series image">
-              </picture>
-           </div> 
+           <div class='parallax-wrapper'>
+              <div class="series__img-box parallax-element">
+                 <picture data-scroll data-scroll-speed="-.85" class="series__img">
+                    <source media="(max-width: 600px)" srcset="{{ section.settings.img-mob | img_url: 'master' }}">
+                    <source media="(max-width: 1200px)" srcset="{{ section.settings.img-desk | img_url: 'master'  }}"> 
+                    <img src="{{ section.settings.img-desk | img_url: 'master'  }}" alt="Uruoi S-series image">
+                 </picture>
+              </div> 
+           </div>
            <!-- END :: IMAGE WRAPPER -->
 
            <!-- CAPTION -->

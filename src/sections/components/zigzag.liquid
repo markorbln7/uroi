@@ -20,22 +20,7 @@
         </div>
         <!-- END :: TOP TITLE -->
 
-        <div class="features__container">
-
-            <!-- IMAGE -->
-            <div class='parallax-wrapper'>
-                <div class='parallax-element'>
-                    <picture 
-                    data-scroll 
-                    data-scroll-speed="-.85"
-                    class="features__img-box">
-                        <source media="(max-width: 600px)" srcset="{{ section.settings.first-img-mob | img_url: 'master' }}">
-                        <source media="(max-width: 1200px)" srcset="{{ section.settings.first-img-tab | img_url: 'master' }}">
-                        <img src="{{ section.settings.first-img-desk | img_url: 'master' }}" alt="{{ section.settings.first-img-alt }}">
-                    </picture>
-                </div>
-            </div>
-            <!-- IMAGE -->
+        <div class="features__container d-flex flex-column-reverse flex-md-row mb-5 mb-md-4">
 
             <!-- FEATURES LIST -->
             <div class="features__wrap">
@@ -59,6 +44,24 @@
                 </ul>
             </div>
             <!-- END :: FEATURES LIST -->
+
+
+            <!-- IMAGE -->
+            <div class='parallax-wrapper col-md-6'>
+                <div class='parallax-element'>
+                    <picture 
+                    data-scroll 
+                    data-scroll-speed="-.85"
+                    class="features__img-box">
+                        <source media="(max-width: 600px)" srcset="{{ section.settings.first-img-mob | img_url: 'master' }}">
+                        <source media="(max-width: 1200px)" srcset="{{ section.settings.first-img-tab | img_url: 'master' }}">
+                        <img src="{{ section.settings.first-img-desk | img_url: 'master' }}" alt="{{ section.settings.first-img-alt }}">
+                    </picture>
+                </div>
+            </div>
+            <!-- IMAGE -->
+
+
         </div>
 
     </div>
