@@ -1,12 +1,22 @@
 .types {
-  padding: 5rem 0;
+  padding: 50px 0;
+  
+  @include respond-to(md) {
+    padding: 5rem 0;
+  }
 
   &__subtitle {
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 9px;
     text-align: center;
-    letter-spacing: 0.67rem;
-    margin-bottom: 4rem;
+    letter-spacing: 6.7px;
+    margin-bottom: 40px;
+
+    @include respond-to(md) {
+      font-size: 0.9rem;
+      letter-spacing: 0.67rem;
+      margin-bottom: 4rem;
+    }
 
     @include respond-to(lg) {
       font-size: 1.4rem;
@@ -18,12 +28,19 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 2.8rem;
+    gap: 28px;
 
     @include respond-to(sm) {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
+      row-gap: 15px;
+      max-width: 1350px;
+      margin: 0 auto;
+    }
+
+    @include respond-to(md) {
+      gap: 2.8rem;
       row-gap: 1.5rem;
       max-width: 135rem;
       margin: 0 auto;
@@ -46,13 +63,17 @@
   }
 
   &__span {
-    font-size: 2.8rem;
+    font-size: 28px;
     font-family: $ff-serif;
     text-transform: uppercase;
     transition: all 0.3s ease-in-out;
 
     @include respond-to(sm) {
       align-self: center;
+    }
+
+    @include respond-to(md) {
+      font-size: 2.8rem;
     }
 
     @include respond-to(lg) {

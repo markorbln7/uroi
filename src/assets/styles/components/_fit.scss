@@ -1,5 +1,5 @@
 .fit {
-  padding-top: 5rem;
+  padding-top: 50px;
 
   @include respond-to(md) {
     padding-top: 10rem;
@@ -37,11 +37,17 @@
   }
 
   &__text {
-    font-size: 1.4rem;
+    font-size: 14px;
     text-align: center;
-    line-height: 2.2rem;
+    line-height: 22px;
     color: rgba($color-black, 0.6);
-    max-width: 86.3rem;
+    max-width: 863px;
+
+    @include respond-to(md) {
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+      max-width: 86.3rem;
+    }
 
     @include respond-to(lg) {
       font-size: 1.8rem;
