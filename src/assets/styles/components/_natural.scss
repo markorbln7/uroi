@@ -1,12 +1,12 @@
 .natural {
-  padding: 5rem 0;
+  padding: 50px 0;
 
   @include respond-to(md) {
-    padding-right: 3rem;
+    padding: 5rem 3rem 5rem 0;
   }
 
   &__content {
-    padding: 0 2rem;
+    padding: 0 20px;
 
     @include respond-to(md) {
       display: flex;
@@ -26,7 +26,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-bottom: 11.7rem;
+    margin-bottom: 117px;
 
     @include respond-to(md) {
       flex-basis: 50%;
@@ -45,7 +45,7 @@
     &::after {
       content: "";
       position: absolute;
-      width: 44rem;
+      width: 440px;
       height: 0.1rem;
       top: -15%;
       left: 2%;
@@ -70,7 +70,7 @@
   }
 
   &__img img {
-    max-width: 16.8rem;
+    max-width: 168px;
 
     @include respond-to(md) {
       max-width: 22.2rem;
@@ -85,7 +85,7 @@
     position: absolute;
     top: 50%;
     right: 10%;
-    max-width: 12.5rem;
+    max-width: 125px;
     z-index: -1;
 
     @include respond-to(md) {
@@ -103,10 +103,10 @@
 
   &__container {
     margin: 0 auto;
-    padding: 0 1.9rem;
+    padding: 0 20px;
 
     @include respond-to(xs) {
-      max-width: 58rem;
+      max-width: 580px;
     }
 
     @include respond-to(md) {
@@ -128,10 +128,11 @@
   &__wrap {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 30px;
 
     @include respond-to(md) {
       max-width: 30rem;
+      gap: 3rem;
     }
 
     @include respond-to(lg) {
@@ -141,8 +142,8 @@
 
   &__number {
     font-family: $ff-serif;
-    font-size: 1.8rem;
-    line-height: 3.2rem;
+    font-size: 18px;
+    line-height: 32px;
     text-transform: uppercase;
 
     @include respond-to(md) {
@@ -158,13 +159,14 @@
   }
 
   &__heading h5 {
-    font-size: 2.4rem;
-    line-height: 3.2rem;
+    font-size: 24px;
+    line-height: 32px;
     text-transform: uppercase;
-    margin-bottom: 3rem;
+    margin-bottom: 30px;
 
     @include respond-to(md) {
       font-size: 1.6rem;
+      line-height: 3.2rem;
       margin-bottom: 2.2rem;
     }
 
@@ -176,8 +178,8 @@
   }
 
   &__text {
-    font-size: 1.4rem;
-    line-height: 2.2rem;
+    font-size: 14px;
+    line-height: 22px;
 
     @include respond-to(md) {
       font-size: 1.2rem;

@@ -1,5 +1,5 @@
 .glycerin {
-  padding: 5rem 0;
+  padding: 50px 0;
 
   @include respond-to(md) {
     padding: 0;
@@ -19,7 +19,7 @@
   }
 
   &__img-box {
-    margin-bottom: 4rem;
+    margin-bottom: 40px;
 
     @include respond-to(md) {
       flex-basis: 50%;
@@ -55,7 +55,7 @@
 
   &__container {
     margin: 0 auto;
-    padding: 0 1.9rem;
+    padding: 0 20px;
 
     @include respond-to(xs) {
       max-width: 58rem;
@@ -66,6 +66,7 @@
       max-width: none;
       padding: 0;
       display: flex;
+      padding: 0 2rem;
       justify-content: flex-start;
       align-items: flex-start;
     }
@@ -74,10 +75,11 @@
   &__wrap {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 30px;
 
     @include respond-to(md) {
       max-width: 25rem;
+      gap: 3rem;
     }
 
     @include respond-to(lg) {
@@ -87,8 +89,8 @@
 
   &__number {
     font-family: $ff-serif;
-    font-size: 1.8rem;
-    line-height: 3.2rem;
+    font-size: 18px;
+    line-height: 32px;
     text-transform: uppercase;
 
     @include respond-to(md) {
@@ -104,13 +106,14 @@
   }
 
   &__heading h5 {
-    font-size: 2.4rem;
-    line-height: 3.2rem;
+    font-size: 24px;
+    line-height: 32px;
     text-transform: uppercase;
-    margin-bottom: 3rem;
+    margin-bottom: 30px;
 
     @include respond-to(md) {
       font-size: 1.6rem;
+      line-height: 3.2rem;
       margin-bottom: 2.2rem;
     }
 
@@ -122,8 +125,8 @@
   }
 
   &__text {
-    font-size: 1.4rem;
-    line-height: 2.2rem;
+    font-size: 14px;
+    line-height: 22px;
 
     @include respond-to(md) {
       font-size: 1.2rem;

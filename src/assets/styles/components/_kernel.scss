@@ -1,5 +1,9 @@
 .kernel {
-  padding: 5rem 0;
+  padding: 50px 0;
+  
+  @include respond-to(md) {
+    padding: 5rem 0;
+  }
 
   &__content {
     @include respond-to(md) {
@@ -16,13 +20,13 @@
   }
 
   &__img-box {
-    margin-bottom: 4rem;
+    margin-bottom: 40px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 3rem 0;
+    padding: 30px 0;
     background-color: $color-light;
 
     @include respond-to(md) {
@@ -30,6 +34,7 @@
       height: 50vw;
       padding: 7.03125vw 0 6.51042vw;
       flex-basis: 50%;
+      margin-bottom: 4rem;
     }
 
     @include respond-to(lg) {
@@ -39,7 +44,7 @@
   }
 
   &__img img {
-    max-width: 11.3rem;
+    max-width: 113px;
 
     @include respond-to(md) {
       max-width: 12.7rem;
@@ -54,7 +59,7 @@
     position: absolute;
     top: 18%;
     left: 25%;
-    max-width: 8rem;
+    max-width: 80px;
 
     @include respond-to(md) {
       top: 40%;
@@ -71,14 +76,16 @@
   }
 
   &__subtitle-top {
-    font-size: 1rem;
-    line-height: 1.2rem;
-    letter-spacing: 0.746rem;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 7px;
     text-transform: uppercase;
-    margin-bottom: 5.5rem;
+    margin-bottom: 55px;
 
     @include respond-to(md) {
       margin-bottom: 8rem;
+      letter-spacing: 0.7rem;
+      font-size: 1rem;
     }
 
     @include respond-to(lg) {
@@ -90,13 +97,16 @@
   }
 
   &__subtitle-bottom {
-    font-size: 1rem;
-    line-height: 1.2rem;
-    letter-spacing: 0.746rem;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 7px;
     text-transform: uppercase;
     margin-top: 2.2rem;
 
     @include respond-to(md) {
+      font-size: 1rem;
+      line-height: 1.2rem;
+      letter-spacing: 0.746rem;
       margin-top: 3.5rem;
     }
 
@@ -110,10 +120,10 @@
 
   &__container {
     margin: 0 auto;
-    padding: 0 1.9rem;
+    padding: 0 20px;
 
     @include respond-to(xs) {
-      max-width: 58rem;
+      max-width: 580px;
     }
 
     @include respond-to(md) {
@@ -136,10 +146,11 @@
   &__wrap {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 30px;
 
     @include respond-to(md) {
       max-width: 30rem;
+      gap: 3rem;
     }
 
     @include respond-to(lg) {
@@ -149,8 +160,8 @@
 
   &__number {
     font-family: $ff-serif;
-    font-size: 1.8rem;
-    line-height: 3.2rem;
+    font-size: 18px;
+    line-height: 32px;
     text-transform: uppercase;
 
     @include respond-to(md) {
@@ -166,13 +177,14 @@
   }
 
   &__heading h5 {
-    font-size: 2.4rem;
-    line-height: 3.2rem;
+    font-size: 24px;
+    line-height: 32px;
     text-transform: uppercase;
-    margin-bottom: 3rem;
+    margin-bottom: 30px;
 
     @include respond-to(md) {
       font-size: 1.6rem;
+      line-height: 3.2rem;
       margin-bottom: 2.2rem;
     }
 
@@ -184,8 +196,8 @@
   }
 
   &__text {
-    font-size: 1.4rem;
-    line-height: 2.2rem;
+    font-size: 14px;
+    line-height: 22px;
 
     @include respond-to(md) {
       font-size: 1.2rem;
