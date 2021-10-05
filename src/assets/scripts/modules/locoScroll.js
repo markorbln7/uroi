@@ -21,7 +21,7 @@ export default class LocoSroll {
     }
 
     toggleDarkNav(method = "remove") {
-        document.querySelector('header').classList.[method]('header--dark')
+        document.querySelector('header').classList.[method]('header--scrolled')
     }
 
     initScroll() {

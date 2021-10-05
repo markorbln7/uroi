@@ -20,8 +20,16 @@
         color: black;
 
         .header {
-            &__logo {
+            &__logo,
+            &__cart-mob svg path {
                 fill: black;
+            }
+
+            &__hamburger {
+                &:before,
+                &:after {
+                    background-color: black;
+                }
             }
         }
     }
