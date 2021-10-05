@@ -14,9 +14,14 @@
   }
 
   .close {
-    right:1.5rem;
+    right: 15px;
     transition: .4s transform;
     cursor: pointer;
+
+    @include respond-to(md) {
+      right:1.5rem;
+    }
+    
     &:hover{
       transform: rotate(180deg);
     }
@@ -36,7 +41,11 @@
     .global-cart__drawer {
       transform: translateX(0);
       h3 {
-        margin-top:1rem;
+        margin-top: 10px;
+
+        @include respond-to(md) {
+          margin-top: 1rem;
+        }
       }
     }
   }
@@ -59,10 +68,11 @@
     width: 100%;
     height: 100%;
     max-width: 100%;
-    padding: 2rem;
+    padding: 20px;
     
     @include respond-to(md) {
       max-width: 50vw;
+      padding: 2rem;
     }
 
     @include respond-to(lg) {
@@ -103,15 +113,23 @@
       // overflow-y: scroll;
       list-style: none;
       max-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-      max-height: calc((var(--vh, 1vh) * 100) - 11rem);
+      max-height: calc((var(--vh, 1vh) * 100) - 110px);
       //max-height: calc(100vh - 16rem);
+
+      @include respond-to(md) {
+        max-height: calc((var(--vh, 1vh) * 100) - 11rem);
+      }
       .item {
         position: relative;
         flex-shrink: 0;
-        padding: 1rem;
+        padding: 10px;
         border-bottom: solid 1px $color--black--10;
         transition: opacity .7s ease-out;
 
+        @include respond-to(md) {
+          padding: 1rem;
+        }
+        
         &::after {
           position: absolute;
           top: 0;
@@ -143,8 +161,8 @@
           position: relative;
           flex-shrink: 0;
           width: 25%;
-          height: 4.5rem;
-          margin-right: 3rem;
+          height: 45px;
+          margin-right: 30px;
 
           @include respond-to(md) {
             width: 3.90rem;
@@ -223,7 +241,11 @@
         padding: 20px;
         text-align: center;
         border-bottom: solid 1px $color--black--10;
-        font-size: 1.8rem;
+        font-size: 18px;
+
+        @include respond-to(md) {
+          font-size: 1.8rem;
+        }
 
         @media screen and (min-width: $break--tblt) {
           padding: 35px 20px;
@@ -238,8 +260,13 @@
       box-sizing: border-box;
       position: absolute;
       bottom:0;
-      width: calc(100% - 4rem);
-      padding-bottom: 2rem;
+      width: calc(100% - 40px);
+      padding-bottom: 20px;
+
+      @include respond-to(md) {
+        width: calc(100% - 4rem);
+        padding-bottom: 2rem;  
+      }
 
       @include respond-to(lg) {
         padding: .8rem 0 1.5rem;
@@ -249,17 +276,26 @@
       }
 
       .shipping-msg {
-        margin:1.1rem 0 .6rem;
+        margin: 11px 0 6px;
+
+        @include respond-to(md) {
+          margin:1.1rem 0 .6rem;
+        }
       }
 
       .checkout-link {
-        margin:0 auto;
+        margin: 1rem auto;
+        display: block;
       }
 
       .btn {
         width: 100%;
-        margin: 3rem 0 0;
+        margin: 30px 0 0;
         max-width: 100%;
+
+        @include respond-to(md) {
+          margin: 3rem 0 0;
+        }
       }
     }
   }
@@ -270,9 +306,13 @@
     align-items: flex-start;
 
     h3 {
-      font-size: 4rem;
+      font-size: 40px;
       line-height: 1.1;
       font-family: $serif;
+
+      @include respond-to(md) {
+        font-size: 4rem;
+      }
     }
   }
 }
@@ -289,8 +329,13 @@
     flex: 1;
   }
   .item-title {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
+    font-size: 16px;
+    margin-bottom: 10px;
+
+    @include respond-to(md) {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
 
     @include respond-to(lg) {
       font-size: 2.6rem;
@@ -298,8 +343,12 @@
     }
   }
   .item-price {
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 500;
+
+    @include respond-to(md) {
+      font-size: 1.6rem;
+    }
 
     @include respond-to(lg) {
       font-size: 2.1rem;
@@ -307,26 +356,45 @@
     }
   }
   .default-title {
-    font-size: 0.9rem;
-    line-height: 1.2rem;
-    letter-spacing: 0.3rem;
+    font-size: 9px;
+    line-height: 12px;
+    letter-spacing: 3px;
     opacity: 0.57;
     text-transform: uppercase;
+
+    @include respond-to(md) {
+      font-size: 0.9rem;
+      line-height: 1.2rem;
+      letter-spacing: 0.3rem;
+    }
+
   }
   .bottom {
     margin-top: auto;
   }
   span {
-    margin-right: 1rem;
+    margin-right: 10px;
+    
+    @include respond-to(md) {
+      margin-right: 1rem;
+    }
   }
   .empty {
-    right:1rem;
-    bottom:1rem;
+    right: 10px;
+    bottom: 10px;
     cursor: pointer;
-    line-height: 2rem;
-    padding-bottom: 0.2rem;
+    line-height: 20px;
+    padding-bottom: 2px;
     opacity: 0.5;
-    font-size: 1.5rem;
+    font-size: 15px;
+
+    @include respond-to(md) {
+      right:1rem;
+      bottom:1rem;
+      line-height: 2rem;
+      padding-bottom: 0.2rem;
+      font-size: 1.5rem;
+    }
 
     @include respond-to(lg) {
       font-size: 1.7rem;
@@ -351,8 +419,14 @@
     align-self: flex-start;
     margin-top: auto;
     // max-width: 5.5rem;
-    margin-top: .5rem;
-    font-size: 2rem;
+    margin-top: 5px;
+    font-size: 20px;
+
+    @include respond-to(md) {
+      margin-top: .5rem;
+      font-size: 2rem;
+    }
+
     button {
       position: relative;
       display: inline-block;
@@ -368,27 +442,42 @@
       vertical-align: middle;
       /* height: 25px; */
       width: 1.5rem;
+
+      @include respond-to(md) {
+        font-size: 20px;
+        width: 15px;
+      }
     }
   }
 }
 .cart-counter {
   background: transparent;
    position: absolute;
-    font-size: 0.6rem;
+    font-size: 6px;
     display: block;
     position: absolute;
-    top: .34rem;
+    top: 3.4px;
     left: 0px;
-    font-size: .5rem;
+    font-size: 5px;
     letter-spacing: -0.2px;
     width: 100%;
+
+    @include respond-to(md) {
+      font-size: 0.6rem;
+      top: .34rem;
+      font-size: .5rem;
+    }
 }
 
 .subtotal-wrapper {
   font-family: $serif;
   border-bottom: 1px solid #979797;
-  font-size: 2rem;
+  font-size: 20px;
   line-height: 1.2;
+
+  @include respond-to(md) {
+    font-size: 2rem;
+  }
 
   @include respond-to(lg) {
     font-size: 4rem;
