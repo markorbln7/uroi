@@ -1,5 +1,5 @@
 .extract {
-  padding: 5rem 0;
+  padding: 50px 0;
 
   @include respond-to(md) {
     padding: 0;
@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-bottom: 11.7rem;
+    margin-bottom: 117px;
 
     @include respond-to(md) {
       flex-basis: 50%;
@@ -37,7 +37,7 @@
     &::after {
       content: "";
       position: absolute;
-      width: 44rem;
+      width: 440px;
       height: 0.1rem;
       top: -15%;
       left: 2%;
@@ -62,12 +62,17 @@
   }
 
   &__img img {
-    max-width: 96rem;
+    max-width: 960px;
     width: 100%;
+
+    @include respond-to(md) {
+      max-width: 96rem;
+    }
   }
 
   &__img-big img {
-    max-width: 16.8rem;
+    max-width: 168px;
+
     @include respond-to(md) {
       max-width: 20rem;
     }
@@ -81,7 +86,7 @@
     position: absolute;
     top: 50%;
     right: 0;
-    max-width: 12.5rem;
+    max-width: 125px;
 
     @include respond-to(md) {
       top: 80%;
@@ -97,7 +102,7 @@
   }
 
   &__box-right {
-    margin-bottom: 4rem;
+    margin-bottom: 40px;
 
     @include respond-to(md) {
       margin-bottom: 0;
@@ -113,7 +118,7 @@
   }
 
   &__box-left {
-    padding: 0 2rem;
+    padding: 0 20px;
 
     @include respond-to(md) {
       padding: 6rem 6.8vw 0 4vw;
@@ -130,10 +135,16 @@
   }
 
   &__title h2 {
-    font-size: 3.2rem;
-    line-height: 4.6rem;
+    font-size: 32px;
+    line-height: 46px;
     text-transform: uppercase;
-    margin-bottom: 3rem;
+    margin-bottom: 30px;
+
+    @include respond-to(md) {
+      font-size: 3.2rem;
+      line-height: 4.6rem;
+      margin-bottom: 3rem;
+    }
 
     @include respond-to(lg) {
       font-size: 5.2rem;
@@ -143,13 +154,14 @@
   }
 
   &__title-text {
-    font-size: 1.4rem;
-    line-height: 2.2rem;
-    margin-bottom: 5.5rem;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 55px;
 
     @include respond-to(md) {
       font-size: 1.2rem;
       line-height: 2.1rem;
+      margin-bottom: 5.5rem;
     }
 
     @include respond-to(lg) {
@@ -185,7 +197,7 @@
   }
 
   &__svg-box-bottom {
-    margin-top: 37rem;
+    margin-top: 370px;
 
     @include respond-to(md) {
       margin-top: 20rem;
@@ -195,12 +207,14 @@
   &__wrap {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 30px;
     padding: 0 2rem;
 
     @include respond-to(md) {
+      padding: 0 2rem;
       padding-left: 4.5rem;
       max-width: 40rem;
+      gap: 3rem;
     }
 
     @include respond-to(lg) {
@@ -218,8 +232,8 @@
 
   &__number {
     font-family: $ff-serif;
-    font-size: 1.8rem;
-    line-height: 3.2rem;
+    font-size: 18px;
+    line-height: 32px;
     text-transform: uppercase;
 
     @include respond-to(md) {
@@ -235,10 +249,10 @@
   }
 
   &__heading h5 {
-    font-size: 2.4rem;
-    line-height: 3.2rem;
+    font-size: 24px;
+    line-height: 32px;
     text-transform: uppercase;
-    margin-bottom: 3rem;
+    margin-bottom: 30px;
 
     @include respond-to(md) {
       font-size: 1.6rem;
@@ -254,8 +268,8 @@
   }
 
   &__text {
-    font-size: 1.4rem;
-    line-height: 2.2rem;
+    font-size: 14px;
+    line-height: 22px;
 
     @include respond-to(md) {
       font-size: 1.2rem;

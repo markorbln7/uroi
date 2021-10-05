@@ -1,5 +1,5 @@
 .ingredient {
-    padding-bottom: 4rem;
+    padding-bottom: 40px;
     background-color: $color-light-1;
   
     @include respond-to(sm) {
@@ -15,7 +15,7 @@
   
     &__left-content {
       position: relative;
-      margin-bottom: 4.3rem;
+      margin-bottom: 43px;
   
       @include respond-to(sm) {
         flex-basis: 50%;
@@ -40,9 +40,15 @@
     }
   
     &__heading-big {
-      font-size: 3.2rem;
-      line-height: 4.2rem;
-      margin-bottom: 1rem;
+      font-size: 32px;
+      line-height: 42px;
+      margin-bottom: 10px;
+
+      @include respond-to(md) {
+        font-size: 3.2rem;
+        line-height: 4.2rem;
+        margin-bottom: 1rem;
+      }
   
       @include respond-to(lg) {
         font-size: 5.5rem;
@@ -55,8 +61,13 @@
     }
   
     &__heading-small {
-      font-size: 1.9rem;
-      line-height: 3.9rem;
+      font-size: 19px;
+      line-height: 39px;
+
+      @include respond-to(md) {
+        font-size: 1.9rem;
+        line-height: 3.9rem;
+      }
   
       @include respond-to(lg) {
         font-size: 2.6rem;
@@ -64,7 +75,11 @@
     }
   
     &__sup {
-      font-size: 1.8rem;
+      font-size: 18px;
+
+      @include respond-to(md) {
+        font-size: 1.8rem;
+      }
     }
   
     &__right-content {
@@ -72,18 +87,19 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      gap: 4rem;
+      gap: 40px;
       padding: 0 10.8vw;
 
       @include respond-to(md) {
+        gap: 4rem;
         flex-direction: column-reverse;
       }
     }
   
     &__text {
-      font-size: 1.4rem;
+      font-size: 14px;
       text-align: center;
-      line-height: 2.2rem;
+      line-height: 22px;
 
       @include respond-to(md) {
         font-size: 1.2rem;
