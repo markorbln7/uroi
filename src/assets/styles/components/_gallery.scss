@@ -180,6 +180,24 @@
     &__link {
       position: relative;
       display: inline-block;
+
+      &--square {
+        img {
+          width: 27rem;
+          height: 27rem;
+          object-fit: cover;
+
+          @include respond-to(md) {
+            width: 32.8rem;
+            height: 32.8rem;
+          }
+
+          @include respond-to(lg) {
+            width: 48rem;
+            height: 48rem;
+          }
+        }
+      }
     }
   
     &__desc {

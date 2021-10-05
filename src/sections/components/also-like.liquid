@@ -11,9 +11,9 @@
                 <div class="like__card">
                     <div class="like__img-box">
                         <picture class="like__img">
-                            <source media="(max-width: 600px)" srcset="{{ block.product.featured_image | img_url: 'medium' }}">
-                            <source media="(max-width: 1200px)" srcset="{{ block.product.featured_image | img_url: 'medium' }}">
-                            <img src="{{ block.product.featured_image | img_url: 'master' }}" alt="{{ block.product.title }}">
+                            <source media="(max-width: 600px)" srcset="{{ block.settings.product.featured_image | img_url: 'medium' }}">
+                            <source media="(max-width: 1200px)" srcset="{{ block.settings.product.featured_image | img_url: 'medium' }}">
+                            <img src="{{ block.settings.product.featured_image | img_url: 'master' }}" alt="{{ block.product.title }}">
                         </picture>
                         <div class="like__hover-info">
                             <div class="like__rating">
