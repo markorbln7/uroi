@@ -27,7 +27,7 @@
     }
 
     &__title {
-        font-size: 3.2rem;
+        font-size: 32px;
         margin-bottom: 0;
 
         @include respond-to(md) {
@@ -55,13 +55,17 @@
     }
 
     &__content {
-        font-size: 1.4rem;
-        padding: 4.5rem 2rem 13.7rem;
-        line-height: 2.2rem;
+        font-size: 14px;
+        padding: 45px 20px 137px;
+        line-height: 22px;
         color: rgba(0, 0, 0, 0.6);
 
         & > * {
-            margin-bottom: 3rem;
+            margin-bottom: 30px;
+
+            @include respond-to(md) {
+                margin-bottom: 3rem;
+            }
         }
 
         @include respond-to(md) {
@@ -78,12 +82,12 @@
     }
 
     &__content-img {
-        width: 14rem;
-        height: 16.8rem;
+        width: 140px;
+        height: 168px;
         object-fit: cover;
         position: absolute;
         top: 75%;
-        left: 15.3rem;
+        left: 153px;
 
         @include respond-to(md) {
             width: 17.1875vw;

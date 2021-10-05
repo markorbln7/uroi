@@ -1,5 +1,9 @@
 .about {
-    padding: 5rem 0;
+    padding: 50px 0;
+
+    @include respond-to(md) {
+      padding: 5rem 0;
+    }
   
     &__wrap {
       @include respond-to(md) {
@@ -9,11 +13,12 @@
     }
   
     &__heading-content {
-      margin-bottom: 6rem;
+      margin-bottom: 60px;
   
       @include respond-to(md) {
         display: flex;
         gap: 1rem;
+        margin-bottom: 6rem;
       }
   
       @include respond-to(lg) {
@@ -26,10 +31,6 @@
         display: flex;
         flex-direction: column-reverse;
         flex-basis: 35%;
-        gap: 2rem;
-      }
-
-      @include respond-to(md) {
         gap: 1rem;
         margin-right: -4vw;
       }
@@ -45,15 +46,17 @@
     }
   
     &__heading h1 {
-      font-size: 1.4rem;
+      font-size: 14px;
       text-transform: uppercase;
-      letter-spacing: 1.045rem;
-      line-height: 1.2rem;
+      letter-spacing: 10px;
+      line-height: 12px;
       color: $color-black;
       font-family: $ff-sans;
-      margin-bottom: 3.4rem;
+      margin-bottom: 34px;
   
       @include respond-to(md) {
+        font-size: 1.4rem;
+        margin-bottom: 3.4rem;
         line-height: 2.5;
         letter-spacing: 0.65rem;
         margin-right: 2rem;
@@ -71,12 +74,13 @@
   
     &__title {
       color: rgba($color-black, $alpha: 0.3);
-      font-size: 4.2rem;
+      font-size: 40px;
       font-family: $ff-serif;
-      margin-bottom: 1.7rem;
+      margin-bottom: 17px;
       cursor: pointer;
 
       @include respond-to(md) {
+        margin-bottom: 1.7rem;
         font-size: 3.2rem;
       }
   
@@ -120,13 +124,22 @@
     }
   
     &__img-box {
-      margin-bottom: 3rem;
+      margin-bottom: 30px;
+      
+      @include respond-to(md) {
+        margin-bottom: 3rem;
+      }
     }
   
     &__img {
-      min-width: 22.8rem;
-      min-height: 31.1rem;
+      min-width: 228px;
+      min-height: 311px;
       object-fit: cover;
+
+      @include respond-to(md) {
+        min-width: 22.8rem;
+        min-height: 31.1rem;
+      }
   
       @include respond-to(lg) {
         width: 100%;
@@ -136,8 +149,8 @@
     }
   
     &__text {
-      font-size: 2.1rem;
-      line-height: 2.7rem;
+      font-size: 21px;
+      line-height: 27px;
       color: $color-silver;
 
       @include respond-to(md) {
