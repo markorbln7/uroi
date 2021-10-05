@@ -21,9 +21,13 @@
         padding: 2rem;
         font-size: 3rem;
         background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
 
         @include respond-to(md) {
-            padding-left: 17.8rem;
+            padding-left: 10rem;
             padding-top: 3rem;
             font-size: 6rem;
             width: 60rem;
@@ -32,12 +36,16 @@
     }
 
     &__logo {
-        width: 14rem;
-        display: block;
-        margin-bottom: 8rem;
-
-        svg {
-            max-width: 100%;
+        display: none;
+        
+        @include respond-to(md) {
+            width: 14rem;
+            display: block;
+            margin-bottom: 8rem;
+            
+            svg {
+                max-width: 100%;
+            }
         }
     }
 
