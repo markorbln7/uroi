@@ -27,11 +27,12 @@
         text-align: center;
 
         @include respond-to(md) {
-            padding-left: 10rem;
             padding-top: 3rem;
             font-size: 6rem;
             width: 60rem;
             max-width: 100%;
+            flex-direction: column;
+            justify-content: flex-start;
         }
     }
 
