@@ -7,7 +7,7 @@ class Menu {
         this.animationDuration = .5
 
         this.$el = options.el
-        this.menu = document.querySelector('.header__menu')
+        this.menu = this.$el.querySelector('.header__menu')
         this.hamburger = this.$el.querySelector('.header__hamburger')
 
         // INIT EVENTS
