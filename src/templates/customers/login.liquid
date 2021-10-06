@@ -11,6 +11,9 @@
             
             {% form 'customer_login', class: "form" %}
                 {{ form_errors | default_errors }}
+                {% for error in form_errors %}
+                    {{ error }}
+                {% endfor %}
                 <ul class="login__inputs">
                     <li>
                         <div class="form__input-box">
