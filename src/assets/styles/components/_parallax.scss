@@ -44,3 +44,8 @@ $delays: 1, 2, 3, 4, 5;
     left: 0;
     top: 0;
 }
+
+// Should go to some general scss file
+main {
+    overflow: hidden;
+}
