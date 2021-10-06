@@ -184,7 +184,7 @@
         opacity: 0;
         text-transform: capitalize;
 
-        @include respond-to(md) {
+        @include respond-to(lg) {
             font-size: 3.2rem;
             opacity: 1!important;
             visibility: visible!important;
