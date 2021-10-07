@@ -11,10 +11,10 @@
         class="container should-animate from-y">
             <div class="features__heading-box">
                 <span class="features__subtitle">
-                    {{ section.settings.subtitle }}
+                    {{product.metafields.zigzag.subtitle}}
                 </span>
                 <div class="features__heading">
-                    <h2>{{ section.settings.title }}</h2>
+                    <h2>{{product.metafields.zigzag.title}}</h2>
                 </div>
             </div>
         </div>
@@ -29,18 +29,17 @@
                 data-scroll-direction="vertical" 
                 data-scroll-repeat="false"
                 class="features__heading-sub ml-3-lg should-animate from-y dl-1">
-                    <h3>{{ section.settings.first-title }}</h3>
+                    <h3>{{product.metafields.zigzag.first_title}}</h3>
                 </div>
                 <ul 
                 data-scroll 
                 data-scroll-direction="vertical" 
                 data-scroll-repeat="false"
                 class="features__list should-animate from-y dl-1">
-                    {% for block in section.blocks %}
-                       {% if block.settings.first-list-item %}
-                            <li class="features__item">{{ block.settings.first-list-item }}</li>
-                       {% endif %}
-                    {% endfor %}
+                {% for column in product.metafields.zigzag.first_list %} 
+                {%- assign columnTitle = column -%}
+                    <li class="features__item">{{ product.metafields.zigzag.first_list[forloop.index0] }}</li>
+                {% endfor %}
                 </ul>
             </div>
             <!-- END :: FEATURES LIST -->
@@ -53,9 +52,9 @@
                     data-scroll 
                     data-scroll-speed="-.85"
                     class="features__img-box">
-                        <source media="(max-width: 600px)" srcset="{{ section.settings.first-img-mob | img_url: 'master' }}">
-                        <source media="(max-width: 1200px)" srcset="{{ section.settings.first-img-tab | img_url: 'master' }}">
-                        <img src="{{ section.settings.first-img-desk | img_url: 'master' }}" alt="{{ section.settings.first-img-alt }}">
+                        <source media="(max-width: 600px)" srcset="{{product.metafields.zigzag.image}}">
+                        <source media="(max-width: 1200px)" srcset="{{product.metafields.zigzag.image}}">
+                        <img src="{{product.metafields.zigzag.image}}" alt="{{product.title}}">
                     </picture>
                 </div>
             </div>
@@ -79,7 +78,7 @@
             data-scroll-direction="vertical" 
             data-scroll-repeat="false"
             class="features__title should-animate from-y">
-                <h2>{{ section.settings.second-title }}</h2>
+                <h2>{{product.metafields.zigzag.second_title}}</h2>
             </div>
 
             <div 
@@ -88,9 +87,9 @@
             data-scroll-repeat="false"
             class="features__img-box-mid should-animate from-y dl-1">
                 <picture class="features__img-mid">
-                    <source media="(max-width: 600px)" srcset="{{ section.settings.second-img-mob | img_url: 'master' }}">
-                    <source media="(max-width: 1200px)" srcset="{{ section.settings.second-img-tab | img_url: 'master' }}">
-                    <img src="{{ section.settings.second-img-desk | img_url: 'master' }}" alt="{{ section.settings.second-img-alt }}">
+                    <source media="(max-width: 600px)" srcset="{{product.metafields.zigzag.second_left_image}}">
+                    <source media="(max-width: 1200px)" srcset="{{product.metafields.zigzag.second_left_image}}">
+                    <img src="{{product.metafields.zigzag.second_left_image}}" alt="{{ product.title }}">
                 </picture>
             </div>
 
@@ -100,13 +99,13 @@
             data-scroll-repeat="false"
             class="features__text-wrap should-animate from-y dl-2">
                 <div class="features__text-desc">
-                    {{ section.settings.second-copy-1 }}
+                    {{product.metafields.zigzag.left_first}}
                 </div>
                 <div class="features__text-big">
-                    {{ section.settings.second-copy-2 }}
+                   {{product.metafields.zigzag.left_second}}
                 </div>
                 <div class="features__text-small">
-                    {{ section.settings.second-copy-3 }}
+                    {{product.metafields.zigzag.left_third}}
                 </div>
             </div>
 
@@ -120,7 +119,7 @@
             data-scroll-direction="vertical" 
             data-scroll-repeat="false"
             class="features__heading-sub should-animate from-y dl-1">
-                <h3>{{ section.settings.second-content-title }}</h3>
+                <h3>{{product.metafields.zigzag.right_title}}</h3>
             </div>
 
             <div 
@@ -128,7 +127,7 @@
             data-scroll-direction="vertical" 
             data-scroll-repeat="false"
             class="features__text-mid should-animate from-y dl-2">
-                {{ section.settings.second-content }}
+                <p>{{product.metafields.zigzag.right_content}}</p>
             </div>
         </div>
         <!-- END :: RIGHT COLUMN -->
@@ -145,9 +144,9 @@
                 data-scroll 
                 data-scroll-speed="-.85"
                 class="features__img-bottom">
-                    <source media="(max-width: 600px)" srcset="{{ section.settings.third-img-mob | img_url: 'master' }}">
-                    <source media="(max-width: 1200px)" srcset="{{ section.settings.third-img-tab | img_url: 'master' }}">
-                    <img src="{{ section.settings.third-img-desk | img_url: 'master' }}" alt="{{ section.settings.third-img-alt }}">
+                    <source media="(max-width: 600px)" srcset="{{product.metafields.zigzag.third_image}}">
+                    <source media="(max-width: 1200px)" srcset="{{product.metafields.zigzag.third_image}}">
+                    <img src="{{product.metafields.zigzag.third_image}}" alt="{{product.title}}">
                 </picture>
             </div>
         </div>
@@ -160,7 +159,7 @@
             data-scroll-direction="vertical" 
             data-scroll-repeat="false"
             class="features__heading-sub should-animate dl-1 from-y">
-                <h3>{{ section.settings.third-title }}</h3>
+                <h3>{{product.metafields.zigzag.third_part_title}}</h3>
             </div>
 
             <div 
@@ -170,12 +169,12 @@
             class="features__text-bottom should-animate dl-2 from-y">
                 <p>
                   {% assign counter = 1%}
-                    {% for block in section.blocks %}
-                        {% if block.settings.third-list-item %}
-                            <span class="features__separator"><span class="features__num">0{{ counter }}.</span>{{ block.settings.third-list-item }}</span>
-                            {% assign counter = counter | plus:1 %}
-                        {% endif %}
-                    {% endfor %}
+
+                {% for column in product.metafields.zigzag.third_list %} 
+                    {%- assign columnTitle = column -%}
+                    <span class="features__separator"><span class="features__num">0{{ counter }}.</span>{{ product.metafields.zigzag.third_list[forloop.index0] }}</span>
+                    {% assign counter = counter | plus:1 %}
+                {% endfor %}
                 </p>
             </div>
         </div>
