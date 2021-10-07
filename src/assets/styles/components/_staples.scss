@@ -38,12 +38,16 @@
 
     &__title {
       font-size: 10vw;
+      text-align: center;
+      padding-right: 20px;
       
       @include respond-to(md) {
         font-size: 4rem;
+        padding-right: 0;
       }
 
       @include respond-to(lg) {
+        text-align: left;
         font-size: 4.8rem;
         margin: 0;
       }
@@ -75,6 +79,8 @@
       margin-top: 30px;
       
       &--last {
+        display: none !important;
+
         @include respond-to(lg) {
           display: none;
         }
@@ -115,8 +121,10 @@
       flex-direction: column;
       gap: 10px;
       text-align: center;
+      margin-top: 1rem;
 
       @include respond-to(md) {
+        margin-top: 0;
         gap: 1rem;
         align-items: center;
       }

@@ -1,5 +1,5 @@
 .extract {
-  padding: 50px 0;
+  padding: 0 0 50px;
 
   @include respond-to(md) {
     padding: 0;
@@ -37,7 +37,7 @@
     &::after {
       content: "";
       position: absolute;
-      width: 440px;
+      width: 550px;
       height: 0.1rem;
       top: -15%;
       left: 2%;
@@ -71,7 +71,7 @@
   }
 
   &__img-big img {
-    max-width: 168px;
+    max-width: 200px;
 
     @include respond-to(md) {
       max-width: 20rem;
@@ -86,7 +86,7 @@
     position: absolute;
     top: 50%;
     right: 0;
-    max-width: 125px;
+    max-width: 150px;
 
     @include respond-to(md) {
       top: 80%;
@@ -201,6 +201,10 @@
 
     @include respond-to(md) {
       margin-top: 20rem;
+    }
+
+    @include respond-to(lg) {
+      margin-top: 29rem;
     }
   }
 
