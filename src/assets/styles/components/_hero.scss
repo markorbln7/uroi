@@ -152,6 +152,33 @@
         }
       }
     }
+
+    &--ingredients,
+    .hero__title {
+      max-width: 161rem;
+    }
+
+    &--regimen {
+      @include respond-to(md) {
+        max-width: 161rem;
+      }
+
+      .hero__title {
+        max-width: 22rem;
+        
+        @include respond-to(md) {
+          max-width: 161rem;
+        }
+
+        span {
+          display: block;
+
+          @include respond-to(md) {
+            display: inline;
+          }
+        }
+      }
+    }
   }
 
   &--mb {

@@ -11,4 +11,10 @@
         opacity: 1;
         transition: opacity .6s, visibility .6s;
     }
+
+    @include respond-to(md) {
+        .slick-arrow {
+            display: none !important;
+        }
+    }
 }

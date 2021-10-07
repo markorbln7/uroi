@@ -4,6 +4,7 @@
   margin-bottom: 30px;
   padding-bottom: 15px;
   font-size: 16px;
+  border-radius: 0;
 
   @include respond-to(md) {
     margin-bottom: 3rem;

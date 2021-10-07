@@ -45,6 +45,7 @@
 
       @include respond-to(lg) {
         font-size: 4.8rem;
+        margin: 0;
       }
     }
   
@@ -189,14 +190,15 @@
       @include respond-to(lg) {
         font-size: 1.9rem;
         line-height: 2.6rem;
-        max-width: 37.8rem;
+        max-width: 52.8rem;
+        margin-bottom: 2rem;
       }
     }
   
     &__arrow-next {
       position: absolute;
       top: 50%;
-      right: 100px;
+      right: 0;
       width: 30px;
       height: 30px;
       transform: scale(0.95) rotate(180deg) translate(-50%, 50%);

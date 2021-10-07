@@ -37,7 +37,7 @@
     <!-- CONTENT -->
     <div class="hero__container">
         <div 
-        class="hero__content-wrapper hero__content-wrapper--small {% if section.settings.dark-title %}hero__content-wrapper--dark-bottom{% endif %}">
+        class="hero__content-wrapper hero__content-wrapper--ingredients {% if section.settings.dark-title %}hero__content-wrapper--dark-bottom{% endif %}">
             <h3 
             data-scroll 
             data-scroll-direction="vertical" 
@@ -48,7 +48,11 @@
             data-scroll 
             data-scroll-direction="vertical" 
             data-scroll-repeat="false"
-            class="hero__title should-animate from-y dl-3">{{ section.settings.title }} </h1>
+            class="hero__title should-animate from-y dl-3">
+                <span>{{ section.settings.title }}</span> <br>
+                <span>{{ section.settings.title2 }}</span> <br>
+                <span>{{ section.settings.title3 }}</span>
+            </h1>
         </div>
     </div>
     <!-- END :: CONTENT -->
@@ -83,7 +87,19 @@
             "id": "title",
             "type": "text",
             "label": "Title",
-            "default": "a blessing of water for every skin"
+            "default": "a blessing of water for every"
+        },
+        {
+            "id": "title2",
+            "type": "text",
+            "label": "Title",
+            "default": "skin. relieving dryness"
+        },
+        {
+            "id": "title3",
+            "type": "text",
+            "label": "Title",
+            "default": "with a gentle touch"
         },
         {
             "id": "subtitle",
