@@ -1,0 +1,196 @@
+.sets-full-ing-two {
+    background-color: #F7F7F7;
+    padding: 45px 0 40px;
+    text-align: center;
+
+    @include respond-to(md) {
+        padding: 0;
+    }
+
+    &__container {
+        padding: 0 28px;
+
+        @include respond-to(md) {
+            padding: 0;
+            display: flex;
+        }
+    }
+
+    &__content {
+        @include respond-to(md) {
+            padding: 4.2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 50%;
+        }
+
+        @include respond-to(lg) {
+            padding: 7.1rem 20.75rem;
+        }
+    }
+
+    &__title {
+        font-size: 35px;
+        line-height: 137%;
+
+        @include respond-to(md) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            white-space: nowrap;
+            font-size: 2.6rem;
+        }
+
+        @include respond-to(lg) {
+            font-size: 4.8rem;
+            line-height: 73%;
+        }
+    }
+
+    &__wrapper {
+        @include respond-to(md) {
+            position: relative;
+            margin-top: -5rem;
+        }
+
+        @include respond-to(lg) {
+            margin-bottom: -6rem;
+            margin-top: -6rem;
+        } 
+    }
+
+    &__small-pic {
+        position: relative;
+        width: 100%;
+        max-width: 190px;
+        margin: 0 auto 10px;
+        z-index: 2;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 330px;
+            height: 0.1rem;
+            top: 10%;
+            left: -20%;
+            background: $color-black;
+            opacity: 0.8;
+            transform-origin: left;
+            transform: rotate(35deg);
+            z-index: -1;
+
+            @include respond-to(md) {
+                width: 17.5rem;
+            }
+      
+            @include respond-to(lg) {
+              width: 48rem;
+            }
+        }
+
+        @include respond-to(md) {
+            max-width: 10.4rem;
+        }
+
+        @include respond-to(lg) {
+            max-width: 28rem;
+        }
+    }
+
+    &__bold {
+        font-size: 14px;
+        line-height: 129%;
+        letter-spacing: 0.311111px;
+        margin-bottom: 30px;
+
+        @include respond-to(md) {
+            font-size: 1.2rem;
+            line-height: 1.4rem;
+            letter-spacing: 0.026rem;
+            position: relative;
+            z-index: 5;
+        }
+
+        @include respond-to(lg) {
+            font: 1.6rem;
+            line-height: 1.75;
+            letter-spacing: 0.035em;
+
+            p {
+                opacity: 0.7;
+            }
+        }
+
+        &--first {
+            order: -1;
+        }
+    }
+
+    &__prod-title {
+        font-size: 32px;
+        line-height: 38px;
+        margin-bottom: 10px;
+        font-family: $ff-sans;
+
+        @include respond-to(md) {
+            font-size: 2.5rem;
+            line-height: 3.5rem;
+            margin-bottom: 2.3rem;
+        }
+
+        @include respond-to(lg) {
+            font-size: 3.6rem;
+            line-height: 72%;
+            letter-spacing: 0.08rem;
+            color: #2c2c2c;
+        }
+    }
+
+    &__light {
+        font-size: 12px;
+        line-height: 1.5;
+        letter-spacing: 0.266667px;
+        color: #000000;
+        mix-blend-mode: normal;
+        opacity: 0.4;
+
+        @include respond-to(md) {
+            font-size: 1rem;
+            line-height: 1.4;
+            letter-spacing: normal;
+        }
+
+        @include respond-to(lg) {
+            font-size: 1.2rem;
+            line-height: 1.58;
+            letter-spacing: 0.026rem;
+            opacity: 0.4;
+        }
+
+        & > * + * {
+            margin-top: 30px;
+
+            @include respond-to(md) {
+                margin-top: 3rem;
+            }
+        }
+    }
+
+    &__img {
+        display: none;
+
+        @include respond-to(md) {
+            display: flex;
+            flex: 0 0 50%;
+
+            img,
+            picture {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

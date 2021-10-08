@@ -232,7 +232,7 @@
       &::after {
         content: "";
         position: absolute;
-        width: 33rem;
+        width: 330px;
         height: 0.1rem;
         top: 10%;
         left: -20%;
@@ -241,6 +241,10 @@
         transform-origin: left;
         transform: rotate(35deg);
         z-index: -1;
+        
+        @include respond-to(md) {
+          width: 33rem;
+        }
   
         @include respond-to(lg) {
           width: 50rem;
