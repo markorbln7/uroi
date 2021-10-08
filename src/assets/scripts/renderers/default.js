@@ -8,7 +8,6 @@ class DefaultRenderer extends Highway.Renderer {
             darkNav: this.darkNav
         })
     }
-
     onEnterCompleted() {
         APP.MainMenu.closeMenu()
         APP.ShopMenu.closeDrawer()
