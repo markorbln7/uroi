@@ -1,0 +1,181 @@
+.sets-products {
+    padding-top: 40px;
+
+    @include respond-to(md) {
+        display: flex;
+        padding: 4.5rem 2.3rem;
+    }
+    
+    @include respond-to(lg) {
+        padding: 5rem 13.5rem;
+    }
+
+    &__title {
+        font-size: 35px;
+        line-height: 43px;
+        margin-bottom: 24px;
+
+        @include respond-to(md) {
+            font-size: 3.2rem;
+            line-height: 4.5rem;
+            margin-bottom: 3.2rem;
+        }
+
+        @include respond-to(lg) {
+            font-size: 5.2rem;
+            line-height: 92%;
+            margin-bottom: 8rem;
+        }
+    }
+
+    &__subtitle {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 12px;
+        text-align: center;
+        letter-spacing: 7.46429px;
+        text-transform: uppercase;
+        color: #000000;
+        opacity: 0.58;
+        font-family: $ff-sans;
+
+        @include respond-to(md) {
+            font-size: 1.30208vw;
+            line-height: 1.5625vw;
+            letter-spacing: .76302vw;
+            margin-bottom: 2.3rem;
+        }
+
+        @include respond-to(lg) {
+            font-size: .72917vw;
+            line-height: .625vw;
+            letter-spacing: .54427vw;
+            text-align: left;
+        }
+    }
+
+    &__item {
+        &--content {
+            text-align: center;
+            font-size: 18px;
+            font-family: $ff-serif;
+            line-height: 25px;
+            padding: 0 20px;
+            margin-bottom: 20px;
+
+            @include respond-to(md) {
+                font-size: 1.8rem;
+                line-height: 2.5rem;
+                padding-left: 1.1rem;
+                padding-right: 2.3rem;
+                flex: 0 0 30%;
+            }
+
+            @include respond-to(lg) {
+                text-align: left;
+                padding-left: 20.9rem - 13.5rem;
+            }
+        }
+
+        &--card {
+            @include respond-to(md) {
+                padding: 0;
+                padding-left: 3.2rem;
+                flex: 0 0 35%;
+            }
+
+            @include respond-to(lg) {
+                padding-left: 3.5rem;
+            }
+        }
+    }
+
+    &__content-text {
+        max-width: 240px;
+        margin: 0 auto;
+
+        @include respond-to(md) {
+            max-width: 24rem;
+            font-size: 2.6rem;
+            line-height: 1.3;
+        }
+
+        @include respond-to(lg) {
+            font-size: 2.4rem;
+            line-height: 125%;
+            max-width: 100%;
+
+        }
+    }
+
+    &__details {
+        padding: 20px 20px 38px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 22px;
+        color: #2C2C2C;
+
+        @include respond-to(md) {
+            padding: 0;
+            font-size: 1.6rem;
+            line-height: 2.6rem;
+            padding-top: 1rem;
+        }
+    }
+
+    &__item-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        @include respond-to(md) {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__product-name {
+        font-size: 32px;
+        line-height: 38px;
+
+        @include respond-to(md) {
+            font-size: 2.5rem;
+            line-height: 1.4;
+        }
+    }
+
+    &__purpose {
+        font-family: $ff-serif;
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: 0.311111px;
+        text-transform: lowercase;
+        color: #2C2C2C;
+        opacity: 0.5;
+
+        @include respond-to(md) {
+            font-size: 1.4rem;
+            line-height: 1.96rem;
+        }
+    }
+
+    &__amount {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 9px;
+        line-height: 12px;
+        letter-spacing: 3.69643px;
+        text-transform: uppercase;
+        color: #000000;
+        opacity: 0.6;
+
+        @include respond-to(md) {
+            font-size: 1.82292vw;
+            line-height: 1.4;
+        }
+    }
+}
