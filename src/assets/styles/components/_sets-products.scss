@@ -136,6 +136,11 @@
             align-items: flex-start;
             margin-bottom: 2rem;
         }
+
+        @include respond-to(lg) {
+            flex-direction: row;
+            align-items: center;
+        }
     }
 
     &__product-name {
@@ -161,6 +166,11 @@
             font-size: 1.4rem;
             line-height: 1.96rem;
         }
+
+        @include respond-to(lg) {
+            font-size: 1.8rem;
+            line-height: 1.4;
+        }
     }
 
     &__amount {
@@ -176,6 +186,10 @@
         @include respond-to(md) {
             font-size: 1.82292vw;
             line-height: 1.4;
+        }
+
+        @include respond-to(lg) {
+            font-size: 1.8rem;
         }
     }
 }
