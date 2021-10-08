@@ -10,6 +10,27 @@
         padding: 5rem 13.5rem;
     }
 
+    &--three {
+        flex-wrap: wrap;
+
+        @include respond-to(lg) {
+            padding-right: 21rem;
+            column-gap: 13rem;
+        }
+
+        .sets-products {
+            &__item {
+                flex: 0 0 50%;
+                margin-bottom: 4.2rem;
+
+                @include respond-to(lg) {
+                    flex: 0 0 calc(50% - 10.5rem);
+                    margin-bottom: 13.7rem;
+                }
+            }
+        }
+    }
+
     &__title {
         font-size: 35px;
         line-height: 43px;
