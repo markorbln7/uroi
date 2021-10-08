@@ -47,90 +47,51 @@
                 data-section='general' 
                 class="def-page__title">General</h2>
                 <ul class="faq-accordion">
+                {% for block in section.blocks %}
+                {% if block.type == 'general' %}
                     <li class="faq-accordion__item faq-accordion__item--active">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
+                        <button class="faq-accordion__button">{{block.settings.title}}</button>
                         <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
+                        <p>{{block.settings.answer}}</p>
                         </div>
                     </li>
-                    <li class="faq-accordion__item">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
-                    <li class="faq-accordion__item">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
-                    <li class="faq-accordion__item">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
+                  
+                {% endif %}
+                {% endfor %}
                 </ul> 
 
                 <h2 
                 data-section='products'
                 class="def-page__title">Products</h2>
                 <ul class="faq-accordion">
-                    <li class="faq-accordion__item faq-accordion__item--active">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
-                    <li class="faq-accordion__item">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
-                    <li class="faq-accordion__item">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
-                    <li class="faq-accordion__item">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
+                    {% for block in section.blocks %}
+                    {% if block.type == 'products' %}
+                        <li class="faq-accordion__item faq-accordion__item--active">
+                            <button class="faq-accordion__button">{{block.settings.title}}</button>
+                            <div class="faq-accordion__answer">
+                            <p>{{block.settings.answer}}</p>
+                            </div>
+                        </li>
+                    
+                    {% endif %}
+                    {% endfor %}
                 </ul>
 
                 <h2 
                 data-section='regimen'
                 class="def-page__title">Regimen</h2>
                 <ul class="faq-accordion">
-                    <li class="faq-accordion__item faq-accordion__item--active">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
-                    <li class="faq-accordion__item">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
-                    <li class="faq-accordion__item">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
-                    <li class="faq-accordion__item">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
+                    {% for block in section.blocks %}
+                        {% if block.type == 'regimen' %}
+                            <li class="faq-accordion__item faq-accordion__item--active">
+                                <button class="faq-accordion__button">{{block.settings.title}}</button>
+                                <div class="faq-accordion__answer">
+                                <p>{{block.settings.answer}}</p>
+                                </div>
+                            </li>
+                        
+                        {% endif %}
+                    {% endfor %}
                 </ul>
 
 
@@ -138,60 +99,34 @@
                 data-section='payment'
                 class="def-page__title">Payment and Shipping</h2>
                 <ul class="faq-accordion">
-                    <li class="faq-accordion__item faq-accordion__item--active">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
-                    <li class="faq-accordion__item">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
-                    <li class="faq-accordion__item">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
-                    <li class="faq-accordion__item">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
+                    {% for block in section.blocks %}
+                    {% if block.type == 'payment' %}
+                        <li class="faq-accordion__item faq-accordion__item--active">
+                            <button class="faq-accordion__button">{{block.settings.title}}</button>
+                            <div class="faq-accordion__answer">
+                            <p>{{block.settings.answer}}</p>
+                            </div>
+                        </li>
+                    
+                    {% endif %}
+                    {% endfor %}
                 </ul>
 
                 <h2 
                 data-section='returns'
                 class="def-page__title">Returns and exchanges</h2>
                 <ul class="faq-accordion">
-                    <li class="faq-accordion__item faq-accordion__item--active">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
-                    <li class="faq-accordion__item">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
-                    <li class="faq-accordion__item">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
-                    <li class="faq-accordion__item">
-                        <button class="faq-accordion__button">What does uruoi mean?</button>
-                        <div class="faq-accordion__answer">
-                            <p>In Japanese, uruoi can mean moisture, richness, and fulfillment. Our brand name uruoi is taken from the Japanese verb “uruou,” it means moisture. Since moisture is the cornerstone of our lineup, we want everyone to be uruoi, and have uruoiskin!</p>
-                        </div>
-                    </li>
+                    {% for block in section.blocks %}
+                        {% if block.type == 'returns' %}
+                            <li class="faq-accordion__item faq-accordion__item--active">
+                                <button class="faq-accordion__button">{{block.settings.title}}</button>
+                                <div class="faq-accordion__answer">
+                                <p>{{block.settings.answer}}</p>
+                                </div>
+                            </li>
+                        
+                        {% endif %}
+                    {% endfor %}
                 </ul>
 
                 <h2 

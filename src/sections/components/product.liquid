@@ -109,28 +109,70 @@
           <p>
             {{ product.description }} 
           </p>
-
+        {{product.metafields.product.icons}}ss
           <div class="product__badges">
+          {% if product.metafields.product.icons contains "index1" %}
             <span class="product__should-animate">
               <img
                 src="//images.ctfassets.net/35vb6ef1spkj/2BUaI4fKzj0qSixnVqfrip/765b733afd91f081817da598e54753c2/1.svg"
                 class="product__badge">
             </span>
+          {% endif %}
+          {% if product.metafields.product.icons contains "index10" %}
             <span class="product__should-animate">
               <img
-                src="//images.ctfassets.net/35vb6ef1spkj/BmYkfbKXndDvfCHXgCwWB/d041bb317f05dbac449dd5f2ed3c622b/4.svg"
+                src="https://cdn.shopify.com/s/files/1/0066/4774/2527/files/Icon_c106b983-508c-461c-929b-3862069e5289.svg?v=1633706214"
                 class="product__badge">
             </span>
+          {% endif %}
+          {% if product.metafields.product.icons contains "index150" %}
             <span class="product__should-animate">
               <img
-                src="//images.ctfassets.net/35vb6ef1spkj/5suxMcYS4dxnOHvC6iMD2j/78d10fda75d3196c5cbfaf9ffc51c880/2.svg"
+                src="https://cdn.shopify.com/s/files/1/0066/4774/2527/files/Icon_1.png?v=1633706194"
                 class="product__badge">
             </span>
+          {% endif %}
+          {% if product.metafields.product.icons contains "index550" %}
+            <span class="product__should-animate">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0066/4774/2527/files/Icon.svg?v=1633706194"
+                class="product__badge">
+            </span>
+          {% endif %}
+          {% if product.metafields.product.icons contains "night" %}
+            <span class="product__should-animate">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0066/4774/2527/files/Icon_3_3772ab4d-3c51-4923-95fc-5de2ef139f23.svg?v=1633706214"
+                class="product__badge">
+            </span>
+            {% endif %}
+            {% if product.metafields.product.icons contains "day" %}
             <span class="product__should-animate">
               <img
                 src="//images.ctfassets.net/35vb6ef1spkj/Szgh31cMXQJGuuZ8XShNb/65bf5cbff7cd5056daeb247b118bbd36/2.svg"
                 class="product__badge">
             </span>
+            {% endif %}
+            {% if product.metafields.product.icons contains "nightAndDay" %}
+            <span class="product__should-animate">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0066/4774/2527/files/Icon_3.svg?v=1633706194"
+                class="product__badge">
+            </span>
+            {% if product.metafields.product.icons contains "colorantFree" %}
+            <span class="product__should-animate">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0066/4774/2527/files/Icon_4.svg?v=1633706214"
+                class="product__badge">
+            </span>
+            {% endif %}
+            {% if product.metafields.product.icons contains "fragranceFree" %}
+            <span class="product__should-animate">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0066/4774/2527/files/Icon_2.svg?v=1633706214"
+                class="product__badge">
+            </span>
+          {% endif %}
           </div>
         </div>
       </div>

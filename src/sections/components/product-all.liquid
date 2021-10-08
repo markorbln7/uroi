@@ -16,6 +16,7 @@
                                             <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
                                         </picture>
                                     </div>
+                                    {% assign mark = product.metafields.yotpo.reviews_average | plus: 0 %}
                                     <div class="grid__hover-info">
                                         <a class="grid__overlay-link" href="{{ product.url }}"></a>
                                         <div class="grid__rating">
@@ -51,6 +52,7 @@
                                                         class="star"></path>
                                                 </svg>
                                             </div>
+                                            {% if mark > 4.49 %}
                                             <div class="grid__star">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
                                                     class="grid__svg-star">
@@ -68,6 +70,9 @@
                                                         class="star"></path>
                                                 </svg>
                                             </div>
+                                            {% else %}
+                                            
+                                            {% endif %}
                                         </div>
                                         <div class="grid__price">
                                             {{ product.price | money }}
