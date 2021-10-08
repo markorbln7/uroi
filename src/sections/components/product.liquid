@@ -109,10 +109,9 @@
           <p>
             {{ product.description }} 
           </p>
-        {{product.metafields.product.icons}}
           <div class="product__badges">
           {% if product.metafields.product.icons contains "index1" %}
-            <span class="product__should-animate">
+            <span class="product__should-animatße">
               <img
                 src="//images.ctfassets.net/35vb6ef1spkj/2BUaI4fKzj0qSixnVqfrip/765b733afd91f081817da598e54753c2/1.svg"
                 class="product__badge">
@@ -159,6 +158,7 @@
                 src="https://cdn.shopify.com/s/files/1/0066/4774/2527/files/Icon_3.svg?v=1633706194"
                 class="product__badge">
             </span>
+            {% endif %}
             {% if product.metafields.product.icons contains "colorantFree" %}
             <span class="product__should-animate">
               <img
