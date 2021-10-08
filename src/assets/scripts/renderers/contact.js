@@ -1,8 +1,6 @@
 import DefaultRenderer from './default'
 
 class ContactRenderer extends DefaultRenderer {
-    onEnter() {}
-    onLeave() {}
     onEnterCompleted() {
       super.onEnterCompleted()
     }
@@ -11,4 +9,4 @@ class ContactRenderer extends DefaultRenderer {
     }
 }
 
-export default ContactRenderer;
+export default ContactRenderer

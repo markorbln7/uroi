@@ -2,9 +2,6 @@ import DefaultRenderer from './default'
 import initAside from '../modules/aside'
 
 class FaqRenderer extends DefaultRenderer {
-    onEnter() {}
-    onLeave() {}
-
     onEnterCompleted() {
         super.onEnterCompleted()
         initAside(this.LocoSroll)

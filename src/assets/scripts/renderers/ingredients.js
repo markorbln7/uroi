@@ -3,13 +3,9 @@ import Tabs from '../modules/tabs'
 import {initIngredientsBar, destroyMarkup} from '../modules/ingredients-bar'
 
 class IngredientRenderer extends DefaultRenderer {
-    onEnter() {}
-    onLeave() {
-        super.onLeave()
-    }
     onEnterCompleted() {
         super.onEnterCompleted()
-        initIngredientsBar();
+        initIngredientsBar()
 
         this.tabs = new Tabs({
             scroll: this.LocoSroll
@@ -17,8 +13,8 @@ class IngredientRenderer extends DefaultRenderer {
     }
     onLeaveCompleted() {
         super.onLeaveCompleted()
-        destroyMarkup();
+        destroyMarkup()
     }
 }
 
-export default IngredientRenderer;
+export default IngredientRenderer

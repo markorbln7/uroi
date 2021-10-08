@@ -1,12 +1,8 @@
 import DefaultRenderer from './default'
-import Slick from '../modules/slider';
+import Slick from '../modules/slider'
 import _each from 'lodash/each'
 
 class HomepageRenderer extends DefaultRenderer {
-    onEnter() {}
-    onLeave() {
-      super.onLeave()
-    }
     onEnterCompleted() {
       super.onEnterCompleted()
       
@@ -19,4 +15,4 @@ class HomepageRenderer extends DefaultRenderer {
     }
 }
 
-export default HomepageRenderer;
+export default HomepageRenderer

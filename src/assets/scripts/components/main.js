@@ -16,9 +16,14 @@ import ShopMenu from '../modules/shopMenu'
 
 window.APP = {}
 
+// INIT THE NAV
 APP.MainMenu = new Menu({
-  el: document.querySelector('.header')
+  el: document.querySelector('.header'), // Will only toggle class on this one
+  menu: document.querySelector('.header__menu'), // Full screen menu
+  hamburger: document.querySelector('.header__hamburger'), // Element to open the menu
+  openClass: "header--open" // Classname to be added to @el when open
 })
+
 
 APP.ShopMenu = new ShopMenu()
 

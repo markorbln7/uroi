@@ -7,8 +7,9 @@ class Menu {
         this.animationDuration = .5
 
         this.$el = options.el
-        this.menu = this.$el.querySelector('.header__menu')
-        this.hamburger = this.$el.querySelector('.header__hamburger')
+        this.menu = options.menu
+        this.hamburger = options.hamburger
+        this.openClass = options.openClass
 
         // INIT EVENTS
         this.hamburger.addEventListener('click', (e) => {
@@ -21,15 +22,14 @@ class Menu {
 
     toggleHamburger() {
         this.open = !this.open
-
         this[this.open ? 'openMenu' : 'closeMenu']()
     }
 
     openMenu(instant) {
-        let duration = instant ? 0 : this.animationDuration
+        this.$el.classList.add(this.openClass)
         document.body.classList.add('noscroll')
-        this.$el.classList.add('header--open')
 
+        let duration = instant ? 0 : this.animationDuration
         gsap.set(this.menu, { visibility: 'visible' })
         gsap.to(this.menu, {
             opacity: 1,
@@ -39,10 +39,10 @@ class Menu {
     }
 
     closeMenu(instant) {
-        let duration = instant ? 0 : this.animationDuration
+        this.$el.classList.remove(this.openClass)
         document.body.classList.remove('noscroll')
-        this.$el.classList.remove('header--open')
 
+        let duration = instant ? 0 : this.animationDuration
         gsap.to(this.menu, {
             opacity: 0,
             overwrite: true,
@@ -53,6 +53,5 @@ class Menu {
         })
     }
 }
-
 
 export default Menu

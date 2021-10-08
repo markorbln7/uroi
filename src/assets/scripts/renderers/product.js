@@ -3,26 +3,11 @@ import Slick from '../modules/slider'
 import LocoSroll from '../modules/locoScroll'
 
 class ProductRenderer extends DefaultRenderer {
-    onEnter() {}
-    onLeave() {
-        super.onLeave()
-    }
-    onEnterCompleted() {
-        // super.onEnterCompleted()
-
-        this.LocoSroll = new LocoSroll({
-            el: $("#wrapper"),
-            darkNav: "add"
-        })
-
-
+    initSlick() {
         this.Slick = new Slick({
             el: $('.find__slider'),
             options:{
-                infinite: false,
-                speed: 300,
                 slidesToShow: 4,
-                slidesToScroll: 1,
                 nextArrow: '.find__arrow-next',
                 prevArrow: '.find__arrow-prev',
                 responsive: [
@@ -43,7 +28,8 @@ class ProductRenderer extends DefaultRenderer {
                 ]
             }        
         })
-
+    }
+    initQuantity() {
         let increase = document.querySelector('.inc')
         let decrease = document.querySelector('.dec')
         let cta = document.querySelector('.add-to-cart.atc-button')
@@ -64,6 +50,13 @@ class ProductRenderer extends DefaultRenderer {
                 cta.setAttribute('data-quantity', toSet)
             }
         })
+    }
+    onEnterCompleted() {
+        this.darkNav = "add"
+
+        super.onEnterCompleted()
+        this.initSlick()
+        this.initQuantity()
         
     }
     onLeaveCompleted() {
@@ -71,4 +64,4 @@ class ProductRenderer extends DefaultRenderer {
     }
 }
 
-export default ProductRenderer;
+export default ProductRenderer

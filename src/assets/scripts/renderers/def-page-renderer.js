@@ -2,8 +2,6 @@ import DefaultRenderer from './default'
 import initAside from '../modules/aside'
 
 class DefPageRenderer extends DefaultRenderer {
-    onEnter() {}
-    onLeave() {}
     onEnterCompleted() {
       super.onEnterCompleted()
       initAside(this.LocoSroll)
@@ -13,4 +11,4 @@ class DefPageRenderer extends DefaultRenderer {
     }
 }
 
-export default DefPageRenderer;
+export default DefPageRenderer
