@@ -1,0 +1,72 @@
+<section class="features__content-bottom">
+    <!-- IMAGE WRAPPER -->
+    <div class="features__img-box-bottom parallax-wrapper">
+        <div class="parallax-element">
+            <picture 
+            data-scroll 
+            data-scroll-speed="-.85"
+            class="features__img-bottom">
+                <source media="(max-width: 600px)" srcset="https://images.ctfassets.net/35vb6ef1spkj/6CRfL0yWBtjfZvb4JzxALo/e471c5e463d759532ddee97a3d7394d9/S1_UA.jpg">
+                <source media="(max-width: 1200px)" srcset="https://images.ctfassets.net/35vb6ef1spkj/6CRfL0yWBtjfZvb4JzxALo/e471c5e463d759532ddee97a3d7394d9/S1_UA.jpg">
+                <img src="https://images.ctfassets.net/35vb6ef1spkj/6CRfL0yWBtjfZvb4JzxALo/e471c5e463d759532ddee97a3d7394d9/S1_UA.jpg" alt="{{product.title}}">
+            </picture>
+        </div>
+    </div>
+    <!-- END :: IMAGE WRAPPER -->
+
+    <!-- NUMBERED LIST -->
+    <div class="features__wrap-bottom">
+        <div 
+        data-scroll 
+        data-scroll-direction="vertical" 
+        data-scroll-repeat="false"
+        class="features__heading-sub should-animate dl-1 from-y">
+            <h3>Full Ingredients</h3>
+        </div>
+
+        <ul 
+        data-scroll 
+        data-scroll-direction="vertical" 
+        data-scroll-repeat="false"
+        class="features__text-bottom should-animate dl-2 from-y">
+            <li class="full-acc">
+                <button class="full-acc__button">
+                    <p class="full-acc__prod-title">S1</p>
+                    <p class="full-acc__prod-desc">Extra Mind Cleansing</p>
+                    <span>+</span>
+                </button>
+                <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, et!</div>
+            </li>
+            <li>
+                <button>
+                    <p>S1</p>
+                    <p>Extra Mind Cleansing</p>
+                    <span>+</span>
+                </button>
+                <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, et!</div>
+            </li>
+            <li>
+                <button>
+                    <p>S1</p>
+                    <p>Extra Mind Cleansing</p>
+                    <span>+</span>
+                </button>
+                <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, et!</div>
+            </li>
+
+        {%- comment -%}
+            <p>
+                {% assign counter = 1%}
+                
+                {% for column in product.metafields.zigzag.third_list %} 
+                {%- assign columnTitle = column -%}
+                <span class="features__separator"><span class="features__num">0{{ counter }}.</span>{{ product.metafields.zigzag.third_list[forloop.index0] }}</span>
+                {% assign counter = counter | plus:1 %}
+                {% endfor %}
+            </p>
+        {%- endcomment -%}
+        </ul>
+    </div>
+    <!-- END :: NUMBERED LIST -->
+
+</section>
