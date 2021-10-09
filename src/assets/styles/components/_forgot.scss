@@ -1,0 +1,43 @@
+.forgot {
+    text-align: center; 
+
+    &__title {
+        font-size: 10vw;
+        margin: 0 0 5.625vw;
+        line-height: normal;
+        text-align: center;
+
+        @include respond-to(md) {
+            font-size: 6.51042vw;
+            margin-bottom: 3.25521vw;
+        }
+
+        @include respond-to(lg) {
+            font-size: 2.44792vw;
+            margin-bottom: 1.35417vw;
+        }
+    }
+
+    &__subtitle {
+        font-size: 5vw;
+        padding: 0 6.25vw;
+        color: rgba(0,0,0,.68);
+        margin-bottom: 10.9375vw;
+        letter-spacing: 0;
+        line-height: normal; 
+
+        @include respond-to(md) {
+            font-size: 1.82292vw;
+            margin-bottom: 7.16146vw;
+            padding: 0 14.97396vw;
+            line-height: 2.73438vw;
+        }
+
+        @include respond-to(lg) {
+            font-size: .9375vw;
+            padding: 0 3.38542vw;
+            margin-bottom: 2.86458vw;
+            line-height: 1.25vw;
+        }
+    }
+}

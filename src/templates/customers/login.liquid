@@ -7,7 +7,7 @@
         data-scroll-direction="vertical" 
         data-scroll-repeat="false"
         class="login__content should-animate from-y">
-            <h1 class="login__title">Log In</h1>
+            <!-- <h1 class="login__title">Log In</h1>
             
             {% form 'customer_login', class: "form" %}
                 {{ form_errors | default_errors }}
@@ -17,13 +17,11 @@
                 <ul class="login__inputs">
                     <li>
                         <div class="form__input-box">
-                            <!-- <label for="email" class="form__label">email</label> -->
                             <input type="email" id="email" name="customer[email]" placeholder="email" class="input" required>
                         </div>
                     </li>
                     <li>
                         <div class="form__input-box">
-                            <!-- <label for="password" class="form__label">Your password</label> -->
                             <input type="password" id="password" name="customer[password]" placeholder="password" class="input" required>
                         </div>
                     </li>
@@ -34,7 +32,27 @@
                     <span>don't have an account?</span>
                     <a href="{{ routes.account_register_url }}" class="login__underline-btn">sign up</a>
                 </div> 
-            {% endform %}
+            {% endform %} -->
+            <div class="forgot">
+                <h2 class="forgot__title">Reset your password</h2>
+                <p class="forgot__subtitle">we will send you an email to reset your password. </p>
+                {% form 'recover_customer_password', class: 'form' %}
+                    {% for error in form_errors %}
+                        {{ error }}
+                    {% endfor %}
+                    <ul class="login__inputs">
+                        <li>
+                            <div class="form__input-box">
+                                <input type="email" id="email" name="customer[email]" placeholder="email" class="input" required>
+                            </div>
+                        </li>
+                    </ul>
+                    <button type="subumit" class="btn btn--black">reset</button>
+                    <div class="login__signup-box">
+                        <button id="forgot-pass-cancel" class="login__underline-btn">cancel</button>
+                    </div> 
+                {% endform %}
+            </div>
         </div>
         <!-- END :: LEFT COLUMN -->
 
