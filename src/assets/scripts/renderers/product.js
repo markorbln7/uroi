@@ -1,7 +1,7 @@
 import DefaultRenderer from './default'
 import Slick from '../modules/slider'
 import LocoSroll from '../modules/locoScroll'
-
+import { initAccordion } from '../modules/accordion';
 class ProductRenderer extends DefaultRenderer {
     initSlick() {
         this.Slick = new Slick({
@@ -57,6 +57,7 @@ class ProductRenderer extends DefaultRenderer {
         super.onEnterCompleted()
         this.initSlick()
         this.initQuantity()
+        initAccordion();
         
     }
     onLeaveCompleted() {

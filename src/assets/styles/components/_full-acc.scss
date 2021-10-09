@@ -5,7 +5,7 @@
         &--open {
             .full-acc {
                 &__content {
-                    max-height: max-content;
+                    max-height: 30rem;
                 }
 
                 &__svg {
@@ -88,6 +88,7 @@
         overflow: hidden;
         max-height: 0;
         transition: 0.2s;
+        height: 100%;
         font-family: $ff-sans;
         font-style: normal;
         font-weight: normal;

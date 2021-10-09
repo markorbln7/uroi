@@ -2,6 +2,7 @@ import DefaultRenderer from './default'
 import Slick from '../modules/slider'
 import _each from 'lodash/each'
 
+
 class HomepageRenderer extends DefaultRenderer {
     onEnterCompleted() {
       super.onEnterCompleted()
