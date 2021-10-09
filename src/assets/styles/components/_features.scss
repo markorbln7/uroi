@@ -393,6 +393,10 @@
       @include respond-to(sm) {
         display: flex;
         flex-direction: row-reverse;
+
+        &--reverse {
+          flex-direction: row;
+        }
       }
     }
   
