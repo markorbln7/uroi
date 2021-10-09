@@ -1,0 +1,124 @@
+.full-acc {
+    &__list-item {
+        margin-bottom: 1rem;
+
+        &--open {
+            .full-acc {
+                &__content {
+                    max-height: max-content;
+                }
+
+                &__svg {
+                    &--minus {
+                        display: block;
+                    }
+    
+                    &--plus {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &__button {
+        width: 100%;
+        background-color: transparent;
+        display: flex;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+        align-items: center;
+    }
+
+    &__prod-title {
+        font-weight: 500;
+        font-size: 14px;    
+        line-height: 1.5;
+        letter-spacing: 0.266667px;
+        color: #161616;
+        margin-right: 10px;
+        font-family: $ff-sans;
+
+        @include respond-to(md) {
+            font-size: 1.4rem;
+            letter-spacing: 0.026rem;
+            margin-right: 1rem;
+        }
+
+        @include respond-to(lg) {
+            font-size: 2.1rem;
+            line-height: 1;
+            letter-spacing: 0.04rem;
+        }
+    }
+
+    &__prod-desc {
+        font-family: $ff-sans;
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: 0.311111px;
+        color: #2C2C2C;
+        mix-blend-mode: normal;
+        opacity: 0.5;
+
+        @include respond-to(md) {
+            font-size: 1.4rem;
+            letter-spacing: 0.03rem;
+        }
+
+        @include respond-to(lg) {
+            font-size: 2.1rem;
+            line-height: 3.1rem;
+            letter-spacing: 0.04rem;
+        }
+    }
+
+    &__icon {
+        margin-left: auto;
+    }
+
+    &__svg {
+        &--minus {
+            display: none;
+        }
+    }
+
+    &__content {
+        overflow: hidden;
+        max-height: 0;
+        transition: 0.2s;
+        font-family: $ff-sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 1.5;
+        letter-spacing: 0.266667px;
+        color: #000000;
+        padding-left: 28px;
+        padding-right: 20px;
+
+        @include respond-to(md) {
+            font-size: 1.2rem;
+            letter-spacing: 0.026rem;
+            padding-left: 0;
+        }
+
+        @include respond-to(lg) {
+            padding-left: 4rem;
+        }
+
+        & > * {
+            margin-top: 12px;
+
+            @include respond-to(md) {
+                margin-top: 1.2rem;
+            }
+
+            @include respond-to(lg) {
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

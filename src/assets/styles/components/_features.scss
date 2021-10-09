@@ -426,6 +426,18 @@
         align-items: center;
         max-width: 60.7rem;
       }
+
+      &--accordion {
+        @include respond-to(md) {
+          padding: 4.2rem 3.2rem;
+        }
+
+        @include respond-to(lg) {
+          h3 {
+            padding-left: 3rem;
+          }
+        }
+      }
     }
   
     &__text-bottom {

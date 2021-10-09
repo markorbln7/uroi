@@ -15,7 +15,7 @@
     <!-- END :: IMAGE WRAPPER -->
 
     <!-- NUMBERED LIST -->
-    <div class="features__wrap-bottom">
+    <div class="features__wrap-bottom features__wrap-bottom--accordion">
         <div 
         data-scroll 
         data-scroll-direction="vertical" 
@@ -28,31 +28,62 @@
         data-scroll 
         data-scroll-direction="vertical" 
         data-scroll-repeat="false"
-        class="features__text-bottom should-animate dl-2 from-y">
-            <li class="full-acc">
+        class="features__text-bottom should-animate dl-2 from-y full-acc">
+            <li class="full-acc__list-item full-acc__list-item--open">
                 <button class="full-acc__button">
                     <p class="full-acc__prod-title">S1</p>
                     <p class="full-acc__prod-desc">Extra Mind Cleansing</p>
-                    <span>+</span>
+                    <div class="full-acc__icon">
+                        <svg class="full-acc__svg full-acc__svg--plus" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.22988 0.349999H7.77988V5.4H12.8049V7.95H7.77988V13H5.22988V7.95H0.204883V5.4H5.22988V0.349999Z" fill="black"/>
+                        </svg>
+                        <svg class="full-acc__svg full-acc__svg--minus" width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.366602 0.35H7.6416V3.05H0.366602V0.35Z" fill="black"/>
+                        </svg>
+                    </div>
                 </button>
-                <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, et!</div>
+                <div class="full-acc__content">
+                    <p>Water, Cetyl Ethylhexanoate, Caprylic/Capric Triglyceride, Glycerin, 
+                        Butylene Glycol, Squalane, Isononyl Isononanoate, Polyglyceryl-10 
+                        Myristate, Sodium Hyaluronate, Simmondsia Chinensis (Jojoba) 
+                        Seed Oil, Dipotassium Glycyrrhizate, Tocopherol, Sodium PCA, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Carbomer, Sodium Hydroxide, Phenoxyethanol, Methylparaben. </p>
+                </div>
             </li>
-            <li>
-                <button>
-                    <p>S1</p>
-                    <p>Extra Mind Cleansing</p>
-                    <span>+</span>
+            <li class="full-acc__list-item">
+                <button class="full-acc__button">
+                    <p class="full-acc__prod-title">S1</p>
+                    <p class="full-acc__prod-desc">Extra Mind Cleansing</p>
+                    <div class="full-acc__icon">
+                        <svg class="full-acc__svg full-acc__svg--plus" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.22988 0.349999H7.77988V5.4H12.8049V7.95H7.77988V13H5.22988V7.95H0.204883V5.4H5.22988V0.349999Z" fill="black"/>
+                        </svg>
+                        <svg class="full-acc__svg full-acc__svg--minus" width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.366602 0.35H7.6416V3.05H0.366602V0.35Z" fill="black"/>
+                        </svg>
+                    </div>
                 </button>
-                <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, et!</div>
+                <div class="full-acc__content">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, et!</p>
+                </div>
             </li>
-            <li>
-                <button>
-                    <p>S1</p>
-                    <p>Extra Mind Cleansing</p>
-                    <span>+</span>
+            <li class="full-acc__list-item">
+                <button class="full-acc__button">
+                    <p class="full-acc__prod-title">S1</p>
+                    <p class="full-acc__prod-desc">Extra Mind Cleansing</p>
+                    <div class="full-acc__icon">
+                        <svg class="full-acc__svg full-acc__svg--plus" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.22988 0.349999H7.77988V5.4H12.8049V7.95H7.77988V13H5.22988V7.95H0.204883V5.4H5.22988V0.349999Z" fill="black"/>
+                        </svg>
+                        <svg class="full-acc__svg full-acc__svg--minus" width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.366602 0.35H7.6416V3.05H0.366602V0.35Z" fill="black"/>
+                        </svg>
+                    </div>
                 </button>
-                <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, et!</div>
+                <div class="full-acc__content">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, et!</p>
+                </div>
             </li>
+
 
         {%- comment -%}
             <p>
