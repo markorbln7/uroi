@@ -13,6 +13,7 @@ import LoginRenderer from '../renderers/login'
 
 import Menu from '../modules/menu'
 import ShopMenu from '../modules/shopMenu'
+import AccountRenderer from '../renderers/account'
 
 window.APP = {}
 
@@ -65,7 +66,8 @@ APP.Highway = new Highway.Core({
       contact: ContactRenderer,
       defpage: DefPageRenderer,
       login: LoginRenderer,
-      register: LoginRenderer
+      register: LoginRenderer,
+      myAcc: AccountRenderer
     },
     transitions: {
       default: Fade

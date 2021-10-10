@@ -1,0 +1,326 @@
+.my-acc {
+    text-align: center;
+    padding: 46.875vw 0 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    @include respond-to(md) {
+        padding-top: 18vw;
+    }
+
+    @include respond-to(lg) {
+        padding-top: 12.76042vw;
+        padding-left: 20.75rem;
+        padding-right: 20.75rem;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    &__menu {
+        @include respond-to(lg) {
+            flex: 0 0 20%;
+            text-align: left;
+        }
+    }
+
+    &__details {
+        @include respond-to(lg) {
+            flex: 1;
+        }
+    }
+
+    &__title {
+        font-size: 4.0625vw;
+        text-transform: uppercase;
+        letter-spacing: 3.03125vw;
+        margin: 0 0 15vw;
+        line-height: 3.6rem;
+        color: #171717;
+        font-family: $ff-sans;
+
+        @include respond-to(md) {
+            font-size: 1.82292vw;
+            line-height: 1.5625vw;
+            letter-spacing: 1.36068vw;
+            margin-bottom: 9.76562vw;
+        }
+
+        @include respond-to(lg) {
+            font-size: .72917vw;
+            line-height: .625vw;
+            letter-spacing: .54427vw;
+            margin-bottom: 4.16667vw;
+        }
+    }
+
+    &__list {
+        margin-bottom: 28.125vw;
+    }
+
+    &__list-item,
+    &__logout {
+        font-size: 10vw;
+        letter-spacing: 0;
+        line-height: normal;
+        margin-bottom: 7.5vw;
+        cursor: pointer;
+        font-family: $ff-serif;
+
+        @include respond-to(md) {
+            font-size: 6.25vw;
+            letter-spacing: 0;
+        }
+
+        @include respond-to(lg) {
+            font-size: 1.82292vw;
+            line-height: 3.64583vw;
+            letter-spacing: 0;
+            margin-bottom: 0;
+            position: relative;
+            transition: color .3s cubic-bezier(.16,.01,.13,.99);
+        }
+    }
+
+    &__tab {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: #fff;
+        z-index: 5;
+        padding: 0 28px;
+        flex-direction: column;
+        padding: 31.25vw 6.25vw 0;
+
+        @include respond-to(lg) {
+            display: flex;
+            position: static;
+            padding: 0;
+
+            &[data-section="newsletter"] {
+                max-width: 60rem;
+            }
+        } 
+
+        &--open {
+            display: flex;
+        }
+    }
+
+    &__order-text {
+        border-bottom: 1px solid hsla(0,0%,59.2%,.35);
+        font-family: $ff-serif;
+        font-size: 7.5vw;
+        letter-spacing: 0;
+        margin-bottom: 0;
+        font-weight: 300;
+        line-height: normal;
+        text-align: left;
+
+        @include respond-to(md) {
+            font-size: 1.45833vw;
+            margin-bottom: 4.4rem;
+        }
+    }
+
+    &__tab-title {
+        font-size: 10vw;
+        line-height: normal;
+        letter-spacing: 0;
+        margin-bottom: 11.875vw;
+
+        @include respond-to(md) {
+            font-size: 3.90625vw;
+            margin-bottom: 3.5rem;
+            text-align: left;
+            padding-left: 10rem;
+        }
+    }
+
+    &__tab-title-wrapper {
+        position: relative;
+
+        @include respond-to(lg) {
+            display: none;
+        }
+    }
+
+    &__back {
+        border: none;
+        padding: 0;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        top: 0.6rem;
+    }
+
+    &__h2 {
+        font-size: 6.40625vw;
+        font-style: normal;
+        position: relative;
+        display: block;
+
+        @include respond-to(md) {
+            font-size: 3.90625vw;
+            line-height: 1;
+            margin-bottom: 4.5625vw;
+        }
+
+        @include respond-to(lg) {
+            font-size: 1.5625vw;
+            line-height: 3.64583vw;
+            margin-bottom: .41667vw;
+        }
+    }
+
+    &__news-title-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        @include respond-to(md) {
+            padding-left: 10rem;
+            padding-right: 10rem;
+        }
+    }
+
+    &__news-text {
+        text-align: left;
+        padding: 0 21.875vw 6.875vw 0;
+        font-size: 5vw;
+        line-height: 6.5625vw;
+        color: rgba(0,0,0,.69);
+        border-bottom: 1px solid hsla(0,0%,59.2%,.34);
+
+        @include respond-to(md) {
+            font-size: 2.34375vw;
+            line-height: 3.125vw;
+            padding: 0 20.18229vw 3.125vw 0;
+            margin-left: 10rem;
+            margin-right: 10rem;
+        }
+
+        @include respond-to(lg) {
+            font-size: .9375vw;
+            line-height: 1.25vw;
+            padding: 0 5.20833vw 1.14583vw 0;
+        }
+    }
+
+    .toggle-checkbox.active {
+        background-color: #696969;
+    }
+
+    .toggle-checkbox {
+        width: 13.125vw;
+        height: 6.25vw;
+        position: relative;
+        background: #b2b2b2;
+        border-radius: 3.125vw;
+        cursor: pointer;
+
+        @include respond-to(md) {
+            width: 5.46875vw;
+            height: 2.60417vw;
+            border-radius: 1.30208vw;
+        }
+
+        @include respond-to(lg) {
+            width: 2.1875vw;
+            height: 1.04167vw;
+            border-radius: .52083vw;
+            margin-top: 2.2rem;
+        }
+    }
+
+    .toggle-checkbox.active::before {
+        transform: translateX(6.875vw);
+
+        @include respond-to(md) {
+            transform: translateX(2.86458vw);
+        }
+
+        @include respond-to(lg) {
+            transform: translateX(1.14583vw);
+        }
+    }
+
+    .toggle-checkbox::after, 
+    .toggle-checkbox::before {
+        position: absolute;
+        transition: -webkit-transform .4s cubic-bezier(.16,.01,.13,.99);
+        transition: transform .4s cubic-bezier(.16,.01,.13,.99);
+        transition: transform .4s cubic-bezier(.16,.01,.13,.99),-webkit-transform .4s cubic-bezier(.16,.01,.13,.99);
+    }
+
+    .toggle-checkbox::before {
+        content: "";
+        width: calc(6.25vw - 4px);
+        height: calc(6.25vw - 4px);
+        border-radius: 50%;
+        top: 2px;
+        left: 2px;
+        background: #fff;
+        transform: translateX(0);
+
+        @include respond-to(md) {
+            width: calc(2.60417vw - 4px);
+            height: calc(2.60417vw - 4px);
+        }
+
+        @include respond-to(lg) {
+            width: calc(1.04167vw - 4px);
+            height: calc(1.04167vw - 4px);
+        }
+    }
+
+    .toggle-checkbox.active::after {
+        content: "Yes";
+        transform: translate3d(-5vw,-50%,0);
+
+        @include respond-to(md) {
+            transform: translate3d(-2.08333vw,-50%,0);
+        }
+
+        @include respond-to(lg) {
+            transform: translate3d(-.83333vw,-50%,0);
+        }
+    }
+
+    .toggle-checkbox::after {
+        content: "No";
+        display: block;
+        font-family: $ff-sans;
+        color: #fff;
+        font-size: 2.1875vw;
+        line-height: normal;
+        right: 2.5vw;
+        letter-spacing: normal;
+        top: 50%;
+        transform: translate3d(0,-50%,0);
+
+        @include respond-to(md) {
+            font-size: 1.04167vw;
+            right: 1.04167vw;
+        }
+
+        @include respond-to(lg) {
+            font-size: .41667vw;
+            right: .41667vw;
+        }
+    }
+
+    .toggle-checkbox::after, 
+    .toggle-checkbox::before {
+        position: absolute;
+        transition: -webkit-transform .4s cubic-bezier(.16,.01,.13,.99);
+        transition: transform .4s cubic-bezier(.16,.01,.13,.99);
+        transition: transform .4s cubic-bezier(.16,.01,.13,.99),-webkit-transform .4s cubic-bezier(.16,.01,.13,.99);
+
+    }
+}
