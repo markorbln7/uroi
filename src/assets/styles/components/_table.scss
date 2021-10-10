@@ -1,0 +1,68 @@
+.table {
+    margin-bottom: 2rem;
+
+    @include respond-to(lg) {
+        margin-bottom: 5rem;
+    }
+
+    &__row {
+        margin-bottom: 2rem;
+
+        @include respond-to(lg) {
+            display: flex;
+            width: 100%;
+            margin-bottom: 0;
+        }
+        
+        &--header {
+            display: none;
+
+            @include respond-to(lg) {
+                display: flex;
+            }
+        }
+    }
+
+    &__row-item {
+        display: flex;
+        border-bottom: 1px solid rgb(238, 238, 238);
+        justify-content: space-between;
+        padding: 0.5rem 0;
+
+        @include respond-to(md) {
+            padding: 1rem 0;
+            font-size: 1.6rem;
+        }
+
+        @include respond-to(lg) {
+            border-bottom: 1px solid #ccc;
+            padding: 2.5rem 0;
+
+            &:nth-child(1) {
+                flex: 0 0 10%;
+            }
+
+            &:nth-child(2) {
+                flex: 0 0 25%;
+            }
+
+            &:nth-child(3) {
+                flex: 0 0 25%;
+            }
+
+            &:nth-child(4) {
+                flex: 0 0 25%;
+            }
+
+            &:nth-child(5) {
+                flex: 0 0 15%;
+            }
+        }
+    }
+
+    &__mob-header {
+        @include respond-to(lg) {
+            display: none;
+        }
+    }
+}
