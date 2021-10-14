@@ -1,3 +1,107 @@
 <div id="wrapper" data-scroll-container data-router-view="account">
-    THIS IS ACCOUNT AREA
+    <section class="my-acc">
+    <div class="my-acc__menu">
+        <h1 class="my-acc__title">My Account</h1>
+        <ul class="my-acc__list">
+            <li class="my-acc__list-item my-acc__list-item--active" data-open="orders">My Orders</li>
+            <li class="my-acc__list-item" data-open="newsletter">Newsletter</li>
+        </ul>
+        <a class="my-acc__logout" href="/account/logout">Logout</a>
+    </div>
+    <div class="my-acc__details">
+        <div class="my-acc__tab" data-section="orders">
+            <div class="my-acc__tab-title-wrapper">
+                <button class="my-acc__back">
+                    {% include "arrow-left" %}
+                </button>
+                <h2 class="my-acc__tab-title">My Orders</h2>
+            </div>
+            <!-- <p class="my-acc__order-text">You currently have no orders</p> -->
+            <div class="table">
+                <div class="table__row table__row--header">
+                    <div class="table__row-item">Order</div>
+                    <div class="table__row-item">Date</div>
+                    <div class="table__row-item">Payment Status</div>
+                    <div class="table__row-item">Fullfillment Status</div>
+                    <div class="table__row-item">Total</div>
+                </div>
+                <div class="table__row">
+                    <div class="table__row-item">
+                        <span class="table__mob-header">Order</span>
+                        <span>#1022</span>
+                    </div>
+                    <div class="table__row-item">
+                        <span class="table__mob-header">Date</span>
+                        <span>December 10, 2020</span>
+                    </div>
+                    <div class="table__row-item">
+                        <span class="table__mob-header">Payment Status</span>
+                        <span>Authorized</span>
+                    </div>
+                    <div class="table__row-item">
+                        <span class="table__mob-header">Fullfillment Status</span>
+                        <span>Received</span>
+                    </div>
+                    <div class="table__row-item">
+                        <span class="table__mob-header">Total</span>
+                        <span>20.500KWD</span>
+                    </div>
+                </div>
+                <div class="table__row">
+                    <div class="table__row-item">
+                        <span class="table__mob-header">Order</span>
+                        <span>#1022</span>
+                    </div>
+                    <div class="table__row-item">
+                        <span class="table__mob-header">Date</span>
+                        <span>December 10, 2020</span>
+                    </div>
+                    <div class="table__row-item">
+                        <span class="table__mob-header">Payment Status</span>
+                        <span>Authorized</span>
+                    </div>
+                    <div class="table__row-item">
+                        <span class="table__mob-header">Fullfillment Status</span>
+                        <span>Received</span>
+                    </div>
+                    <div class="table__row-item">
+                        <span class="table__mob-header">Total</span>
+                        <span>20.500KWD</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a href="#" class="btn">
+                    <span class="btn--span font-size-def">
+                        <span class="btn--arrow">
+                            <svg width="28px" height="19px" viewBox="0 0 28 19">
+                                <g stroke="none" stroke-width="1" fill-rule="evenodd">
+                                    <g transform="translate(-230.000000, -3082.000000)">
+                                        <path
+                                        d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z">
+                                    </path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </span>
+                    Go Shopping
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div class="my-acc__tab" data-section="newsletter">
+            <div class="my-acc__tab-title-wrapper">
+                <button class="my-acc__back">
+                    {% include "arrow-left" %}
+                </button>
+                <h2 class="my-acc__tab-title">Newsletter</h2>
+            </div>
+            <div class="my-acc__news-title-wrapper">
+                <h2 class="my-acc__h2">uruoi's Newsletters</h2>
+                <span class="toggle-checkbox active"></span>
+            </div>
+            <p class="my-acc__news-text">I would like to receive letters about Uruoi products, services, stores, events and matters of cultural interest. </p>
+        </div>
+    </div>
+</section>
 </div>

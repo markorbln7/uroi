@@ -3,106 +3,44 @@
 .sets-products--three - ova klasa se dodaje na setove sa tri ili cetiri proizvoda i ona ce da poredja proizvode u grid na tabletu i desku
 
 {%- endcomment -%}
-<section class="sets-products sets-products--three">
+{% if product.metafields.sets.includes %}
+{% assign counter = 0 %}
+{% for column in product.metafields.sets.product %} 
+{% assign counter = counter | plus:1 %}
+{% endfor %}
+{% if counter == 3 %}
+{% assign klasa = "--three" %}
+{% endif %}
+<section class="sets-products sets-products{{klasa}}">
     <div class="sets-products__item sets-products__item--content">
-        <h2 class="sets-products__title">Double Cleansing Set Includes:</h2>
+        <h2 class="sets-products__title">{{product.metafields.sets.includes}}</h2>
         <h5 class="sets-products__subtitle">Recommended For:</h5>
-        <p class="sets-products__content-text">For oily to normal skin types. Best for congested pores</p>
+        <p class="sets-products__content-text">{{product.metafields.sets.recom}}</p>
     </div>
+    {% for column in product.metafields.sets.product %} 
+    {%- assign columnTitle = column -%}
     <div class="sets-products__item sets-products__item--card">
         <a href="#">
             <picture class="">
-                <source
-                  media="(max-width: 1200px)"
-                  srcset="https://images.ctfassets.net/35vb6ef1spkj/1hSfFwq9wlls3TBdsAkr1G/e93a9a5efc674f93e5ec6ea6d6e9ddd8/uruoi_s1.png"
-                />
                 <img
-                  src="https://images.ctfassets.net/35vb6ef1spkj/1hSfFwq9wlls3TBdsAkr1G/e93a9a5efc674f93e5ec6ea6d6e9ddd8/uruoi_s1.png"
+                  src="{{ all_products[columnTitle].featured_image | img_url: 'master' }}"
                   alt=""
                 />
               </picture>
         </a>
         <div class="sets-products__details">
-            <a class="sets-products__product-name" href="#">S1</a>
+            <a class="sets-products__product-name" href="#">{{all_products[columnTitle].title}}</a>
             <p class="sets-products__item-details">
-                <span class="sets-products__purpose">extra mild cleansing</span>
-                <span class="sets-products__amount">140ml / 4.94 FL. OZ.</span>
+                <span class="sets-products__purpose">{{all_products[columnTitle].metafields.product.subtext}}</span>
+                <span class="sets-products__amount">{{all_products[columnTitle].metafields.product.volume}}</span>
             </p>
             <div>
-                <p>The ultimate everyday cleanser for sensitive skin. Formulated with gentle cleansing agents that protect, soften and restore skin while cleansing. Emollient-rich ingredients such as glycerin, squalane and jojoba seed oil help condition and restore skin’s surface while cleansing.</p>
+                <p>{{all_products[columnTitle].description}}</p>
             </div>
         </div>
     </div>
-    <div class="sets-products__item sets-products__item--card">
-        <a href="#">
-            <picture class="">
-                <source
-                  media="(max-width: 1200px)"
-                  srcset="https://images.ctfassets.net/35vb6ef1spkj/1hSfFwq9wlls3TBdsAkr1G/e93a9a5efc674f93e5ec6ea6d6e9ddd8/uruoi_s1.png"
-                />
-                <img
-                  src="https://images.ctfassets.net/35vb6ef1spkj/1hSfFwq9wlls3TBdsAkr1G/e93a9a5efc674f93e5ec6ea6d6e9ddd8/uruoi_s1.png"
-                  alt=""
-                />
-              </picture>
-        </a>
-        <div class="sets-products__details">
-            <a class="sets-products__product-name" href="#">S1</a>
-            <p class="sets-products__item-details">
-                <span class="sets-products__purpose">extra mild cleansing</span>
-                <span class="sets-products__amount">140ml / 4.94 FL. OZ.</span>
-            </p>
-            <div>
-                <p>The ultimate everyday cleanser for sensitive skin. Formulated with gentle cleansing agents that protect, soften and restore skin while cleansing. Emollient-rich ingredients such as glycerin, squalane and jojoba seed oil help condition and restore skin’s surface while cleansing.</p>
-            </div>
-        </div>
-    </div>
-    <div class="sets-products__item sets-products__item--card">
-        <a href="#">
-            <picture class="">
-                <source
-                  media="(max-width: 1200px)"
-                  srcset="https://images.ctfassets.net/35vb6ef1spkj/1hSfFwq9wlls3TBdsAkr1G/e93a9a5efc674f93e5ec6ea6d6e9ddd8/uruoi_s1.png"
-                />
-                <img
-                  src="https://images.ctfassets.net/35vb6ef1spkj/1hSfFwq9wlls3TBdsAkr1G/e93a9a5efc674f93e5ec6ea6d6e9ddd8/uruoi_s1.png"
-                  alt=""
-                />
-              </picture>
-        </a>
-        <div class="sets-products__details">
-            <a class="sets-products__product-name" href="#">S1</a>
-            <p class="sets-products__item-details">
-                <span class="sets-products__purpose">extra mild cleansing</span>
-                <span class="sets-products__amount">140ml / 4.94 FL. OZ.</span>
-            </p>
-            <div>
-                <p>The ultimate everyday cleanser for sensitive skin. Formulated with gentle cleansing agents that protect, soften and restore skin while cleansing. Emollient-rich ingredients such as glycerin, squalane and jojoba seed oil help condition and restore skin’s surface while cleansing.</p>
-            </div>
-        </div>
-    </div>
-    <div class="sets-products__item sets-products__item--card">
-        <a href="#">
-            <picture class="">
-                <source
-                  media="(max-width: 1200px)"
-                  srcset="https://images.ctfassets.net/35vb6ef1spkj/1hSfFwq9wlls3TBdsAkr1G/e93a9a5efc674f93e5ec6ea6d6e9ddd8/uruoi_s1.png"
-                />
-                <img
-                  src="https://images.ctfassets.net/35vb6ef1spkj/1hSfFwq9wlls3TBdsAkr1G/e93a9a5efc674f93e5ec6ea6d6e9ddd8/uruoi_s1.png"
-                  alt=""
-                />
-              </picture>
-        </a>
-        <div class="sets-products__details">
-            <a class="sets-products__product-name" href="#">S1</a>
-            <p class="sets-products__item-details">
-                <span class="sets-products__purpose">extra mild cleansing</span>
-                <span class="sets-products__amount">140ml / 4.94 FL. OZ.</span>
-            </p>
-            <div>
-                <p>The ultimate everyday cleanser for sensitive skin. Formulated with gentle cleansing agents that protect, soften and restore skin while cleansing. Emollient-rich ingredients such as glycerin, squalane and jojoba seed oil help condition and restore skin’s surface while cleansing.</p>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
+
+    
 </section>
+{% endif %}

@@ -2,41 +2,47 @@
 ovde sam napravio novu komponentu. Posto ima ove zajebancije sa slikama na mobilnom mislio sam da je bolje da ide odvojeno
 Komponenta za setove koja ima vise od dva koraka je u zigzag.liquid -> features__content-bottom, ako hoces da obrnes redosled dodaj jos features__content-bottom--reverse
 {%- endcomment -%}
-<section class="how-to-use">
-    <div class="how-to-use__container">
-        <div class="how-to-use__big-img">
-            <picture>
-                <source media="(max-width: 1200px)" srcset="{{ 'U2.png' | asset_img_url: 'master' }}"/>
-                <img src="{{ 'U2.png' | asset_img_url: 'master' }}" alt="" />
-            </picture>
-        </div> 
-        <div class="how-to-use__content">
-            <h2 class="how-to-use__title-wrapper">
-                <span class="how-to-use__title-small">How</span>
-                <span class="how-to-use__title-big">To Use</span>
-            </h2>
-            <ul class="how-to-use__list">
-                <li class="how-to-use__list-item how-to-use__list-item--first">
-                    <div class="how-to-use__img-wrapper">
-                        <span class="how-to-use__num">1</span>
-                        <picture class="how-to-use__img">
-                            <source media="(max-width: 1200px)" srcset="{{ 'how1.png' | asset_img_url: 'master' }}"/>
-                            <img src="{{ 'how1.png' | asset_img_url: 'master' }}" alt="" />
-                        </picture>
-                    </div>
-                    <p class="how-to-use__text">Apply U1 make-up cleansing directly to dry hands and face. Gently massage into skin to remove make-up and bring pore-clogging impurities to the surface to be removed. Rinse with lukewarm water.</p>
-                </li>
-                <li class="how-to-use__list-item how-to-use__list-item--second">
-                    <div class="how-to-use__img-wrapper">
-                        <span class="how-to-use__num">2</span>
-                        <picture class="how-to-use__img">
-                            <source media="(max-width: 1200px)" srcset="{{ 'how2.png' | asset_img_url: 'master' }}"/>
-                            <img src="{{ 'how2.png' | asset_img_url: 'master' }}" alt="" />
-                        </picture>
-                    </div>
-                    <p class="how-to-use__text">Begin with wet hands and face. Apply a small pea-sized amount of U2 clean foam onto wet hands and then lather on hands. Apply lathered foam onto face and massage into skin. Rinse with lukewarm water.</p>
-                </li>
-            </ul>
+<section class="features zigzag">
+        <div class="features__content-bottom features__content-bottom--reverse">
+        <!-- IMAGE WRAPPER -->
+        <div class="features__img-box-bottom parallax-wrapper">
+            <div class="parallax-element">
+                <picture 
+                data-scroll 
+                data-scroll-speed="-.85"
+                class="features__img-bottom">
+                    <source media="(max-width: 600px)" srcset="{{product.metafields.zigzag.third_image}}">
+                    <source media="(max-width: 1200px)" srcset="{{product.metafields.zigzag.third_image}}">
+                    <img src="{{product.metafields.zigzag.third_image}}" alt="{{product.title}}">
+                </picture>
+            </div>
         </div>
-    </div>
+        <!-- END :: IMAGE WRAPPER -->
+
+        <!-- NUMBERED LIST -->
+        <div class="features__wrap-bottom">
+            <div 
+            data-scroll 
+            data-scroll-direction="vertical" 
+            data-scroll-repeat="false"
+            class="features__heading-sub should-animate dl-1 from-y">
+                <h3>{{product.metafields.zigzag.third_part_title}}</h3>
+            </div>
+
+            <div 
+            data-scroll 
+            data-scroll-direction="vertical" 
+            data-scroll-repeat="false"
+            class="features__text-bottom should-animate dl-2 from-y">
+                <p>
+                    {% assign counter = 1%}
+
+                {% for column in product.metafields.zigzag.third_list %} 
+                    {%- assign columnTitle = column -%}
+                    <span class="features__separator"><span class="features__num">0{{ counter }}.</span>{{ product.metafields.zigzag.third_list[forloop.index0] }}</span>
+                    {% assign counter = counter | plus:1 %}
+                {% endfor %}
+                </p>
+        </div>
+</div>
 </section>

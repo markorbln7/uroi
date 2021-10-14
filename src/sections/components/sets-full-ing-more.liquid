@@ -1,3 +1,4 @@
+{% if product.metafields.fullMore.image %}
 <section class="features__content-bottom">
     <!-- IMAGE WRAPPER -->
     <div class="features__img-box-bottom parallax-wrapper">
@@ -6,9 +7,7 @@
             data-scroll 
             data-scroll-speed="-.85"
             class="features__img-bottom">
-                <source media="(max-width: 600px)" srcset="https://images.ctfassets.net/35vb6ef1spkj/6CRfL0yWBtjfZvb4JzxALo/e471c5e463d759532ddee97a3d7394d9/S1_UA.jpg">
-                <source media="(max-width: 1200px)" srcset="https://images.ctfassets.net/35vb6ef1spkj/6CRfL0yWBtjfZvb4JzxALo/e471c5e463d759532ddee97a3d7394d9/S1_UA.jpg">
-                <img src="https://images.ctfassets.net/35vb6ef1spkj/6CRfL0yWBtjfZvb4JzxALo/e471c5e463d759532ddee97a3d7394d9/S1_UA.jpg" alt="{{product.title}}">
+                <img src="{{product.metafields.fullMore.image}}" alt="{{product.title}}">
             </picture>
         </div>
     </div>
@@ -29,10 +28,12 @@
         data-scroll-direction="vertical" 
         data-scroll-repeat="false"
         class="features__text-bottom should-animate dl-2 from-y full-acc">
-            <li class="full-acc__list-item full-acc__list-item--open">
+        {% for column in product.metafields.sets.product %} 
+        {%- assign columnTitle = column -%}
+            <li class="full-acc__list-item full-acc__list-item">
                 <button class="full-acc__button">
-                    <p class="full-acc__prod-title">S1</p>
-                    <p class="full-acc__prod-desc">Extra Mind Cleansing</p>
+                    <p class="full-acc__prod-title">{{all_products[columnTitle].title}}</p>
+                    <p class="full-acc__prod-desc">{{all_products[columnTitle].metafields.product.subtext}}</p>
                     <div class="full-acc__icon">
                         <svg class="full-acc__svg full-acc__svg--plus" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5.22988 0.349999H7.77988V5.4H12.8049V7.95H7.77988V13H5.22988V7.95H0.204883V5.4H5.22988V0.349999Z" fill="black"/>
@@ -43,46 +44,10 @@
                     </div>
                 </button>
                 <div class="full-acc__content">
-                    <p>Water, Cetyl Ethylhexanoate, Caprylic/Capric Triglyceride, Glycerin, 
-                        Butylene Glycol, Squalane, Isononyl Isononanoate, Polyglyceryl-10 
-                        Myristate, Sodium Hyaluronate, Simmondsia Chinensis (Jojoba) 
-                        Seed Oil, Dipotassium Glycyrrhizate, Tocopherol, Sodium PCA, Acrylates/C10-30 Alkyl Acrylate Crosspolymer, Carbomer, Sodium Hydroxide, Phenoxyethanol, Methylparaben. </p>
+                    <p>{{all_products[columnTitle].metafields.zigzag.left_first}} </p>
                 </div>
             </li>
-            <li class="full-acc__list-item">
-                <button class="full-acc__button">
-                    <p class="full-acc__prod-title">S1</p>
-                    <p class="full-acc__prod-desc">Extra Mind Cleansing</p>
-                    <div class="full-acc__icon">
-                        <svg class="full-acc__svg full-acc__svg--plus" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.22988 0.349999H7.77988V5.4H12.8049V7.95H7.77988V13H5.22988V7.95H0.204883V5.4H5.22988V0.349999Z" fill="black"/>
-                        </svg>
-                        <svg class="full-acc__svg full-acc__svg--minus" width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.366602 0.35H7.6416V3.05H0.366602V0.35Z" fill="black"/>
-                        </svg>
-                    </div>
-                </button>
-                <div class="full-acc__content">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, et!</p>
-                </div>
-            </li>
-            <li class="full-acc__list-item">
-                <button class="full-acc__button">
-                    <p class="full-acc__prod-title">S1</p>
-                    <p class="full-acc__prod-desc">Extra Mind Cleansing</p>
-                    <div class="full-acc__icon">
-                        <svg class="full-acc__svg full-acc__svg--plus" width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.22988 0.349999H7.77988V5.4H12.8049V7.95H7.77988V13H5.22988V7.95H0.204883V5.4H5.22988V0.349999Z" fill="black"/>
-                        </svg>
-                        <svg class="full-acc__svg full-acc__svg--minus" width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.366602 0.35H7.6416V3.05H0.366602V0.35Z" fill="black"/>
-                        </svg>
-                    </div>
-                </button>
-                <div class="full-acc__content">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In, et!</p>
-                </div>
-            </li>
+        {% endfor %}
 
 
         {%- comment -%}
@@ -101,3 +66,4 @@
     <!-- END :: NUMBERED LIST -->
 
 </section>
+{% endif %}
