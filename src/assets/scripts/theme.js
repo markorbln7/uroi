@@ -4,8 +4,6 @@ import '../styles/theme.scss';
 
 import './utility/polyfill';
 
-import './components/global-cart';
 
-import './templates/home';
-
-import './templates/page-about';
+// CART SHOULD BE EXPORTED AS A MODULE AND THEN CREATED AND ATTACHED TO APP INSIDE MAIN.JS
+import './components/global-cart'
