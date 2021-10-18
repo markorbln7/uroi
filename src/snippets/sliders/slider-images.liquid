@@ -23,5 +23,16 @@
         <div class="staples__desc-text">
             <p>{{ productDesc }}</p>
         </div>
+        {% if amChek == true %}
+        <div class="staples__am-pm">
+            {% if ampm == 'am' %}
+                {% render 'am' %}
+            {% elsif ampm == 'pm' %}
+                {% render 'pm' %}
+            {% else %}
+                {% render 'pmam' %}
+            {% endif %}
+        </div>
+        {% endif %}
     </div>
 </a>

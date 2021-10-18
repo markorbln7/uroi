@@ -1,149 +1,22 @@
 <section class="staples">
    <div class="container-left">
       <div class="staples__container">
-         <div class="staples__wrap">
-            <h2 class="staples__title">{{ section.settings.title }}</h2>
-            {% if section.settings.subtitle and section.settings.subtitle != '' %}
-               <div class="staples__subtitle">
-                  {{ section.settings.subtitle }}
-               </div>
-            {% endif %}
-            <div class="staples__text d-none-2 {% unless section.settings.btn-text and section.settings.btn-text !='' %}mb-0{% endunless %}">
-               {{ section.settings.copy }}
-            </div>
-            {% if section.settings.btn-text and section.settings.btn-text !='' %}
-               <a href="{{ section.settings.btn-link }}" class="btn d-none-2">
-                  <span class="btn--span font-size-def">
-                     <span class="btn--arrow">
-                        <svg width="28px" height="19px" viewBox="0 0 28 19">
-                           <g stroke="none" stroke-width="1" fill-rule="evenodd">
-                              <g transform="translate(-230.000000, -3082.000000)">
-                                 <path
-                                    d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z">
-                                 </path>
-                              </g>
-                           </g>
-                        </svg>
-                     </span>
-                     {{ section.settings.btn-text }}
-                  </span>
-               </a>
-            {% endif %}
-         </div>
-         <div class="staples__slider-content">
-            <div class="staples__slider">
-               {% for block in section.blocks %}
-                  <a href="{{ block.settings.product.url }}" class="staples__slide">
-                     <picture class="staples__img">
-                        {%- comment -%}If user wants to display image other than featured image{%- endcomment -%}
-                        {% if block.settings.override-img %}
-                           <source media="(min-width: 600px)" srcset="{{ block.settings.override-img | img_url: 'master' }}">
-                           <source media="(min-width: 1200px)" srcset="{{ block.settings.override-img | img_url: 'master' }}">
-                           <img src="{{ block.settings.override-img | img_url: 'master' }}" alt="{{ block.settings.product.title }}">
-                        {% else %}
-                           {%- comment -%}If user wants to display featured image{%- endcomment -%}
-                           <source media="(min-width: 600px)" srcset="{{ block.settings.product.featured_image | img_url: 'master' }}">
-                           <source media="(min-width: 1200px)" srcset="{{ block.settings.product.featured_image | img_url: 'master' }}">
-                           <img src="{{ block.settings.product.featured_image | img_url: 'master' }}" alt="{{ block.settings.product.title }}">
-                        {% endif %}
-                     </picture>
-                     <div class="staples__desc">
-                        <h5>
-                           {% if block.settings.override-name and block.settings.override-name != '' %}
-                                 {{ block.settings.override-name }}
-                              {% else %}
-                                 {{ block.settings.product.title }}
-                           {% endif %}
-                        </h5>
-                        <div class="staples__desc-text">
-                           {{ block.settings.product-desc }}
-                        </div>
-                        <div class="staples__am-pm">
-                            {% if block.settings.am-pm == 'am' %}
-                                <span>AM</span>
-                                <!-- There is no Sun icon in design, when available just replace this SVG -->
-                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2003 18.8624C12.4049 18.8624 8.51007 15.3403 8.51007 11.0072C8.51007 6.6548 12.3994 3.13358 17.2003 3.13358C18.0031 3.13358 18.7922 3.23419 19.5486 3.42844C17.5394 1.81816 14.9301 0.890959 12.1523 0.890959C5.98384 0.890959 0.985235 5.4194 0.985235 11.0072C0.985235 16.58 5.98801 21.109 12.1523 21.109C14.9272 21.109 17.5368 20.1798 19.547 18.5678C18.7913 18.7618 18.0025 18.8624 17.2003 18.8624ZM9.49466 11.0072C9.49466 14.848 12.9488 17.9714 17.2003 17.9714C18.6457 17.9714 20.0399 17.6029 21.2412 16.9195C21.703 16.6569 22.2245 17.1674 21.8979 17.5632C19.615 20.3306 16.0323 22 12.1523 22C5.44379 22 0 17.0717 0 11.0072C0 4.92767 5.43962 0 12.1523 0C16.0352 0 19.6169 1.66566 21.8979 4.43102C22.2242 4.8262 21.7037 5.33677 21.2415 5.07467C20.0393 4.39246 18.6451 4.02454 17.2003 4.02454C12.9436 4.02454 9.49466 7.14652 9.49466 11.0072Z" fill="#1A1919"/>
-                                </svg>
-                            {% elsif block.settings.am-pm == 'pm' %}
-                                <span>PM</span>
-                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.2003 18.8624C12.4049 18.8624 8.51007 15.3403 8.51007 11.0072C8.51007 6.6548 12.3994 3.13358 17.2003 3.13358C18.0031 3.13358 18.7922 3.23419 19.5486 3.42844C17.5394 1.81816 14.9301 0.890959 12.1523 0.890959C5.98384 0.890959 0.985235 5.4194 0.985235 11.0072C0.985235 16.58 5.98801 21.109 12.1523 21.109C14.9272 21.109 17.5368 20.1798 19.547 18.5678C18.7913 18.7618 18.0025 18.8624 17.2003 18.8624ZM9.49466 11.0072C9.49466 14.848 12.9488 17.9714 17.2003 17.9714C18.6457 17.9714 20.0399 17.6029 21.2412 16.9195C21.703 16.6569 22.2245 17.1674 21.8979 17.5632C19.615 20.3306 16.0323 22 12.1523 22C5.44379 22 0 17.0717 0 11.0072C0 4.92767 5.43962 0 12.1523 0C16.0352 0 19.6169 1.66566 21.8979 4.43102C22.2242 4.8262 21.7037 5.33677 21.2415 5.07467C20.0393 4.39246 18.6451 4.02454 17.2003 4.02454C12.9436 4.02454 9.49466 7.14652 9.49466 11.0072Z" fill="#1A1919"/>
-                                </svg>
-                            {% else %}
-                                <span>AM/PM</span>
-                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g id="Group 4" opacity="0.723656">
-                                    <path id="Fill 1041" fill-rule="evenodd" clip-rule="evenodd" d="M15.9781 3.89809C15.0107 3.89809 14.2233 4.6906 14.2233 5.65809C14.2233 6.62557 15.0107 7.41037 15.9781 7.41037C16.9482 7.41037 17.7356 6.62557 17.7356 5.65809C17.7356 4.6906 16.9482 3.89809 15.9781 3.89809ZM15.9781 8.33411C14.5063 8.33411 13.3047 7.13247 13.3047 5.65809C13.3047 4.18113 14.5063 2.97949 15.9781 2.97949C17.4525 2.97949 18.6542 4.18113 18.6542 5.65809C18.6542 7.13247 17.4525 8.33411 15.9781 8.33411Z" fill="#1A1919"/>
-                                    <path id="Fill 1042" fill-rule="evenodd" clip-rule="evenodd" d="M15.978 3.67953C15.7232 3.67953 15.5174 3.47111 15.5174 3.21637V0.458012C15.5174 0.203275 15.7232 0 15.978 0C16.2327 0 16.4385 0.203275 16.4385 0.458012V3.21637C16.4385 3.47111 16.2327 3.67953 15.978 3.67953Z" fill="#1A1919"/>
-                                    <path id="Fill 1043" fill-rule="evenodd" clip-rule="evenodd" d="M15.978 11.3129C15.7232 11.3129 15.5174 11.1045 15.5174 10.8498V8.0348C15.5174 7.78007 15.7232 7.57422 15.978 7.57422C16.2327 7.57422 16.4385 7.78007 16.4385 8.0348V10.8498C16.4385 11.1045 16.2327 11.3129 15.978 11.3129Z" fill="#1A1919"/>
-                                    <path id="Fill 1044" fill-rule="evenodd" clip-rule="evenodd" d="M21.1669 6.1192H18.195C17.9402 6.1192 17.7344 5.91078 17.7344 5.65605C17.7344 5.40646 17.9402 5.19804 18.195 5.19804H21.1669C21.4216 5.19804 21.6275 5.40646 21.6275 5.65605C21.6275 5.91078 21.4216 6.1192 21.1669 6.1192Z" fill="#1A1919"/>
-                                    <path id="Fill 1045" fill-rule="evenodd" clip-rule="evenodd" d="M13.5689 6.1192H10.7848C10.5301 6.1192 10.3242 5.91078 10.3242 5.65605C10.3242 5.40646 10.5301 5.19804 10.7848 5.19804H13.5689C13.8236 5.19804 14.0295 5.40646 14.0295 5.65605C14.0295 5.91078 13.8236 6.1192 13.5689 6.1192Z" fill="#1A1919"/>
-                                    <path id="Fill 1046" fill-rule="evenodd" clip-rule="evenodd" d="M17.8181 4.27723C17.7023 4.27723 17.5839 4.22835 17.4964 4.14086C17.3163 3.96074 17.3163 3.66998 17.4964 3.48987L19.3285 1.65267C19.5034 1.47513 19.7968 1.46998 19.9769 1.65267C20.1544 1.83536 20.1544 2.12612 19.9769 2.30367L18.1448 4.14086C18.0574 4.22835 17.939 4.27723 17.8181 4.27723Z" fill="#1A1919"/>
-                                    <path id="Fill 1047" fill-rule="evenodd" clip-rule="evenodd" d="M12.3076 9.78772C12.1892 9.78772 12.0709 9.74397 11.9808 9.65134C11.8033 9.4738 11.8033 9.18561 11.9808 9.00292L13.9827 7.00619C14.1679 6.82608 14.4587 6.82865 14.6337 7.00619C14.8138 7.18117 14.8138 7.4745 14.6337 7.65462L12.6318 9.65134C12.5417 9.74397 12.4234 9.78772 12.3076 9.78772Z" fill="#1A1919"/>
-                                    <path id="Fill 1048" fill-rule="evenodd" clip-rule="evenodd" d="M19.6523 9.78832C19.5313 9.78832 19.4156 9.74457 19.3281 9.65194L17.4368 7.76071C17.2567 7.58317 17.2567 7.28984 17.4368 7.10972C17.6195 6.93218 17.9103 6.93218 18.0878 7.10972L19.9765 9.00352C20.154 9.18621 20.154 9.4744 19.9765 9.65194C19.889 9.74457 19.7706 9.78832 19.6523 9.78832Z" fill="#1A1919"/>
-                                    <path id="Fill 1049" fill-rule="evenodd" clip-rule="evenodd" d="M14.1946 4.33066C14.0763 4.33066 13.9553 4.28434 13.8678 4.19428L11.9818 2.30563C11.8017 2.12808 11.8017 1.83475 11.9818 1.65463C12.1645 1.47452 12.4552 1.47709 12.6328 1.65463L14.5163 3.54586C14.6964 3.72598 14.6964 4.01674 14.5163 4.19428C14.4288 4.28434 14.3104 4.33066 14.1946 4.33066Z" fill="#1A1919"/>
-                                    <path id="Fill 1050" fill-rule="evenodd" clip-rule="evenodd" d="M19.9309 21.6737C19.8126 21.6737 19.6942 21.6274 19.6067 21.5373L0.460283 2.38314C0.280166 2.2056 0.280166 1.91226 0.460283 1.73472C0.637827 1.55718 0.928587 1.55718 1.1087 1.73472L20.2551 20.8889C20.4327 21.0716 20.4327 21.3623 20.2551 21.5373C20.1677 21.6274 20.0467 21.6737 19.9309 21.6737Z" fill="#1A1919"/>
-                                    <path id="Fill 1051" fill-rule="evenodd" clip-rule="evenodd" d="M4.48749 12.9925C2.51906 12.9925 0.918597 14.5929 0.918597 16.5639C0.918597 18.5298 2.51906 20.1302 4.48749 20.1302C4.97895 20.1302 5.46269 20.0299 5.90526 19.8343C4.24047 19.6722 2.93591 18.2673 2.93591 16.5639C2.93591 14.858 4.2379 13.453 5.90012 13.2832C5.46012 13.0928 4.97637 12.9925 4.48749 12.9925ZM4.48749 21.054C2.01216 21.054 0 19.0392 0 16.5639C0 14.0886 2.01216 12.0713 4.48749 12.0713C5.85637 12.0713 7.16608 12.712 8.01263 13.7824C8.12585 13.8673 8.20047 14.0037 8.20047 14.1529C8.20047 14.4077 7.99462 14.6161 7.74246 14.6161H7.71673C7.63696 14.6161 7.5469 14.5929 7.47485 14.544C7.10175 14.3125 6.66947 14.1889 6.22947 14.1889C4.92234 14.1889 3.85965 15.2542 3.85965 16.5639C3.85965 17.8711 4.92234 18.9337 6.22947 18.9337C6.66947 18.9337 7.10175 18.8102 7.47485 18.5761C7.65754 18.4551 7.90456 18.4963 8.05637 18.6507C8.20561 18.8154 8.21591 19.065 8.08468 19.2399C7.2407 20.3721 5.90012 21.054 4.48749 21.054Z" fill="#1A1919"/>
-                                    </g>
-                                </svg>
-                            {% endif %}
-                        </div>
-                     </div>
-                  </a>
-               {% endfor %}
- 
-
- 
-            </div>
-            <div class="staples__arrow-next">
-               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492 492">
-                  <g>
-                     <g>
-                        <path d="M198.608,246.104L382.664,62.04c5.068-5.056,7.856-11.816,7.856-19.024c0-7.212-2.788-13.968-7.856-19.032l-16.128-16.12
-             C361.476,2.792,354.712,0,347.504,0s-13.964,2.792-19.028,7.864L109.328,227.008c-5.084,5.08-7.868,11.868-7.848,19.084
-             c-0.02,7.248,2.76,14.028,7.848,19.112l218.944,218.932c5.064,5.072,11.82,7.864,19.032,7.864c7.208,0,13.964-2.792,19.032-7.864
-             l16.124-16.12c10.492-10.492,10.492-27.572,0-38.06L198.608,246.104z"></path>
-                     </g>
-                  </g>
-               </svg>
-            </div>
-            <div class="staples__arrow-prev">
-               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492 492" data-v-5adf6490="">
-                  <g data-v-5adf6490="">
-                     <g data-v-5adf6490="">
-                        <path d="M198.608,246.104L382.664,62.04c5.068-5.056,7.856-11.816,7.856-19.024c0-7.212-2.788-13.968-7.856-19.032l-16.128-16.12
-             C361.476,2.792,354.712,0,347.504,0s-13.964,2.792-19.028,7.864L109.328,227.008c-5.084,5.08-7.868,11.868-7.848,19.084
-             c-0.02,7.248,2.76,14.028,7.848,19.112l218.944,218.932c5.064,5.072,11.82,7.864,19.032,7.864c7.208,0,13.964-2.792,19.032-7.864
-             l16.124-16.12c10.492-10.492,10.492-27.572,0-38.06L198.608,246.104z"></path>
-                     </g>
-                  </g>
-               </svg>
-            </div>
-         </div>
-         <div class="staples__text d-none-lg {% unless section.settings.btn-text and section.settings.btn-text !='' %}mb-0{% endunless %}">
-            {{ section.settings.copy }}
-         </div>
-         {% if section.settings.btn-text and section.settings.btn-text != "" %}
-            <a href="{{ section.settings.btn-link }}" class="btn d-none-lg">
-               <span class="btn--span">
-                  <span class="btn--arrow">
-                     <svg width="28px" height="19px" viewBox="0 0 28 19">
-                        <g stroke="none" stroke-width="1" fill-rule="evenodd">
-                           <g transform="translate(-230.000000, -3082.000000)">
-                              <path
-                                 d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z">
-                              </path>
-                           </g>
-                        </g>
-                     </svg>
-                  </span>
-                  {{ section.settings.btn-text }}
-               </span>
-            </a> 
-         {% endif %}
+         {% render 'sliders-text' 
+            title:section.settings.title
+            subtitle: section.settings.subtitle
+            copy: section.settings.copy
+            btnText: section.settings.btn-text
+            btnLink: section.settings.btn-link
+         %}
+          {% render 'slider' check: true %}
+         <!-- MOBILE CONTENT -->
+          {% render 'sliders-mobile-text' 
+            title:section.settings.title
+            subtitle: section.settings.subtitle
+            copy: section.settings.copy
+            btnText: section.settings.btn-text
+            btnLink: section.settings.btn-link 
+        %}
       </div>
    </div>
 </section>
