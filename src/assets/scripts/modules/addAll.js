@@ -37,7 +37,7 @@ class AddAll {
         items
       })
 
-      window.vueCart && window.vueCart.refreshCart()
+      APP.Cart && APP.Cart.refreshCart()
 
     } catch(err) {
       console.warn('[addAll.js] error:', err)

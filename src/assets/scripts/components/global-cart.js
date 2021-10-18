@@ -29,7 +29,7 @@ const LineItemComponent = {
   },
 };
 
-window.vueCart = new Vue({
+export default new Vue({
   el: cartEl,
   name: 'vueCart',
   delimiters: ['${', '}'],

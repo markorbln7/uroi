@@ -15,6 +15,8 @@ import Menu from '../modules/menu'
 import ShopMenu from '../modules/shopMenu'
 import AccountRenderer from '../renderers/account'
 
+import VueCart from '../components/global-cart'
+
 window.APP = {}
 
 // INIT THE NAV
@@ -25,8 +27,11 @@ APP.MainMenu = new Menu({
   openClass: "header--open" // Classname to be added to @el when open
 })
 
-
+// SHOP MENU
 APP.ShopMenu = new ShopMenu()
+
+// MINI CART
+APP.Cart = VueCart
 
 
 // Fade
