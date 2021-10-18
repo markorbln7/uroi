@@ -18,7 +18,7 @@ class AddAll {
     }
   }
 
-  addToCart(e) {
+  async addToCart(e) {
     let ids = e.currentTarget.dataset.ids.split(",")
 
     if(!ids){
@@ -32,9 +32,16 @@ class AddAll {
       }
     })
 
-    axios.post('/cart/add.js', {
-      items
-    })
+    try {      
+      await axios.post('/cart/add.js', {
+        items
+      })
+
+      window.vueCart && window.vueCart.refreshCart()
+
+    } catch(err) {
+      console.warn('[addAll.js] error:', err)
+    }
   }
 
   destroy() {

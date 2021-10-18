@@ -29,7 +29,7 @@ const LineItemComponent = {
   },
 };
 
-const vueCart = new Vue({
+window.vueCart = new Vue({
   el: cartEl,
   name: 'vueCart',
   delimiters: ['${', '}'],
@@ -87,12 +87,14 @@ const vueCart = new Vue({
     toggleCart(target) {
       this.cartIsOpen = !this.cartIsOpen;
     },
+
     refreshCart(lineItemKey) {
       const config = {
         headers: {
           'X-Requested-With': 'XMLHttpRequest',
         },
       };
+
       axios.get('/cart.js', config)
         .then((response) => {
           const newCart = response.data;
