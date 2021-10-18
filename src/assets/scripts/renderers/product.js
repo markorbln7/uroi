@@ -52,7 +52,7 @@ class ProductRenderer extends DefaultRenderer {
         })
     }
     onEnterCompleted() {
-        this.darkNav = "add"
+        this.darkNav = true
 
         super.onEnterCompleted()
         this.initSlick()

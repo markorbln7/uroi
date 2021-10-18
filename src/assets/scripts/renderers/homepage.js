@@ -6,9 +6,11 @@ import { initAccount } from '../modules/account'
 
 class HomepageRenderer extends DefaultRenderer {
     onEnterCompleted() {
+      this.darkNav = false
+
       super.onEnterCompleted()
 
-      initAccount();
+      initAccount()
       
       _each($('.staples__slider'), (el) => {
         this.Slick = new Slick({el:$(el)})
