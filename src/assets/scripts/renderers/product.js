@@ -1,7 +1,8 @@
 import DefaultRenderer from './default'
 import Slick from '../modules/slider'
 import LocoSroll from '../modules/locoScroll'
-import { initAccordion } from '../modules/accordion';
+import { initAccordion } from '../modules/accordion'
+
 class ProductRenderer extends DefaultRenderer {
     initSlick() {
         this.Slick = new Slick({
@@ -29,6 +30,12 @@ class ProductRenderer extends DefaultRenderer {
             }        
         })
     }
+
+    initYotpo() {
+        var api = new Yotpo.API(yotpo)
+        api.refreshWidgets()
+    }
+
     initQuantity() {
         let increase = document.querySelector('.inc')
         let decrease = document.querySelector('.dec')
@@ -57,7 +64,9 @@ class ProductRenderer extends DefaultRenderer {
         super.onEnterCompleted()
         this.initSlick()
         this.initQuantity()
-        initAccordion();
+        initAccordion()
+
+        this.initYotpo()
         
     }
     onLeaveCompleted() {
