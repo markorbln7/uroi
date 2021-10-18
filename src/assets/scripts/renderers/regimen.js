@@ -8,15 +8,18 @@ import AddAll from '../modules/addAll'
 class RegimenRenderer extends DefaultRenderer {
   onEnterCompleted() {
     super.onEnterCompleted()
-    initTypesBar()
-    initTypes()
 
+    // TYPES HELPER NAV
+    initTypesBar()
+
+    // TYPES TABS
+    initTypes()
     
     // ADD ALL EVENT
     // on each element there should be data-ids='xxx,xxx,xxx'
     this.addAll = new AddAll('.add-all')
 
-
+    // INIT THE SLIDERS
     _each($('.staples__slider'), (el) => {
       this.Slick = new Slick({el:$(el)})
     })
@@ -25,9 +28,6 @@ class RegimenRenderer extends DefaultRenderer {
   onLeaveCompleted() {
     super.onLeaveCompleted()
     destroyMarkup()
-
-    // remove the event handlers
-    this.addAll.destroy()
   }
 }
 
