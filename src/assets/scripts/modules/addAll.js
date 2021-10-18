@@ -44,6 +44,7 @@ class AddAll {
     }
   }
 
+  // @TODO: check if we need this
   destroy() {
     if(_size(this.buttons)){
       _each(this.buttons, (b) => {
