@@ -1,0 +1,27 @@
+<a href="{{ url }}" class="staples__slide">
+    <picture class="staples__img">
+        {%- comment -%}If user wants to display image other than featured image{%- endcomment -%}
+        {% if block.settings.overrideImg !="" %}
+        <source media="(min-width: 600px)" srcset="{{ overrideImg | img_url: 'master' }}">
+        <source media="(min-width: 1200px)" srcset="{{ overrideImg | img_url: 'master' }}">
+        <img src="{{ overrideImg | img_url: 'master' }}">
+        {% else %}
+        {%- comment -%}If user wants to display featured image{%- endcomment -%}
+        <source media="(min-width: 600px)" srcset="{{ featuredImage | img_url: 'master' }}">
+        <source media="(min-width: 1200px)" srcset="{{ featuredImage | img_url: 'master' }}">
+        <img src="{{ featuredImage | img_url: 'master' }}">
+        {% endif %}
+    </picture>
+    <div class="staples__desc">
+        <h5>
+            {% if block.settings.overrideName and block.settings.overrideName != '' %}
+            {{ overrideName }}
+            {% else %}
+            {{ productTitle }}
+            {% endif %}
+        </h5>
+        <div class="staples__desc-text">
+            <p>{{ productDesc }}</p>
+        </div>
+    </div>
+</a>

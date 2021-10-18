@@ -48,6 +48,11 @@
                 </div>
             </li>
         {% endfor %}
+        {% if product.metafields.sets.disclaimer %}
+        <div class="disclaimer">
+            {{product.metafields.sets.disclaimer}}
+        </div>
+        {% endif %}
 
 
         {%- comment -%}

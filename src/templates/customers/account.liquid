@@ -1,4 +1,4 @@
-<div id="wrapper" data-scroll-container data-router-view="account">
+<div id="wrapper" data-scroll-container data-router-view="myAcc">
     <section class="my-acc">
     <div class="my-acc__menu">
         <h1 class="my-acc__title">My Account</h1>
@@ -25,50 +25,30 @@
                     <div class="table__row-item">Fullfillment Status</div>
                     <div class="table__row-item">Total</div>
                 </div>
+                {% for order in customer.orders %}
                 <div class="table__row">
                     <div class="table__row-item">
                         <span class="table__mob-header">Order</span>
-                        <span>#1022</span>
+                        <span>{{ order.name }}</span>
                     </div>
                     <div class="table__row-item">
                         <span class="table__mob-header">Date</span>
-                        <span>December 10, 2020</span>
+                        <span>{{ order.created_at | date: "%a, %b %d, %y" }}</span>
                     </div>
                     <div class="table__row-item">
                         <span class="table__mob-header">Payment Status</span>
-                        <span>Authorized</span>
+                        <span>{{ order.financial_status }}</span>
                     </div>
                     <div class="table__row-item">
                         <span class="table__mob-header">Fullfillment Status</span>
-                        <span>Received</span>
+                        <span>{{ order.fulfillment_status }}</span>
                     </div>
                     <div class="table__row-item">
                         <span class="table__mob-header">Total</span>
-                        <span>20.500KWD</span>
+                        <span>${{ order.total_price }}</span>
                     </div>
                 </div>
-                <div class="table__row">
-                    <div class="table__row-item">
-                        <span class="table__mob-header">Order</span>
-                        <span>#1022</span>
-                    </div>
-                    <div class="table__row-item">
-                        <span class="table__mob-header">Date</span>
-                        <span>December 10, 2020</span>
-                    </div>
-                    <div class="table__row-item">
-                        <span class="table__mob-header">Payment Status</span>
-                        <span>Authorized</span>
-                    </div>
-                    <div class="table__row-item">
-                        <span class="table__mob-header">Fullfillment Status</span>
-                        <span>Received</span>
-                    </div>
-                    <div class="table__row-item">
-                        <span class="table__mob-header">Total</span>
-                        <span>20.500KWD</span>
-                    </div>
-                </div>
+            {% endfor %}
             </div>
             <div>
                 <a href="#" class="btn">

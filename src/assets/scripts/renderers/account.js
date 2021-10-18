@@ -5,6 +5,7 @@ class AccountRenderer extends DefaultRenderer {
     onEnter() {}
     onLeave() {}
     onEnterCompleted() {
+        super.onEnterCompleted()
         initAccount();
     }
     onLeaveCompleted() {}

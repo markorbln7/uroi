@@ -1,0 +1,15 @@
+<div class="staples__slider-content">
+    <div class="staples__slider">
+        {% for block in section.blocks %}
+        {% render 'slider-images' 
+            overrideImg:block.settings.override-img
+            featuredImage: block.settings.product.featured_image
+            overrideName: block.settings.override-name
+            productTitle: block.settings.product.title
+            productDesc:block.settings.product-desc
+        %}
+        {% endfor %}
+    </div>
+    {% render 'staples-next' %}
+    {% render 'staples-prev' %}
+</div>

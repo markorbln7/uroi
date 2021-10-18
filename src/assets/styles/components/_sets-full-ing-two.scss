@@ -194,3 +194,13 @@
         }
     }
 }
+
+.disclaimer {
+    font-size: 1.2rem;
+    line-height: 1.5;   
+    letter-spacing: 0.266667px;
+    margin-top:1.9rem;
+    @include respond-to(md) {
+        margin-top:2.8rem;
+    }
+}
