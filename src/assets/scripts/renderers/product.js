@@ -12,20 +12,20 @@ class ProductRenderer extends DefaultRenderer {
                 nextArrow: '.find__arrow-next',
                 prevArrow: '.find__arrow-prev',
                 responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                        }
                     }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                    }
-                },
                 ]
             }        
         })
