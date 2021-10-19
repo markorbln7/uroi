@@ -33,11 +33,12 @@ class ProductRenderer extends DefaultRenderer {
 
     initYotpo() {
         var api = new Yotpo.API(yotpo)
-        api.refreshWidgets()
+        let a = api.refreshWidgets()
 
+        // BUDZ TIMEOUT - nadji nacin za callback od yotpoa
         setTimeout(() => {
             this.LocoSroll.updateScroll()
-        }, 100)
+        }, 1000)
     }
 
     initQuantity() {
