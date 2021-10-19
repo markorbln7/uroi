@@ -4,9 +4,9 @@ import { initLogin } from '../modules/login'
 
 class LoginRenderer extends DefaultRenderer {
     onEnterCompleted() {
-        this.darkNav = "add"
+        this.darkNav = true
         super.onEnterCompleted()
-        initLogin();
+        initLogin()
     }
     onLeaveCompleted() {
         super.onLeaveCompleted()

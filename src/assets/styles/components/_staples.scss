@@ -1,6 +1,22 @@
 .staples {
     padding: 36px 0;
 
+
+    //swiper
+    .swiper-button-prev, .swiper-button-next{
+      background-image: none!important;
+      transition: opacity .4s;
+
+      &.swiper-button-disabled{
+        opacity: 0!important;
+      }
+    }
+
+    .swiper-button-next{
+      transform: scaleX(-1);
+    }
+
+
     @include respond-to(md) {
         padding: 5rem 0;
     }

@@ -34,6 +34,10 @@ class ProductRenderer extends DefaultRenderer {
     initYotpo() {
         var api = new Yotpo.API(yotpo)
         api.refreshWidgets()
+
+        setTimeout(() => {
+            this.LocoSroll.updateScroll()
+        }, 100)
     }
 
     initQuantity() {

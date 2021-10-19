@@ -1,30 +1,23 @@
 import _merge from "lodash/merge"
+import Swiper from 'swiper'
+
 
 const defaultOptions = {
-   infinite: false,
-   speed: 300,
-   slidesToShow: 3,
-   slidesToScroll: 1,
-   nextArrow: '.staples__arrow-next',
-   prevArrow: '.staples__arrow-prev',
-   responsive: [
-      {
-         breakpoint: 600,
-         settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-         }
-      }
-   ]
+   slidesPerView: 'auto',
+
+   navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+   }
 }
 
- export default class Slick {
+export default class Slider {
    constructor ({el, options}){
       this.el = el
       this.options = _merge({}, defaultOptions, options)
       this.initSlider()
    }
    initSlider() {
-      this.el.slick(this.options)
+      this.swiper = new Swiper(this.el, this.options)
    }
  }

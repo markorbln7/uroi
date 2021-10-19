@@ -30,7 +30,7 @@
 
     @include respond-to(lg) {
       font-size: 5.2rem;
-      line-height: 14.7rem;
+      line-height: 7rem;
     }
   }
 
@@ -51,28 +51,35 @@
 
   &__container {
     padding: 0 20px;
-    width: 540px;
+    width: 100%;
+    // width: 540px;
 
     @include respond-to(sm) {
-      width: 780px;
+      // width: 780px;
     }
 
     @include respond-to(md) {
       padding: 0 2rem;
       padding-left: 10.8vw;
-      width: 120rem;
+      // width: 120rem;
     }
 
     @include respond-to(lg) {
-      width: 228rem;
+      // width: 228rem;
     }
   }
 
   &__card {
     margin-right: 10px;
+    width: 90vw!important;
     
     @include respond-to(md) {
+      width: 35vw!important;
       margin-right: 1rem;
+    }
+
+    @include respond-to(lg) {
+      width: 27vw!important;
     }
   }
 
@@ -208,7 +215,7 @@
     }
 
     @include respond-to(lg) {
-      height: 68.5rem;
+      height: 70.5rem;
     }
   }
 

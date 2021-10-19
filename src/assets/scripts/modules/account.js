@@ -10,7 +10,7 @@ export function initAccount() {
 
         toggleCheckbox.addEventListener('click', () => {
             toggleCheckbox.classList.toggle('active');
-        }) 
+        })
 
         backBtns.forEach(btn => {
             btn.addEventListener('click', () => {

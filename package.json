@@ -20,6 +20,7 @@
 		]
 	},
 	"dependencies": {
+		"@dogstudio/highway": "^2.2.1",
 		"autoprefixer": "^8.6.5",
 		"axios": "^0.19.2",
 		"body-scroll-lock": "^2.7.1",

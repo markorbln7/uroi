@@ -1,9 +1,11 @@
 import DefaultRenderer from './default'
-import Slick from '../modules/slider'
+import Slider from '../modules/slider'
 import { initTypes } from '../modules/types'
 import { initTypesBar, destroyMarkup } from '../modules/types-bar'
 import _each from 'lodash/each'
 import AddAll from '../modules/addAll'
+
+import Swiper from 'swiper'
 
 class RegimenRenderer extends DefaultRenderer {
   onEnterCompleted() {
@@ -20,8 +22,24 @@ class RegimenRenderer extends DefaultRenderer {
     this.addAll = new AddAll('.add-all')
 
     // INIT THE SLIDERS
-    _each($('.staples__slider'), (el) => {
-      this.Slick = new Slick({el:$(el)})
+    this.sliders = []
+    _each($('.swiper'), (el, i) => {
+      this.sliders[i] = new Slider({
+        el:$(el),
+
+        // swiper options
+        options: {
+          slidesPerView: 1,
+          breakpoints: {
+            768: {
+            slidesPerView: 2
+            },
+            1200: {
+            slidesPerView: 3
+            }
+          }
+        }
+      })
     })
   }
 

@@ -1,35 +1,20 @@
 import DefaultRenderer from './default'
-import Slick from '../modules/slider'
+import Slider from '../modules/slider'
 
 class FindRenderer extends DefaultRenderer {
     onEnterCompleted() {
         super.onEnterCompleted()
-        this.Slick = new Slick({
+
+        this.slider = new Slider({
             el: $('.find__slider'),
-            options:{
-                infinite: false,
-                speed: 300,
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                nextArrow: '.find__arrow-next',
-                prevArrow: '.find__arrow-prev',
-                responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1
-                    }
+            options: {
+                navigation: {
+                    nextEl: '.find__arrow-next',
+                    prevEl: '.find__arrow-prev',
                 },
-                {
-                    breakpoint: 600,
-                    settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                    }
-                },
-                ]
-            }        
+                slidesPerView: 'auto',
+                breakpoints: {}
+            }
         })
     }
     onLeaveCompleted() {

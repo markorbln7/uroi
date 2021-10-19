@@ -8,50 +8,54 @@
         </div>
     </div>
     <div class="find__container">
-        <div class="find__slider">
-            {% for block in section.blocks %}
-                <div class="find__card">
-                    <a href="/pages/regimen-test" class="find__card-box">
-                        <div class="find__img-wrapper">
-                            <picture class="find__img">
-                                <source media="(max-width: 600px)" srcset="{{ block.settings.image | img_url: 'medium' }}">
-                                <source media="(max-width: 1200px)" srcset="{{ block.settings.image | img_url: 'medium' }}">
-                                <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.product.title }}">
-                            </picture>
-                            <div class="find__hover"></div>
+
+        <!-- SWIPER -->
+        <div class="find__slider swiper">
+            <div class='swiper-wrapper'>
+                {% for block in section.blocks %}
+                    <div class="find__card swiper-slide">
+                        <a href="/pages/regimen-test" class="find__card-box">
+                            <div class="find__img-wrapper">
+                                <picture class="find__img">
+                                    <source media="(max-width: 600px)" srcset="{{ block.settings.image | img_url: 'medium' }}">
+                                    <source media="(max-width: 1200px)" srcset="{{ block.settings.image | img_url: 'medium' }}">
+                                    <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.product.title }}">
+                                </picture>
+                                <div class="find__hover"></div>
+                            </div>
+                        </a>
+                        <a href="/pages/regimen-test" class="find__title">{{ block.settings.title }}</a>
+                        <div class="find__desc">{{ block.settings.desc }}</div>
+                    </div>
+                {% endfor %}
+
+                <div class="find__card swiper-slide">
+                    <a href="/collections" class="find__link">
+                        <div class="find__card-content">
+                            <div class="find__card-text">
+                                Explore <br>
+                                All
+                                <svg class="find__svg" width="28px" height="19px" viewBox="0 0 28 19">
+                                    <g stroke="none" stroke-width="1" fill-rule="evenodd">
+                                        <g transform="translate(-230.000000, -3082.000000)">
+                                            <path
+                                                d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
                         </div>
                     </a>
-                    <a href="/pages/regimen-test" class="find__title">{{ block.settings.title }}</a>
-                    <div class="find__desc">{{ block.settings.desc }}</div>
                 </div>
-            {% endfor %}
-
-            <div class="find__card">
-                <a href="/collections" class="find__link">
-                    <div class="find__card-content">
-                        <div class="find__card-text">
-                            Explore <br>
-                            All
-                            <svg class="find__svg" width="28px" height="19px" viewBox="0 0 28 19">
-                                <g stroke="none" stroke-width="1" fill-rule="evenodd">
-                                    <g transform="translate(-230.000000, -3082.000000)">
-                                        <path
-                                            d="M248.747826,3082 L247.530435,3083.39706 C250.93913,3086.75 253.373913,3089.07843 254.834783,3090.38235 C249.709069,3090.33044 241.430808,3090.33044 230,3090.38235 L230,3092.05882 C241.434357,3092.01824 249.712618,3092.01824 254.834783,3092.05882 C253.373913,3093.54902 250.93913,3095.97059 247.530435,3099.32353 L248.747826,3101 L258,3091.22059 L248.747826,3082 Z">
-                                        </path>
-                                    </g>
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="find__card">
-                <div class="find__card-wrap"></div>
             </div>
         </div>
+        <!-- END :: SWIPER -->
+
+        <!-- SWIPER NAV -->
         <div class="find__arrow-next"></div>
         <div class="find__arrow-prev"></div>
+        <!-- END :: SWIPER NAV -->
     </div>
 </section>
 
