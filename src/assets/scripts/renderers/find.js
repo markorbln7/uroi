@@ -7,8 +7,10 @@ class FindRenderer extends DefaultRenderer {
         super.onEnterCompleted()
 
         this.filter = new Filter({
-            options: document.querySelectorAll('.filter-option'),
-            elements: document.querySelectorAll('.grid__card')
+            options: document.querySelectorAll('.filter-option'), // filter options/links
+            elements: document.querySelectorAll('.grid__card'), // elements to filter
+            sortKeys: ['latest', 'rating'], // possible sort values 
+            filterKeys: ['bestSeller', 'productType'] // possible filter keys
         })
 
         this.slider = new Slider({
