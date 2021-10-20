@@ -6,7 +6,20 @@
         <div class="grid__wrap">
                     {% assign colHandle = collection.handle%}
                     {% for product in collections[colHandle].products %}
-                        <div class="grid__card">
+                    {% assign type = '' %}
+                    {% for collection in product.collections %}	
+                        {% assign type = type | append: ',' | append: collection.handle %}
+                        {% if type contains 'best-seller' %}
+                            {% assign bs = 'true' %}
+                        {% else %}
+                            {% assign bs = 'false' %}
+                        {% endif %}
+                    {% endfor %}
+                    {% assign types = type | remove_first: "," %}
+                        <div class="grid__card" 
+                        data-type="{{types}}"
+                        data-best-sellers="{{bs}}"
+                        data-rating={{product.metafields.yotpo.reviews_average}}>
                             <div class="grid__content">
                                 <div class="grid__link">
                                     <div class="grid__img-box">

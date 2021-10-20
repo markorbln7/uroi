@@ -12,9 +12,10 @@
         <!-- SWIPER -->
         <div class="find__slider swiper">
             <div class='swiper-wrapper'>
+                {% assign count = 0 %}
                 {% for block in section.blocks %}
                     <div class="find__card swiper-slide">
-                        <a href="/pages/regimen-test" class="find__card-box">
+                        <a href="/pages/regimen-test?section={{count}}" class="find__card-box">
                             <div class="find__img-wrapper">
                                 <picture class="find__img">
                                     <source media="(max-width: 600px)" srcset="{{ block.settings.image | img_url: 'medium' }}">
@@ -27,6 +28,7 @@
                         <a href="/pages/regimen-test" class="find__title">{{ block.settings.title }}</a>
                         <div class="find__desc">{{ block.settings.desc }}</div>
                     </div>
+                    {% assign count = count | plus:1 %}
                 {% endfor %}
 
                 <div class="find__card swiper-slide">

@@ -1,0 +1,6 @@
+{% for collection in collections %}
+{% if collection.handle == 'dry-skin' or collection.handle == 'sensitive' or collection.handle == 'normal' or collection.handle == 'oily-combination' %}
+    {{collection.title}}
+    {{collection.handle}}
+{% endif %}
+{% endfor %}

@@ -1,5 +1,8 @@
 <div id="wrapper" data-scroll-container data-router-view="listCollections">
     {% section 'hero-collections' %}
+    {% if collection.handle == "all"%}
+        {% render 'filter' %}
+    {% endif %}
     {% section 'product-all' %}
     {% section 'drop' %}
     {% section 'find' %}
