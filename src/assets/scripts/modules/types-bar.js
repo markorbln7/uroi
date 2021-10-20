@@ -2,7 +2,7 @@ export function initTypesBar() {
     addMarkupToHeader();
 
     const barButtons = document.querySelectorAll('.tabs-bar__button');
-    const tabs = document.querySelectorAll('.types__card')
+    const tabs = document.querySelectorAll('.tab-button')
 
     barButtons.forEach((button, i) => {
         button.addEventListener('click', function() {
@@ -14,7 +14,7 @@ export function initTypesBar() {
 const addScrollListenerToBar = () => {
     setTimeout(() => {
         window.locoScroll.on('scroll', args => {
-            if(args.scroll.y > window.innerHeight + document.querySelector('.fit').offsetHeight + document.querySelector('.types').offsetHeight) {
+            if(args.scroll.y > window.innerHeight + document.querySelector('.fit').offsetHeight + document.querySelector('.types').offsetHeight - 50) {
                 document.querySelector('.tabs-bar').classList.add('tabs-bar--show');
             } else {
                 document.querySelector('.tabs-bar').classList.remove('tabs-bar--show');

@@ -8,7 +8,7 @@
     <p class="types__subtitle">{{ section.settings.title }}</p>
     <div class="types__wrap">
 
-
+      <!-- SHOULD BE MOVED TO SNIPPET -->
       <div class="types__card" data-index="0">
         <div class="types__img-box">
           <picture class="types__img">
@@ -22,8 +22,11 @@
             />
           </picture>
         </div>
-        <span class="types__span types__active">Oily/Combination </span>
+        <span 
+        data-index="1"
+        class="tab-button types__span active">Oily/Combination </span>
       </div>
+
 
       <div class="types__card" data-index="1">
         <div class="types__img-box">
@@ -38,7 +41,9 @@
             />
           </picture>
         </div>
-        <span class="types__span"> Normal </span>
+        <span 
+        data-index="2"
+        class="tab-button types__span"> Normal </span>
       </div>
 
 
@@ -55,7 +60,9 @@
             />
           </picture>
         </div>
-        <span class="types__span"> Sensitive </span>
+        <span 
+        data-index="3"
+        class="tab-button types__span"> Sensitive </span>
       </div>
 
 
@@ -72,7 +79,9 @@
             />
           </picture>
         </div>
-        <span class="types__span"> dry skin </span>
+        <span 
+        data-index="4"
+        class="tab-button types__span"> dry skin </span>
       </div>
 
 

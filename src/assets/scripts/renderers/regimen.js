@@ -1,11 +1,11 @@
 import DefaultRenderer from './default'
 import Slider from '../modules/slider'
-import { initTypes } from '../modules/types'
 import { initTypesBar, destroyMarkup } from '../modules/types-bar'
 import _each from 'lodash/each'
 import AddAll from '../modules/addAll'
 
 import Swiper from 'swiper'
+import Tabs from '../modules/tabs'
 
 class RegimenRenderer extends DefaultRenderer {
   onEnterCompleted() {
@@ -15,7 +15,9 @@ class RegimenRenderer extends DefaultRenderer {
     initTypesBar()
 
     // TYPES TABS
-    initTypes()
+    this.tabs = new Tabs({
+      scroll: this.LocoSroll
+    })
     
     // ADD ALL EVENT
     // on each element there should be data-ids='xxx,xxx,xxx'

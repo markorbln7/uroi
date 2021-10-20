@@ -38,7 +38,7 @@ class ProductRenderer extends DefaultRenderer {
         // BUDZ TIMEOUT - nadji nacin za callback od yotpoa
         setTimeout(() => {
             this.LocoSroll.updateScroll()
-        }, 1000)
+        }, 2000)
     }
 
     initQuantity() {

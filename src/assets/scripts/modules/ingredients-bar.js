@@ -2,7 +2,7 @@ export function initIngredientsBar() {
     addMarkupToHeader();
 
     const barButtons = document.querySelectorAll('.tabs-bar__button');
-    const tabs = document.querySelectorAll('.about__title')
+    const tabs = document.querySelectorAll('.tab-button')
 
     barButtons.forEach((button, i) => {
         button.addEventListener('click', function() {

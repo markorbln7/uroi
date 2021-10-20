@@ -85,20 +85,21 @@
       color: $color-silver;
       cursor: pointer;
     }
-  }
 
-  &__active {
-    color: $color-silver;
-    position: relative;
+    &.active {
+      color: $color-silver;
+      position: relative;
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 0;
-      height: 2px;
-      width: 100%;
-      background-color: $color-silver;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: $color-silver;
+      }
     }
   }
+
 }
