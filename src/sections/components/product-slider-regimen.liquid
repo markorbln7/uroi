@@ -1,3 +1,8 @@
+{% assign ids = '' %}
+{% for block in section.blocks %}
+    {% assign ids = ids | append: ',' | append: block.settings.product.first_available_variant.id %}
+{% endfor%}
+{% assign ID = ids | remove_first: "," %}
 <section class="staples">
    <div class="container-left">
       <div class="staples__container">
@@ -7,6 +12,7 @@
             copy: section.settings.copy
             btnText: section.settings.btn-text
             btnLink: section.settings.btn-link
+            id: ID
          %}
           {% render 'slider' check: true %}
          <!-- MOBILE CONTENT -->
@@ -16,6 +22,7 @@
             copy: section.settings.copy
             btnText: section.settings.btn-text
             btnLink: section.settings.btn-link 
+            id: ID
         %}
       </div>
    </div>
