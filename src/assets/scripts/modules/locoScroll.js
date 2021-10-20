@@ -1,8 +1,11 @@
 import LocomotiveScroll from 'locomotive-scroll'
 import { gsap } from 'gsap'
+const eventBus = require('js-event-bus')()
 
 export default class LocoSroll {
     constructor (options){
+        let self = this
+
         this.$el = options.el[0]
         this.darkNav = options.darkNav
         
@@ -12,6 +15,10 @@ export default class LocoSroll {
             this.initScroll()
             this.initScrollEvents()
         },100)
+
+        eventBus.on('loco.update', function() {
+            self.updateScroll()
+        })
     }
 
     initScrollEvents() {
@@ -44,6 +51,10 @@ export default class LocoSroll {
     }
 
     updateScroll(el) {
+        if(!this.scroll){
+            return
+        }
+
         this.scroll.update()
         if(el) {
             this.scroll.scrollTo(el, {
