@@ -2,6 +2,7 @@ import DefaultRenderer from './default'
 import Slick from '../modules/slider'
 import LocoSroll from '../modules/locoScroll'
 import { initAccordion } from '../modules/accordion'
+import _each from 'lodash/each'
 
 class ProductRenderer extends DefaultRenderer {
     initSlick() {
@@ -32,12 +33,27 @@ class ProductRenderer extends DefaultRenderer {
     }
 
     initYotpo() {
+        if(typeof Yotpo == "undefined"){
+            return
+        }
+
         var api = new Yotpo.API(yotpo)
         let a = api.refreshWidgets()
-
-        // BUDZ TIMEOUT - nadji nacin za callback od yotpoa
+        
+        // BUDZ TIMEOUT / FALE EVENTOVI - nadji nacin za callback od yotpoa
         setTimeout(() => {
             this.LocoSroll.updateScroll()
+
+            // BUDZ - KADA SE OTVORI FORMA DA REFRESUJE SKROL
+            let btns = document.querySelectorAll('.write-review-button')
+            _each(btns, (btn) => {
+                btn.addEventListener('click', () => {
+                    setTimeout(() => {
+                        this.LocoSroll.updateScroll()
+                    }, 1000)
+                })
+            })
+
         }, 2000)
     }
 
@@ -72,7 +88,6 @@ class ProductRenderer extends DefaultRenderer {
         initAccordion()
 
         this.initYotpo()
-        
     }
     onLeaveCompleted() {
         super.onLeaveCompleted()

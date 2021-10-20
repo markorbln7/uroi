@@ -80,12 +80,14 @@ export default new Vue({
       toggleEls.forEach((toggleEl) => {
         toggleEl.addEventListener('click', (e) => {
           e.preventDefault();
-          this.toggleCart(e.target);
+          this.toggleCart();
         });
       });
     },
-    toggleCart(target) {
-      this.cartIsOpen = !this.cartIsOpen;
+
+    toggleCart(open) {
+      this.cartIsOpen = typeof open === "boolean" ? open : !this.cartIsOpen;
+      console.log("open", open, this.cartIsOpen)
     },
 
     refreshCart(lineItemKey) {

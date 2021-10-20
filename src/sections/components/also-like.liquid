@@ -9,7 +9,7 @@
         <div class="like__content">
         {% assign collsectionName  = product.metafields.alsoLike.collection %}
             {% for product in collections[collsectionName].products %}
-                <div class="gallery__card">
+                <div class="gallery__card col-md-3">
                     <div class="gallery__content">
                         <a href="#" class="gallery__link">
                             <picture class="gallery__img">

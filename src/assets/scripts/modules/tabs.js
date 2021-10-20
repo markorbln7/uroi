@@ -4,20 +4,40 @@ const eventBus = require('js-event-bus')()
 
 class Tabs {
     constructor(options) {
-        this.activeIndex = 0
 
         this.sections = document.querySelectorAll('.tab-section')
         this.tabs = document.querySelectorAll('.tab-button')
         this.barButtons = document.querySelectorAll('.tabs-bar__button')
-
-        this.activeSection = this.sections[this.activeIndex]
         this.scroll = options.scroll
+
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const section = urlParams.get('section')
+        this.activeIndex = section ? parseInt(section) : 0
+        this.activeSection = this.sections[this.activeIndex]
+
+        // SHOW THE FIRST ONE
+        gsap.set(this.activeSection, {
+            display: 'block'
+        })
+
+        this.setActiveLinks()
 
         _each(this.tabs, (tab, i) => {
             tab.addEventListener('click', (e) => {
                 this.onClick(e)
             })
         })
+    }
+
+    setActiveLinks() {
+        // REMOVE ACTIVE LINKS
+        this.tabs.forEach(t => t.classList.remove('active')) // MAIN LINS
+        this.barButtons.forEach(b => b.classList.remove('tabs-bar__button--active')) // BAR LINKS
+
+        // SET ACTIVE LINKS
+        this.tabs[this.activeIndex].classList.add('active')
+        this.barButtons[this.activeIndex].classList.add('tabs-bar__button--active')
     }
 
     onClick(e) {
@@ -37,7 +57,7 @@ class Tabs {
 
         // FADE IN THE NEW SECTION
         this.activeIndex = e.currentTarget.dataset.index
-        let newActiveSection = this.sections[this.activeIndex - 1]
+        let newActiveSection = this.sections[this.activeIndex]
         newActiveSection.classList.remove('transitioning')
         gsap.set(newActiveSection, { display: 'block' })
 
@@ -56,14 +76,8 @@ class Tabs {
             }
         })
 
-        // REMOVE ACTIVE LINKS
-        this.tabs.forEach(t => t.classList.remove('active'))
-        this.barButtons.forEach(b => b.classList.remove('tabs-bar__button--active'))
-
-        // SET ACTIVE LINKS
-        e.currentTarget.classList.add('active')
-        this.barButtons[this.activeIndex - 1].classList.add('tabs-bar__button--active')
-
+        
+        this.setActiveLinks()
 
         // UPDATE SCROLL
         setTimeout(() => {

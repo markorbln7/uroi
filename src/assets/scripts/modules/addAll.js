@@ -37,7 +37,11 @@ class AddAll {
         items
       })
 
-      APP.Cart && APP.Cart.refreshCart()
+      // update and open the cart
+      if(APP.Cart){        
+        APP.Cart.refreshCart()
+        APP.Cart.toggleCart(true)
+      }
 
     } catch(err) {
       console.warn('[addAll.js] error:', err)
