@@ -10,7 +10,10 @@ class FindRenderer extends DefaultRenderer {
             options: document.querySelectorAll('.filter-option'), // filter options/links
             elements: document.querySelectorAll('.grid__card'), // elements to filter
             sortKeys: ['latest', 'rating'], // possible sort values 
-            filterKeys: ['bestSeller', 'productType'] // possible filter keys
+            filterKeys: ['bestSeller', 'productType'], // possible filter keys,
+            onUpdate: () => {
+                this.LocoSroll.updateScroll()
+            }
         })
 
         this.slider = new Slider({

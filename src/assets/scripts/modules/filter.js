@@ -1,15 +1,15 @@
 /*!
  * HTML/JS FILTER
  * 
- * 1. REGULAR FILTERS
+ * 1. REGULAR FILTER LINKS
  * On the the links for regular filters we need to have data-filter and data-value 
  * @data-filter - this is the key we are filtering
  * @data-value - this is the value of the filter option
  * 
- * 2. RESET FILTERS
+ * 2. RESET FILTERS LINKS
  * On the the reset links we need to have data-reset which can be either 'filters' or 'sort'
  * 
- * 3. SORT FILTERS
+ * 3. SORT FILTERS LINKS
  * Add data-sort=key to the sorting links, key can be any attribute that exists on the filtering element
  * 
  * NOTE:
@@ -28,12 +28,12 @@ import _mapValues from 'lodash/mapValues'
 import _filter from 'lodash/filter'
 import _get from 'lodash/get'
 import _includes from 'lodash/includes'
+import _isFunction from 'lodash/isFunction'
 
 import { gsap } from 'gsap'
-const eventBus = require('js-event-bus')()
 
 class Filter {
-	constructor({options, elements, sortKeys, filterKeys}) {
+	constructor({options, elements, sortKeys, filterKeys, onUpdate}) {
 		let self = this
 
 		this.filterOptions = options
@@ -41,6 +41,7 @@ class Filter {
 
 		this.sortKeys = sortKeys
 		this.filterKeys = filterKeys
+		this.onUpdate = onUpdate
 
 		// add click events
 		_each(this.filterOptions, (opt, i) => {
@@ -126,14 +127,14 @@ class Filter {
 			duration: instant ? 0 : .2,
 			opacity: 0,
 			onComplete: () => {
-				callback && callback()
+				_isFunction(callback) && callback()
 
 				gsap.to(this.elements, {
 					duration: instant ? 0 : .4,
 					opacity: 1
 				})
 
-				eventBus.emit('loco.update')
+				_isFunction(this.onUpdate) && this.onUpdate()
 			}
 		})
 	}
