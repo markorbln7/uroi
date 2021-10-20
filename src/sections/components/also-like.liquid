@@ -2,93 +2,90 @@
     <div class="container">
         <div class="like__heading">
             <h2>
-                <span class="like__heading-small">{{product.metafields.alsoLike.subtitle}}</span><br>
-                {{product.metafields.alsoLike.title}}
+                <span class="like__heading-small">{{product.metafields.alsoLike.title}}</span><br>
+                {{product.metafields.alsoLike.subtitle}}
             </h2>
         </div>
         <div class="like__content">
         {% assign collsectionName  = product.metafields.alsoLike.collection %}
             {% for product in collections[collsectionName].products %}
-                <a href="{{ product.url }}" class="like__card">
-                    <div class="like__img-box">
-                        <picture class="like__img">
-                            <source media="(max-width: 600px)" srcset="{{ product.featured_image | img_url: 'medium' }}">
-                            <source media="(max-width: 1200px)" srcset="{{ product.featured_image | img_url: 'medium' }}">
-                            <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
-                        </picture>
-                        <div class="like__hover-info">
-                            <div class="like__rating">
-                                <div class="like__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="like__svg-star">
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
+                <div class="gallery__card">
+                    <div class="gallery__content">
+                        <a href="#" class="gallery__link">
+                            <picture class="gallery__img">
+                                    {%- comment -%}If user wants to display featured image{%- endcomment -%}
+                                    <source media="(min-width: 600px)" srcset="{{ product.featured_image | img_url: 'master' }}">
+                                    <source media="(min-width: 1200px)" srcset="{{ product.featured_image | img_url: 'master' }}">
+                                    <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
+                            </picture>
+                            <div class="gallery__hover-info">
+                                <div class="gallery__rating">
+                                    <div class="gallery__star">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="gallery__svg-star">
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="gallery__star">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="gallery__svg-star">
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="gallery__star">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="gallery__svg-star">
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="gallery__star">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="gallery__svg-star">
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="gallery__star">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="gallery__svg-star">
+                                            <defs>
+                                                <clipPath id="rect16284126205765">
+                                                    <path
+                                                        d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                        class="mask"></path>
+                                                </clipPath>
+                                            </defs>
+                                            <rect clip-path="url(#rect16284126205765)" width="4.5269999999999975" x="0.5"
+                                                y="0" height="14.15" fill="#000"></rect>
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="like__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="like__svg-star">
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
+                                <div class="gallery__price">
+                                    {{ product.price | money }}
                                 </div>
-                                <div class="like__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="like__svg-star">
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
-                                </div>
-                                <div class="like__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="like__svg-star">
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
-                                </div>
-                                <div class="like__star">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
-                                        class="like__svg-star">
-                                        <defs>
-                                            <clipPath id="rect16284126205765">
-                                                <path
-                                                    d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                                    class="mask"></path>
-                                            </clipPath>
-                                        </defs>
-                                        <rect clip-path="url(#rect16284126205765)" width="4.5269999999999975" x="0.5" y="0"
-                                            height="14.15" fill="#000"></rect>
-                                        <path
-                                            d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
-                                            class="star"></path>
-                                    </svg>
+                                <div class="gallery__cart">
+                                    <span class="atc-button add-to-cart" data-variant-id="{{product.first_available_variant.id}}" data-quantity="1">
+                                        Add to cart
+                                    </span>
                                 </div>
                             </div>
-                            <div class="like__price">
-                                {{ product.price | money_with_currency }}
-                            </div>
-                            <div class="like__cart">
-                                <span>
-                                    Add to cart
-                                </span>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-                    <div class="like__desc-wrap">
-                        <div class="like__desc">
-                            <span class="like__desc-title">{{ product.title }}</span>
-                            <span class="like__separator">/</span>
-                            <div class="like__text">
-                                <p>{{ product-desc }}</p>
-                            </div>
-                        </div>
-                        <div class="like__price-bottom"> {{ product.price | money_with_currency }}</div>
-                    </div>
-                </a>
+                    <a href="{{ product.url }}" class="gallery__heading-sub">
+                                {{ product.title }}
+                    </a>
+                    
+                </div>
             {% endfor %}
         </div>
     </div>
