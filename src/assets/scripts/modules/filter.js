@@ -1,5 +1,5 @@
 /*!
- * HTML/JS FILTER
+ * ***********************************************  HTML/JS FILTER ***********************************************
  * 
  * 1. REGULAR FILTER LINKS
  * On the the links for regular filters we need to have data-filter and data-value 
@@ -15,12 +15,7 @@
  * NOTE:
  * To all filtering elements add data-[key] for all properties you want to filter or sort
  * 
- * OPTIONS:
- * @param {array} elements - Array of HTML objects to filter
- * @param {array} options - Array of filter options/links
- * @param {array} sortKeys - array of all possible sort keys ie [rating, score] and their values need to be NUMBERS
- * @param {array} filterKeys - array of all possible filter keys
- * 
+ * ****************************************************************************************************************
  */
 
 import _each from 'lodash/each'
@@ -29,10 +24,14 @@ import _filter from 'lodash/filter'
 import _get from 'lodash/get'
 import _includes from 'lodash/includes'
 import _isFunction from 'lodash/isFunction'
-
 import { gsap } from 'gsap'
 
 class Filter {
+
+	// @param {array} elements - Array of HTML objects to filter
+	// @param {array} options - Array of filter options/links
+	// @param {array} sortKeys - array of all possible sort keys ie [rating, score] and their values need to be NUMBERS
+	// @param {array} filterKeys - array of all possible filter keys
 	constructor({options, elements, sortKeys, filterKeys, onUpdate}) {
 		let self = this
 
@@ -44,16 +43,12 @@ class Filter {
 		this.onUpdate = onUpdate
 
 		// add click events
-		_each(this.filterOptions, (opt, i) => {
-			opt.addEventListener('click', function (event) {
-				self.onClick(event)
-			})
+		_each(this.filterOptions, opt => {
+			opt.addEventListener('click', (event) => this.onClick(event))
 		})
 
 		// enable back / forward in browser
-		window.addEventListener('popstate', function (event) {
-			self.filter()
-		})
+		window.addEventListener('popstate', (event) => this.filter())
 
 		// make initial filtering / sorting
 		this.filter(true)
