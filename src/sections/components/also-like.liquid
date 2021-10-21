@@ -9,7 +9,6 @@
         <div class="like__content">
         {% assign collsectionName  = product.metafields.alsoLike.collection %}
             {% for product in collections[collsectionName].products %}
-            {% assign mark = product.metafields.yotpo.reviews_average | plus: 0 %}
                 <div class="gallery__card col-md-3">
                     <div class="gallery__content">
                         <a href="{{product.url}}" class="gallery__link">
@@ -22,30 +21,54 @@
                             <div class="gallery__hover-info">
                                 <div class="gallery__rating">
                                     <div class="gallery__star">
-                                        {% render 'fullStar' %}
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="gallery__svg-star">
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
                                     </div>
                                     <div class="gallery__star">
-                                        {% render 'fullStar' %}
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="gallery__svg-star">
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
                                     </div>
                                     <div class="gallery__star">
-                                        {% render 'fullStar' %}
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="gallery__svg-star">
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
                                     </div>
                                     <div class="gallery__star">
-                                        {% render 'fullStar' %}
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="gallery__svg-star">
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
                                     </div>
-                                    {% if mark > 4 %}
-                                        <div class="gallery__star">
-                                            {% render 'epmtyStar' %}
-                                        </div>
-                                        {% else if mark > 4.49 %}
-                                        <div class="gallery__star">
-                                            {% render 'halfStar' %}
-                                        </div>
-                                        {% else %}
-                                        <div class="gallery__star">
-                                            {% render 'fullStar' %}
-                                        </div>
-                                    {% endif %}
+                                    <div class="gallery__star">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.09 14.45"
+                                            class="gallery__svg-star">
+                                            <defs>
+                                                <clipPath id="rect16284126205765">
+                                                    <path
+                                                        d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                        class="mask"></path>
+                                                </clipPath>
+                                            </defs>
+                                            <rect clip-path="url(#rect16284126205765)" width="4.5269999999999975" x="0.5"
+                                                y="0" height="14.15" fill="#000"></rect>
+                                            <path
+                                                d="M8,12,4.18,14a.5.5,0,0,1-.67-.21.49.49,0,0,1,0-.31l.7-4.24-3.06-3a.5.5,0,0,1,0-.71.47.47,0,0,1,.28-.14l4.25-.64L7.55.89A.51.51,0,0,1,8.22.67a.54.54,0,0,1,.23.22l1.92,3.85,4.25.64A.5.5,0,0,1,15,6a.62.62,0,0,1-.14.28l-3.06,3,.7,4.24a.5.5,0,0,1-.41.57.47.47,0,0,1-.31-.05Z"
+                                                class="star"></path>
+                                        </svg>
+                                    </div>
                                 </div>
                                 <div class="gallery__price">
                                     {{ product.price | money }}
