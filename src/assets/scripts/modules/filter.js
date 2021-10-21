@@ -22,6 +22,7 @@ import _each from 'lodash/each'
 import _mapValues from 'lodash/mapValues'
 import _filter from 'lodash/filter'
 import _get from 'lodash/get'
+import _size from 'lodash/size'
 import _includes from 'lodash/includes'
 import _isFunction from 'lodash/isFunction'
 import { gsap } from 'gsap'
@@ -34,6 +35,10 @@ class Filter {
 	// @param {array} filterKeys - array of all possible filter keys
 	constructor({options, elements, sortKeys, filterKeys, onUpdate}) {
 		let self = this
+
+		if(!_size(elements) || !_size(options)){
+			return
+		}
 
 		this.filterOptions = options
 		this.elements = elements
@@ -48,7 +53,7 @@ class Filter {
 		})
 
 		// enable back / forward in browser
-		window.addEventListener('popstate', (event) => this.filter())
+		// window.addEventListener('popstate', (event) => this.filter())
 
 		// make initial filtering / sorting
 		this.filter(true)

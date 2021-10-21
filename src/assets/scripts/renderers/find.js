@@ -5,7 +5,7 @@ import Filter from '../modules/filter'
 class FindRenderer extends DefaultRenderer {
     onEnterCompleted() {
         super.onEnterCompleted()
-
+        
         this.filter = new Filter({
             options: document.querySelectorAll('.filter-option'), // filter options/links
             elements: document.querySelectorAll('.grid__card'), // elements to filter

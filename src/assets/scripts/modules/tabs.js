@@ -30,16 +30,6 @@ class Tabs {
         })
     }
 
-    setActiveLinks() {
-        // REMOVE ACTIVE LINKS
-        this.tabs.forEach(t => t.classList.remove('active')) // MAIN LINS
-        this.barButtons.forEach(b => b.classList.remove('tabs-bar__button--active')) // BAR LINKS
-
-        // SET ACTIVE LINKS
-        this.tabs[this.activeIndex].classList.add('active')
-        this.barButtons[this.activeIndex].classList.add('tabs-bar__button--active')
-    }
-
     onClick(e) {
         if(this.activeIndex == e.currentTarget.dataset.index){
             return
@@ -85,6 +75,16 @@ class Tabs {
         })
 
         console.log("[tabs.js] active section changed:", this.activeSection, newActiveSection)
+    }
+
+    setActiveLinks() {
+        // REMOVE ACTIVE LINKS
+        this.tabs.forEach(t => t.classList.remove('active')) // MAIN LINS
+        this.barButtons.forEach(b => b.classList.remove('tabs-bar__button--active')) // BAR LINKS
+
+        // SET ACTIVE LINKS
+        this.tabs[this.activeIndex].classList.add('active')
+        this.barButtons[this.activeIndex].classList.add('tabs-bar__button--active')
     }
 }
 

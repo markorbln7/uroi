@@ -7,8 +7,9 @@ class IngredientRenderer extends DefaultRenderer {
         super.onEnterCompleted()
         initIngredientsBar()
 
+        // TYPES TABS
         this.tabs = new Tabs({
-            scroll: this.LocoSroll
+          scroll: this.LocoSroll
         })
     }
     onLeaveCompleted() {
