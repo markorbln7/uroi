@@ -8,7 +8,7 @@
         <div class="about__title-box">
             {% for block in section.blocks %}
                 <div class="tab-button about__title about__title--{{ forloop.index }} {% if forloop.index == 1  %}active{% endif %}"  
-                data-index="{{ forloop.index }}">
+                data-index="{{ forloop.index | minus:1 }}">
                     <span>{{ block.settings.title }}</span>
                 </div>
             {% endfor %}
