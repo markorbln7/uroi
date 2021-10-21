@@ -40,13 +40,6 @@
 
     .global-cart__drawer {
       transform: translateX(0);
-      h3 {
-        margin-top: 10px;
-
-        @include respond-to(md) {
-          margin-top: 1rem;
-        }
-      }
     }
   }
 
