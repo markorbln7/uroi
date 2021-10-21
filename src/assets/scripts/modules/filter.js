@@ -50,7 +50,7 @@ class Filter {
 			})
 		})
 
-		// back / forward in browser
+		// enable back / forward in browser
 		window.addEventListener('popstate', function (event) {
 			self.filter()
 		})
@@ -68,11 +68,43 @@ class Filter {
 		})
 	}
 
+	onClick(event) {
+		event.preventDefault()
+		let dataset = _get(event, 'currentTarget.dataset')
+
+		if(!dataset){
+			return
+		}
+
+		// RESET - filters or sort
+		let reset = dataset.reset
+		if(reset){
+			this.reset(reset)
+		}
+
+		// SORT / FILTER
+		let sort = dataset.sort
+		if(sort){
+			this.toggleQueryParam('sort', sort)
+			this.sort()
+		} else {
+			this.toggleQueryParam(dataset.filter, dataset.value)
+			this.filter()
+		}
+
+		// SET ACTIVE LINKS
+		this.setActiveLinks()
+	}
+
+
+	// Get query params from the URL
 	getQuery() {
 		const urlSearchParams = new URLSearchParams(window.location.search)
 		return Object.fromEntries(urlSearchParams.entries())
 	}
 
+	// Sort elements based on the query params
+	// @param {boolean} instant - if the animation should be instant
 	sort(instant) {
 		const params = this.getQuery()
 
@@ -87,6 +119,8 @@ class Filter {
 		}, instant)
 	}
 
+	// Filter elements based on the query params
+	// @param {boolean} instant - if the animation should be instant
 	filter(instant) {
 		const params = this.getQuery()
 
@@ -110,7 +144,6 @@ class Filter {
 
 		// ANIMATE THE ELEMENTS
 		this.fade(() => {
-
 			gsap.set(this.elements, {
 				display: 'none'
 			})
@@ -121,6 +154,9 @@ class Filter {
 		}, instant)
 	}
 
+	// Fade in and out with a callback
+	// @param {function} callback - executed when faded out
+	// @param {boolean} instant - if the animation is instant
 	fade(callback, instant) {
 		// ANIMATE THE ELEMENTS
 		gsap.to(this.elements, {
@@ -139,6 +175,9 @@ class Filter {
 		})
 	}
 
+	// Change query params
+	// @param {string} key - query key
+	// @param {string} value - query value
 	toggleQueryParam = (key, value) => {
 	  const url = new URL(window.location.href)
 	  const params = this.getQuery()
@@ -152,7 +191,8 @@ class Filter {
 	  window.history.pushState({}, '', url.toString())
 	}
 
-	// type - filters / sort
+	// Reset either the filter or the sort
+	// @param {string} type - can reset filters / sort
 	reset(type) {
 		const url = new URL(window.location.href)
 	  	const params = this.getQuery()
@@ -170,6 +210,7 @@ class Filter {
 	  	window.history.pushState({}, '', url.toString())
 	}
 
+	// Set active class on links
 	setActiveLinks() {
 		if(!this.filterOptions){
 			return
@@ -199,35 +240,6 @@ class Filter {
 		// SET ACTIVE CLASSES
 		_each(this.filterOptions, el => el.classList.remove('active'))
 		_each(activeLinks, el => el.classList.add('active'))
-	}
-
-	onClick(event) {
-		event.preventDefault()
-		let dataset = _get(event, 'currentTarget.dataset')
-
-		if(!dataset){
-			return
-		}
-
-		// RESET - filters or sort
-		let reset = dataset.reset
-		if(reset){
-			this.reset(reset)
-		}
-
-		// SORT / FILTER
-		let sort = dataset.sort
-		if(sort){
-			this.toggleQueryParam('sort', sort)
-			this.sort()
-		} else {
-			this.toggleQueryParam(dataset.filter, dataset.value)
-			this.filter()
-		}
-
-
-		// SET ACTIVE LINKS
-		this.setActiveLinks()
 	}
 
 }
