@@ -1,6 +1,64 @@
-{% for collection in collections %}
-{% if collection.handle == 'dry-skin' or collection.handle == 'sensitive' or collection.handle == 'normal' or collection.handle == 'oily-combination' %}
-    {{collection.title}}
-    {{collection.handle}}
-{% endif %}
-{% endfor %}
+<section class='product-filters container'>
+
+    <div class='d-flex justify-content-between'>
+
+        <!-- TYPE FILTERS -->
+        <div class='d-flex flex-column flex-md-row'>
+            <!-- RESET FILTER -->
+            <a 
+            data-router-disabled
+            class='filter-option me-5 mb-2'
+            data-reset='filters'
+            href='#'>All Products</a>
+            <!-- END :: RESET FILTER -->
+
+            <!-- COLLECTION FILTER OPTIONS -->
+            {% for collection in collections %}
+                {% if collection.handle == 'dry-skin' or collection.handle == 'sensitive' or collection.handle == 'normal' or collection.handle == 'oily-combination' %}
+                    <a 
+                    data-router-disabled
+                    class='filter-option me-5 mb-2'
+                    data-filter='productType'
+                    data-value='{{collection.handle}}'
+                    href='?type={{collection.handle}}'>{{collection.title}}</a>
+                {% endif %}
+            {% endfor %}
+            <!-- END :: COLLECTION FILTER OPTIONS -->
+
+        </div>
+        <!-- END :: TYPE FILTERS -->
+
+
+        <!-- SPECIAL FILTERS -->
+        <div class='d-flex flex-column flex-md-row align-items-end'>
+            <!-- RESET SORT -->
+            <a 
+            data-router-disabled
+            class='filter-option mb-2'
+            data-reset='sort'
+            href='#'>Latest</a>
+            <!-- END :: RESET SORT -->
+
+            <!-- BEST SELLER FILTER -->
+            <a 
+            data-router-disabled
+            class='filter-option ms-5 mb-2'
+            data-filter='bestSeller'
+            data-value='true'
+            href='?bestSeller=true'>Best Sellers</a>
+            <!-- END :: BEST SELLER FILTER -->
+
+            <!-- SORT BY RATING -->
+            <a 
+            data-router-disabled
+            class='filter-option ms-5 mb-2'
+            data-sort='rating'
+            href='?sort=rating'>Highest Rated</a>
+            <!-- END :: SORT BY RATING -->
+
+        </div>
+        <!-- END :: SPECIAL FILTERS -->
+
+    </div>
+
+</section>
