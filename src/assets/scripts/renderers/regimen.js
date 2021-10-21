@@ -16,6 +16,9 @@ class RegimenRenderer extends DefaultRenderer {
 
     // TYPES TABS
     this.tabs = new Tabs({
+      sections: document.querySelectorAll('.tab-section'),
+      tabs: document.querySelectorAll('.tab-button'),
+      barButtons: document.querySelectorAll('.tabs-bar__button'),
       scroll: this.LocoSroll
     })
     

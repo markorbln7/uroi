@@ -1,14 +1,19 @@
 import { gsap } from 'gsap'
 import _each from 'lodash/each'
+import _size from 'lodash/size'
 const eventBus = require('js-event-bus')()
 
 class Tabs {
-    constructor(options) {
+    constructor({sections, tabs, barButtons, scroll}) {
 
-        this.sections = document.querySelectorAll('.tab-section')
-        this.tabs = document.querySelectorAll('.tab-button')
-        this.barButtons = document.querySelectorAll('.tabs-bar__button')
-        this.scroll = options.scroll
+        if(!_size(sections) || !_size(tabs)){
+            return
+        }
+
+        this.sections = sections
+        this.tabs = tabs
+        this.barButtons = barButtons
+        this.scroll = scroll
 
 
         const urlParams = new URLSearchParams(window.location.search);
@@ -78,13 +83,17 @@ class Tabs {
     }
 
     setActiveLinks() {
-        // REMOVE ACTIVE LINKS
-        this.tabs.forEach(t => t.classList.remove('active')) // MAIN LINS
-        this.barButtons.forEach(b => b.classList.remove('tabs-bar__button--active')) // BAR LINKS
+        // TABS
+        if(_size(this.tabs)){            
+            this.tabs.forEach(t => t.classList.remove('active')) // MAIN LINS
+            this.tabs[this.activeIndex].classList.add('active')
+        }
 
-        // SET ACTIVE LINKS
-        this.tabs[this.activeIndex].classList.add('active')
-        this.barButtons[this.activeIndex].classList.add('tabs-bar__button--active')
+        // BAR BUTTONS
+        if(_size(this.barButtons)){
+            this.barButtons.forEach(b => b.classList.remove('tabs-bar__button--active')) // BAR LINKS
+            this.barButtons[this.activeIndex].classList.add('tabs-bar__button--active')
+        }
     }
 }
 
