@@ -208,10 +208,10 @@
 
   &__link {
     display: block;
-    height: 328px;
+    height: 122.6vw;
 
     @include respond-to(md) {
-      height: 47.3rem;
+      height: 36.7rem;
     }
 
     @include respond-to(lg) {

@@ -7,8 +7,12 @@
         class="login__content should-animate from-y">
             <h1 class="login__title">Create Account</h1>
             
-            {% form 'create_customer', class: "form" %}
-                {{ form_errors | default_errors }}
+            {% form 'create_customer', class: "form form__main" %}
+                <div class="form__error login__forgot">
+                    {% for error in form.errors %}
+                        {{ form_errors | default_errors }}
+                    {% endfor %}
+                </div>
                 <ul class="login__inputs">
                     <li>
                         <div class="form__input-box">
@@ -35,7 +39,7 @@
                         </div>
                     </li>
                 </ul>
-                <button type="subumit" class="btn btn--black">sign up</button>
+                <button data-router-disabled type="subumit" class="btn btn--black">sign up</button>
                 <div class="login__signup-box">
                     <span>already have an account?</span>
                     <a href="/account" class="login__underline-btn">log in</a>

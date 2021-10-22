@@ -1,4 +1,4 @@
-<div id="wrapper" data-scroll-container data-router-view="login">
+<div id="wrapper" data-scroll-container data-router-view="login">  
     <section class="login">
 
         <!-- LEFT COLUMN -->
@@ -9,11 +9,12 @@
         class="login__content should-animate from-y">
             <h1 class="login__title">Log In</h1>
             
-            {% form 'customer_login', class: "form" %}
-                {{ form_errors | default_errors }}
-                {% for error in form_errors %}
-                    {{ error }}
-                {% endfor %}
+            {% form 'customer_login', class: "form form__main" %}
+                <div class="form__error login__forgot">
+                        {% for error in form.errors %}
+                            {{ form.errors | default_errors }}
+                        {% endfor %}
+                    </div>
                 <ul class="login__inputs">
                     <li>
                         <div class="form__input-box">
@@ -36,14 +37,14 @@
             <div class="forgot">
                 <h2 class="forgot__title">Reset your password</h2>
                 <p class="forgot__subtitle">we will send you an email to reset your password. </p>
-                {% form 'recover_customer_password', class: 'form' %}
+                {% form 'recover_customer_password', class: 'form recover_form' %}
                     {% for error in form_errors %}
                         {{ error }}
                     {% endfor %}
                     <ul class="login__inputs">
                         <li>
                             <div class="form__input-box">
-                                <input type="email" id="emailRecover" name="customer[email]" placeholder="email" class="input" required>
+                                <input value="" type="email" id="emailRecover" name="email" placeholder="email" class="input form__input" required>
                             </div>
                         </li>
                     </ul>

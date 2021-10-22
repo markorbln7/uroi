@@ -3,6 +3,9 @@
     transform: scale(1.075);
     picture {
         display:block;
+        img {
+            width:100%;
+        }
     }
 }
 .parallax-wrapper {
