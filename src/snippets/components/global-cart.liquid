@@ -59,7 +59,7 @@
         <span class="sans">$${total}</span>
       </div>
       <!-- <p class="p2 font-sans text-center shipping-msg">Shipping & Taxes Calculated at Checkout</p> -->
-      <a v-if="cartData.items && cartData.items.length > 0" class="btn cta checkout-link clickable--contained clickable--contained--primary width--100 hero-button color-white bg-black button-big button-1 d-flex justify-content-center flex-column align-items-center font-sans" :href="checkoutUrl">
+      <a data-router-disabled v-if="cartData.items && cartData.items.length > 0" class="btn cta checkout-link clickable--contained clickable--contained--primary width--100 hero-button color-white bg-black button-big button-1 d-flex justify-content-center flex-column align-items-center font-sans" :href="checkoutUrl">
         <span class="btn--span">
           <span class="btn--arrow">
           <svg width="28px" height="19px" viewBox="0 0 28 19">
@@ -75,7 +75,7 @@
             Checkout
         </span>
       </a>
-      <a v-else class="checkout-link clickable--contained clickable--contained--primary width--100">
+      <a data-router-disabled v-else class="checkout-link clickable--contained clickable--contained--primary width--100">
         Empty Bag
       </a>
     </div>
